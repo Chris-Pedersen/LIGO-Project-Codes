@@ -6,27 +6,26 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pickle
 
+## Computational parameters
+match_lim=0.97 # Set limit to distinguish between spinning and non spinning
+mass1=55 # Mass of dominant body - this body is whose spin we vary
+mass2_low=25 # Upper mass boundary
+mass2_high=26 # Lower mass boundary
+spin_resolution=100 # Number of spin values to 'check' for each gridpoint
+dimensions=100 # Number of mass and inclination values - grid resolution
+
 ## Static parameters
-savename="testdata.p"
 approx="IMRPhenomPv2"
 approx1="IMRPhenomPv2"
 approx2="IMRPhenomPv2"
 f_low = 25
 sample_rate = 4096
 savename="test.p"
-match_lim=0.97 # Set limit to distinguish between spinning and non spinning
-mass1=55
-mass2_low=25
-mass2_high=26
-spin_resolution=100
-dimensions=100
 
 ## Spin parameters
 phi_JL=0 ## Polarisation angle perhaps?
 theta_z1=1.57
 theta_z2=1.57
-#spin_z1=0
-#spin_z2=0
 phi12=0 ## Don't know what parameter this is
 
 ## Save parameters for the plot axes and future reference
@@ -45,7 +44,7 @@ def match_inc(inc,spin_1,mass2):
                          theta_z1, #theta1
                          theta_z2, #theta2
                          phi12, #phi12
-                         spin_1, #chi1
+                         spin_1, #chi1 - this parameter varies
                          0, #chi2
                          m1_1,
                          m2_1,
