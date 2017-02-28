@@ -7,7 +7,7 @@ import numpy as np
 import pickle
 
 ## Computational parameters
-match_lim=0.97 # Set limit to distinguish between spinning and non spinning
+match_lim=0.95 # Set limit to distinguish between spinning and non spinning
 mass1=55 # Mass of dominant body - this body is whose spin we vary
 mass2_low=25 # Upper mass boundary
 mass2_high=26 # Lower mass boundary
@@ -29,7 +29,7 @@ theta_z2=1.57
 phi12=0 ## Don't know what parameter this is
 
 ## Save parameters for the plot axes and future reference
-specs=np.array([mass1,00,approx,"Inclination","Spin difference required"])
+specs=np.array([mass1,match_lim,approx,"Inclination","Spin difference required"])
 
 def match_inc(inc,spin_1,mass2):
    # Allow masses to vary as parameters
