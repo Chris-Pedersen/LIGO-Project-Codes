@@ -103,7 +103,7 @@ printf "Inclination (degrees now) = ${INC} \n" >> ${PAR}
 printf "Phase = ${COA_PHASE} \n" >> ${PAR}
 printf "Polarisation = ${POLARIZATION} \n" >> ${PAR}
 printf "Distance (kpc) = ${DISTANCE} \n" >> ${PAR}
-printf "Minimum frequency = ${INV_F_MIN} \n" >> ${PAR}
+printf "Minimum frequency = ${INJ_F_MIN} \n" >> ${PAR}
 printf " \nSpin parameters: \n" >> ${PAR}
 printf "Spin1 min = ${MIN_SPIN1} \n" >> ${PAR}
 printf "Spin1 max = ${MAX_SPIN1} \n" >> ${PAR}
