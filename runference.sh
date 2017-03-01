@@ -99,7 +99,7 @@ printf "Mass 1 = ${MASS1} \n" >> ${PAR}
 printf "Mass 2 = ${MASS2} \n" >> ${PAR}
 printf "RA = ${RA} \n" >> ${PAR}
 printf "Declination = ${DEC} \n" >> ${PAR}
-printf "Inclination = ${INC} \n" >> ${PAR}
+printf "Inclination (degrees now) = ${INC} \n" >> ${PAR}
 printf "Phase = ${COA_PHASE} \n" >> ${PAR}
 printf "Polarisation = ${POLARIZATION} \n" >> ${PAR}
 printf "Distance (kpc) = ${DISTANCE} \n" >> ${PAR}
@@ -115,8 +115,8 @@ printf "Spin2 min kappa = ${MIN_KAPPA2} \n" >> ${PAR}
 printf "Spin2 max kappa = ${MAX_KAPPA2} \n" >> ${PAR}
 printf " \nSampler parameters \n" >> ${PAR}
 printf "Number of walkers = ${N_WALKERS} \n" >> ${PAR}
-printf "Number of checkpoints =${N_CHECKPOINT} \n" >> ${PAR}
-printf "Number of iterations =$ {N_ITERATIONS} \n" >> ${PAR}
+printf "Number of checkpoints = ${N_CHECKPOINT} \n" >> ${PAR}
+printf "Number of iterations = ${N_ITERATIONS} \n" >> ${PAR}
 printf "Number of processors = ${NPROCS} \n" >> ${PAR}
 
 
