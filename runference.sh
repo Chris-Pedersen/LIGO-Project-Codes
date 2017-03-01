@@ -113,7 +113,7 @@ printf "Spin2 min = ${MIN_SPIN2} \n" >> ${PAR}
 printf "Spin2 max = ${MAX_SPIN2} \n" >> ${PAR}
 printf "Spin2 min kappa = ${MIN_KAPPA2} \n" >> ${PAR}
 printf "Spin2 max kappa = ${MAX_KAPPA2} \n" >> ${PAR}
-printf " \nSampler parameters \n" >> ${PAR}
+printf " \nSampler parameters: \n" >> ${PAR}
 printf "Number of walkers = ${N_WALKERS} \n" >> ${PAR}
 printf "Number of checkpoints = ${N_CHECKPOINT} \n" >> ${PAR}
 printf "Number of iterations = ${N_ITERATIONS} \n" >> ${PAR}
