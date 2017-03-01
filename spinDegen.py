@@ -98,7 +98,7 @@ def findMatchLimit(mass2,inc,spin1):
   for aa in range(len(inc)):
     match=1
     bb=0
-    while (match > match_lim) and (bb < (len(spin1)-1)):
+    while (match > match_lim) and (bb < (len(spin1)-2)):
       #print spin1[bb]
       #print inc[aa]
       match=match_inc(inc[aa],spin1[bb],mass2)
