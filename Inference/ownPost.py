@@ -3,8 +3,9 @@ import numpy as np
 from pycbc.io import InferenceFile
 
 #Select file and paramters
-parameter="distance"
+parameter="spin2_a"
 folder="20170228-225207/"
+injected_value=0.05
 
 #Iteration range to sample
 it_start=9950
@@ -17,7 +18,6 @@ savename=folder+parameter
 
 #Read in file
 datafile=folder+data_name
-print datafile
 fp = InferenceFile("%s" % datafile, "r")
 
 parameter_values=np.array([])
@@ -34,7 +34,7 @@ values=len(parameter_values)
 plt.figure()
 plt.title("Iterations %d to %d; %d data points" % (it_start,it_end,values))
 plt.hist(parameter_values,50)
-plt.axvline(x=100,linewidth=2,color='r')
+plt.axvline(x=injected_value,linewidth=2,color='r')
 plt.xlabel("%s" % parameter)
 plt.savefig("%s.png" % savename)
 plt.show("hold")
