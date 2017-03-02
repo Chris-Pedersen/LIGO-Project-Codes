@@ -13,12 +13,13 @@ fp = InferenceFile("%s" % datafile, "r")
 parameter_values=np.zeros(num_walkers)
 
 for aa in range(num_walkers):
-   samples = fp.read_samples("mchirp", walkers=0)
+   samples = fp.read_samples("mchirp", walkers=aa)
    temp=samples.mchirp
    parameter_values[aa]=temp[iteration]
 
+print parameter_values
 plt.figure()
-plt.hist(parameter_values,200)
+plt.hist(parameter_values,50)
 plt.xlabel("Chirp mass")
 plt.show("hold")
 
