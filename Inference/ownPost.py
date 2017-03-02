@@ -4,12 +4,10 @@ from pycbc.io import InferenceFile
 
 #Select file and paramters
 parameter="inclination"
-folder="20170228-225207/"
+folder="20170301-215856/"
 injected_value=0
 
-#Iteration range to sample
-it_start=9950
-it_end=9999
+#Walker number - should be sticking with 5000
 num_walkers=5000
 
 #Combine inputs to form variables
@@ -20,19 +18,17 @@ savename=folder+parameter
 datafile=folder+data_name
 fp = InferenceFile("%s" % datafile, "r")
 
+#Take last iteration of each walker
 parameter_values=np.array([])
-
 for aa in range(num_walkers):
    samples = fp.read_samples("%s" % parameter, walkers=aa)
    temp=getattr(samples,parameter)
-   temp=temp[it_start:it_end]
-   for bb in range(len(temp)):
-      parameter_values=np.append(parameter_values,temp[bb])
+   parameter_values=np.append(parameter_values,temp[-1])
 
 values=len(parameter_values)
-
+#Plot and save
 plt.figure()
-plt.title("Iterations %d to %d; %d data points" % (it_start,it_end,values))
+plt.title("%d data points" % (values))
 plt.hist(parameter_values,50)
 plt.axvline(x=injected_value,linewidth=2,color='r')
 plt.xlabel("%s" % parameter)
