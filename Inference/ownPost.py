@@ -3,9 +3,9 @@ import numpy as np
 from pycbc.io import InferenceFile
 
 #Select file and paramters
-parameter="spin2_a"
+parameter="inclination"
 folder="20170228-225207/"
-injected_value=0.05
+injected_value=0
 
 #Iteration range to sample
 it_start=9950
