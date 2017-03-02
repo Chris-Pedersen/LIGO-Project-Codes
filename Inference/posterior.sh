@@ -1,4 +1,4 @@
-TARGETDIR=20170228-225207
+TARGET=20170228-225207
 ITER=4999
 INPUT_FILE=${TARGET}/output.hdf
 OUTPUT_FILE=${TARGET}/scatter.png
@@ -9,4 +9,4 @@ pycbc_inference_plot_posterior \
     --plot-scatter \
     --plot-marginal \
     --z-arg logplr \
-    --parameters "ra" \
+    --parameters mchirp q \
