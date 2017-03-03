@@ -1,3 +1,5 @@
+import matplotlib
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import numpy as np
 from pycbc.io import InferenceFile
@@ -35,3 +37,5 @@ plt.xlabel("%s" % parameter)
 plt.savefig("%s.png" % savename)
 plt.show("hold")
 
+print "Plot saved as %s.png" % savename
+print "DONE"
