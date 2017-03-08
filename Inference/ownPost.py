@@ -6,7 +6,7 @@ from pycbc.io import InferenceFile
 
 #Select file and paramters
 parameter="mchirp"
-folder="20170301-215856/"
+folder="20170302-190306/"
 injected_value=0
 m1=67.
 m2=25.
