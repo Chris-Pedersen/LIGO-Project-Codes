@@ -18,13 +18,13 @@ m1_1=55
 m2_1=45
 m1_2=55
 m2_2=45
-spin_z1=0
-spin_z2=0
+spin_z1=1
+spin_z2=1
 theta_z1=1.57
 theta_z2=1.57
 #Second match spin parameters
-spin_z1_2=0
-spin_z2_2=0
+spin_z1_2=1
+spin_z2_2=1
 
 #Convert to precessing coords
 inc_1,s1x,s1y,s1z,s2x,s2y,s2z=SimInspiralTransformPrecessingNewInitialConditions(
