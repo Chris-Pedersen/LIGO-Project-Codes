@@ -5,11 +5,11 @@ import numpy as np
 from pycbc.io import InferenceFile
 
 #Select file and paramters
-parameter="inclination"
-folder="20170307-175032/"
+parameter="mchirp"
+folder="20170301-215856/"
 injected_value=0
-m1=
-m2=
+m1=67.
+m2=25.
 
 #Walker number - should be sticking with 5000
 num_walkers=5000
@@ -23,7 +23,7 @@ datafile=folder+data_name
 fp = InferenceFile("%s" % datafile, "r")
 
 #Chirp mass function
-def chirpMass(mass1,mass2)
+def chirpMass(mass1,mass2):
    numer=(mass1*mass2)**(0.6)
    denom=(mass1+mass2)**(0.2)
    return numer/denom
