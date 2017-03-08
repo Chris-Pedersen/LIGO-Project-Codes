@@ -80,11 +80,11 @@ def match_inc(inc,spin_1,mass2):
                          f_lower=f_low,inclination=inc_2,
                          delta_t=1.0/sample_rate)
    # Resize the waveforms to the same length
-   tlen = max(len(sp), len(hp))
-   sp.resize(tlen)
-   hp.resize(tlen)
+   tlen = max(len(sc), len(hc))
+   sc.resize(tlen)
+   hc.resize(tlen)
    # Generate the aLIGO ZDHP PSD
-   delta_f = 1.0 / sp.duration
+   delta_f = 1.0 / sc.duration
    flen = tlen/2 + 1
    psd = aLIGOZeroDetHighPower(flen, delta_f, f_low)
    # Note: This takes a while the first time as an FFT plan is generated
