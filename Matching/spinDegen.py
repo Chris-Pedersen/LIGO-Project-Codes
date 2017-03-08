@@ -10,7 +10,7 @@ import pickle
 match_lim=0.95 # Set limit to distinguish between spinning and non spinning
 mass1=55 # Mass of dominant body - this body is whose spin we vary
 mass2_low=25 # Upper mass boundary
-mass2_high=26 # Lower mass boundary
+mass2_high=55 # Lower mass boundary
 spin_resolution=100 # Number of spin values to 'check' for each gridpoint
 dimensions=100 # Number of mass and inclination values - grid resolution
 
@@ -20,12 +20,13 @@ approx1="IMRPhenomPv2"
 approx2="IMRPhenomPv2"
 f_low = 25
 sample_rate = 4096
-savename="test.p"
+savename="2D_data/s2_0_cross.p"
 
 ## Spin parameters
 phi_JL=0 ## Polarisation angle perhaps?
 theta_z1=1.57
 theta_z2=1.57
+spin_2=0
 phi12=0 ## Don't know what parameter this is
 
 ## Save parameters for the plot axes and future reference
@@ -45,11 +46,12 @@ def match_inc(inc,spin_1,mass2):
                          theta_z2, #theta2
                          phi12, #phi12
                          spin_1, #chi1 - this parameter varies
-                         0, #chi2
+                         spin_2, #chi2
                          m1_1,
                          m2_1,
                          f_low,phiRef=0)
 
+   #This is our 'spin1=0' waveform that we match the precessing one with
    inc_2,s1x_2,s1y_2,s1z_2,s2x_2,s2y_2,s2z_2=SimInspiralTransformPrecessingNewInitialConditions(
                          inc, #theta_JN
                          phi_JL, #phi_JL
@@ -57,7 +59,7 @@ def match_inc(inc,spin_1,mass2):
                          theta_z2, #theta2
                          phi12, #phi12
                          0, #chi1
-                         0, #chi2
+                         spin_2, #chi2
                          m1_2,
                          m2_2,
                          f_low,phiRef=0)
@@ -78,16 +80,16 @@ def match_inc(inc,spin_1,mass2):
                          f_lower=f_low,inclination=inc_2,
                          delta_t=1.0/sample_rate)
    # Resize the waveforms to the same length
-   tlen = max(len(sp), len(hp))
-   sp.resize(tlen)
-   hp.resize(tlen)
+   tlen = max(len(sc), len(hc))
+   sc.resize(tlen)
+   hc.resize(tlen)
    # Generate the aLIGO ZDHP PSD
-   delta_f = 1.0 / sp.duration
+   delta_f = 1.0 / sc.duration
    flen = tlen/2 + 1
    psd = aLIGOZeroDetHighPower(flen, delta_f, f_low)
    # Note: This takes a while the first time as an FFT plan is generated
    # subsequent calls are much faster.
-   m, i = match(hp, sp, psd=psd, low_frequency_cutoff=f_low)
+   m, i = match(hc, sc, psd=psd, low_frequency_cutoff=f_low)
    #print 'The match is: %1.3f' % m
    return m
 
