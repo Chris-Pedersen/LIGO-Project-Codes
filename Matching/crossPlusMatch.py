@@ -23,7 +23,7 @@ spin_z2=0
 theta_z1=1.57
 theta_z2=1.57
 #Second match spin parameters
-spin_z1_2=1
+spin_z1_2=0
 spin_z2_2=0
 
 #Convert to precessing coords
@@ -67,23 +67,22 @@ sp, sc = get_td_waveform(approximant=approx2,
                       f_lower=f_low,inclination=inc_2,
                       delta_t=1.0/sample_rate)
 # Resize the waveforms to the same length
-tlen = max(len(sc), len(hc))
-sc.resize(tlen)
+tlen = max(len(sp), len(hc))
+sp.resize(tlen)
 hc.resize(tlen)
 # Generate the aLIGO ZDHP PSD
-delta_f = 1.0 / sc.duration
+delta_f = 1.0 / sp.duration
 flen = tlen/2 + 1
 psd = aLIGOZeroDetHighPower(flen, delta_f, f_low)
 # ote: This takes a while the first time as an FFT plan is generated
 # subsequent calls are much faster.
-m, i = match(hc, sc, psd=psd, low_frequency_cutoff=f_low)
+m, i = match(hc, sp, psd=psd, low_frequency_cutoff=f_low)
 
-
-
+# Match and plot
 print 'The match is: %1.3f' % m
 plt.figure()
-plt.plot(hc.sample_times,hc,'b-',label="in-plane spin = %1.2f" % spin_z1)#  % approx1)
-plt.plot(sc.sample_times,sc,'r-',label="in-plane spin = %1.2f" % spin_z1_2)# % approx2)
+plt.plot(hc.sample_times,hc,'b-',label="cross")
+plt.plot(sp.sample_times,sp,'r-',label="plus")
 plt.xlabel("Time (s)")
 plt.ylabel("Strain")
 plt.title("m1=%1.0f,m2=%1.0f,Inc=%1.2f, Match = %1.3f" % (m1_1,m2_1,inc,m))
