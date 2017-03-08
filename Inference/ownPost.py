@@ -8,6 +8,8 @@ from pycbc.io import InferenceFile
 parameter="inclination"
 folder="20170307-175032/"
 injected_value=0
+m1=
+m2=
 
 #Walker number - should be sticking with 5000
 num_walkers=5000
@@ -19,6 +21,17 @@ savename=folder+parameter
 #Read in file
 datafile=folder+data_name
 fp = InferenceFile("%s" % datafile, "r")
+
+#Chirp mass function
+def chirpMass(mass1,mass2)
+   numer=(mass1*mass2)**(0.6)
+   denom=(mass1+mass2)**(0.2)
+   return numer/denom
+
+if parameter=="mchrip":
+   injected_value=chirpMass(m1,m2)
+elif parameter=="q":
+   injected_value=m1/m2
 
 #Take last iteration of each walker
 parameter_values=np.array([])
