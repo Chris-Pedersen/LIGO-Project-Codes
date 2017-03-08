@@ -5,9 +5,9 @@ import numpy as np
 from pycbc.io import InferenceFile
 
 #Select file and paramters
-parameter="q"
-folder="20170301-215856/"
-injected_value=2.68
+parameter="inclination"
+folder="20170307-175032/"
+injected_value=0
 
 #Walker number - should be sticking with 5000
 num_walkers=5000
