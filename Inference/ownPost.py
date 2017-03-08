@@ -28,10 +28,12 @@ def chirpMass(mass1,mass2):
    denom=(mass1+mass2)**(0.2)
    return numer/denom
 
-if parameter=="mchrip":
+if parameter=="mchirp":
    injected_value=chirpMass(m1,m2)
+   print injected_value
 elif parameter=="q":
    injected_value=m1/m2
+   print injected_value
 
 #Take last iteration of each walker
 parameter_values=np.array([])
