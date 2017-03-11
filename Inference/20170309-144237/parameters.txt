@@ -9,7 +9,8 @@ Phase = 85.9436692696
 Polarisation = 100.267614148 
 Distance (kpc) = 100000 
 Minimum frequency = 28. 
- 
+
+*** Spin disabled *** 
 Spin parameters: 
 Spin1 min = 0.9 
 Spin1 max = 0.9 
