@@ -12,7 +12,6 @@ m2=specs[1]
 plt.figure()
 plt.contourf(x,y,z,200,cmap="inferno")
 plt.colorbar()
-plt.clim(0.5,1)
 plt.ylabel("Mass2")
 plt.xlabel("Inclination")
 plt.title("m1=%s, approx=%s" % (m1,specs[2]))
