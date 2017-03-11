@@ -5,7 +5,7 @@ from pycbc.inference import distributions
 
 # Create a mass distribution object that is uniform between 0.5 and 1.5
 # solar masses.
-mass1_distribution = distributions.Uniform(mass1=(0.5, 1.5))
+mass1_distribution = distributions.SinAngle(mass1=(0,1))
 # Take 100000 random variable samples from this uniform mass distribution.
 mass1_samples = mass1_distribution.rvs(size=1000000)
 
