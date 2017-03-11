@@ -1,3 +1,5 @@
+import matplotlib
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from pycbc.inference import distributions
 
@@ -41,4 +43,4 @@ ax2.set_title('Mass 3 samples')
 ax3.set_title('Mass 4 samples')
 
 plt.tight_layout()
-plt.show()
+plt.savefig("distributions.png")
