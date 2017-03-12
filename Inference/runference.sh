@@ -7,24 +7,24 @@ PAR=${NAMEDIR}/parameters.txt
 TRIGGER_TIME=1126259462.0
 INJ_APPROX=IMRPhenomPv2threePointFivePN
 MASS1=67.
-MASS2=22.
+MASS2=25.
 RA=2.21535724066
 DEC=-1.23649695537
-INC=0.0
+INC=1.62
 COA_PHASE=1.5
-POLARIZATION=0
+POLARIZATION=1.75
 DISTANCE=100000 # in kpc
 INJ_F_MIN=28.
 TAPER="start"
 # Spin parameters
 MIN_SPIN1=0.9
 MAX_SPIN1=0.9
-MIN_KAPPA1=0
-MAX_KAPPA1=0
+MIN_KAPPA1=0.0
+MAX_KAPPA1=0.0
 MIN_SPIN2=0.0
-MAX_SPIN2=0.1
+MAX_SPIN2=0.0
 MIN_KAPPA2=0.9
-MAX_KAPPA2=1
+MAX_KAPPA2=0.9
 
 # path of injection file that will be created in the example
 INJ_PATH=${NAMEDIR}/injection.xml.gz
@@ -40,8 +40,8 @@ COA_PHASE=`python -c "import numpy; print ${COA_PHASE} * 180/numpy.pi"`
 OUTPUT=${NAMEDIR}/output.hdf
 SEGLEN=8
 PSD_INVERSE_LENGTH=4
-IFOS="H1 L1"
-STRAIN="H1:aLIGOZeroDetHighPower L1:aLIGOZeroDetHighPower"
+IFOS="H1 L1 V1"
+STRAIN="H1:aLIGOZeroDetHighPower L1:aLIGOZeroDetHighPower V1:aLIGOZeroDetHighPower"
 SAMPLE_RATE=2048
 F_MIN=30.
 N_WALKERS=5000
@@ -118,7 +118,9 @@ printf "Number of walkers = ${N_WALKERS} \n" >> ${PAR}
 printf "Number of checkpoints = ${N_CHECKPOINT} \n" >> ${PAR}
 printf "Number of iterations = ${N_ITERATIONS} \n" >> ${PAR}
 printf "Number of processors = ${NPROCS} \n" >> ${PAR}
-
+printf " \nOther parameters> \n" >> ${PAR}
+printf "Detectors = ${IFOS} \n" >> ${PAR}
+printf "Strain = ${STRAIN} \n" >> ${PAR}
 
 # run sampler
 # specifies the number of threads for OpenMP
@@ -141,7 +143,7 @@ pycbc_inference --verbose \
     --fake-strain ${STRAIN} \
     --sample-rate ${SAMPLE_RATE} \
     --low-frequency-cutoff ${F_MIN} \
-    --channel-name H1:FOOBAR L1:FOOBAR \
+    --channel-name H1:FOOBAR V1:FOOBAR L1:FOOBAR \
     --injection-file ${INJ_PATH} \
     --processing-scheme ${PROCESSING_SCHEME} \
     --sampler kombine \
