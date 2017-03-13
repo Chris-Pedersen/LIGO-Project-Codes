@@ -36,14 +36,16 @@ def plotPosterior(parameter):
    parameter_values=np.sort(parameter_values)
    lower_90=parameter_values[250]
    upper_90=parameter_values[4749]
+   mean_val=np.average(parameter_values)
    
    ## Plot and save
    plt.figure()
    plt.title("%d data points" % (values))
    plt.hist(parameter_values,50)
    plt.axvline(x=injected_value,linewidth=2,color='r')
-   plt.axvline(x=lower_90,linewidth=2,linestyle='dashed',color='r')
-   plt.axvline(x=upper_90,linewidth=2,linestyle='dashed',color='r')
+   plt.axvline(x=lower_90,linewidth=2,linestyle='dashed',color='k')
+   plt.axvline(x=mean_val,linewidth=2, color='k')
+   plt.axvline(x=upper_90,linewidth=2,linestyle='dashed',color='k')
    plt.xlabel("%s" % parameter)
    plt.savefig("%s.png" % savename)
    print "Plot saved as %s.png" % savename
