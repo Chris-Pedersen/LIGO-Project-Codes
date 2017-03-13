@@ -43,11 +43,19 @@ for aa in range(num_walkers):
    parameter_values=np.append(parameter_values,temp[-1])
 
 values=len(parameter_values)
+
+#Find confidence intervals
+parameter_values=np.sort(parameter_values)
+lower_90=parameter_values[250]
+upper_90=parameter_values[4749]
+
 #Plot and save
 plt.figure()
 plt.title("%d data points" % (values))
 plt.hist(parameter_values,50)
 plt.axvline(x=injected_value,linewidth=2,color='r')
+plt.axvline(x=lower_90,linewitdh=2,linestyle='dashed',color='g')
+plt.axvline(x=upper_90,linewitdh=2,linestyle='dashed',color='g')
 plt.xlabel("%s" % parameter)
 plt.savefig("%s.png" % savename)
 plt.show("hold")
