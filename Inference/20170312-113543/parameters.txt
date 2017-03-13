@@ -25,3 +25,5 @@ Number of walkers = 5000
 Number of checkpoints = 1000 
 Number of iterations = 10000 
 Number of processors = 12 
+
+VIRGO TOO
