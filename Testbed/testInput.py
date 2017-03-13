@@ -1,0 +1,4 @@
+import numpy as np
+import sys
+x=sys.argv[1]
+print x
