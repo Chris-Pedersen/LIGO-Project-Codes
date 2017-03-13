@@ -2,6 +2,7 @@
 NAMEDIR=`date '+%Y%m%d-%H%M%S'`
 mkdir ${NAMEDIR}
 PAR=${NAMEDIR}/parameters.txt
+TEMPPAR=${NAMEDIR}/temp_par.txt
 
 # define coalescence time, observed masses, and waveform parameters
 TRIGGER_TIME=1126259462.0
@@ -16,6 +17,7 @@ POLARIZATION=1.75
 DISTANCE=100000 # in kpc
 INJ_F_MIN=28.
 TAPER="start"
+
 # Spin parameters
 MIN_SPIN1=0.9
 MAX_SPIN1=0.9
@@ -32,9 +34,9 @@ INJ_PATH=${NAMEDIR}/injection.xml.gz
 # lalapps_inspinj requires degrees on the command line
 LONGITUDE=`python -c "import numpy; print ${RA} * 180/numpy.pi"`
 LATITUDE=`python -c "import numpy; print ${DEC} * 180/numpy.pi"`
-INC=`python -c "import numpy; print ${INC} * 180/numpy.pi"`
-POLARIZATION=`python -c "import numpy; print ${POLARIZATION} * 180/numpy.pi"`
-COA_PHASE=`python -c "import numpy; print ${COA_PHASE} * 180/numpy.pi"`
+INC_inj=`python -c "import numpy; print ${INC} * 180/numpy.pi"`
+POLARIZATION_inj=`python -c "import numpy; print ${POLARIZATION} * 180/numpy.pi"`
+COA_PHASE_inj=`python -c "import numpy; print ${COA_PHASE} * 180/numpy.pi"`
 
 # sampler parameters
 OUTPUT=${NAMEDIR}/output.hdf
@@ -122,6 +124,34 @@ printf " \nOther parameters> \n" >> ${PAR}
 printf "Detectors = ${IFOS} \n" >> ${PAR}
 printf "Strain = ${STRAIN} \n" >> ${PAR}
 
+# Write to temporary file
+printf "${INJ_APPROX} \n" > ${TEMPPAR}
+printf "${MASS1} \n" >> ${TEMPPAR}
+printf "${MASS2} \n" >> ${TEMPPAR}
+printf "${RA} \n" >> ${TEMPPAR}
+printf "%f \n" ${DEC} >> ${TEMPPAR}
+printf "${INC} \n" >> ${TEMPPAR}
+printf "${COA_PHASE} \n" >> ${TEMPPAR}
+printf "${POLARIZATION} \n" >> ${TEMPPAR}
+printf "${DISTANCE} \n" >> ${TEMPPAR}
+printf "${MIN_SPIN1} \n" >> ${TEMPPAR}
+printf "${MAX_SPIN1} \n" >> ${TEMPPAR}
+printf "${MIN_KAPPA1} \n" >> ${TEMPPAR}
+printf "${MAX_KAPPA1} \n" >> ${TEMPPAR}
+printf "${MIN_SPIN2} \n" >> ${TEMPPAR}
+printf "${MAX_SPIN2} \n" >> ${TEMPPAR}
+printf "${MIN_KAPPA2} \n" >> ${TEMPPAR}
+printf "${MAX_KAPPA2} \n" >> ${TEMPPAR}
+printf "${N_WALKERS} \n" >> ${TEMPPAR}
+printf "${N_ITERATIONS} \n" >> ${TEMPPAR}
+#printf "${IFOS} \n" >> ${TEMPPAR}  ----- this is not working, cannot be parsed
+
+# Convert temporary file into dictionary and write
+python conv2Dict.py ${NAMEDIR}
+
+#Delete temporary file
+rm ${TEMPPAR}
+
 # run sampler
 # specifies the number of threads for OpenMP
 # Running with OMP_NUM_THREADS=1 stops lalsimulation
@@ -155,3 +185,4 @@ pycbc_inference --verbose \
     --checkpoint-interval ${N_CHECKPOINT} \
     --checkpoint-fast \
     --nprocesses ${NPROCS}
+

@@ -4,38 +4,50 @@ import matplotlib.pyplot as plt
 import numpy as np
 from pycbc.io import InferenceFile
 
-#Select file and paramters
-parameter="inclination"
-folder="20170228-225207/"
-injected_value=1.57
+## Select file
+folder="20170302-190306/"
 
-#Walker number - should be sticking with 5000
-num_walkers=5000
-
-#Combine inputs to form variables
+## Combine inputs to form variables
 data_name="output.hdf"
-savename=folder+parameter
 
-#Read in file
-datafile=folder+data_name
-fp = InferenceFile("%s" % datafile, "r")
+## Load in dictionary
+dic_name="paramDict.npy"
+dict_load=folder+dic_name
+injected=np.load("%s" % dict_load).item()
 
-def plostPosterior(parameter,inj):
-   #Take last iteration of each walker
+def plostPosterior(parameter):
+   ## Prepare to read in parameters
+   savename=folder+parameter
+   datafile=folder+data_name
+   fp = InferenceFile("%s" % datafile, "r")
+   injected_value=injected[parameter]
+   
+   ## Take last iteration of each walker
    parameter_values=np.array([])
    for aa in range(num_walkers):
       samples = fp.read_samples("%s" % parameter, walkers=aa)
       temp=getattr(samples,parameter)
       parameter_values=np.append(parameter_values,temp[-1])
    values=len(parameter_values)
-   #Plot and save
+   
+   ## Find confidence intervals
+   parameter_values=np.sort(parameter_values)
+   lower_90=parameter_values[250]
+   upper_90=parameter_values[4749]
+   
+   ## Plot and save
    plt.figure()
    plt.title("%d data points" % (values))
    plt.hist(parameter_values,50)
-   plt.axvline(x=inj,linewidth=2,color='r')
+   plt.axvline(x=injected_value,linewidth=2,color='r')
+   plt.axvline(x=lower_90,linewidth=2,linestyle='dashed',color='r')
+   plt.axvline(x=upper_90,linewidth=2,linestyle='dashed',color='r')
    plt.xlabel("%s" % parameter)
    plt.savefig("%s.png" % savename)
-   plt.show("hold")
    print "Plot saved as %s.png" % savename
+
+
+## Execute
+plotPosterior("q")
 
 print "DONE"
