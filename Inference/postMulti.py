@@ -5,7 +5,7 @@ import numpy as np
 from pycbc.io import InferenceFile
 
 ## Select file
-folder="20170302-190306/"
+folder="20170312-113543/"
 
 ## Combine inputs to form variables
 data_name="output.hdf"
@@ -14,8 +14,10 @@ data_name="output.hdf"
 dic_name="paramDict.npy"
 dict_load=folder+dic_name
 injected=np.load("%s" % dict_load).item()
+num_walkers=int(injected["n_walkers"])
+num_its=int(injected["n_its"])
 
-def plostPosterior(parameter):
+def plotPosterior(parameter):
    ## Prepare to read in parameters
    savename=folder+parameter
    datafile=folder+data_name
