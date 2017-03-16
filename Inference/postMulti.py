@@ -5,13 +5,13 @@ import numpy as np
 from pycbc.io import InferenceFile
 
 ## Select file
-folder="20170312-113543/"
+folder="20170228-225207/"
 
 ## Combine inputs to form variables
 data_name="output.hdf"
 
 ## Determine what parameters to plot
-whatdo=raw_input("What parameters do you want to plot?")
+whatdo=raw_input("What parameters do you want to plot? \n")
 
 ## List of parameters
 params=np.array(["q",
