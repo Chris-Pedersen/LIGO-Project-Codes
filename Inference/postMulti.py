@@ -10,6 +10,20 @@ folder="20170312-113543/"
 ## Combine inputs to form variables
 data_name="output.hdf"
 
+## Determine what parameters to plot
+whatdo=raw_input("What parameters do you want to plot?")
+
+## List of parameters
+params=np.array(["q",
+		"mchirp",
+		"distance",
+		"inclination",
+		"polarization",
+		"spin1_a",
+		"spin1_polar",
+		"spin2_a",
+		"spin2_polar"])
+
 ## Load in dictionary
 dic_name="paramDict.npy"
 dict_load=folder+dic_name
@@ -52,6 +66,12 @@ def plotPosterior(parameter):
 
 
 ## Execute
-plotPosterior("q")
+if whatdo=="all":
+  print "Generating posteriors for all parameters..."
+  for aa in range(len(params)):
+    plotPosterior(params[aa])
+else:
+  print "Generating posterior for %s" % whatdo
+  plotPosterior(whatdo)
 
 print "DONE"
