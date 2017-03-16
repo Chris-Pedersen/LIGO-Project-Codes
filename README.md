@@ -1,4 +1,4 @@
 # Matching
-runference.sh needs to be used in conjunction with inference.ini
+runference.sh needs to be used in conjunction with inference.ini, located in /Inference/configs. There are now two inference.inis, one in which component masses vary during the MCMC, the other in which mass ratio and chirp mass are the varying mass parameters.
 
 paraLoop.py and spinDegen.py generate pickled data files that can be read and plot in plotData.py, including x and y axis and axis labels.
