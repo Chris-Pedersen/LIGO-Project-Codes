@@ -1,6 +1,6 @@
-# Create new directory for this inference run
-NAMEDIR=`date '+%Y%m%d-%H%M%S'`
-NAMEDIR=data/${NAMEDIR}
+Create new directory for this inference run
+DIR=`date '+%Y%m%d-%H%M%S'`
+NAMEDIR=data/${DIR}
 mkdir ${NAMEDIR}
 PAR=${NAMEDIR}/parameters.txt
 TEMPPAR=${NAMEDIR}/temp_par.txt
@@ -43,10 +43,8 @@ COA_PHASE_inj=`python -c "import numpy; print ${COA_PHASE} * 180/numpy.pi"`
 OUTPUT=${NAMEDIR}/output.hdf
 SEGLEN=8
 PSD_INVERSE_LENGTH=4
-#IFOS="H1 L1 V1"
-IFOS="H1 L1"
-#STRAIN="H1:aLIGOZeroDetHighPower L1:aLIGOZeroDetHighPower V1:aLIGOZeroDetHighPower"
-STRAIN="H1:aLIGOZeroDetHighPower L1:aLIGOZeroDetHighPower"
+IFOS="H1 L1 V1"
+STRAIN="H1:aLIGOZeroDetHighPower L1:aLIGOZeroDetHighPower V1:aLIGOZeroDetHighPower"
 SAMPLE_RATE=2048
 F_MIN=30.
 N_WALKERS=5000
@@ -176,7 +174,7 @@ pycbc_inference --verbose \
     --fake-strain ${STRAIN} \
     --sample-rate ${SAMPLE_RATE} \
     --low-frequency-cutoff ${F_MIN} \
-    --channel-name H1:FOOBAR V1:FOOBAR \
+    --channel-name H1:FOOBAR V1:FOOBAR L1:FOOBAR \
     --injection-file ${INJ_PATH} \
     --processing-scheme ${PROCESSING_SCHEME} \
     --sampler kombine \
