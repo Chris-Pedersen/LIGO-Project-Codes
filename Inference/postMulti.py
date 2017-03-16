@@ -3,9 +3,11 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import numpy as np
 from pycbc.io import InferenceFile
+import sys
 
 ## Select file
-folder="20170228-225207/"
+folder=sys.argv[1]
+folder=folder+"/"
 
 ## Combine inputs to form variables
 data_name="output.hdf"
