@@ -108,6 +108,14 @@ def chi_p():
    s1_perp=s1_a*np.sin(s1_polar)
    s2_perp=s2_a*np.sin(s2_polar)
 
+   ## Find args for max function
+   arg1=B1*s1_perp
+   arg2=B2*s2_perp
+
+   ## Find chi_p now, have to loop cuz of the max function
+   for aa in range(num_walkers):
+      chi_p[aa]=(1/(B1[aa]*m1[aa]*ma[aa]))*max(arg1,arg2)
+   return chi_p
 
 
 ## Extract parameter and plot posterior
