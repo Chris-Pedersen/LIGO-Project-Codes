@@ -88,7 +88,7 @@ def chi_effect():
    chi_eff=(s1_z/m1+s2_z/m2)/M
    return chi_eff
 
-def chi_p():
+def chi_prec():
    ## chi_p is given by (1/B1m1^2)*max(B1*S1perp,B2*S2perp)
    ## with B1=2+3/2q, B2=2+3q/2
    ## so we need m1, q, s1_a, s1_polar, s2_a, s2_polar
@@ -161,8 +161,9 @@ def plotPosterior(parameter):
       injected_value=chi_eff
 
    elif parameter=="chi_p":
-      parameter_values=chi_p()
+      parameter_values=chi_prec()
       ## Derive injected value
+      mchirp=injected["mchirp"]
       q=injected["q"]
       q=1./q ## <-- flip again, this is gonna get boring
 
@@ -178,7 +179,7 @@ def plotPosterior(parameter):
       B1=2.+(3./(2.*q))
       B2=2.+((3.*q)/2.)
 
-      chi_p=(1./(B1*m1*m1))*max((B1*s1_per,B2*s2_per)
+      chi_p=(1./(B1*m1*m1))*max((B1*s1_per,B2*s2_per))
       injected_value=chi_p
 
    elif parameter=="q":
