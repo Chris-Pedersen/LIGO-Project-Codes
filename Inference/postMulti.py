@@ -69,6 +69,7 @@ def chi_effect():
    ## chi_eff is given by (S1/m1+S2/m2) dot L/M where M is total mass
    ## So for this we need m1, m2, s1_a, s2_a, s1_polar, s2_polar... fak me
    chi_eff=np.zeros(num_walkers)
+   print "   Extracting intrinsic parameters..."
    ## Generate arrays for each paramter
    s1_a=getParameter("spin1_a")
    s1_polar=getParameter("spin1_polar")
@@ -82,6 +83,7 @@ def chi_effect():
    s1_z=s1_a*np.cos(s1_polar)
    s2_z=s2_a*np.cos(s2_polar)
 
+   print "   Calculating derived parameters..."
    ## Do chi_eff now innit --- POTENTIAL ISSUE with L, don't have a value for it
    chi_eff=(s1_z/m1+s2_z/m2)/M
    return chi_eff
@@ -92,6 +94,7 @@ def chi_p():
    ## so we need m1, q, s1_a, s1_polar, s2_a, s2_polar
    ## NB chi_p should always be 0 < chi_p < 1
    chi_p=np.zeros(num_walkers)
+   print "   Extracting intrinsic parameters..."
    ## Generate arrays for each parameter
    s1_a=getParameter("spin1_a")
    s1_polar=getParameter("spin1_polar")
@@ -113,6 +116,7 @@ def chi_p():
    arg1=B1*s1_perp
    arg2=B2*s2_perp
 
+   print "   Calculating derived parameters..."
    ## Find chi_p now, have to loop cuz of the max function
    for aa in range(num_walkers):
       chi_p[aa]=(1./(B1[aa]*m1[aa]*m1[aa]))*max(arg1[aa],arg2[aa])
@@ -121,6 +125,7 @@ def chi_p():
 
 ## Extract parameter and plot posterior
 def plotPosterior(parameter):
+
    if parameter=="mass1":
       parameter_values=componentMass(parameter)
       ## Also need to get injected value
@@ -128,6 +133,7 @@ def plotPosterior(parameter):
       q=injected["q"]
       q=1./q ## <-- flip again, this is gonna get boring
       injected_value=mchirp*((1.+q)**(1./5.))*(q)**(2./5.)
+
    elif parameter=="mass2":
       parameter_values=componentMass(parameter)
       ## Also need to get injected value
@@ -135,17 +141,52 @@ def plotPosterior(parameter):
       q=injected["q"]
       q=1./q ## <-- flip again, this is gonna get boring
       injected_value=mchirp*((1.+q)**(1./5.))*(q)**(-3./5.)
+
    elif parameter=="chi_eff":
       parameter_values=chi_effect()
-      injected_value=0 ## Will function this after debugging
+
+      ## Find injected value
+      mchirp=injected["mchirp"]
+      q=injected["q"]
+      q=1./q ## <-- flip again, this is gonna get boring
+      m1=mchirp*((1.+q)**(1./5.))*(q)**(2./5.)
+      m2=mchirp*((1.+q)**(1./5.))*(q)**(-3./5.)
+      s1a=injected["spin1_a"]
+      s2a=injected["spin2_a"]
+      s1_polar=injected["spin1_polar"]
+      s2_polar=injected["spin2_polar"]
+      s1z=s1a*np.cos(s1_polar)
+      s2z=s2a*np.cos(s2_polar)
+      chi_eff=(s1z/m1+s2z/m2)/(m1+m2)
+      injected_value=chi_eff
+
    elif parameter=="chi_p":
       parameter_values=chi_p()
-      injected_value=0 ## Will function this after debug
+      ## Derive injected value
+      q=injected["q"]
+      q=1./q ## <-- flip again, this is gonna get boring
+
+      m1=mchirp*((1.+q)**(1./5.))*(q)**(2./5.)
+      s1a=injected["spin1_a"]
+      s2a=injected["spin2_a"]
+      s1_polar=injected["spin1_polar"]
+      s2_polar=injected["spin2_polar"]
+      s1_per=s1a*np.sin(s1_polar)
+      s2_per=s2a*np.sin(s2_polar)
+
+      ## Find Bs   
+      B1=2.+(3./(2.*q))
+      B2=2.+((3.*q)/2.)
+
+      chi_p=(1./(B1*m1*m1))*max((B1*s1_per,B2*s2_per)
+      injected_value=chi_p
+
    elif parameter=="q":
       parameter_values=getParameter(parameter)
       parameter_values=1./parameter_values
       injected_value=injected["q"] ## Flip both of these..
       injected_value=1./injected_value
+
    else:
       parameter_values=getParameter(parameter)
       values=len(parameter_values)
