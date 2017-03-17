@@ -110,8 +110,8 @@ def chi_prec():
    q=1./q ## <<---------- mass ratio flip, only do this once
 
    ## Find Bs
-   B1=2.+(3./(2.*q))
-   B2=2.+((3.*q)/2.)   
+   B1=2.+((q*3.)/2.)
+   B2=2.+(3./(2.*q))   
 
    ## Find in-plane spin magnitudes
    s1_perp=m1*m1*s1_a*np.sin(s1_polar)
@@ -124,6 +124,7 @@ def chi_prec():
    print "   Calculating derived parameters..."
    ## Find chi_p now, have to loop cuz of the max function
    for aa in range(num_walkers):
+      #print q[aa]
       chi_p[aa]=(1./(B1[aa]*m1[aa]*m1[aa]))*max(arg1[aa],arg2[aa])
    return chi_p
 
@@ -181,9 +182,9 @@ def plotPosterior(parameter):
       s1_per=m1*m1*s1a*np.sin(s1_polar)
       s2_per=m2*m2*s2a*np.sin(s2_polar)
 
-      ## Find Bs   
-      B1=2.+(3./(2.*q))
-      B2=2.+((3.*q)/2.)
+      ## Find Bs
+      B1=2.+((q*3.)/2.)
+      B2=2.+(3./(2.*q))
 
       chi_p=(1./(B1*m1*m1))*max((B1*s1_per,B2*s2_per))
       injected_value=chi_p
