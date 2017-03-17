@@ -33,12 +33,12 @@ injected=np.load("%s" % dict_load).item()
 num_walkers=int(injected["n_walkers"])
 num_its=int(injected["n_its"])
 
-def plotPosterior(parameter):
+## Function to extract posterior for a given parameter
+def getParameter(parameter):
    ## Prepare to read in parameters
    savename=folder+parameter
    datafile=folder+data_name
    fp = InferenceFile("%s" % datafile, "r")
-   injected_value=injected[parameter]
    
    ## Take last iteration of each walker
    parameter_values=np.array([])
@@ -46,7 +46,38 @@ def plotPosterior(parameter):
       samples = fp.read_samples("%s" % parameter, walkers=aa)
       temp=getattr(samples,parameter)
       parameter_values=np.append(parameter_values,temp[-1])
-   values=len(parameter_values)
+   return parameter_values
+
+## Derive component masses from chirp mass and mass ratio
+def componentMass(mass_param):
+   mchirp=getParameter("mchirp")
+   massratio=getParameter("q")
+   massratio=1/massratio ## <-------- because q comes out inverted for some silly reason
+   comp_mass=np.zeros(num_walkers)
+   if mass_param=="mass1":
+      for aa in range(num_walkers):
+         comp_mass[aa]=mchirp[aa]*((1+q[aa])^(1./5.))*(q[aa])^(2./5.)
+   elif mass_param=="mass2":
+      for aa in range(num_walkers):
+         comp_mass[aa]=mchirp[aa]*((1+q[aa])^(1./5.))*(q[aa])^(-3./5.)
+   else:
+      print "Mass parameter not recognised, you dun goofed"
+   return comp_mass
+
+## Extract parameter and plot posterior
+def plotPosterior(parameter):
+   if parameter=="mass1":
+      do this
+   elif parameter=="mass2":
+      do this
+   elif parameter=="chi_eff":
+      do this
+   elif parameter=="chi_p":
+      do this
+   else:
+      parameter_values=getParameter(parameter)
+      values=len(parameter_values)
+      injected_value=injected[parameter]
    
    ## Find confidence intervals
    parameter_values=np.sort(parameter_values)
