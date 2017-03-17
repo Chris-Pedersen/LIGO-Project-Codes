@@ -138,7 +138,7 @@ def plotPosterior(parameter):
       mchirp=injected["mchirp"]
       q=injected["q"]
       q=1./q ## <-- flip again, this is gonna get boring
-      injected_value=mchirp*((1.+q)**(1./5.))*(q)**(2./5.)
+      injected_value=mchirp*((1.+q)**(1./5.))*(q)**(-3./5.)
 
    elif parameter=="mass2":
       parameter_values=componentMass(parameter)
@@ -146,7 +146,7 @@ def plotPosterior(parameter):
       mchirp=injected["mchirp"]
       q=injected["q"]
       q=1./q ## <-- flip again, this is gonna get boring
-      injected_value=mchirp*((1.+q)**(1./5.))*(q)**(-3./5.)
+      injected_value=mchirp*((1.+q)**(1./5.))*(q)**(2./5.)
 
    elif parameter=="chi_eff":
       parameter_values=chi_effect()
