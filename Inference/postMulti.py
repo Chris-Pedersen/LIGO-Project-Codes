@@ -5,6 +5,8 @@ import numpy as np
 from pycbc.io import InferenceFile
 import sys
 
+print "Initialising..."
+
 ## Select file
 folder=sys.argv[1]
 folder=folder+"/"
@@ -52,14 +54,14 @@ def getParameter(parameter):
 def componentMass(mass_param):
    mchirp=getParameter("mchirp")
    massratio=getParameter("q")
-   massratio=1/massratio ## <-------- because q comes out inverted for some silly reason
+   massratio=1./massratio ## <-------- because q comes out inverted for some silly reason
    comp_mass=np.zeros(num_walkers)
    if mass_param=="mass1":
       for aa in range(num_walkers):
-         comp_mass[aa]=mchirp[aa]*((1+q[aa])^(1./5.))*(q[aa])^(2./5.)
+         comp_mass[aa]=mchirp[aa]*((1.+q[aa])^(1./5.))*(q[aa])^(2./5.)
    elif mass_param=="mass2":
       for aa in range(num_walkers):
-         comp_mass[aa]=mchirp[aa]*((1+q[aa])^(1./5.))*(q[aa])^(-3./5.)
+         comp_mass[aa]=mchirp[aa]*((1.+q[aa])^(1./5.))*(q[aa])^(-3./5.)
    else:
       print "Mass parameter not recognised, you dun goofed"
    return comp_mass
@@ -98,11 +100,11 @@ def chi_p():
    s2_polar=getParameter("spin2_polar")
    m1=componentMass("mass1")
    q=getParameter("q")
-   q=1/q ## <<---------- mass ratio flip, only do this once
+   q=1./q ## <<---------- mass ratio flip, only do this once
 
    ## Find Bs   
-   B1=2+(3/(2*q))
-   B2=2+((3*q)/2)
+   B1=2.+(3./(2.*q))
+   B2=2.+((3.*q)/2.)
    
    ## Find in-plane spin magnitudes
    s1_perp=s1_a*np.sin(s1_polar)
@@ -114,7 +116,7 @@ def chi_p():
 
    ## Find chi_p now, have to loop cuz of the max function
    for aa in range(num_walkers):
-      chi_p[aa]=(1/(B1[aa]*m1[aa]*ma[aa]))*max(arg1,arg2)
+      chi_p[aa]=(1./(B1[aa]*m1[aa]*ma[aa]))*max(arg1,arg2)
    return chi_p
 
 
@@ -123,15 +125,19 @@ def plotPosterior(parameter):
    if parameter=="mass1":
       parameter_values=componentMass(parameter)
       ## Also need to get injected value
+      mchirp=injected["mchirp"]
+      q=injected["q"]
+      q=1./q ## <-- flip again, this is gonna get boring
+      injected_value=
    elif parameter=="mass2":
       parameter_values=componentMass(parameter)
       ## Also need to get injected value
    elif parameter=="chi_eff":
-      do this
+      parameter_values=chi_effect()
    elif parameter=="chi_p":
-      do this
+      parameter_values=chi_p()
    elif paramter=="q":
-      do this
+      parameter_values=get
    else:
       parameter_values=getParameter(parameter)
       values=len(parameter_values)
