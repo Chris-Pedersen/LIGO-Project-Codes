@@ -59,10 +59,10 @@ def componentMass(mass_param):
    massratio=getParameter("q")
    q=1./massratio ## <-------- because q comes out inverted for some silly reason
    comp_mass=np.zeros(num_walkers)
-   if mass_param=="mass1":
+   if mass_param=="mass2":
       for aa in range(num_walkers):
          comp_mass[aa]=mchirp[aa]*((1.+q[aa])**(1./5.))*(q[aa])**(2./5.)
-   elif mass_param=="mass2":
+   elif mass_param=="mass1": ## These are the wrong way round cuz some genius decided to swap them
       for aa in range(num_walkers):
          comp_mass[aa]=mchirp[aa]*((1.+q[aa])**(1./5.))*(q[aa])**(-3./5.)
    else:
@@ -173,8 +173,8 @@ def plotPosterior(parameter):
       q=injected["q"]
       q=1./q ## <-- flip again, this is gonna get boring
 
-      m1=mchirp*((1.+q)**(1./5.))*(q)**(2./5.)
-      m2=mchirp*((1.+q)**(1./5.))*(q)**(-3./5.)
+      m2=mchirp*((1.+q)**(1./5.))*(q)**(2./5.)
+      m1=mchirp*((1.+q)**(1./5.))*(q)**(-3./5.)
       s1a=injected["spin1_a"]
       s2a=injected["spin2_a"]
       s1_polar=injected["spin1_polar"]
@@ -185,7 +185,7 @@ def plotPosterior(parameter):
       ## Find Bs
       B1=2.+((q*3.)/2.)
       B2=2.+(3./(2.*q))
-
+      
       chi_p=(1./(B1*m1*m1))*max((B1*s1_per,B2*s2_per))
       injected_value=chi_p
 
