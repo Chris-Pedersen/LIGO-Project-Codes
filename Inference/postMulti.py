@@ -64,15 +64,31 @@ def componentMass(mass_param):
       print "Mass parameter not recognised, you dun goofed"
    return comp_mass
 
+def chi_effect():
+   ## chi_eff is given by (S1/m1+S2/m2) dot L/M where M is total mass
+   ## So for this we need m1, m2, s1_a, s2_a, s1_polar, s2_polar... fak me
+   return chi_eff
+
+def chi_p():
+   ## chi_p is given by (1/B1m1^2)*max(B1*S1perp,B2*S2perp)
+   ## with B1=2+3/2q, B2=2+3q/2
+   ## so we need m1, q, s1_a, s1_polar, s2_a, s2_polar
+   ## NB chi_p should always be 0 < chi_p < 1
+
+
 ## Extract parameter and plot posterior
 def plotPosterior(parameter):
    if parameter=="mass1":
-      do this
+      parameter_values=componentMass(parameter)
+      ## Also need to get injected value
    elif parameter=="mass2":
-      do this
+      parameter_values=componentMass(parameter)
+      ## Also need to get injected value
    elif parameter=="chi_eff":
       do this
    elif parameter=="chi_p":
+      do this
+   elif paramter=="q":
       do this
    else:
       parameter_values=getParameter(parameter)
