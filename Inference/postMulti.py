@@ -67,6 +67,22 @@ def componentMass(mass_param):
 def chi_effect():
    ## chi_eff is given by (S1/m1+S2/m2) dot L/M where M is total mass
    ## So for this we need m1, m2, s1_a, s2_a, s1_polar, s2_polar... fak me
+   chi_eff=np.zeros(num_walkers)
+   ## Generate arrays for each paramter
+   s1_a=getParameter("spin1_a")
+   s1_polar=getParameter("spin1_polar")
+   s2_a=getParameter("spin2_a")
+   s2_polar=getParameter("spin2_polar")
+   m1=componentMass("mass1")
+   m2=componentMass("mass2")
+   M=m1+m2
+   
+   ## Find spins along z-axis
+   s1_z=s1_a*np.cos(s1_polar)
+   s2_z=s2_a*np.cos(s2_polar)
+
+   ## Do chi_eff now innit --- POTENTIAL ISSUE with L, don't have a value for it
+   chi_eff=(s1_z/m1+s2_z/m2)/M
    return chi_eff
 
 def chi_p():
@@ -74,6 +90,24 @@ def chi_p():
    ## with B1=2+3/2q, B2=2+3q/2
    ## so we need m1, q, s1_a, s1_polar, s2_a, s2_polar
    ## NB chi_p should always be 0 < chi_p < 1
+   chi_p=np.zeros(num_walkers)
+   ## Generate arrays for each parameter
+   s1_a=getParameter("spin1_a")
+   s1_polar=getParameter("spin1_polar")
+   s2_a=getParameter("spin2_a")
+   s2_polar=getParameter("spin2_polar")
+   m1=componentMass("mass1")
+   q=getParameter("q")
+   q=1/q ## <<---------- mass ratio flip, only do this once
+
+   ## Find Bs   
+   B1=2+(3/(2*q))
+   B2=2+((3*q)/2)
+   
+   ## Find in-plane spin magnitudes
+   s1_perp=s1_a*np.sin(s1_polar)
+   s2_perp=s2_a*np.sin(s2_polar)
+
 
 
 ## Extract parameter and plot posterior
