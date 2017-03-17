@@ -53,14 +53,14 @@ def getParameter(parameter):
 def componentMass(mass_param):
    mchirp=getParameter("mchirp")
    massratio=getParameter("q")
-   massratio=1./massratio ## <-------- because q comes out inverted for some silly reason
+   q=1./massratio ## <-------- because q comes out inverted for some silly reason
    comp_mass=np.zeros(num_walkers)
    if mass_param=="mass1":
       for aa in range(num_walkers):
-         comp_mass[aa]=mchirp[aa]*((1.+q[aa])^(1./5.))*(q[aa])^(2./5.)
+         comp_mass[aa]=mchirp[aa]*((1.+q[aa])**(1./5.))*(q[aa])**(2./5.)
    elif mass_param=="mass2":
       for aa in range(num_walkers):
-         comp_mass[aa]=mchirp[aa]*((1.+q[aa])^(1./5.))*(q[aa])^(-3./5.)
+         comp_mass[aa]=mchirp[aa]*((1.+q[aa])**(1./5.))*(q[aa])**(-3./5.)
    else:
       print "Mass parameter not recognised, you dun goofed"
    return comp_mass
@@ -127,14 +127,14 @@ def plotPosterior(parameter):
       mchirp=injected["mchirp"]
       q=injected["q"]
       q=1./q ## <-- flip again, this is gonna get boring
-      injected_value=mchirp*((1.+q)^(1./5.))*(q)^(2./5.)
+      injected_value=mchirp*((1.+q)**(1./5.))*(q)**(2./5.)
    elif parameter=="mass2":
       parameter_values=componentMass(parameter)
       ## Also need to get injected value
       mchirp=injected["mchirp"]
       q=injected["q"]
       q=1./q ## <-- flip again, this is gonna get boring
-      injected_value=mchirp*((1.+q)^(1./5.))*(q)^(-3./5.)
+      injected_value=mchirp*((1.+q)**(1./5.))*(q)**(-3./5.)
    elif parameter=="chi_eff":
       parameter_values=chi_effect()
       injected_value=0 ## Will function this after debugging
