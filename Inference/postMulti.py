@@ -143,7 +143,7 @@ def plotPosterior(parameter):
       injected_value=0 ## Will function this after debug
    elif parameter=="q":
       parameter_values=getParameter(parameter)
-      paramter_values=1./parameter_values
+      parameter_values=1./parameter_values
       injected_value=injected["q"] ## Flip both of these..
       injected_value=1./injected_value
    else:
