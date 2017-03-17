@@ -26,7 +26,11 @@ params=np.array(["q",
 		"spin1_a",
 		"spin1_polar",
 		"spin2_a",
-		"spin2_polar"])
+		"spin2_polar",
+                "mass1",
+                "mass2",
+                "chi_p",
+                "chi_eff"])
 
 ## Load in dictionary
 dic_name="paramDict.npy"
