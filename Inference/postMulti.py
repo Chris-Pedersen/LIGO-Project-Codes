@@ -9,7 +9,7 @@ print "Initialising..."
 
 ## Select file
 folder=sys.argv[1]
-folder=folder+"/"
+folder="data/"+folder+"/"
 
 ## Combine inputs to form variables
 data_name="output.hdf"
@@ -138,10 +138,13 @@ def plotPosterior(parameter):
       injected_value=mchirp*((1.+q)^(1./5.))*(q)^(-3./5.)
    elif parameter=="chi_eff":
       parameter_values=chi_effect()
+      injected_value=0 ## Will function this after debugging
    elif parameter=="chi_p":
       parameter_values=chi_p()
+      injected)value=0 ## Will function this after debug
    elif paramter=="q":
-      parameter_values=get
+      parameter_values=(getParameter(parameter))^(-1.)
+      injected_value=(injected["q"])^(-1.) ## Flip both of these..
    else:
       parameter_values=getParameter(parameter)
       values=len(parameter_values)
