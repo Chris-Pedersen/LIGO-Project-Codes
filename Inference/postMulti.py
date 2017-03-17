@@ -110,8 +110,8 @@ def chi_prec():
    q=1./q ## <<---------- mass ratio flip, only do this once
 
    ## Find Bs   
-   B1=2.+(3./(2.*q))
-   B2=2.+((3.*q)/2.)
+   B1=2.+(3.*q/(2.))
+   B2=2.+(3./(2.*q))
    
    ## Find in-plane spin magnitudes
    s1_perp=m1*m1*s1_a*np.sin(s1_polar)
