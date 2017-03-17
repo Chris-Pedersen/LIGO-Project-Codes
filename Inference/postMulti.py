@@ -128,10 +128,14 @@ def plotPosterior(parameter):
       mchirp=injected["mchirp"]
       q=injected["q"]
       q=1./q ## <-- flip again, this is gonna get boring
-      injected_value=
+      injected_value=mchirp*((1.+q)^(1./5.))*(q)^(2./5.)
    elif parameter=="mass2":
       parameter_values=componentMass(parameter)
       ## Also need to get injected value
+      mchirp=injected["mchirp"]
+      q=injected["q"]
+      q=1./q ## <-- flip again, this is gonna get boring
+      injected_value=mchirp*((1.+q)^(1./5.))*(q)^(-3./5.)
    elif parameter=="chi_eff":
       parameter_values=chi_effect()
    elif parameter=="chi_p":
@@ -143,6 +147,7 @@ def plotPosterior(parameter):
       values=len(parameter_values)
       injected_value=injected[parameter]
    
+   values=len(parameter_values)
    ## Find confidence intervals
    parameter_values=np.sort(parameter_values)
    lower_90=parameter_values[250]
