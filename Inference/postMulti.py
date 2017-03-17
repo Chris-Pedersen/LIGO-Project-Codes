@@ -173,6 +173,7 @@ def plotPosterior(parameter):
       q=1./q ## <-- flip again, this is gonna get boring
 
       m1=mchirp*((1.+q)**(1./5.))*(q)**(2./5.)
+      m2=mchirp*((1.+q)**(1./5.))*(q)**(-3./5.)
       s1a=injected["spin1_a"]
       s2a=injected["spin2_a"]
       s1_polar=injected["spin1_polar"]
