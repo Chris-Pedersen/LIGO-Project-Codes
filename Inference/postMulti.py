@@ -115,7 +115,7 @@ def chi_p():
 
    ## Find chi_p now, have to loop cuz of the max function
    for aa in range(num_walkers):
-      chi_p[aa]=(1./(B1[aa]*m1[aa]*ma[aa]))*max(arg1,arg2)
+      chi_p[aa]=(1./(B1[aa]*m1[aa]*m1[aa]))*max(arg1[aa],arg2[aa])
    return chi_p
 
 
