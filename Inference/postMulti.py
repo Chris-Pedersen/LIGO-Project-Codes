@@ -38,7 +38,6 @@ num_its=int(injected["n_its"])
 ## Function to extract posterior for a given parameter
 def getParameter(parameter):
    ## Prepare to read in parameters
-   savename=folder+parameter
    datafile=folder+data_name
    fp = InferenceFile("%s" % datafile, "r")
    
@@ -141,15 +140,18 @@ def plotPosterior(parameter):
       injected_value=0 ## Will function this after debugging
    elif parameter=="chi_p":
       parameter_values=chi_p()
-      injected)value=0 ## Will function this after debug
-   elif paramter=="q":
-      parameter_values=(getParameter(parameter))^(-1.)
-      injected_value=(injected["q"])^(-1.) ## Flip both of these..
+      injected_value=0 ## Will function this after debug
+   elif parameter=="q":
+      parameter_values=getParameter(parameter)
+      paramter_values=1./parameter_values
+      injected_value=injected["q"] ## Flip both of these..
+      injected_value=1./injected_value
    else:
       parameter_values=getParameter(parameter)
       values=len(parameter_values)
       injected_value=injected[parameter]
-   
+
+   savename=folder+parameter   
    values=len(parameter_values)
    ## Find confidence intervals
    parameter_values=np.sort(parameter_values)
