@@ -80,8 +80,8 @@ def chi_effect():
    M=m1+m2
    
    ## Find spins along z-axis
-   s1_z=s1_a*np.cos(s1_polar)
-   s2_z=s2_a*np.cos(s2_polar)
+   s1_z=m1*m1*s1_a*np.cos(s1_polar)
+   s2_z=m2*m2*s2_a*np.cos(s2_polar)
 
    print "   Calculating derived parameters..."
    ## Do chi_eff now innit --- POTENTIAL ISSUE with L, don't have a value for it
@@ -101,6 +101,7 @@ def chi_prec():
    s2_a=getParameter("spin2_a")
    s2_polar=getParameter("spin2_polar")
    m1=componentMass("mass1")
+   m2=componentMass("mass2")
    q=getParameter("q")
    q=1./q ## <<---------- mass ratio flip, only do this once
 
@@ -109,8 +110,8 @@ def chi_prec():
    B2=2.+((3.*q)/2.)
    
    ## Find in-plane spin magnitudes
-   s1_perp=s1_a*np.sin(s1_polar)
-   s2_perp=s2_a*np.sin(s2_polar)
+   s1_perp=m1*m1*s1_a*np.sin(s1_polar)
+   s2_perp=m2*m2*s2_a*np.sin(s2_polar)
 
    ## Find args for max function
    arg1=B1*s1_perp
@@ -155,8 +156,8 @@ def plotPosterior(parameter):
       s2a=injected["spin2_a"]
       s1_polar=injected["spin1_polar"]
       s2_polar=injected["spin2_polar"]
-      s1z=s1a*np.cos(s1_polar)
-      s2z=s2a*np.cos(s2_polar)
+      s1z=m1*m1*s1a*np.cos(s1_polar)
+      s2z=m2*m2*s2a*np.cos(s2_polar)
       chi_eff=(s1z/m1+s2z/m2)/(m1+m2)
       injected_value=chi_eff
 
@@ -172,8 +173,8 @@ def plotPosterior(parameter):
       s2a=injected["spin2_a"]
       s1_polar=injected["spin1_polar"]
       s2_polar=injected["spin2_polar"]
-      s1_per=s1a*np.sin(s1_polar)
-      s2_per=s2a*np.sin(s2_polar)
+      s1_per=m1*m1*s1a*np.sin(s1_polar)
+      s2_per=m2*m2*s2a*np.sin(s2_polar)
 
       ## Find Bs   
       B1=2.+(3./(2.*q))
