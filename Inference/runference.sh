@@ -12,7 +12,7 @@ MASS1=67.
 MASS2=25.
 RA=2.21535724066
 DEC=-1.23649695537
-INC=1.62
+INC=0.
 COA_PHASE=1.5
 POLARIZATION=0.2
 DISTANCE=100000 # in kpc
@@ -52,7 +52,7 @@ N_ITERATIONS=10000
 N_CHECKPOINT=1000
 PROCESSING_SCHEME=cpu
 NPROCS=12
-CONFIG_PATH=configs/inference_individual.ini
+CONFIG_PATH=configs/inference_chirp.ini
 
 # get coalescence time as an integer
 TRIGGER_TIME_INT=${TRIGGER_TIME%.*}
