@@ -8,13 +8,13 @@ TEMPPAR=${NAMEDIR}/temp_par.txt
 # define coalescence time, observed masses, and waveform parameters
 TRIGGER_TIME=1126259462.0
 INJ_APPROX=IMRPhenomPv2threePointFivePN
-MASS1=67.
-MASS2=25.
+MASS1=30.
+MASS2=15.
 RA=2.21535724066
 DEC=-1.23649695537
-INC=0.
+INC=1.6
 COA_PHASE=1.5
-POLARIZATION=0.2
+POLARIZATION=1.67
 DISTANCE=100000 # in kpc
 INJ_F_MIN=28.
 TAPER="start"
