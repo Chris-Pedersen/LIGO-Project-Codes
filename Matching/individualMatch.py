@@ -13,6 +13,8 @@ f_low = 25
 sample_rate = 4096
 
 #Paranerets
+psi_1=0
+psi_2=0
 inc=1.40
 phi_JL=0
 phi12=0
@@ -68,17 +70,21 @@ sp, sc = get_td_waveform(approximant=approx2,
                       spin2y=s2y_2,spin2x=s2x_2,spin2z=s2z_2,
                       f_lower=f_low,inclination=inc_2,
                       delta_t=1.0/sample_rate)
+
+h=sp*hp.cos(2*psi)+hc*np.sin(2*psi)
+s=sp*np.cos(2*psi)+sc*np.sin(2*psi)
+
 # Resize the waveforms to the same length
-tlen = max(len(sp), len(hp))
-sp.resize(tlen)
-hp.resize(tlen)
+tlen = max(len(s), len(h))
+s.resize(tlen)
+h.resize(tlen)
 # Generate the aLIGO ZDHP PSD
 delta_f = 1.0 / sp.duration
 flen = tlen/2 + 1
 psd = aLIGOZeroDetHighPower(flen, delta_f, f_low)
 # ote: This takes a while the first time as an FFT plan is generated
 # subsequent calls are much faster.
-m, i = match(hp, sp, psd=psd, low_frequency_cutoff=f_low)
+m, i = match(h, s, psd=psd, low_frequency_cutoff=f_low)
 
 print 'The match is: %1.3f' % m
 plt.figure()
