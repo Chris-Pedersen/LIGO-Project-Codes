@@ -14,8 +14,8 @@ f_low = 25
 sample_rate = 4096
 
 #Paranerets
-psi_1=0
-psi_2=0
+psi_1=1.58
+psi_2=1.58
 inc=1.40
 phi_JL=0
 phi12=0
