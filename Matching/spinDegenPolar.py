@@ -88,7 +88,7 @@ def match_inc(inc,spin_1,psi):
    s.resize(tlen)
    h.resize(tlen)
    # Generate the aLIGO ZDHP PSD
-   delta_f = 1.0 / sc.duration
+   delta_f = 1.0 / s.duration
    flen = tlen/2 + 1
    psd = aLIGOZeroDetHighPower(flen, delta_f, f_low)
    # Note: This takes a while the first time as an FFT plan is generated
