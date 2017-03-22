@@ -1,10 +1,11 @@
-import matplotlib
-matplotlib.use('Agg')
+#import matplotlib
+#matplotlib.use('Agg')
 from pycbc.waveform import get_td_waveform
 from pycbc.filter import match
 from pycbc.psd import aLIGOZeroDetHighPower
 import matplotlib.pyplot as plt
 from lalsimulation import SimInspiralTransformPrecessingNewInitialConditions
+import numpy as np
 
 approx1="IMRPhenomPv2"
 approx2="IMRPhenomPv2"
@@ -71,8 +72,8 @@ sp, sc = get_td_waveform(approximant=approx2,
                       f_lower=f_low,inclination=inc_2,
                       delta_t=1.0/sample_rate)
 
-h=sp*hp.cos(2*psi)+hc*np.sin(2*psi)
-s=sp*np.cos(2*psi)+sc*np.sin(2*psi)
+h=hp*np.cos(2*psi_1)+hc*np.sin(2*psi_1)
+s=sp*np.cos(2*psi_2)+sc*np.sin(2*psi_2)
 
 # Resize the waveforms to the same length
 tlen = max(len(s), len(h))
