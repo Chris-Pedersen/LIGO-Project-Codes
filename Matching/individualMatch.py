@@ -1,3 +1,5 @@
+import matplotlib
+matplotlib.use('Agg')
 from pycbc.waveform import get_td_waveform
 from pycbc.filter import match
 from pycbc.psd import aLIGOZeroDetHighPower
@@ -6,7 +8,7 @@ from lalsimulation import SimInspiralTransformPrecessingNewInitialConditions
 
 approx1="IMRPhenomPv2"
 approx2="IMRPhenomPv2"
-inc=0.0
+
 f_low = 25
 sample_rate = 4096
 
@@ -14,10 +16,10 @@ sample_rate = 4096
 inc=1.40
 phi_JL=0
 phi12=0
-m1_1=55
-m2_1=45
-m1_2=55
-m2_2=45
+m1_1=30
+m2_1=15
+m1_2=30
+m2_2=15
 spin_z1=0
 spin_z2=0
 theta_z1=1.57
@@ -78,8 +80,6 @@ psd = aLIGOZeroDetHighPower(flen, delta_f, f_low)
 # subsequent calls are much faster.
 m, i = match(hp, sp, psd=psd, low_frequency_cutoff=f_low)
 
-
-
 print 'The match is: %1.3f' % m
 plt.figure()
 plt.plot(hp.sample_times,hp,'b-',label="in-plane spin = %1.2f" % spin_z1)#  % approx1)
@@ -89,4 +89,5 @@ plt.ylabel("Strain")
 plt.title("m1=%1.0f,m2=%1.0f,Inc=%1.2f, Match = %1.3f" % (m1_1,m2_1,inc,m))
 plt.legend(loc="best")
 plt.xlim(hp.sample_times[0],hp.sample_times[-1])
+plt.savefig("testIndi.png")
 plt.show("hold")
