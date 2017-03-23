@@ -1,10 +1,11 @@
-import matplotlib
-matplotlib.use('Agg')
+#import matplotlib
+#matplotlib.use('Agg')
 from pycbc.waveform import get_td_waveform
 from pycbc.filter import match
 from pycbc.psd import aLIGOZeroDetHighPower
 import matplotlib.pyplot as plt
 from lalsimulation import SimInspiralTransformPrecessingNewInitialConditions
+import numpy as np
 
 approx1="IMRPhenomPv2"
 approx2="IMRPhenomPv2"
@@ -13,6 +14,8 @@ f_low = 25
 sample_rate = 4096
 
 #Paranerets
+psi_1=1.58
+psi_2=1.58
 inc=1.40
 phi_JL=0
 phi12=0
@@ -68,17 +71,21 @@ sp, sc = get_td_waveform(approximant=approx2,
                       spin2y=s2y_2,spin2x=s2x_2,spin2z=s2z_2,
                       f_lower=f_low,inclination=inc_2,
                       delta_t=1.0/sample_rate)
+
+h=hp*np.cos(2*psi_1)+hc*np.sin(2*psi_1)
+s=sp*np.cos(2*psi_2)+sc*np.sin(2*psi_2)
+
 # Resize the waveforms to the same length
-tlen = max(len(sp), len(hp))
-sp.resize(tlen)
-hp.resize(tlen)
+tlen = max(len(s), len(h))
+s.resize(tlen)
+h.resize(tlen)
 # Generate the aLIGO ZDHP PSD
 delta_f = 1.0 / sp.duration
 flen = tlen/2 + 1
 psd = aLIGOZeroDetHighPower(flen, delta_f, f_low)
 # ote: This takes a while the first time as an FFT plan is generated
 # subsequent calls are much faster.
-m, i = match(hp, sp, psd=psd, low_frequency_cutoff=f_low)
+m, i = match(h, s, psd=psd, low_frequency_cutoff=f_low)
 
 print 'The match is: %1.3f' % m
 plt.figure()
