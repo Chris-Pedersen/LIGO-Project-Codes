@@ -1,6 +1,6 @@
 Create new directory for this inference run
 DIR=`date '+%Y%m%d-%H%M%S'`
-NAMEDIR=data/${DIR}
+NAMEDIR=jobs/${DIR}
 mkdir ${NAMEDIR}
 PAR=${NAMEDIR}/parameters.txt
 TEMPPAR=${NAMEDIR}/temp_par.txt
@@ -12,10 +12,10 @@ MASS1=30.
 MASS2=15.
 RA=2.21535724066
 DEC=-1.23649695537
-INC=1.6
+INC=0.
 COA_PHASE=1.5
 POLARIZATION=1.67
-DISTANCE=100000 # in kpc
+DISTANCE=1000000 # in kpc
 INJ_F_MIN=28.
 TAPER="start"
 
@@ -43,8 +43,8 @@ COA_PHASE_inj=`python -c "import numpy; print ${COA_PHASE} * 180/numpy.pi"`
 OUTPUT=${NAMEDIR}/output.hdf
 SEGLEN=8
 PSD_INVERSE_LENGTH=4
-IFOS="H1 L1 V1"
-STRAIN="H1:aLIGOZeroDetHighPower L1:aLIGOZeroDetHighPower V1:aLIGOZeroDetHighPower"
+IFOS="H1 L1"
+STRAIN="H1:aLIGOZeroDetHighPower L1:aLIGOZeroDetHighPower"
 SAMPLE_RATE=2048
 F_MIN=30.
 N_WALKERS=5000
@@ -92,8 +92,8 @@ lalapps_inspinj \
     --max-spin1 ${MAX_SPIN1} \
     --min-spin2 ${MIN_SPIN2} \
     --max-spin2 ${MAX_SPIN2} \
-    --min-kappa1 ${MIN_KAPPA2} \
-    --max-kappa1 ${MAX_KAPPA2} \
+    --min-kappa1 ${MIN_KAPPA1} \
+    --max-kappa1 ${MAX_KAPPA1} \
 
 # Output parameters as text file
 printf "Injection approximant = ${INJ_APPROX} \n" > ${PAR}
@@ -174,7 +174,7 @@ pycbc_inference --verbose \
     --fake-strain ${STRAIN} \
     --sample-rate ${SAMPLE_RATE} \
     --low-frequency-cutoff ${F_MIN} \
-    --channel-name H1:FOOBAR V1:FOOBAR L1:FOOBAR \
+    --channel-name H1:FOOBAR L1:FOOBAR \
     --injection-file ${INJ_PATH} \
     --processing-scheme ${PROCESSING_SCHEME} \
     --sampler kombine \
