@@ -12,11 +12,11 @@ MASS1=30.
 MASS2=15.
 RA=2.21535724066
 DEC=-1.23649695537
-INC=0.
+INC=1.67
 COA_PHASE=1.5
-POLARIZATION=1.67
+POLARIZATION=1.6
 DISTANCE=1000000 # in kpc
-INJ_F_MIN=28.
+INJ_F_MIN=20.
 TAPER="start"
 
 # Spin parameters
@@ -46,7 +46,7 @@ PSD_INVERSE_LENGTH=4
 IFOS="H1 L1"
 STRAIN="H1:aLIGOZeroDetHighPower L1:aLIGOZeroDetHighPower"
 SAMPLE_RATE=2048
-F_MIN=30.
+F_MIN=19.
 N_WALKERS=5000
 N_ITERATIONS=10000
 N_CHECKPOINT=1000
@@ -106,7 +106,8 @@ printf "Inclination = ${INC} \n" >> ${PAR}
 printf "Phase = ${COA_PHASE} \n" >> ${PAR}
 printf "Polarisation = ${POLARIZATION} \n" >> ${PAR}
 printf "Distance (kpc) = ${DISTANCE} \n" >> ${PAR}
-printf "Minimum frequency = ${INJ_F_MIN} \n" >> ${PAR}
+printf "Minimum frequency injected = ${INJ_F_MIN} \n" >> ${PAR}
+printf "Sampler min frequency = ${F_MIN} \n" >> ${PAR}
 printf " \nSpin parameters: \n" >> ${PAR}
 printf "Spin1 min = ${MIN_SPIN1} \n" >> ${PAR}
 printf "Spin1 max = ${MAX_SPIN1} \n" >> ${PAR}
