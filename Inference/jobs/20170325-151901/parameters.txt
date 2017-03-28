@@ -7,8 +7,10 @@ Declination = -1.23649695537
 Inclination = 0. 
 Phase = 1.5 
 Polarisation = 1.67 
+Theta_JN = 0. 
 Distance (kpc) = 1000000 
-Minimum frequency = 28. 
+Minimum frequency injected = 28. 
+Sampler min frequency = 19. 
  
 Spin parameters: 
 Spin1 min = 0.9 

@@ -1,7 +1,6 @@
 Create new directory for this inference run
 DIR=20170325-151901
 NAMEDIR=jobs/${DIR}
-mkdir ${NAMEDIR}
 PAR=${NAMEDIR}/parameters.txt
 TEMPPAR=${NAMEDIR}/temp_par.txt
 

@@ -183,6 +183,9 @@ pycbc_inference --verbose \
     --processing-scheme ${PROCESSING_SCHEME} \
     --sampler kombine \
     --likelihood-evaluator gaussian \
+    --save-psd \
+    --save-stilde \
+    --save-strain \
     --nwalkers ${N_WALKERS} \
     --niterations ${N_ITERATIONS} \
     --config-file ${CONFIG_PATH} \
