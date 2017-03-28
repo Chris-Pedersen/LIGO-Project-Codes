@@ -82,6 +82,11 @@ def match_inc(inc,spin_1,psi):
    # Add polarisation mixing
    h=hp*np.cos(2*psi)+hc*np.sin(2*psi)
    s=sp*np.cos(2*psi)+sc*np.sin(2*psi)
+   
+   print inc
+   print inc_1
+   print inc_2
+   print " \n"
 
    # Resize the waveforms to the same length
    tlen = max(len(s), len(h))
