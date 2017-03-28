@@ -3,8 +3,8 @@ import numpy as np
 from pycbc.io import InferenceFile
 
 #Pick parameter and file
-parameter="inclination"
-folder="20170301-215856/"
+parameter="penis"
+folder="jobs/20170325-151901/"
 walker=45
 
 #Set up composite variables
