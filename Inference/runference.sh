@@ -12,7 +12,9 @@ MASS1=30.
 MASS2=15.
 RA=2.21535724066
 DEC=-1.23649695537
-INC=1.67
+THETA_JN=1.25
+## Inclination calculated manually currently using findTheta.py
+INC=1.27349725528
 COA_PHASE=1.5
 POLARIZATION=1.6
 DISTANCE=1000000 # in kpc
@@ -105,6 +107,7 @@ printf "Declination = ${DEC} \n" >> ${PAR}
 printf "Inclination = ${INC} \n" >> ${PAR}
 printf "Phase = ${COA_PHASE} \n" >> ${PAR}
 printf "Polarisation = ${POLARIZATION} \n" >> ${PAR}
+printf "Theta_JN = ${THETA_JN} \n" >> ${PAR}
 printf "Distance (kpc) = ${DISTANCE} \n" >> ${PAR}
 printf "Minimum frequency injected = ${INJ_F_MIN} \n" >> ${PAR}
 printf "Sampler min frequency = ${F_MIN} \n" >> ${PAR}
@@ -146,7 +149,7 @@ printf "${MIN_KAPPA2} \n" >> ${TEMPPAR}
 printf "${MAX_KAPPA2} \n" >> ${TEMPPAR}
 printf "${N_WALKERS} \n" >> ${TEMPPAR}
 printf "${N_ITERATIONS} \n" >> ${TEMPPAR}
-#printf "${IFOS} \n" >> ${TEMPPAR}  ----- this is not working, cannot be parsed
+printf "${THETA_JN} \n" >> ${TEMPPAR} # <----- Needs to be added to conv2dict
 
 # Convert temporary file into dictionary and write
 python conv2Dict.py ${NAMEDIR}

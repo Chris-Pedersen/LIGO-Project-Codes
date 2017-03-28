@@ -2,16 +2,16 @@ from lalsimulation import SimInspiralTransformPrecessingNewInitialConditions
 import numpy as np
 
 ## Input parameters
-theta=1.3344888881
-phi_JL=2.
+theta=1.25
+phi_JL=0.
 theta_z1=np.pi/2
-theta_z2=1.45
-phi12=1.
+theta_z2=0.
+phi12=2.
 spin_z1=0.9
-spin_z2=0.9
-m1=80*2e30
+spin_z2=0.0
+m1=30*2e30
 m2=15*2e30
-f_low=25
+f_low=20
 
 
 #Convert to precessing coords

@@ -22,7 +22,7 @@ import sys
 # 16 max kappa2
 # 17 number of walkers
 # 18 number of iterations
-# 19 detectors used <---- NOT YET
+# 19 theta_JN
 #################################################
 
 ## Import temporary file
@@ -71,7 +71,8 @@ paramDict={"approx":input_params[0],
 			"n_walkers":float(input_params[17]),
 			"n_its":float(input_params[18]),
 			"mchirp":chirp,
-			"q":mratio}
+			"q":mratio,
+                        "theta_jn":float(input_params[19])}
 
 ## Save dictionary in folder to be read by ownPost.py
 np.save("%s" % savename, paramDict)
