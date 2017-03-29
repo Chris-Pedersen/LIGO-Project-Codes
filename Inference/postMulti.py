@@ -153,7 +153,8 @@ def plot_injected():
                       f_lower=injected["f_min"],
                       inclination=inc,
                       distance=injected["distance"],
-                      delta_t=1.0/sample_rate)
+                      delta_t=1.0/sample_rate,
+                      coa_phase=1.5)
    
 
    ## Mix polarisations according to polarisation angle
