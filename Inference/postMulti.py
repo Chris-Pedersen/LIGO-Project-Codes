@@ -128,6 +128,43 @@ def chi_prec():
       chi_p[aa]=(1./(B1[aa]*m1[aa]*m1[aa]))*max(arg1[aa],arg2[aa])
    return chi_p
 
+## Function to plot the injected waveform in time domain
+def plot_injected():
+   inc,s1x,s1y,s1z,s2x,s2y,s2z=SimInspiralTransformPrecessingNewInitialConditions(
+                      injected["theta_jn"], #theta_JN
+                      0, #phi_JL <---- could play with this
+                      injected["spin1_polar"], #theta1
+                      injected["spin2_polar"], #theta2
+                      0, #phi12 <-- kind of irrelevant I think
+                      injected["spin1_a"], #chi1
+                      injected["spin2_a"], #chi2
+                      injected["mass1"]*2e30, #m1 in SI
+                      injected["mass2"]*2e30, #m2 in SI
+                      injected["f_min"], ## This needs to be variable
+                      phiRef=0)
+   sample_rate = 4096 # Sampling frequency
+   hp, hc = get_td_waveform(approximant=IMRPhenomPv2,
+                      mass1=injected["mass1"],
+                      mass2=injected["mass2"],
+                      spin1y=s1y,spin1x=s1x,spin1z=s1z,
+                      spin2y=s2y,spin2x=s2x,spin2z=s2z,
+                      f_lower=injected["f_min"],
+                      inclination=inc,
+                      distance=injected["distance"],
+                      delta_t=1.0/sample_rate)
+   
+
+   ## Mix polarisations according to polarisation angle
+   psi=injected["polarization"]
+   h_obs=hp*np.cos(2*psi)+hc*np.sin(2*psi)
+   plt.figure()
+   plt.plot(hp.sample_times,h_obs)
+   plt.xlabel("Time (s)")
+   plt.ylabel("Strain")
+   plt.title("Injected waveform using IMRPhenomPv2")
+   savename=folder+"injected_clean"
+   plt.savefig("%s.png" % savename)
+   print "Saved plot of injected waveform"
 
 ## Extract parameter and plot posterior
 def plotPosterior(parameter):
@@ -223,9 +260,12 @@ def plotPosterior(parameter):
 
 ## Execute
 if whatdo=="all":
+  plot_injected()
   print "Generating posteriors for all parameters..."
   for aa in range(len(params)):
     plotPosterior(params[aa])
+elif whatdo=="inj":
+  plot_injected()
 else:
   print "Generating posterior for %s" % whatdo
   plotPosterior(whatdo)
