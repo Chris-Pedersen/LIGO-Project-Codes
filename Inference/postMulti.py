@@ -4,6 +4,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 from pycbc.io import InferenceFile
 import sys
+from lalsimulation import SimInspiralTransformPrecessingNewInitialConditions
+from pycbc.waveform import get_td_waveform
 
 print "Initialising..."
 
@@ -143,7 +145,7 @@ def plot_injected():
                       injected["f_min"], ## This needs to be variable
                       phiRef=0)
    sample_rate = 4096 # Sampling frequency
-   hp, hc = get_td_waveform(approximant=IMRPhenomPv2,
+   hp, hc = get_td_waveform(approximant="IMRPhenomPv2",
                       mass1=injected["mass1"],
                       mass2=injected["mass2"],
                       spin1y=s1y,spin1x=s1x,spin1z=s1z,
@@ -164,7 +166,7 @@ def plot_injected():
    plt.title("Injected waveform using IMRPhenomPv2")
    savename=folder+"injected_clean"
    plt.savefig("%s.png" % savename)
-   print "Saved plot of injected waveform"
+   print "Saved plot of injected waveform as %s" % savename
 
 ## Extract parameter and plot posterior
 def plotPosterior(parameter):
