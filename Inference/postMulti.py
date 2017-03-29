@@ -165,6 +165,7 @@ def plot_injected():
    plt.xlabel("Time (s)")
    plt.ylabel("Strain")
    plt.title("Injected waveform using IMRPhenomPv2")
+   plt.xlim(-0.15,0.05)
    savename=folder+"injected_clean"
    plt.savefig("%s.png" % savename)
    print "Saved plot of injected waveform as %s" % savename
