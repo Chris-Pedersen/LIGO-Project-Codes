@@ -149,7 +149,8 @@ printf "${MIN_KAPPA2} \n" >> ${TEMPPAR}
 printf "${MAX_KAPPA2} \n" >> ${TEMPPAR}
 printf "${N_WALKERS} \n" >> ${TEMPPAR}
 printf "${N_ITERATIONS} \n" >> ${TEMPPAR}
-printf "${THETA_JN} \n" >> ${TEMPPAR} # <----- Needs to be added to conv2dict
+printf "${THETA_JN} \n" >> ${TEMPPAR}
+printf "${INJ_F_MIN} \n" >> ${TEMPPAR}
 
 # Convert temporary file into dictionary and write
 python conv2Dict.py ${NAMEDIR}

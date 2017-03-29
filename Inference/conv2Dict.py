@@ -23,6 +23,7 @@ import sys
 # 17 number of walkers
 # 18 number of iterations
 # 19 theta_JN
+# 20 inj_f_min
 #################################################
 
 ## Import temporary file
@@ -72,7 +73,8 @@ paramDict={"approx":input_params[0],
 			"n_its":float(input_params[18]),
 			"mchirp":chirp,
 			"q":mratio,
-                        "theta_jn":float(input_params[19])}
+                        "theta_jn":float(input_params[19]),
+                        "f_min":float(input_params[20])}
 
 ## Save dictionary in folder to be read by ownPost.py
 np.save("%s" % savename, paramDict)
