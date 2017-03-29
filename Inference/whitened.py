@@ -86,7 +86,7 @@ for ifo in ['H1', 'L1']:
         gps_time = sargs['tc']
     except KeyError:
         gps_time = map_values['tc']
-    xmin = -1.15 
+    xmin = -1. 
     xmax = 0.05
 
     # whitened strain
@@ -95,8 +95,8 @@ for ifo in ['H1', 'L1']:
     ax.plot(x, y, colors[ifo], lw=1.5, zorder=1)
     ylim = get_ylim(y, x, xmin, xmax)
 
-    #if opts.plot_map_waveforms:
-    #    ax.plot(ts.sample_times.numpy()-gps_time, ts.data, 'k', lw=2, zorder=2)
+    if opts.plot_map_waveforms:
+        ax.plot(ts.sample_times.numpy()-gps_time, ts.data, 'k', lw=2, zorder=2)
 
     if opts.injection_file:
         # get the injection values
