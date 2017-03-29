@@ -86,7 +86,7 @@ for ifo in ['H1', 'L1']:
         gps_time = sargs['tc']
     except KeyError:
         gps_time = map_values['tc']
-    xmin = -1. 
+    xmin = -0.5 
     xmax = 0.05
 
     # whitened strain
