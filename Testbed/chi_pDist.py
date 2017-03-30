@@ -45,7 +45,7 @@ def getMasses(mchirp,q):
    mass2=np.zeros(len(mchirp))
    for aa in range(len(mchirp)):
       mass1[aa]=mchirp[aa]*((1.+q[aa])**(1./5.))*(q[aa])**(-3./5.)
-      mass2[aa]=mchirp[aa]*((1.+q[aa])**(1./5.))*(q[aa])**(2./5.))
+      mass2[aa]=mchirp[aa]*((1.+q[aa])**(1./5.))*(q[aa])**(2./5.)
    return mass1, mass2
 m1,m2=getMasses(mchirp,q)
 
