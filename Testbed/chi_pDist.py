@@ -26,9 +26,47 @@ mass_samples=mass_dist.rvs(size=dist_size)
 polar_samples=polar_dist.rvs(size=dist_size)
 spina_samples=spina_dist.rvs(size=dist_size)
 
+## Mass arrays
 mchirp=mass_samples["mchirp"]
-print mchirp[1:10]
+q=mass_samples["q"]
+q=1/q # <<--- flipping q, only do this once!!! ######
 
+## Spin magnitudes
+s1_a=spina_samples["spin1_a"]
+s2_a=spina_samples["spin2_a"]
+
+## Spin angles
+s1_polar=polar_samples["s1_polar"]
+s2_polar=polar_samples["s2_polar"]
+
+## Find component masses
+def getMasses(mchirp,q):
+   mass1=np.zeros(len(mchirp))
+   mass2=np.zeros(len(mchirp))
+   for aa in range(len(mchirp)):
+      mass1[aa]=mchirp[aa]*((1.+q[aa])**(1./5.))*(q[aa])**(-3./5.)
+      mass2[aa]=mchirp[aa]*((1.+q[aa])**(1./5.))*(q[aa])**(2./5.))
+   return mass1, mass2
+m1,m2=getMasses(mchirp,q)
+
+## Find chi_p
+def chi_prec(q,mass1,mass2,s1_a,s1_polar,s2_a,s2_polar):
+   chi_p=np.zeros(len(q))    ## <-- convention here so 0<q<1
+   for aa in range(len(q)):  ## Standard chi_p function
+      B1=2+((3*q[aa])/2)
+      B2=2+(3/(q[aa]*2))
+      spin1_plane=s1_a[aa]*np.sin(s1_polar[aa])
+      spin2_plane=s2_a[aa]*np.sin(s2_polar[aa])
+      arg1=B1*spin1_plane*m1[aa]*m1[aa]
+      arg2=B2*spin2_plane*m2[aa]*m2[aa]
+      chi_p[aa]=(1./(B1*m1[aa]*m1[aa]))*max(arg1,arg2)
+   return chi_p
+chi_p=chi_prec(q,m1,m2,s1_a,s1_polar,s1_a,s2_polar)
+
+## Plot chi_p and component masses for sanity
+print chi_p[1:10]
+
+## Save data
 
 '''
 # We can make pairs of distributions together, instead of apart.
