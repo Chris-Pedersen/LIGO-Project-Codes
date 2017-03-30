@@ -3,7 +3,7 @@ import numpy as np
 
 ## Input parameters
 theta=1.25
-phi_JL=0.
+phi_JL=1.
 theta_z1=np.pi/2
 theta_z2=0.
 phi12=2.
@@ -12,7 +12,7 @@ spin_z2=0.0
 m1=30*2e30
 m2=15*2e30
 f_low=20
-
+phase=1.2
 
 #Convert to precessing coords
 inc_1,s1x,s1y,s1z,s2x,s2y,s2z=SimInspiralTransformPrecessingNewInitialConditions(
@@ -25,7 +25,7 @@ inc_1,s1x,s1y,s1z,s2x,s2y,s2z=SimInspiralTransformPrecessingNewInitialConditions
                       abs(spin_z2), #chi2
                       m1,
                       m2,
-                      f_low,phiRef=0)
+                      f_low,phiRef=phase)
 
 ## Convert Carestian coords into spherical polar
 s1_a=np.sqrt(s1x**2+s1y**2+s1z**2)
