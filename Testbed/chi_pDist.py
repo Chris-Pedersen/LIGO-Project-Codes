@@ -64,6 +64,7 @@ def chi_prec(q,mass1,mass2,s1_a,s1_polar,s2_a,s2_polar):
 chi_p=chi_prec(q,m1,m2,s1_a,s1_polar,s1_a,s2_polar)
 
 ## Plot chi_p and component masses for sanity
+n_bins=50
 fig, axes = plt.subplots(nrows=2, ncols=2)
 ax0, ax1, ax2, ax3, = axes.flat
 ax0.hist(m1, bins = n_bins)
