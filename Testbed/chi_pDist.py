@@ -18,8 +18,8 @@ dist_size=1000000
 
 ## Create distribution classes
 mass_dist=distributions.Uniform(q=(1.,5.),mchirp=(7.,40.))
-polar_dist=distributions.SinAngle(s1_polar=(0,np.pi),s2_polar=(0,np.pi))
-spina_dist=distributions.Uniform(spin1_a(0.,1.),spin2_a(0.,1.)
+polar_dist=distributions.SinAngle(s1_polar=(0,1),s2_polar=(0,1))
+spina_dist=distributions.Uniform(spin1_a=(0.,1.),spin2_a=(0.,1.))
 
 ## Generate distribution arrays
 mass_samples=mass_dist.rvs(size=dist_size)
@@ -27,7 +27,7 @@ polar_samples=polar_dist.rvs(size=dist_size)
 spina_samples=spina_dist.rvs(size=dist_size)
 
 mchirp=mass_samples["mchirp"]
-
+print mchirp[1:10]
 
 
 '''
