@@ -49,8 +49,9 @@ def chi_prec(q,mass1,mass2,s1_a,s1_polar,s2_a,s2_polar):
          hold=mass2
          mass2=mass1
          mass1=hold
-      B1=2+((3*q[aa])/2)
-      B2=2+(3/(q[aa]*2))
+      ratio=mass1/mass2
+      B1=2+((3*ratio)/2)
+      B2=2+(3/(ratio*2))
       spin1_plane=s1_a[aa]*np.sin(s1_polar[aa])
       spin2_plane=s2_a[aa]*np.sin(s2_polar[aa])
       arg1=B1*spin1_plane*mass1*mass1
@@ -63,16 +64,24 @@ chi_p=chi_prec(q,m1,m2,s1_a,s1_polar,s1_a,s2_polar)
 ## Plot chi_p and component masses for sanity
 n_bins=50
 plt.figure()
-fig, axes = plt.subplots(nrows=2, ncols=2)
-ax0, ax1, ax2, ax3, = axes.flat
+fig, axes = plt.subplots(nrows=4, ncols=2)
+ax0, ax1, ax2, ax3, ax4, ax5, ax6, ax7 = axes.flat
 ax0.hist(m1, bins = n_bins)
-ax1.hist(chi_p, bins = n_bins)
+ax1.hist(m2, bins = n_bins)
 ax2.hist(s1_polar, bins = n_bins)
-ax3.hist(q, bins = n_bins)
+ax3.hist(s1_a, bins = n_bins)
+ax4.hist(s2_polar, bins = n_bins)
+ax5.hist(s2_a, bins = n_bins)
+ax6.hist(q, bins = n_bins)
+ax7.hist(chi_p, bins = n_bins)
 ax0.set_title('Mass 1')
-ax1.set_title('chi_p')
+ax1.set_title('Mass 2')
 ax2.set_title('s1_polar')
-ax3.set_title('q')
+ax3.set_title('s1_a')
+ax4.set_title('s2_polar')
+ax5.set_title('s2_a')
+ax6.set_title('q')
+ax7.set_title('chi_p')
 plt.tight_layout()
 plt.show("hold")
 plt.savefig("priors_component.png")
