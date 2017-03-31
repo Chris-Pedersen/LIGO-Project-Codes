@@ -87,6 +87,6 @@ ax6.set_title('q')
 ax7.set_title('chi_p')
 plt.tight_layout()
 plt.show("hold")
-plt.savefig("priors_component.png")
+plt.savefig("priors_current.png")
 
 ## Save data
