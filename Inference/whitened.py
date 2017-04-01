@@ -65,11 +65,6 @@ for ifo in ['H1', 'L1']:
     sargs = fp.static_args
     mapvals = [map_values[arg] for arg in varargs]
 
-    print "saving MAP values to dictionary"
-    MAPDic={}
-    for aa in len(varargs):
-        MAPDic[varargs[aa]]=mapvals
-       
     print "generating map waveforms"
     genclass = waveform.select_waveform_generator(fp.static_args['approximant'])
     gen = waveform.FDomainDetFrameGenerator(
@@ -125,13 +120,13 @@ for ifo in ['H1', 'L1']:
 
 print "saving MAP values to dictionary"
 MAPDic={}
-for aa in len(varargs):
-    MAPDic[varargs[aa]]=mapvals
+for aa in range(len(varargs)):
+    MAPDic[varargs[aa]]=mapvals[aa]
 
 print "save dictionary"
 savename=opts.output_file
 savename=savename+"_dic"
-numpy.save("s" %  savename, MAPDic)
+numpy.save("%s" %  savename, MAPDic)
 
 fp.close()
 fig.savefig(opts.output_file, dpi=200, bbox_inches='tight')
