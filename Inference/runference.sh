@@ -54,7 +54,7 @@ N_ITERATIONS=10000
 N_CHECKPOINT=1000
 PROCESSING_SCHEME=cpu
 NPROCS=12
-CONFIG_PATH=configs/inference_chirp.ini
+CONFIG_PATH=configs/inference_individual.ini
 
 # get coalescence time as an integer
 TRIGGER_TIME_INT=${TRIGGER_TIME%.*}
