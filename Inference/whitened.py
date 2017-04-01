@@ -65,8 +65,11 @@ for ifo in ['H1', 'L1']:
     sargs = fp.static_args
     mapvals = [map_values[arg] for arg in varargs]
 
-    print varargs
-
+    print "saving MAP values to dictionary"
+    MAPDic={}
+    for aa in len(varargs):
+        MAPDic[varargs[aa]]=mapvals
+       
     print "generating map waveforms"
     genclass = waveform.select_waveform_generator(fp.static_args['approximant'])
     gen = waveform.FDomainDetFrameGenerator(
@@ -118,6 +121,17 @@ for ifo in ['H1', 'L1']:
     ax.set_ylabel('{} whitened strain'.format(ifo))
     if ii == 2:
         ax.set_xlabel('GPS time - {} (s)'.format(gps_time))
+
+
+print "saving MAP values to dictionary"
+MAPDic={}
+for aa in len(varargs):
+    MAPDic[varargs[aa]]=mapvals
+
+print "save dictionary"
+savename=opts.output_file
+savename=savename+"_dic"
+numpy.save("s" %  savename, MAPDic)
 
 fp.close()
 fig.savefig(opts.output_file, dpi=200, bbox_inches='tight')
