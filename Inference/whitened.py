@@ -65,6 +65,8 @@ for ifo in ['H1', 'L1']:
     sargs = fp.static_args
     mapvals = [map_values[arg] for arg in varargs]
 
+    print varargs
+
     print "generating map waveforms"
     genclass = waveform.select_waveform_generator(fp.static_args['approximant'])
     gen = waveform.FDomainDetFrameGenerator(
