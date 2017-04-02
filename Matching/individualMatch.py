@@ -25,37 +25,28 @@ map_vals=np.load("%s" % map_load).item()
 
 #Convert to precessing coords
 inc_1,s1x,s1y,s1z,s2x,s2y,s2z=SimInspiralTransformPrecessingNewInitialConditions(
-                      inc, #theta_JN
-                      phi_JL, #phi_JL
-                      theta_z1, #theta1
-                      theta_z2, #theta2
-                      phi12, #phi12
-                      abs(spin_z1), #chi1
-                      abs(spin_z2), #chi2
-                      m1_1,
-                      m2_1,
-                      f_low,phiRef=0)
+                      injected["theta_JN], #theta_JN
+                      0, #phi_JL
+                      injected["spin1_polar"], #theta1
+                      injected["spin2_polar"], #theta2
+                      0, #phi12
+                      injected["spin1_a"], #chi1
+                      injected["spin2_a"], #chi2
+                      injected["mass1"]*2e30,
+                      injected["mass2"]*2e30,
+                      injected["inj_f_min"],phiRef=0)
 
-inc_2,s1x_2,s1y_2,s1z_2,s2x_2,s2y_2,s2z_2=SimInspiralTransformPrecessingNewInitialConditions(
-                      inc, #theta_JN
-                      phi_JL, #phi_JL
-                      theta_z1, #theta1
-                      theta_z2, #theta2
-                      phi12, #phi12
-                      abs(spin_z1_2), #chi1
-                      abs(spin_z2_2), #chi2
-                      m1_2,
-                      m2_2,
-                      f_low,phiRef=0)
 
-# Generate the two waveforms to compare
+# Injected waveform
 hp, hc = get_td_waveform(approximant=approx1,
-                      mass1=m1_1,
-                      mass2=m2_1,
+                      mass1=injected["mass1"],
+                      mass2=injected["mass2"],
                       spin1y=s1y,spin1x=s1x,spin1z=s1z,
                       spin2y=s2y,spin2x=s2x,spin2z=s2z,
                       f_lower=f_low,inclination=inc_1,
                       delta_t=1.0/sample_rate)
+
+# MAP waveform
 sp, sc = get_td_waveform(approximant=approx2,
                       mass1=m1_2,
                       mass2=m2_2,
@@ -64,6 +55,7 @@ sp, sc = get_td_waveform(approximant=approx2,
                       f_lower=f_low,inclination=inc_2,
                       delta_t=1.0/sample_rate)
 
+# Mix polarisations
 h=hp*np.cos(2*psi_1)+hc*np.sin(2*psi_1)
 s=sp*np.cos(2*psi_2)+sc*np.sin(2*psi_2)
 
@@ -77,6 +69,7 @@ flen = tlen/2 + 1
 psd = aLIGOZeroDetHighPower(flen, delta_f, f_low)
 # ote: This takes a while the first time as an FFT plan is generated
 # subsequent calls are much faster.
+# Match the waveforms
 m, i = match(h, s, psd=psd, low_frequency_cutoff=f_low)
 
 print 'The match is: %1.3f' % m
