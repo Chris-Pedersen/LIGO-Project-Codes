@@ -6,30 +6,22 @@ from pycbc.psd import aLIGOZeroDetHighPower
 import matplotlib.pyplot as plt
 from lalsimulation import SimInspiralTransformPrecessingNewInitialConditions
 import numpy as np
+import sys
 
 approx1="IMRPhenomPv2"
 approx2="IMRPhenomPv2"
 
-f_low = 25
-sample_rate = 4096
+## Select file
+folder=sys.argv[1]
+folder="jobs/"+folder+"/"
 
-#Paranerets
-psi_1=1.58
-psi_2=1.58
-inc=1.40
-phi_JL=0
-phi12=0
-m1_1=30
-m2_1=15
-m1_2=30
-m2_2=15
-spin_z1=0
-spin_z2=0
-theta_z1=1.57
-theta_z2=1.57
-#Second match spin parameters
-spin_z1_2=1
-spin_z2_2=0
+## Load in dictionaries
+inj_name="paramDict.npy"
+inj_load=folder+inj_name
+injected=np.load("%s" % inj_load).item()
+map_name="mapDic.npy"
+map_load=folder+map_name
+map_vals=np.load("%s" % map_load).item()
 
 #Convert to precessing coords
 inc_1,s1x,s1y,s1z,s2x,s2y,s2z=SimInspiralTransformPrecessingNewInitialConditions(
