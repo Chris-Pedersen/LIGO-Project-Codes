@@ -53,7 +53,7 @@ def chi_prec(q,mass1,mass2,s1_a,s1_polar,s2_a,s2_polar):
          arg2=B2*spin2_plane*mass2[aa]*mass2[aa]
          chi_p[aa]=(max(arg1,arg2))/(mass1[aa]*mass1[aa]*B1)
       else:
-         ratio=mass1[aa]/mass2[aa] # Modify function for inverted mass ratio
+         ratio=mass2[aa]/mass1[aa] # Modify function for inverted mass ratio
          B1=2+((3*ratio)/2)
          B2=2+(3/(ratio*2))
          spin1_plane=s1_a[aa]*np.sin(s1_polar[aa]) # Spin1 is smaller mass this time!
