@@ -67,7 +67,7 @@ chi_p=chi_prec(q,m1,m2,s1_a,s1_polar,s1_a,s2_polar)
 #q=1/q ###< _________________________---REMOVE AFTER
 ## Plot chi_p and component masses for sanity
 n_bins=50
-plt.figure()
+
 fig, axes = plt.subplots(nrows=4, ncols=2)
 ax0, ax1, ax2, ax3, ax4, ax5, ax6, ax7 = axes.flat
 ax0.hist(m1, bins = n_bins)
@@ -89,5 +89,7 @@ ax7.set_title('chi_p')
 plt.tight_layout()
 plt.show("hold")
 plt.savefig("priors_component.png")
+
+print "DONE and plot saved"
 
 ## Save data
