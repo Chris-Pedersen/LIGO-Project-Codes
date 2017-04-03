@@ -11,6 +11,7 @@ import sys
 approx1="IMRPhenomPv2"
 approx2="IMRPhenomPv2"
 sample_rate = 4096
+f_low=19.
 
 # Load injected parameters
 folder=sys.argv[1]
@@ -24,7 +25,7 @@ maps=np.load("%s" % MAPname).item()
 
 #Convert to precessing coords
 inc_1,s1x,s1y,s1z,s2x,s2y,s2z=SimInspiralTransformPrecessingNewInitialConditions(
-                      injected["theta_JN"], #theta_JN
+                      injected["theta_jn"], #theta_JN
                       0, #phi_JL << ---- not sure how to compare this with MAP..
                       injected["spin1_polar"], #theta1
                       injected["spin2_polar"], #theta2
@@ -33,7 +34,7 @@ inc_1,s1x,s1y,s1z,s2x,s2y,s2z=SimInspiralTransformPrecessingNewInitialConditions
                       injected["spin2_a"], #chi2
                       injected["mass1"]*2e30,
                       injected["mass2"]*2e30,
-                      injected["inj_f_min"],phiRef=0)
+                      injected["f_min"],phiRef=0)
 
 # Generate injected waveform
 hp, hc = get_td_waveform(approximant=approx1,
@@ -41,8 +42,8 @@ hp, hc = get_td_waveform(approximant=approx1,
                       mass2=injected["mass2"],
                       spin1y=s1y,spin1x=s1x,spin1z=s1z,
                       spin2y=s2y,spin2x=s2x,spin2z=s2z,
-                      f_lower=injected["inj_f_min"],inclination=inc_1,
-                      distance=injected["distance"]
+                      f_lower=injected["f_min"],inclination=inc_1,
+                      distance=injected["distance"],
                       delta_t=1.0/sample_rate)
 
 # Find spin angles from MAP Cartesian values
@@ -78,13 +79,14 @@ h.resize(tlen)
 # Generate the aLIGO ZDHP PSD
 delta_f = 1.0 / sp.duration
 flen = tlen/2 + 1
-psd = aLIGOZeroDetHighPower(flen, delta_f, f_low)
+psd = aLIGOZeroDetHighPower(flen, delta_f, 19.)
 # ote: This takes a while the first time as an FFT plan is generated
 # subsequent calls are much faster.
 m, i = match(h, s, psd=psd, low_frequency_cutoff=f_low)
 
 print 'The match is: %1.3f' % m
 plt.figure()
+plt.subplot(2,1,1)
 plt.plot(hp.sample_times,hp,'b-',label="Injected")
 plt.plot(sp.sample_times,sp,'r-',label="MAP waveform")
 plt.xlabel("Time (s)")
@@ -92,6 +94,14 @@ plt.ylabel("Strain")
 plt.title("Comparison of injected and recovered waveforms")
 plt.legend(loc="best")
 plt.xlim(hp.sample_times[0],hp.sample_times[-1])
+plt.subplot(2,1,2)
+plt.plot(hp.sample_times,hp,'b-',label="Injected")
+plt.plot(sp.sample_times,sp,'r-',label="MAP waveform")
+plt.xlabel("Time (s)")
+plt.ylabel("Strain")
+plt.title("Comparison of injected and recovered waveforms")
+plt.legend(loc="best")
+plt.xlim(-0.15,0.05)
 plt.savefig("%s.png" % folder+"injMap")
 plt.show("hold")
 
