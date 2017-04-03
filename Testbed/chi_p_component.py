@@ -42,21 +42,25 @@ for aa in range(len(m1)):
 ## Find chi_p
 def chi_prec(q,mass1,mass2,s1_a,s1_polar,s2_a,s2_polar):
    chi_p=np.zeros(len(q))    ## <-- convention here so 0<q<1
-   for aa in range(len(q)):  ## Standard chi_p function
-      mass1=m1[aa]
-      mass2=m2[aa]
-      if mass2>mass1:
-         hold=mass2
-         mass2=mass1
-         mass1=hold
-      ratio=mass1/mass2
-      B1=2+((3*ratio)/2)
-      B2=2+(3/(ratio*2))
-      spin1_plane=s1_a[aa]*np.sin(s1_polar[aa])
-      spin2_plane=s2_a[aa]*np.sin(s2_polar[aa])
-      arg1=B1*spin1_plane*mass1*mass1
-      arg2=B2*spin2_plane*mass2*mass2
-      chi_p[aa]=(max(arg1,arg2))/(mass1*mass1*B1)
+   for aa in range(len(q)):  ## Standard chi_p function]
+      if mass1[aa]>mass2[aa]:
+         ratio=mass1[aa]/mass2[aa]
+         B1=2+((3*ratio)/2)
+         B2=2+(3/(ratio*2))
+         spin1_plane=s1_a[aa]*np.sin(s1_polar[aa])
+         spin2_plane=s2_a[aa]*np.sin(s2_polar[aa])
+         arg1=B1*spin1_plane*mass1[aa]*mass1[aa]
+         arg2=B2*spin2_plane*mass2[aa]*mass2[aa]
+         chi_p[aa]=(max(arg1,arg2))/(mass1[aa]*mass1[aa]*B1)
+      else:
+         ratio=mass2[aa]/mass1[aa] # Modify function for inverted mass ratio
+         B1=2+((3*ratio)/2)
+         B2=2+(3/(ratio*2))
+         spin1_plane=s1_a[aa]*np.sin(s1_polar[aa]) # Spin1 is smaller mass this time!
+         spin2_plane=s2_a[aa]*np.sin(s2_polar[aa]) # Spin2 is larger mass this time!
+         arg1=B2*spin1_plane*mass1[aa]*mass1[aa]
+         arg2=B1*spin2_plane*mass2[aa]*mass2[aa]
+         chi_p[aa]=(max(arg1,arg2))/(mass2[aa]*mass2[aa]*B1)
    return chi_p
 chi_p=chi_prec(q,m1,m2,s1_a,s1_polar,s1_a,s2_polar)
 
