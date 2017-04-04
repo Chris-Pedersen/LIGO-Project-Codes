@@ -103,6 +103,6 @@ plt.plot(sp.sample_times,sp,'r-',label="MAP waveform")
 plt.xlabel("Time (s)")
 plt.ylabel("Strain")
 plt.xlim(-0.15,0.05)
-plt.savefig("%s.png" % folder+"injMap")
+plt.savefig("%s" % folder+"injMap.png")
 plt.show("hold")
 
