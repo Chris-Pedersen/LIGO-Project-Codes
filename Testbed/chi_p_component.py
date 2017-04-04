@@ -3,6 +3,7 @@ import matplotlib
 import matplotlib.pyplot as plt
 from pycbc.inference import distributions
 import numpy as np
+from numpy import random
 
 #############################
 # Need distributions for
@@ -36,6 +37,7 @@ s2_polar=polar_samples["s2_polar"]
 m1=mass_samples["mass1"]
 m2=mass_samples["mass2"]
 q=np.zeros(len(m1))
+
 for aa in range(len(m1)):
    q[aa]=min(m1[aa]/m2[aa],m2[aa]/m1[aa])
 
@@ -58,16 +60,16 @@ def chi_prec(q,mass1,mass2,s1_a,s1_polar,s2_a,s2_polar):
          B2=2+(3/(ratio*2))
          spin1_plane=s1_a[aa]*np.sin(s1_polar[aa]) # Spin1 is smaller mass this time!
          spin2_plane=s2_a[aa]*np.sin(s2_polar[aa]) # Spin2 is larger mass this time!
-         arg1=B2*spin1_plane*mass1[aa]*mass1[aa]   # Swap the B coefficients now as B1 should be on the larger mass
-         arg2=B1*spin2_plane*mass2[aa]*mass2[aa]
-         chi_p[aa]=(max(arg1,arg2))/(mass2[aa]*mass2[aa]*B1)
+         arg1=B1*spin1_plane*mass1[aa]*mass1[aa]   # Swap the B coefficients now as B1 should be on the larger mass
+         arg2=B2*spin2_plane*mass2[aa]*mass2[aa]
+         chi_p[aa]=(max(arg1,arg2))/(mass2[aa]*mass2[aa]*B2)
    return chi_p
-chi_p=chi_prec(q,m1,m2,s1_a,s1_polar,s1_a,s2_polar)
+
+chi_p=chi_prec(q,m1,m2,s1_a,s1_polar,s2_a,s2_polar)
 
 #q=1/q ###< _________________________---REMOVE AFTER
 ## Plot chi_p and component masses for sanity
 n_bins=50
-
 fig, axes = plt.subplots(nrows=4, ncols=2)
 ax0, ax1, ax2, ax3, ax4, ax5, ax6, ax7 = axes.flat
 ax0.hist(m1, bins = n_bins)
@@ -89,7 +91,7 @@ ax7.set_title('chi_p')
 plt.tight_layout()
 plt.show("hold")
 plt.savefig("priors_component.png")
-
 print "DONE and plot saved"
 
 ## Save data
+np.savetxt("chi_p_prior.txt",chi_p)

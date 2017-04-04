@@ -118,6 +118,8 @@ for ifo in ['H1', 'L1']:
         ax.set_xlabel('GPS time - {} (s)'.format(gps_time))
 
 
+print varargs
+print sargs
 print "saving MAP values to dictionary"
 MAPDic={}
 for aa in range(len(varargs)):
