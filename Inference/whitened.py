@@ -28,6 +28,34 @@ opts = parser.parse_args()
 
 fp, parameters, _, samples = option_utils.results_from_cli(opts)
 
+## Extract file location from argument
+directorys=opts.output_file
+folder=directorys[:21]
+
+## Load dictionary and make array of injected parameters
+dic_name="paramDict.npy"
+dict_load=folder+dic_name
+injected=numpy.load("%s" % dict_load).item()
+## Generate array manually
+inj_vals=list([1126259462.0,     # time
+              injected["mass1"], # mass1
+              injected["mass2"], # mass2
+              injected["spin1_a"], # spin 1 magnitude
+              0, # spin1 azimuthal
+              injected["spin1_polar"], # spin 1 polar
+              injected["spin2_a"], # spin 2 magnitude
+              0, # spin2 azimuthal
+              injected["spin2_polar"], # spin 2 polar
+              injected["distance"], # distance
+              1.5, # coa_phase]
+              injected["inclination"], # inclination
+              injected["polarization"], # polarisation
+              injected["ra"],
+              injected["dec"]])
+
+print inj_vals
+
+
 fig = pyplot.figure()
 ii = 0
 colors = {'H1': 'r', 'L1': 'g'}
@@ -64,7 +92,7 @@ for ifo in ['H1', 'L1']:
     varargs = fp.variable_args
     sargs = fp.static_args
     mapvals = [map_values[arg] for arg in varargs]
-
+    print mapvals
     print "generating map waveforms"
     genclass = waveform.select_waveform_generator(fp.static_args['approximant'])
     gen = waveform.FDomainDetFrameGenerator(
