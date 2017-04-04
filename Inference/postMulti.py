@@ -32,7 +32,9 @@ params=np.array(["q",
                 "mass1",
                 "mass2",
                 "chi_p",
-                "chi_eff"])
+                "chi_eff",
+                "ra",
+                "dec"])
 
 ## Load in dictionary
 dic_name="paramDict.npy"
@@ -88,8 +90,6 @@ def chi_effect():
    ## Find spins along z-axis
    s1_z=m1*m1*s1_a*np.cos(s1_polar)
    s2_z=m2*m2*s2_a*np.cos(s2_polar)
-
-   print "   Calculating derived parameters..."
    ## Do chi_eff now innit --- POTENTIAL ISSUE with L, don't have a value for it
    chi_eff=(s1_z/m1+s2_z/m2)/M
    return chi_eff
@@ -106,31 +106,29 @@ def chi_prec():
    s1_polar=getParameter("spin1_polar")
    s2_a=getParameter("spin2_a")
    s2_polar=getParameter("spin2_polar")
-   m1=componentMass("mass1")
-   m2=componentMass("mass2")
-   q=getParameter("q")
-   q=1./q ## <<---------- mass ratio flip, only do this once
-
-   ## Find Bs
-   B1=2.+((q*3.)/2.)
-   B2=2.+(3./(2.*q))   
-
-   ## Find in-plane spin magnitudes
-   s1_perp=m1*m1*s1_a*np.sin(s1_polar)
-   s2_perp=m2*m2*s2_a*np.sin(s2_polar)
-
-   ## Find args for max function
-   arg1=B1*s1_perp
-   arg2=B2*s2_perp
-
-   print "   Calculating derived parameters..."
-   ## Find chi_p now, have to loop cuz of the max function
-   for aa in range(num_walkers):
-      #print q[aa]
-      chi_p[aa]=(1./(B1[aa]*m1[aa]*m1[aa]))*max(arg1[aa],arg2[aa])
+   mass1=componentMass("mass1")
+   mass2=componentMass("mass2")
+   for aa in range(len(mass1)):  ## Standard chi_p function]
+      if mass1[aa]>mass2[aa]:
+         ratio=mass2[aa]/mass1[aa]
+         B1=2+((3*ratio)/2)
+         B2=2+(3/(ratio*2))
+         spin1_plane=s1_a[aa]*np.sin(s1_polar[aa])
+         spin2_plane=s2_a[aa]*np.sin(s2_polar[aa])
+         arg1=B1*spin1_plane*mass1[aa]*mass1[aa]
+         arg2=B2*spin2_plane*mass2[aa]*mass2[aa]
+         chi_p[aa]=(max(arg1,arg2))/(mass1[aa]*mass1[aa]*B1)
+      else:
+         ratio=mass2[aa]/mass1[aa] # Modify function for inverted mass ratio
+         B1=2+((3*ratio)/2)
+         B2=2+(3/(ratio*2))
+         spin1_plane=s1_a[aa]*np.sin(s1_polar[aa]) # Spin1 is smaller mass this time!
+         spin2_plane=s2_a[aa]*np.sin(s2_polar[aa]) # Spin2 is larger mass this time!
+         arg1=B1*spin1_plane*mass1[aa]*mass1[aa]   # Swap the B coefficients now as B1 should be on the larger mass
+         arg2=B2*spin2_plane*mass2[aa]*mass2[aa]
+         chi_p[aa]=(max(arg1,arg2))/(mass2[aa]*mass2[aa]*B2)
    return chi_p
 
-## Function to plot the injected waveform in time domain
 def plot_injected():
    inc,s1x,s1y,s1z,s2x,s2y,s2z=SimInspiralTransformPrecessingNewInitialConditions(
                       injected["theta_jn"], #theta_JN
@@ -252,15 +250,22 @@ def plotPosterior(parameter):
    ## Plot and save
    plt.figure()
    plt.title("%d data points" % (values))
-   plt.hist(parameter_values,50)
+   plt.hist(parameter_values,50, normed=True, alpha=0.9)
    plt.axvline(x=injected_value,linewidth=2,color='r')
    plt.axvline(x=lower_90,linewidth=2,linestyle='dashed',color='k')
    plt.axvline(x=mean_val,linewidth=2, color='k')
    plt.axvline(x=upper_90,linewidth=2,linestyle='dashed',color='k')
    plt.xlabel("%s" % parameter)
+   plt.grid()
+   ## Plot priors for derived spin parameters
+   if parameter=="chi_p":
+      prior=np.loadtxt("priors/chi_p_prior.txt")
+      plt.hist(prior,50,normed=True,alpha=0.6)
+   elif parameter=="chi_eff":
+      prior=np.loadtxt("priors/chi_eff_prior.txt")
+      plt.hist(prior,50,normed=True,alpha=0.6)
    plt.savefig("%s.png" % savename)
    print "Plot saved as %s.png" % savename
-
 
 ## Execute
 if whatdo=="all":
