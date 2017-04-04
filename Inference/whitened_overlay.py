@@ -151,7 +151,7 @@ for ifo in ['H1', 'L1']:
             fi = fi[:len(psd)]
         fi /= psd
         ti = fi.to_timeseries()
-    ax.plot(ins.sample_times.numpy()-gps_time, ins.data, 'r', lw=2, zorder=2)
+    ax.plot(ins.sample_times.numpy()-gps_time, ins.data, 'b-', lw=2, zorder=2)
 
     ax.set_xlim(xmin, xmax)
     ax.set_ylim(ylim)
