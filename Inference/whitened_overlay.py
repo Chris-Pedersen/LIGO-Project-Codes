@@ -28,6 +28,32 @@ opts = parser.parse_args()
 
 fp, parameters, _, samples = option_utils.results_from_cli(opts)
 
+## Extract file location from argument
+directorys=opts.output_file
+folder=directorys[:21]
+
+## Load dictionary and make array of injected parameters
+dic_name="paramDict.npy"
+dict_load=folder+dic_name
+injected=numpy.load("%s" % dict_load).item()
+## Generate array manually
+inj_vals=list([1126259462.0,     # time
+              injected["mass1"], # mass1
+              injected["mass2"], # mass2
+              injected["spin1_a"], # spin 1 magnitude
+              0, # spin1 azimuthal
+              injected["spin1_polar"], # spin 1 polar
+              injected["spin2_a"], # spin 2 magnitude
+              0, # spin2 azimuthal
+              injected["spin2_polar"], # spin 2 polar
+              injected["distance"], # distance
+              1.5, # coa_phase]
+              injected["inclination"], # inclination
+              injected["polarization"], # polarisation
+              injected["ra"],
+              injected["dec"]])
+
+
 fig = pyplot.figure()
 ii = 0
 colors = {'H1': 'r', 'L1': 'g'}
@@ -64,7 +90,7 @@ for ifo in ['H1', 'L1']:
     varargs = fp.variable_args
     sargs = fp.static_args
     mapvals = [map_values[arg] for arg in varargs]
-
+    print mapvals
     print "generating map waveforms"
     genclass = waveform.select_waveform_generator(fp.static_args['approximant'])
     gen = waveform.FDomainDetFrameGenerator(
@@ -80,13 +106,29 @@ for ifo in ['H1', 'L1']:
     fs /= asd
     ts = fs.to_timeseries()
 
+    print "generating injected waveforms"
+
+    genclass = waveform.select_waveform_generator(fp.static_args['approximant'])
+    gen = waveform.FDomainDetFrameGenerator(
+        genclass,
+        detectors=['H1', 'L1'], epoch=stilde.epoch,
+        variable_args=varargs,
+        **sargs)
+    fis = gen.generate(*map(float, inj_vals))[ifo]
+    if len(fis) < len(psd):
+        fis.resize(len(psd))
+    elif len(psd) < len(fis):
+        fis = fis[:len(psd)]
+    fis /= asd
+    ins = fis.to_timeseries()
+
     print "plotting"
 
     try:
         gps_time = sargs['tc']
     except KeyError:
         gps_time = map_values['tc']
-    xmin = -0.5 
+    xmin = -0.15 
     xmax = 0.05
 
     # whitened strain
@@ -109,13 +151,24 @@ for ifo in ['H1', 'L1']:
             fi = fi[:len(psd)]
         fi /= psd
         ti = fi.to_timeseries()
-        ax.plot(ti.sample_times.numpy()-gps_time, ti.data, 'r', lw=2, zorder=2)
+    ax.plot(ins.sample_times.numpy()-gps_time, ins.data, 'r', lw=2, zorder=2)
 
     ax.set_xlim(xmin, xmax)
     ax.set_ylim(ylim)
     ax.set_ylabel('{} whitened strain'.format(ifo))
     if ii == 2:
         ax.set_xlabel('GPS time - {} (s)'.format(gps_time))
+
+
+print "saving MAP values to dictionary"
+MAPDic={}
+for aa in range(len(varargs)):
+    MAPDic[varargs[aa]]=mapvals[aa]
+
+print "save dictionary"
+savename=opts.output_file
+savename=savename+"_dic"
+numpy.save("%s" %  savename, MAPDic)
 
 fp.close()
 fig.savefig(opts.output_file, dpi=200, bbox_inches='tight')
