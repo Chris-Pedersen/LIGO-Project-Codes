@@ -92,8 +92,8 @@ def chi_prec():
    s1_polar=getParameter("spin1_polar")
    s2_a=getParameter("spin2_a")
    s2_polar=getParameter("spin2_polar")
-   m1=getParameter("mass1")
-   m2=getParameter("mass2")
+   mass1=getParameter("mass1")
+   mass2=getParameter("mass2")
    print "   Calculating derived parameters..."
    for aa in range(len(mass1)):  ## Standard chi_p function]
       if mass1[aa]>mass2[aa]:
@@ -210,14 +210,16 @@ def plotPosterior(parameter):
       injected_value=chi_p
 
    elif parameter=="q":
-      mass1=getParameter(mass1)
-      mass2=getParameter(mass2)
-      
+      mass1=getParameter("mass1")
+      mass2=getParameter("mass2")
+      q=np.zeros(len(mass1))
+ 
       for aa in range(len(mass1)): ## Have to ensure 0<q<1 by making sure the larger mass is the denom
          q[aa]=min((mass1[aa]/mass2[aa]),(mass2[aa]/mass1[aa]))
 
+      parameter_values=q
       ## Injected value
-         injected_value=m2/m1
+      injected_value=injected["mass2"]/injected["mass1"]
 
    else:
       parameter_values=getParameter(parameter)
