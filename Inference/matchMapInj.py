@@ -44,6 +44,8 @@ hp, hc = get_td_waveform(approximant=approx1,
                       spin2y=s2y,spin2x=s2x,spin2z=s2z,
                       f_lower=injected["f_min"],inclination=inc_1,
                       distance=injected["distance"],
+                      ra=injected["ra"],
+                      dec=injected["dec"],
                       delta_t=1.0/sample_rate)
 
 # Find spin angles from MAP Cartesian values
@@ -64,6 +66,8 @@ sp, sc = get_td_waveform(approximant=approx2,
                       spin1y=s1y_map,spin1x=s1x_map,spin1z=s1z_map,
                       spin2y=s2y_map,spin2x=s2x_map,spin2z=s2z_map,
                       f_lower=19.,inclination=maps["inclination"],
+                      ra=maps["ra"],
+                      dec=maps["dec"],
                       delta_t=1.0/sample_rate)
 
 ## Mix polarisation angles
@@ -89,9 +93,8 @@ plt.figure()
 plt.subplot(2,1,1)
 plt.plot(hp.sample_times,hp,'b-',label="Injected")
 plt.plot(sp.sample_times,sp,'r-',label="MAP waveform")
-plt.xlabel("Time (s)")
 plt.ylabel("Strain")
-plt.title("Comparison of injected and recovered waveforms")
+plt.title("Match of %.2f" % m)
 plt.legend(loc="best")
 plt.xlim(hp.sample_times[0],hp.sample_times[-1])
 plt.subplot(2,1,2)
@@ -99,8 +102,6 @@ plt.plot(hp.sample_times,hp,'b-',label="Injected")
 plt.plot(sp.sample_times,sp,'r-',label="MAP waveform")
 plt.xlabel("Time (s)")
 plt.ylabel("Strain")
-plt.title("Comparison of injected and recovered waveforms")
-plt.legend(loc="best")
 plt.xlim(-0.15,0.05)
 plt.savefig("%s.png" % folder+"injMap")
 plt.show("hold")
