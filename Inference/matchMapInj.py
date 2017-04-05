@@ -1,5 +1,5 @@
-import matplotlib
-matplotlib.use('Agg')
+#import matplotlib
+#matplotlib.use('Agg')
 from pycbc.waveform import get_td_waveform
 from pycbc.filter import match
 from pycbc.psd import aLIGOZeroDetHighPower
@@ -26,7 +26,7 @@ maps=np.load("%s" % MAPname).item()
 #Convert to precessing coords
 inc_1,s1x,s1y,s1z,s2x,s2y,s2z=SimInspiralTransformPrecessingNewInitialConditions(
                       injected["theta_jn"], #theta_JN
-                      0, #phi_JL << ---- not sure how to compare this with MAP..
+                      1.1, #phi_JL << ---- not sure how to compare this with MAP..
                       injected["spin1_polar"], #theta1
                       injected["spin2_polar"], #theta2
                       0, #phi12  << ---- doesn't really affect results much
@@ -46,7 +46,8 @@ hp, hc = get_td_waveform(approximant=approx1,
                       distance=injected["distance"],
                       ra=injected["ra"],
                       dec=injected["dec"],
-                      delta_t=1.0/sample_rate)
+                      delta_t=1.0/sample_rate,
+                      coa_phase=1.5)
 
 # Find spin angles from MAP Cartesian values
 s1_a=maps["spin1_a"]
