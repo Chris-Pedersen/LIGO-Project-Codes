@@ -53,8 +53,6 @@ inj_vals=list([1126259462.0,     # time
               injected["ra"],
               injected["dec"]])
 
-print inj_vals
-
 
 fig = pyplot.figure()
 ii = 0
@@ -92,7 +90,6 @@ for ifo in ['H1', 'L1']:
     varargs = fp.variable_args
     sargs = fp.static_args
     mapvals = [map_values[arg] for arg in varargs]
-    print mapvals
     print "generating map waveforms"
     genclass = waveform.select_waveform_generator(fp.static_args['approximant'])
     gen = waveform.FDomainDetFrameGenerator(
@@ -107,6 +104,22 @@ for ifo in ['H1', 'L1']:
         fs = fs[:len(psd)]
     fs /= asd
     ts = fs.to_timeseries()
+
+    print "generating injected waveforms"
+
+    genclass = waveform.select_waveform_generator(fp.static_args['approximant'])
+    gen = waveform.FDomainDetFrameGenerator(
+        genclass,
+        detectors=['H1', 'L1'], epoch=stilde.epoch,
+        variable_args=varargs,
+        **sargs)
+    fis = gen.generate(*map(float, inj_vals))[ifo]
+    if len(fis) < len(psd):
+        fis.resize(len(psd))
+    elif len(psd) < len(fis):
+        fis = fis[:len(psd)]
+    fis /= asd
+    ins = fis.to_timeseries()
 
     print "plotting"
 
@@ -128,16 +141,17 @@ for ifo in ['H1', 'L1']:
 
     if opts.injection_file:
         # get the injection values
-        f = h5py.File(opts.injection_file, 'r')
-        injvals = [f[p][()] for p in varargs]
-        fi = gen.generate(*map(float, injvals))[ifo]
+        from pycbc import inject, io
+        injf = inject.InjectionSet(opts.injection_file)
+        ti = injf.make_strain_from_inj_object(injf.table[0], wh_strain.delta_t, ifo, f_lower=gen.current_params['f_lower'])
+        fi = ti.to_frequencyseries(delta_f=gen.current_params['delta_f'])
         if len(fi) < len(psd):
             fi.resize(len(psd))
         elif len(psd) < len(fi):
             fi = fi[:len(psd)]
-        fi /= psd
+        fi /= asd
         ti = fi.to_timeseries()
-        ax.plot(ti.sample_times.numpy()-gps_time, ti.data, 'r', lw=2, zorder=2)
+        ax.plot(ti.sample_times.numpy()-gps_time, ti.data, 'b-', lw=2, zorder=2)
 
     ax.set_xlim(xmin, xmax)
     ax.set_ylim(ylim)
@@ -146,8 +160,6 @@ for ifo in ['H1', 'L1']:
         ax.set_xlabel('GPS time - {} (s)'.format(gps_time))
 
 
-print varargs
-print sargs
 print "saving MAP values to dictionary"
 MAPDic={}
 for aa in range(len(varargs)):
