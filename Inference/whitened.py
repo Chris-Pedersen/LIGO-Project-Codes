@@ -13,6 +13,8 @@ import numpy
 import matplotlib
 matplotlib.use('Agg')
 from matplotlib import pyplot
+from pycbc.filter import match
+
 
 def get_ylim(data, times, tmin, tmax):
     selected = data[(times >= tmin) & (times < tmax)]
@@ -152,7 +154,8 @@ for ifo in ['H1', 'L1']:
         fi /= asd
         ti = fi.to_timeseries()
         ax.plot(ti.sample_times.numpy()-gps_time, ti.data, 'b-', lw=2, zorder=2)
-
+    m, i = match(ti, ts, psd=psd, low_frequency_cutoff=gen.current_params['f_lower'])
+    print "Match between map and injected is %.2f" % m
     ax.set_xlim(xmin, xmax)
     ax.set_ylim(ylim)
     ax.set_ylabel('{} whitened strain'.format(ifo))
