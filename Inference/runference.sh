@@ -1,4 +1,4 @@
-Create new directory for this inference run
+#Create new directory for this inference run
 DIR=`date '+%Y%m%d-%H%M%S'`
 NAMEDIR=jobs/${DIR}
 mkdir ${NAMEDIR}
@@ -22,8 +22,8 @@ INJ_F_MIN=20.
 TAPER="start"
 
 # Spin parameters
-MIN_SPIN1=0.9
-MAX_SPIN1=0.9
+MIN_SPIN1=0.0
+MAX_SPIN1=0.0
 MIN_KAPPA1=0.0
 MAX_KAPPA1=0.0
 MIN_SPIN2=0.0
@@ -196,5 +196,5 @@ pycbc_inference --verbose \
     --nprocesses ${NPROCS}
 
 
-. plotStrain.sh ${DIR}
-. matchMapInj.py ${DIR}
+#. plotStrain.sh ${DIR}
+#. matchMapInj.py ${DIR}

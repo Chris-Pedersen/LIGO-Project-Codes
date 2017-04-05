@@ -1,5 +1,5 @@
-#import matplotlib
-#matplotlib.use('Agg')
+import matplotlib
+matplotlib.use('Agg')
 from pycbc.waveform import get_td_waveform
 from pycbc.filter import match
 from pycbc.psd import aLIGOZeroDetHighPower
