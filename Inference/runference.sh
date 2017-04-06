@@ -8,7 +8,7 @@ TEMPPAR=${NAMEDIR}/temp_par.txt
 # define coalescence time, observed masses, and waveform parameters
 TRIGGER_TIME=1126259462.0
 INJ_APPROX=IMRPhenomPv2threePointFivePN
-MASS1=50.
+MASS1=30.
 MASS2=15.
 RA=2.21535724066
 DEC=-1.23649695537
@@ -22,8 +22,8 @@ INJ_F_MIN=20.
 TAPER="start"
 
 # Spin parameters
-MIN_SPIN1=0.0
-MAX_SPIN1=0.0
+MIN_SPIN1=0.9
+MAX_SPIN1=0.9
 MIN_KAPPA1=0.0
 MAX_KAPPA1=0.0
 MIN_SPIN2=0.0

@@ -41,6 +41,7 @@ def findMeans(parameter):
       upper=getParameter(parameter,aa+1) ## Later iteration
       lower=np.mean(lower) ## Mean of earlier it
       upper=np.mean(upper) ## Mean of later it
+      print lower
       means[aa]=abs(lower-upper)/lower ## Relative change in mean
    return means
 
@@ -53,4 +54,5 @@ plt.plot(xaxis,means,'bx')
 plt.xlabel("Iteration number")
 plt.ylabel("Relative change in mean")
 plt.grid()
+plt.show("hold")
 plt.savefig("%s" % savename)

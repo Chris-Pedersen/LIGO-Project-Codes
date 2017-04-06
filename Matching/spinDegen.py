@@ -9,7 +9,7 @@ import pickle
 ## Computational parameters
 match_lim=0.95 # Set limit to distinguish between spinning and non spinning
 mass1=55 # Mass of dominant body - this body is whose spin we vary
-mass2_low=25 # Upper mass boundary
+mass2_low=15 # Upper mass boundary
 mass2_high=55 # Lower mass boundary
 spin_resolution=100 # Number of spin values to 'check' for each gridpoint
 dimensions=100 # Number of mass and inclination values - grid resolution
@@ -18,7 +18,7 @@ dimensions=100 # Number of mass and inclination values - grid resolution
 approx="IMRPhenomPv2"
 approx1="IMRPhenomPv2"
 approx2="IMRPhenomPv2"
-f_low = 25
+f_low = 20
 sample_rate = 4096
 savename="2D_data/s2_0_cross.p"
 
@@ -47,8 +47,8 @@ def match_inc(inc,spin_1,mass2):
                          phi12, #phi12
                          spin_1, #chi1 - this parameter varies
                          spin_2, #chi2
-                         m1_1,
-                         m2_1,
+                         m1_1*2e30,
+                         m2_1*2e30,
                          f_low,phiRef=0)
 
    #This is our 'spin1=0' waveform that we match the precessing one with
@@ -60,8 +60,8 @@ def match_inc(inc,spin_1,mass2):
                          phi12, #phi12
                          0, #chi1
                          spin_2, #chi2
-                         m1_2,
-                         m2_2,
+                         m1_2*2e30,
+                         m2_2*2e30,
                          f_low,phiRef=0)
 
    # Generate the two waveforms to compare
