@@ -11,36 +11,47 @@ import sys
 approx1="IMRPhenomPv2"
 approx2="IMRPhenomPv2"
 
-## Select file
-folder=sys.argv[1]
-folder="jobs/"+folder+"/"
+## Masses
+m1_1=30.
+m2_1=15.
+m1_2=30.
+m2_2=15.
 
-## Load in dictionaries
-inj_name="paramDict.npy"
-inj_load=folder+inj_name
-injected=np.load("%s" % inj_load).item()
-map_name="mapDic.npy"
-map_load=folder+map_name
-map_vals=np.load("%s" % map_load).item()
+## Inclination
+inc_1=0.
+inc_2=0.
 
-#Convert to precessing coords
-inc_1,s1x,s1y,s1z,s2x,s2y,s2z=SimInspiralTransformPrecessingNewInitialConditions(
-                      injected["theta_JN], #theta_JN
-                      0, #phi_JL
-                      injected["spin1_polar"], #theta1
-                      injected["spin2_polar"], #theta2
-                      0, #phi12
-                      injected["spin1_a"], #chi1
-                      injected["spin2_a"], #chi2
-                      injected["mass1"]*2e30,
-                      injected["mass2"]*2e30,
-                      injected["inj_f_min"],phiRef=0)
+## Polarisation
+psi_1=0.
+psi_2=0.
 
+## Spin parameters
+s1x=0.
+s1y=0.
+s1z=0.
+s2x=0.
+s2y=0.
+s2z=0.
+
+## Spin parameters for 2nd waveform
+s1x_2=0.
+s1y_2=0.
+s1z_2=0.
+s2x_2=0.
+s2y_2=0.
+s2z_2=0.
+
+f_low=20
+sample_rate=4096
+
+## For legend
+spin_z1=np.sqrt(s1x**2+s1y**2)
+spin_z1_2=np.sqrt(s1x_2**2+s1y_2**2)
 
 # Injected waveform
 hp, hc = get_td_waveform(approximant=approx1,
-                      mass1=injected["mass1"],
-                      mass2=injected["mass2"],
+                      mass1=m1_1,
+                      mass2=m2_1,
                       spin1y=s1y,spin1x=s1x,spin1z=s1z,
                       spin2y=s2y,spin2x=s2x,spin2z=s2z,
                       f_lower=f_low,inclination=inc_1,
@@ -78,7 +89,7 @@ plt.plot(hp.sample_times,hp,'b-',label="in-plane spin = %1.2f" % spin_z1)#  % ap
 plt.plot(sp.sample_times,sp,'r-',label="in-plane spin = %1.2f" % spin_z1_2)# % approx2)
 plt.xlabel("Time (s)")
 plt.ylabel("Strain")
-plt.title("m1=%1.0f,m2=%1.0f,Inc=%1.2f, Match = %1.3f" % (m1_1,m2_1,inc,m))
+plt.title("m1=%1.0f,m2=%1.0f,Inc=%1.2f, Match = %1.3f" % (m1_1,m2_1,inc_1,m))
 plt.legend(loc="best")
 plt.xlim(hp.sample_times[0],hp.sample_times[-1])
 plt.savefig("testIndi.png")
