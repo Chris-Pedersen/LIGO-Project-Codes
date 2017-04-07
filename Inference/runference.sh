@@ -8,7 +8,7 @@ TEMPPAR=${NAMEDIR}/temp_par.txt
 # define coalescence time, observed masses, and waveform parameters
 TRIGGER_TIME=1126259462.0
 INJ_APPROX=IMRPhenomPv2threePointFivePN
-MASS1=30.
+MASS1=50.
 MASS2=15.
 RA=2.21535724066
 DEC=-1.23649695537
@@ -16,7 +16,7 @@ THETA_JN=1.25
 ## Inclination calculated manually currently using findTheta.py
 INC=1.27349725528
 COA_PHASE=1.5
-POLARIZATION=1.6
+POLARIZATION=0.8
 DISTANCE=200000 # in kpc
 INJ_F_MIN=20.
 TAPER="start"

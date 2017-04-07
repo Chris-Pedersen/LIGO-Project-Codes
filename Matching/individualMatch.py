@@ -26,7 +26,7 @@ psi_1=0.
 psi_2=0.
 
 ## Spin parameters
-s1x=0.
+s1x=0.9
 s1y=0.
 s1z=0.
 s2x=0.
@@ -35,7 +35,7 @@ s2z=0.
 
 ## Spin parameters for 2nd waveform
 s1x_2=0.
-s1y_2=0.
+s1y_2=0.9
 s1z_2=0.
 s2x_2=0.
 s2y_2=0.
