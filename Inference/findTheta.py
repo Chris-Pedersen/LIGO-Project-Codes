@@ -3,16 +3,16 @@ import numpy as np
 
 ## Input parameters
 theta=1.25
-phi_JL=1.
+phi_JL=.6
 theta_z1=np.pi/2
 theta_z2=0.
 phi12=2.
 spin_z1=0.9
 spin_z2=0.0
-m1=30*2e30
-m2=15*2e30
+m1=30
+m2=15
 f_low=20
-phase=1.2
+phase=2.452
 
 #Convert to precessing coords
 inc_1,s1x,s1y,s1z,s2x,s2y,s2z=SimInspiralTransformPrecessingNewInitialConditions(
@@ -41,6 +41,7 @@ s2_polar=np.pi/2.-s2_polar
 ## Print out new coords
 print "\nTransformed parameters: \n"
 print "Inclination: %s \n" % inc_1
+print "Theta_JN: %s \n" % theta
 print "Spin1 magnitude: %s \n" % s1_a
 print "Spin1 polar: %s \n" % s1_polar
 print "Spin2 magnitude: %s \n" % s2_a
