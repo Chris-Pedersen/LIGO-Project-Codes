@@ -118,26 +118,19 @@ def chi_prec():
 
 ## Function to plot the injected waveform in time domain
 def plot_injected():
-   inc,s1x,s1y,s1z,s2x,s2y,s2z=SimInspiralTransformPrecessingNewInitialConditions(
-                      injected["theta_jn"], #theta_JN
-                      0, #phi_JL <---- could play with this
-                      injected["spin1_polar"], #theta1
-                      injected["spin2_polar"], #theta2
-                      0, #phi12 <-- kind of irrelevant I think
-                      injected["spin1_a"], #chi1
-                      injected["spin2_a"], #chi2
-                      injected["mass1"]*2e30, #m1 in SI
-                      injected["mass2"]*2e30, #m2 in SI
-                      injected["f_min"], ## This needs to be variable
-                      phiRef=0)
+   ## Not worrying about azimuthal angles as they are irrelevant
+   s1z=injected["spin1_a"]*np.cos(injected["spin1_polar"])
+   s1x=injected["spin1_a"]*np.sin(injected["spin1_polar"])
+   s2z=injected["spin2_a"]*np.cos(injected["spin2_polar"])
+   s2x=injected["spin2_a"]*np.sin(injected["spin2_polar"])
    sample_rate = 4096 # Sampling frequency
    hp, hc = get_td_waveform(approximant="IMRPhenomPv2",
                       mass1=injected["mass1"],
                       mass2=injected["mass2"],
-                      spin1y=s1y,spin1x=s1x,spin1z=s1z,
-                      spin2y=s2y,spin2x=s2x,spin2z=s2z,
+                      spin1y=0,spin1x=s1x,spin1z=s1z,
+                      spin2y=0,spin2x=s2x,spin2z=s2z,
                       f_lower=injected["f_min"],
-                      inclination=inc,
+                      inclination=injected["inclination"],
                       distance=injected["distance"],
                       ra=injected["ra"],
                       dec=injected["dec"],
