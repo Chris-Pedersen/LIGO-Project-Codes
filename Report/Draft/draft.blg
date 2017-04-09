@@ -1,0 +1,53 @@
+This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: draft.aux
+The style file: unsrt.bst
+Database file #1: draftbib.bib.bib
+You're missing a field part---line 154 of file draftbib.bib.bib
+ :  volume    = 
+ :              ,
+I'm skipping whatever remains of this entry
+Warning--there's a number but no volume in eins1
+Warning--there's a number but no volume in eins2
+You've used 15 entries,
+            1791 wiz_defined-function locations,
+            536 strings with 5333 characters,
+and the built_in function-call counts, 2444 in all, are:
+= -- 201
+> -- 84
+< -- 0
++ -- 37
+- -- 22
+* -- 151
+:= -- 417
+add.period$ -- 43
+call.type$ -- 15
+change.case$ -- 12
+chr.to.int$ -- 0
+cite$ -- 17
+duplicate$ -- 121
+empty$ -- 269
+format.name$ -- 22
+if$ -- 529
+int.to.chr$ -- 0
+int.to.str$ -- 15
+missing$ -- 14
+newline$ -- 76
+num.names$ -- 15
+pop$ -- 37
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 51
+stack$ -- 0
+substring$ -- 82
+swap$ -- 15
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 2
+while$ -- 21
+width$ -- 17
+write$ -- 158
+(There was 1 error message)

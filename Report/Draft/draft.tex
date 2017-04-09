@@ -1,5 +1,12 @@
 \documentclass[]{article}
-
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\bibliographystyle{unsrt}
+\textwidth=430pt
+\textheight=640pt
+\hoffset=-50pt
+\voffset=-80pt
 %opening
 \title{Gravitational waves from colliding black holes}
 \author{Chris Pedersen}
@@ -9,21 +16,88 @@
 \maketitle
 
 \begin{abstract}
-Words
+B B B B B Binnnaryyyy.. 
 \end{abstract}
 
 \section{Introduction}
-Gravitational wave history
-\subsection{Gravitational Waves}
-Fundamental theory
+\subsection{A Brief History}
+The first\cite{obs} and subsequent\cite{obs2} observations of gravitational waves (GWs) came around the centenary of Einstein's theoretical prediction of their existence\cite{eins1}\cite{eins2}. Einstein noticed that a solution to the linearised approximations of his field equations took the form of a wave equation\cite{gw1}, and that the source of these waves would be an asymmetric, massive, rotating system, such as a binary star system. As the amplitude of the waves was predicted to be so incredibly weak, with strain amplitudes on the order of $10^{-24}$, at the time there was no hope of ever actually detecting them, and Einstein even questioned whether they were physically real at all\cite{eins3}. Observations of the Hulse-Taylor pulsar (PSR 1913+16)\cite{hulse} showed that the energy loss of the binary agreed perfectly with the rate predicted by gravitational wave emission, leading to the award of the 1993 Nobel Prize in Physics, but it was not until the construction of the Laser-Interferometric Gravitational wave Observatory (LIGO) that direct detection of gravitational waves became possible - a truly remarkable feat of science and engineering involving the most precise measurements ever made by several orders of magnitude.
+
+Now that the existence of gravitational waves has been confirmed and their detection is possible we enter a new era of astronomy, and it is difficult to overstate the wealth of science that is now attainable in the coming decades. Gravitational waves can be used to study astrophysical phenomena that cannot be observed using electromagnetic radiation, such as binary black hole (BBH) systems where two inspiralling black holes merge into one, as well as being used in conjunction with electromagnetic observations in 'multi-messenger' astronomy where events such as supernovae and gamma ray bursts are thought to release both gravitational and electromagnetic radiation which can be studied in conjunction with one another\cite{mm}\cite{mm2}. In addition GWs can be used to conduct the closest tests of general relativity (GR) to date, (CITE CAL's) as well as to further inform the ongoing development of quantum gravity models\cite{qgrav}. Currently the LIGO network consists of two detectors, one in Hanford WA, one in Livingston LA, however there are three detectors that will be added to the network in the coming years, with VIRGO in Italy due to come online by the end of 2017, and with LIGO India and KAGRA joining later. In addition to this, there are also proposals underway for a space-based gravitational wave observatory, the Laster Interferometric Space Antenna (LISA)\cite{lisa} which would be able to explore a different frequency-range and therefore study a range of different astrophysical objects to earth-based detectors.
+
+This project focuses on studying the merging of a binary system, known as a compact binary coalesence (CBC). This term includes the merging of binary neutron star systems and neutron star-black hole systems, but in this work we focus on the merging of BBHs, where we do not consider the internal structure of the compact binary objects unlike in the case of systems involving neutron stars. We focus on parameter estimation of BBH mergers, with a specific emphasis on inferring the spin parameters of the component BHs in systems where the spins are misaligned, and how they can be determined though careful analysis of LIGO data.
+
+The work is structured as follows; first we present an overview of gravitational wave theory and the LIGO detectors. We then discuss the process of parameter estimation and the mathematical and computational models that are used. Next we consider the case of systems with misaligned spins where relativistic precession is manifested, and consider the specific set of challenges this raises for signal analysis and parameter estimation. The astrophysical significance of studying precessing systems is also discussed. In chapter 2 we introduce the concept of 'matching' as a method for quantifying the degenerecy between different waveforms with minimal computational effort, and use these matches to identify the parts of the parameter space that would be most fruitful to explore. In chapter 3 we describe the process of software injections, where simulated signals are inserted into detector noise and then recovered using the inference methods introducted in the introduction. This gives a way of probing the detector response to a given signal. We present results from a range of software injections guided by the match findings, and attempt to analyse how effectively the current infrastructure is capable of inferring spin parameters on precessing BBHs. Finally we briefly consider the impact of the upcoming VIRGO detector on spin inference.
+
+\subsection{Gravitational waves and their sources}
+A complete analysis is available in Hartle\cite{hartle}, but here we briefly overview the fundamental theory of gravitational waves. In the general theory of relativity, gravity is a consequence of the curvature of a 4-dimensional spacetime as described by the Einstein equation:
+\begin{equation}
+R_{\alpha\beta}-\frac{1}{2}g_{\alpha\beta}R=8\pi T_{\alpha\beta}
+\end{equation}
+where $R_{\alpha\beta}$ is the Riemannian curvature tensor, $g_{\alpha\beta}$ is the metric tensor, $R$ is the Ricci scalar and $T_{\alpha\beta}$ is the metric tensor. This equation is essentially ten non-linear partial differential equations, where we use the Einstein summation convention. Intuitively, the LHS of this equation can be thought of as the local curvature of spacetime, and the RHS quantifies the energy and momentum density. In the weak-field regime, where the curvature of spacetime is low, the metric tensor can be approximated as
+\begin{equation}
+g_{\alpha\beta}(x)=\eta_{\alpha\beta}+h_{\alpha\beta}(x).
+\end{equation}
+where $\eta_{\alpha\beta}$ is the Minkowski metric and $|h_{\alpha\beta}| \ll 1$ for all components. This metric can be substituted into the Einstein equation, and expanding in $h_{\alpha\beta}$ in first order and using the Lorentz gauage, the Einstein equation becomes
+\begin{equation}
+\square h_{\alpha\beta}=0
+\end{equation}
+where $\square$ is the D'Alembertian operator, with
+\begin{equation}
+\partial_\beta h^\beta_\alpha-\frac{1}{2}\partial_\alpha h^\beta_\beta=0.
+\end{equation}
+The most general solution to this equation is
+
+\begin{equation}
+h_{\alpha\beta}=
+\begin{pmatrix}
+0 & 0 & 0 & 0\\
+0 & a_+ & a_x & 0\\
+0 & a_x & -a_+ & 0\\
+0 & 0 & 0 & 0\\
+\end{pmatrix}
+e^{i\omega(z-t)}
+\end{equation}
+for a wave with frequency $\omega$ propagating in the $z$ direction. Here the $a_+$ and $a_x$ terms represent the amplitudes of the 'plus' and 'cross' polarisations respectively. As a gravitational wave passes through an observer, spacetime is distorted along the spatial directions orthogonal to the propagation direction of the wave according to these polarisation amplitudes. A visualisation of this is shown in Fig. 1. It is this stretching and squeezing of spacetime that the LIGO detectors were built to detect.
+
+\begin{figure}[h]
+	\includegraphics[scale=0.60]{fig1.jpg}
+	\centering
+	\caption{\cite{fig1}Plus and cross polarisations respectively of a gravitational wave propagating through the page, with scale greatly exagerrated.}
+	\centering
+\end{figure}
+
+Now we consider the sources of these waves. Analysis in this area can rapidly become extremely complicated as the weak-field approximation is dropped and higher orders of perturbations are included\cite{blanch}, but the simplest case is still instructive.
+
+\begin{figure}[h]
+	\includegraphics[scale=0.60]{fig2.jpg}
+	
+	\centering
+	\caption{\cite{fig2}Impression of two inspiralling compact objects emitting gravitational waves}
+	\centering
+\end{figure}
+
+Approximating that the field around the source is still weak, that the wavelength is long and that the observer is a large distance from the source, the spatial elements of the GW metric are
+\begin{equation}
+h_{ij}\approx\frac{2}{r}\ddot{I}^{ij}(t-r)
+\end{equation}
+where $I^{ij}$ is the second mass moment given by
+\begin{equation}
+I^{ij}(t)=\int d^3x\mu(t,\vec{x})x^jx^j
+\end{equation}
+where $\mu(t,\vec{x})$ is the mass density of the system. The energy loss of a binary system emitting gravitational waves is
+\begin{equation}
+L_{GW}=\frac{128}{5}M^2R^4\Omega^6,
+\end{equation}
+and as the binary loses energy, the separation between the compact objects decreases, increasing the orbital frequency. Given the connection between the mass distribution of the system in (7) and the GW amplitudes in (6), this gives rise to a 'chirp' effect seen in the signal of a CBC GW. This is shown in a Fig. 3. which is a simulated waveform of the merging of a BBH system.
 \subsection{LIGO}
 Overview of detectors
-\subsection{Precession}
-Precessing binaries and effective spin parameters
-\subsection{Bayesian Inference}
+\subsection{Parameter estimation and Bayesian inference}
 Bayes theorem and how it is used in PE
 \subsection{MCMC}
 Overview of MCMCs that will be used for inference
+\subsection{Precession}
+Precessing binaries and effective spin parameters
 \subsection{Astrophysical implications}
 Binary formation models and how estimating chi p is significant for distinguishing bewteen them
 
@@ -42,5 +116,6 @@ Posteriors and discussion of inference results
 A look at how Virgo will influence PE, especially chi p estimation
 \section{Conclusions and implications}
 Summary of results on PE and estimation of chi p, and a prospect on Virgo's impact.
+\bibliography{draftbib.bib}
 
 \end{document}
