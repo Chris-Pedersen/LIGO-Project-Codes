@@ -81,4 +81,37 @@ Luc Blanchet, Thibault Damour, Bala~R. Iyer, Clifford~M. Will, and Alan~G.
 Swinburne~Astronomy Productions.
 \newblock Accessed {09/04/2017}.
 
+\bibitem{noise3}
+D.~V. et~al. Martynov.
+\newblock Sensitivity of the advanced ligo detectors at the beginning of
+  gravitational wave astronomy.
+\newblock {\em Phys. Rev. D}, 93:112004, Jun 2016.
+
+\bibitem{noise}
+D.{\hspace{0.167em}}V.~Martynov et~al.
+\newblock Sensitivity of the advanced {LIGO} detectors at the beginning of
+  gravitational wave astronomy.
+\newblock {\em Physical Review D}, 93(11), Jun 2016.
+
+\bibitem{noise2}
+J.~et~al. Abadie.
+\newblock {Sensitivity Achieved by the LIGO and Virgo Gravitational Wave
+  Detectors during LIGO's Sixth and Virgo's Second and Third Science Runs}.
+\newblock 2012.
+
+\bibitem{lasers}
+J~Aasi et~al.
+\newblock Advanced {LIGO}.
+\newblock {\em Classical and Quantum Gravity}, 32(7):074001, Mar 2015.
+
+\bibitem{beampat}
+Robert~L. Forward.
+\newblock Wideband laser-interferometer graviational-radiation experiment.
+\newblock {\em Phys. Rev. D}, 17:379--390, Jan 1978.
+
+\bibitem{props}
+B.{\hspace{0.167em}}P.~Abbott et~al.
+\newblock Properties of the binary black hole merger {GW}150914.
+\newblock {\em Physical Review Letters}, 116(24), Jun 2016.
+
 \end{thebibliography}
