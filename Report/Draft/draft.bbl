@@ -66,11 +66,19 @@ James~B. Hartle.
 \newblock {\em Gravity: An Introduction to Einstein's General Relativity}.
 \newblock Addison Wesley, 2003.
 
+\bibitem{fig1}
+Unknown.
+\newblock Accessed {09/04/2017}.
+
 \bibitem{blanch}
 Luc Blanchet, Thibault Damour, Bala~R. Iyer, Clifford~M. Will, and Alan~G.
   Wiseman.
 \newblock Gravitational-radiation damping of compact binary systems to second
   post-newtonian order.
-\newblock {\em Physical Review Letters}, 74(18):3515--3518, may 1995.
+\newblock {\em Physical Review Letters}, 74(18):3515--3518, May 1995.
+
+\bibitem{fig2}
+Swinburne~Astronomy Productions.
+\newblock Accessed {09/04/2017}.
 
 \end{thebibliography}
