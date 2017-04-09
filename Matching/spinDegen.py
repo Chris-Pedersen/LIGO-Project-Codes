@@ -20,13 +20,13 @@ approx1="IMRPhenomPv2"
 approx2="IMRPhenomPv2"
 f_low = 20
 sample_rate = 4096
-savename="2D_data/s2_0_cross.p"
+savename="2D_data/s2_095z_cross.p"
 
 ## Spin parameters
 phi_JL=0 ## Polarisation angle perhaps?
 theta_z1=1.57
-theta_z2=1.57
-spin_2=0
+theta_z2=0.01
+spin_2=0.95
 phi12=0 ## Don't know what parameter this is
 
 ## Save parameters for the plot axes and future reference

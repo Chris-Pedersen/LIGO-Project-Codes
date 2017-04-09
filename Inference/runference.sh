@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 #Create new directory for this inference run
 DIR=`date '+%Y%m%d-%H%M%S'`
 NAMEDIR=jobs/${DIR}
@@ -9,12 +11,12 @@ TEMPPAR=${NAMEDIR}/temp_par.txt
 TRIGGER_TIME=1126259462.0
 INJ_APPROX=IMRPhenomPv2threePointFivePN
 MASS1=50.
-MASS2=15.
+MASS2=25.
 RA=2.21535724066
 DEC=-1.23649695537
 THETA_JN=1.25
 ## Inclination calculated manually currently using findTheta.py
-INC=1.27349725528
+INC=2.7
 COA_PHASE=1.5
 POLARIZATION=0.8
 DISTANCE=200000 # in kpc
