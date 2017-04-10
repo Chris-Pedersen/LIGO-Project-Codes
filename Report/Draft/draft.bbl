@@ -51,6 +51,17 @@ B.{\hspace{0.167em}}P.~Abbott et. al.
   with advanced ligo and advanced virgo.
 \newblock {\em Living Reviews in Relativity}, 1:19, Dec 2016.
 
+\bibitem{gr1}
+B.{\hspace{0.167em}}P.~Abbott et~al.
+\newblock Tests of general relativity with {GW}150914.
+\newblock {\em Physical Review Letters}, 116(22), May 2016.
+
+\bibitem{gr2}
+Nicol{\'{a}}s Yunes, Kent Yagi, and Frans Pretorius.
+\newblock Theoretical physics implications of the binary black-hole mergers
+  {GW}150914 and {GW}151226.
+\newblock {\em Physical Review D}, 94(8), Oct 2016.
+
 \bibitem{qgrav}
 Xavier Calmet, Iber{\^{e}} Kuntz, and Sonali Mohapatra.
 \newblock Gravitational waves in effective quantum gravity.
@@ -81,11 +92,16 @@ Luc Blanchet, Thibault Damour, Bala~R. Iyer, Clifford~M. Will, and Alan~G.
 Swinburne~Astronomy Productions.
 \newblock Accessed {09/04/2017}.
 
-\bibitem{noise3}
-D.~V. et~al. Martynov.
-\newblock Sensitivity of the advanced ligo detectors at the beginning of
-  gravitational wave astronomy.
-\newblock {\em Phys. Rev. D}, 93:112004, Jun 2016.
+\bibitem{advfig}
+Advanced ligo fig.
+\newblock
+  \url{https://upload.wikimedia.org/wikipedia/commons/d/d5/Simplified_diagram_of_an_Advanced_LIGO_detector.png}.
+\newblock Accessed: 10/04/2017.
+
+\bibitem{noisecurve}
+Rana~X. Adhikari.
+\newblock Gravitational radiation detection with laser interferometry.
+\newblock {\em Reviews of Modern Physics}, 86(1):121--151, Feb 2014.
 
 \bibitem{noise}
 D.{\hspace{0.167em}}V.~Martynov et~al.
@@ -104,14 +120,89 @@ J~Aasi et~al.
 \newblock Advanced {LIGO}.
 \newblock {\em Classical and Quantum Gravity}, 32(7):074001, Mar 2015.
 
+\bibitem{noise3}
+D.~V. et~al. Martynov.
+\newblock Sensitivity of the advanced ligo detectors at the beginning of
+  gravitational wave astronomy.
+\newblock {\em Phys. Rev. D}, 93:112004, Jun 2016.
+
 \bibitem{beampat}
 Robert~L. Forward.
 \newblock Wideband laser-interferometer graviational-radiation experiment.
 \newblock {\em Phys. Rev. D}, 17:379--390, Jan 1978.
 
+\bibitem{search1}
+C.~{Capano}, I.~{Harry}, S.~{Privitera}, and A.~{Buonanno}.
+\newblock {Implementing a search for gravitational waves from non-precessing,
+  spinning binary black holes}.
+\newblock {\em ArXiv e-prints}, February 2016.
+
+\bibitem{search2}
+B.~P. et~al. Abbott.
+\newblock Gw150914: First results from the search for binary black hole
+  coalescence with advanced ligo.
+\newblock {\em Phys. Rev. D}, 93:122003, Jun 2016.
+
 \bibitem{props}
 B.{\hspace{0.167em}}P.~Abbott et~al.
 \newblock Properties of the binary black hole merger {GW}150914.
 \newblock {\em Physical Review Letters}, 116(24), Jun 2016.
+
+\bibitem{spindegen}
+Emily Baird, Stephen Fairhurst, Mark Hannam, and Patricia Murphy.
+\newblock Degeneracy between mass and spin in black-hole-binary waveforms.
+\newblock {\em Physical Review D}, 87(2), Jan 2013.
+
+\bibitem{pe2}
+J.~Veitch et~al.
+\newblock Parameter estimation for compact binaries with ground-based
+  gravitational-wave observations using the {LALInference} software library.
+\newblock {\em Physical Review D}, 91(4), Feb 2015.
+
+\bibitem{inj}
+M.~V. van~der Sluys, C.~Röver, A.~Stroeer, V.~Raymond, I.~Mandel,
+  N.~Christensen, V.~Kalogera, R.~Meyer, and A.M Vecchio.
+\newblock Gravitational-wave astronomy with inspiral signals of spinning
+  compact-object binaries.
+\newblock {\em The Astrophysical Journal Letters}, 688(2):L61, 2008.
+
+\bibitem{pe}
+J.~et~al. Aasi.
+\newblock Parameter estimation for compact binary coalescence signals with the
+  first generation gravitational-wave detector network.
+\newblock {\em Phys. Rev. D}, 88:062001, Sep 2013.
+
+\bibitem{pe3}
+Carl~L. Rodriguez, Benjamin Farr, Vivien Raymond, Will~M. Farr, Tyson~B.
+  Littenberg, Diego Fazi, and Vicky Kalogera.
+\newblock {BASIC} {PARAMETER} {ESTIMATION} {OF} {BINARY} {NEUTRON} {STAR}
+  {SYSTEMS} {BY} {THE} {ADVANCED} {LIGO}/{VIRGO} {NETWORK}.
+\newblock {\em The Astrophysical Journal}, 784(2):119, Mar 2014.
+
+\bibitem{pe_latest}
+Salvatore Vitale, Ryan Lynch, Vivien Raymond, Riccardo Sturani, John Veitch,
+  and Philip Graff.
+\newblock Parameter estimation for heavy binary-black holes with networks of
+  second-generation gravitational-wave detectors.
+\newblock {\em Physical Review D}, 95(6), mar 2017.
+
+\bibitem{precess1}
+Theocharis~A. Apostolatos, Curt Cutler, Gerald~J. Sussman, and Kip~S. Thorne.
+\newblock Spin-induced orbital precession and its modulation of the
+  gravitational waveforms from merging binaries.
+\newblock {\em Phys. Rev. D}, 49:6274--6297, Jun 1994.
+
+\bibitem{precess2}
+Lawrence~E. Kidder.
+\newblock Coalescing binary systems of compact objects to
+  (post${)}^{5/2}$-newtonian order. v. spin effects.
+\newblock {\em Phys. Rev. D}, 52:821--847, Jul 1995.
+
+\bibitem{sloos}
+M.~V. van~der Sluys, C.~Röver, A.~Stroeer, V.~Raymond, I.~Mandel,
+  N.~Christensen, V.~Kalogera, R.~Meyer, and A.~M Vecchio.
+\newblock Gravitational-wave astronomy with inspiral signals of spinning
+  compact-object binaries.
+\newblock {\em The Astrophysical Journal Letters}, 688(2):L61, 2008.
 
 \end{thebibliography}
