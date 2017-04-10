@@ -172,12 +172,26 @@ J.~et~al. Aasi.
   first generation gravitational-wave detector network.
 \newblock {\em Phys. Rev. D}, 88:062001, Sep 2013.
 
+\bibitem{imr}
+P.~Ajith, M.~Hannam, S.~Husa, Y.~Chen, B.~Br\"ugmann, N.~Dorband, D.~M\"uller,
+  F.~Ohme, D.~Pollney, C.~Reisswig, L.~Santamar\'{\i}a, and J.~Seiler.
+\newblock Inspiral-merger-ringdown waveforms for black-hole binaries with
+  nonprecessing spins.
+\newblock {\em Phys. Rev. Lett.}, 106:241101, Jun 2011.
+
 \bibitem{pe3}
 Carl~L. Rodriguez, Benjamin Farr, Vivien Raymond, Will~M. Farr, Tyson~B.
   Littenberg, Diego Fazi, and Vicky Kalogera.
 \newblock {BASIC} {PARAMETER} {ESTIMATION} {OF} {BINARY} {NEUTRON} {STAR}
   {SYSTEMS} {BY} {THE} {ADVANCED} {LIGO}/{VIRGO} {NETWORK}.
 \newblock {\em The Astrophysical Journal}, 784(2):119, Mar 2014.
+
+\bibitem{sloos}
+M.~V. van~der Sluys, C.~Röver, A.~Stroeer, V.~Raymond, I.~Mandel,
+  N.~Christensen, V.~Kalogera, R.~Meyer, and A.~M Vecchio.
+\newblock Gravitational-wave astronomy with inspiral signals of spinning
+  compact-object binaries.
+\newblock {\em The Astrophysical Journal Letters}, 688(2):L61, 2008.
 
 \bibitem{pe_latest}
 Salvatore Vitale, Ryan Lynch, Vivien Raymond, Riccardo Sturani, John Veitch,
@@ -198,11 +212,10 @@ Lawrence~E. Kidder.
   (post${)}^{5/2}$-newtonian order. v. spin effects.
 \newblock {\em Phys. Rev. D}, 52:821--847, Jul 1995.
 
-\bibitem{sloos}
-M.~V. van~der Sluys, C.~Röver, A.~Stroeer, V.~Raymond, I.~Mandel,
-  N.~Christensen, V.~Kalogera, R.~Meyer, and A.~M Vecchio.
-\newblock Gravitational-wave astronomy with inspiral signals of spinning
-  compact-object binaries.
-\newblock {\em The Astrophysical Journal Letters}, 688(2):L61, 2008.
+\bibitem{chip}
+Patricia Schmidt, Frank Ohme, and Mark Hannam.
+\newblock Towards models of gravitational waveforms from generic binaries: Ii.
+  modelling precession effects with a single effective precession parameter.
+\newblock {\em Phys. Rev. D}, 91:024043, Jan 2015.
 
 \end{thebibliography}
