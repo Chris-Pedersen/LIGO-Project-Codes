@@ -147,21 +147,24 @@ Various methods of waveform generation have been attempted, with varying degrees
 --- overview of MCMCs that will be used for inference
 
 \subsection{Precession and its astrophysical importance}
-Considerable research has been done on studying non-spinning binaries and on non-precessing binaries where the spins are aligned or anti-aligned with the orbital angular momentum $\vec{\hat{L}}$\cite{pe3}, but it is only recently that a more complete study of the parameter space has begun\cite{pe_latest}. This is partly down to computational resources, as ignoring spin effects leads to a reduced parameter space and less computationally intensive waveforms. There are a unique set of challenges when considering binaries with non-aligned spin, as due to relativistic effects, these binaries precess around the axis of total angular momentum $\vec{\hat{J}}$, giving a time dependence to the orbital plane of the binary\cite{precess1}\cite{precess2}. This causes the signal in the detector to have an overall amplitude modulation as a function of time due to the change in orientation of the source, and therefore the change in direction of peak emission of GWs.
+Considerable research has been done on studying non-spinning binaries and on non-precessing binaries where the spins are aligned or anti-aligned with the orbital angular momentum $\vec{\hat{L}}$\cite{pe3}, but it is only recently that a more complete study of the parameter space has begun\cite{sloos}\cite{pe_latest}. This is partly down to computational resources, as ignoring spin effects leads to a reduced parameter space and less computationally intensive waveforms. There are a unique set of challenges when considering binaries with non-aligned spin, as due to relativistic effects, these binaries precess around the axis of total angular momentum $\vec{\hat{J}}$, giving a time dependence to the orbital plane of the binary\cite{precess1}\cite{precess2}.
 \begin{figure}[h]
 	\includegraphics[scale=0.75]{fig6.jpg}
 	\centering
 	\caption{Illustration of a precessing binary system https://phys.org/news/2015-03-insights-black-hole-collisions.html}
 	\centering
 \end{figure}
+This causes the signal in the detector to have an overall amplitude modulation as a function of time due to the change in orientation of the source, and therefore the change in direction of peak emission of GWs. 
+\end{figure}
 
-
-https://phys.org/news/2015-03-insights-black-hole-collisions.html
-
-Precessing binaries and effective spin parameters\cite{sloos}
-\subsection{Astrophysical implications}
 Binary formation models and how estimating chi p is significant for distinguishing bewteen them
-
+\section{Precessive effects on the waveform}
+An example of this is shown in Fig. 7, where from this particular perspective the precessive effect appears largest in the case of the in-plane spin being $0.5$, instead of the maximally precessing system with $|\vec{S}|=0.98$. In this case this is due to the fact that the inclination angle is defined with respect to the total angular momentum, and so when we say we are viewing a binary 'edge-on', i.e. at $\iota=\pi/2$, the actual orbital plane of the system will not necessarily be edge-on at all for precessing systems. As a result, it is not always the case that precession affects are most noticeable in systems with the most precession, and a lot depends on the specific combination of source location and the polarisation and inclination angles for a specific event.
+\begin{figure}[h]
+	\includegraphics[scale=1]{fig7.png}
+	\centering
+	\caption{Waveforms for three BBH mergers with $m1=30$, $m2=10$ and with spins only in the $x$ direction on the heavier black hole. The inclination is such that the binary is viewed edge-on.}
+	\centering
 \section{Matching}
 Describe matching, and how matches are used to run targeted software injections.
 Then identify parameter combinations where we are particularly sensitive to chi p, and those where we are not
