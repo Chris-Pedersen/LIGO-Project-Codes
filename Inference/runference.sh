@@ -2,7 +2,7 @@
 
 #Create new directory for this inference run
 DIR=`date '+%Y%m%d-%H%M%S'`
-NAMEDIR=jobs/${DIR}
+NAMEDIR=arc_jobs/${DIR}
 mkdir ${NAMEDIR}
 PAR=${NAMEDIR}/parameters.txt
 TEMPPAR=${NAMEDIR}/temp_par.txt
