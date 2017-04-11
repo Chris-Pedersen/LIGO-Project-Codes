@@ -23,7 +23,7 @@ inc_2=0.
 
 ## Polarisation
 psi_1=0.
-psi_2=0.
+psi_2=0.8
 
 ## Spin parameters
 s1x=0.9
@@ -34,8 +34,8 @@ s2y=0.
 s2z=0.
 
 ## Spin parameters for 2nd waveform
-s1x_2=0.
-s1y_2=0.9
+s1x_2=0.9
+s1y_2=0.
 s1z_2=0.
 s2x_2=0.
 s2y_2=0.
@@ -85,12 +85,12 @@ m, i = match(h, s, psd=psd, low_frequency_cutoff=f_low)
 
 print 'The match is: %1.3f' % m
 plt.figure()
-plt.plot(hp.sample_times,hp,'b-',label="in-plane spin = %1.2f" % spin_z1)#  % approx1)
-plt.plot(sp.sample_times,sp,'r-',label="in-plane spin = %1.2f" % spin_z1_2)# % approx2)
+plt.plot(hp.sample_times,hp,'b-',label="psi = %1.2f" % psi_1)#  % approx1)
+plt.plot(sp.sample_times,sp,'r-',label="psi = %1.2f" % psi_2)# % approx2)
 plt.xlabel("Time (s)")
 plt.ylabel("Strain")
 plt.title("m1=%1.0f,m2=%1.0f,Inc=%1.2f, Match = %1.3f" % (m1_1,m2_1,inc_1,m))
 plt.legend(loc="best")
 plt.xlim(hp.sample_times[0],hp.sample_times[-1])
-plt.savefig("testIndi.png")
+plt.savefig("Individuals/0inc_polarisation_prec.png")
 plt.show("hold")

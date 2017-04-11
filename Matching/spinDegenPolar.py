@@ -12,6 +12,7 @@ mass1=30 # Mass of dominant body - this body is whose spin we vary
 mass2=15 # Mass of 2nd body
 spin_resolution=100 # Number of spin values to 'check' for each gridpoint
 dimensions=100 # Number of mass and inclination values - grid resolution
+MSUN=1.99e30
 
 ## Static parameters
 approx="IMRPhenomPv2"
@@ -46,8 +47,8 @@ def match_inc(inc,spin_1,psi):
                          phi12, #phi12
                          spin_1, #chi1 - this parameter varies
                          spin_2, #chi2
-                         m1_1,
-                         m2_1,
+                         m1_1*MSUN,
+                         m2_1*MSUN,
                          f_low,phiRef=0)
 
    #This is our 'spin1=0' waveform that we match the precessing one with
@@ -59,8 +60,8 @@ def match_inc(inc,spin_1,psi):
                          phi12, #phi12
                          0, #chi1
                          spin_2, #chi2
-                         m1_2,
-                         m2_2,
+                         m1_2*MSUN,
+                         m2_2*MSUN,
                          f_low,phiRef=0)
 
    # Generate the two waveforms to compare
@@ -82,11 +83,6 @@ def match_inc(inc,spin_1,psi):
    # Add polarisation mixing
    h=hp*np.cos(2*psi)+hc*np.sin(2*psi)
    s=sp*np.cos(2*psi)+sc*np.sin(2*psi)
-   
-   print inc
-   print inc_1
-   print inc_2
-   print " \n"
 
    # Resize the waveforms to the same length
    tlen = max(len(s), len(h))
