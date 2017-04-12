@@ -26,8 +26,9 @@ option_utils.add_inference_results_option_group(parser)
 parser.add_argument('--injection-file')
 parser.add_argument('--plot-map-waveforms', action='store_true', default=False)
 parser.add_argument('--output-file', required=True)
+parser.add_argument('--min-xlim')
 opts = parser.parse_args()
-
+print type(opts.min_xlim)
 fp, parameters, _, samples = option_utils.results_from_cli(opts)
 
 ## Extract file location from argument
@@ -129,7 +130,7 @@ for ifo in ['H1', 'L1']:
         gps_time = sargs['tc']
     except KeyError:
         gps_time = map_values['tc']
-    xmin = -1.0 
+    xmin = float(opts.min_xlim)
     xmax = 0.05
 
     # whitened strain
