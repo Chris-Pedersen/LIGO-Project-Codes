@@ -9,12 +9,11 @@ print "Initialising..."
 
 ## Select file
 folder=sys.argv[1]
-parameter=sys.argv[2]
+#parameter=sys.argv[2]
 folder="jobs/"+folder+"/"
 
 ## Combine inputs to form variables
 data_name="output.hdf"
-savename="convergences/convtest.png"
 num_walkers=5000
 
 ## Function to extract posterior for a given parameter
@@ -42,17 +41,18 @@ def findMeans(parameter):
       lower=np.mean(lower) ## Mean of earlier it
       upper=np.mean(upper) ## Mean of later it
       print lower
-      means[aa]=abs(lower-upper)/lower ## Relative change in mean
-   return means
+      means[aa]=abs(lower-upper)/abs(lower) ## Relative change in mean
+   ## Plot results
+   xaxis=np.linspace(1,12,11)
+   savename=folder+parameter+".png"
+   plt.figure()
+   plt.plot(xaxis,means,'bx')
+   plt.title("Convergence of %s" % parameter)
+   plt.xlabel("Iteration number")
+   plt.ylabel("Relative change in mean")
+   plt.grid()
+   plt.show("hold")
+   plt.savefig("%s" % savename)
 
-means=findMeans(parameter)
-      
-## Plot results
-xaxis=np.linspace(1,12,11)
-plt.figure()
-plt.plot(xaxis,means,'bx')
-plt.xlabel("Iteration number")
-plt.ylabel("Relative change in mean")
-plt.grid()
-plt.show("hold")
-plt.savefig("%s" % savename)
+findMeans("ra")
+findMeans("dec")
