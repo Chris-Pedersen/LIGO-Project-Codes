@@ -10,45 +10,45 @@ I'm skipping whatever remains of this entry
 Warning--there's a number but no volume in eins1
 Warning--there's a number but no volume in eins2
 Warning--empty journal in noise2
-You've used 36 entries,
+You've used 38 entries,
             1791 wiz_defined-function locations,
-            641 strings with 8550 characters,
-and the built_in function-call counts, 6539 in all, are:
-= -- 535
-> -- 287
+            652 strings with 9054 characters,
+and the built_in function-call counts, 7112 in all, are:
+= -- 573
+> -- 336
 < -- 0
-+ -- 116
-- -- 80
-* -- 472
-:= -- 1117
-add.period$ -- 106
-call.type$ -- 36
-change.case$ -- 33
++ -- 133
+- -- 95
+* -- 528
+:= -- 1220
+add.period$ -- 112
+call.type$ -- 38
+change.case$ -- 35
 chr.to.int$ -- 0
-cite$ -- 39
-duplicate$ -- 297
-empty$ -- 664
-format.name$ -- 80
-if$ -- 1395
+cite$ -- 41
+duplicate$ -- 315
+empty$ -- 708
+format.name$ -- 95
+if$ -- 1511
 int.to.chr$ -- 0
-int.to.str$ -- 36
-missing$ -- 34
-newline$ -- 181
-num.names$ -- 35
-pop$ -- 71
+int.to.str$ -- 38
+missing$ -- 36
+newline$ -- 191
+num.names$ -- 37
+pop$ -- 73
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 121
+skip$ -- 127
 stack$ -- 0
-substring$ -- 287
-swap$ -- 35
+substring$ -- 323
+swap$ -- 37
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 3
-while$ -- 56
-width$ -- 38
-write$ -- 384
+while$ -- 60
+width$ -- 40
+write$ -- 406
 (There was 1 error message)
