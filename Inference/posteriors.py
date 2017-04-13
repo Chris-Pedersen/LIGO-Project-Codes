@@ -11,7 +11,7 @@ print "Initialising..."
 
 ## Select file
 folder=sys.argv[1]
-folder="jobs/"+folder+"/"
+folder="final/"+folder+"/"
 
 ## Combine inputs to form variables
 data_name="output.hdf"

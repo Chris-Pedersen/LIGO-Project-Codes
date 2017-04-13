@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 
 #Create new directory for this inference run
-DIR=`date '+%Y%m%d-%H%M%S'`
-NAMEDIR=arc_jobs/${DIR}
+#DIR=`date '+%Y%m%d-%H%M%S'`
+DIR=convtest1
+NAMEDIR=final/${DIR}
 mkdir ${NAMEDIR}
 PAR=${NAMEDIR}/parameters.txt
 TEMPPAR=${NAMEDIR}/temp_par.txt
@@ -14,12 +15,12 @@ MASS1=50.
 MASS2=15.
 RA=2.21535724066
 DEC=-1.23649695537
-THETA_JN=1.25
+THETA_JN=2.7  ### <<---- this parameter is no longer relevant
 ## Inclination calculated manually currently using findTheta.py
 INC=2.7
 COA_PHASE=1.5
 POLARIZATION=0.8
-DISTANCE=200000 # in kpc
+DISTANCE=800000 # in kpc
 INJ_F_MIN=20.
 TAPER="start"
 
@@ -50,9 +51,9 @@ PSD_INVERSE_LENGTH=4
 IFOS="H1 L1"
 STRAIN="H1:aLIGOZeroDetHighPower L1:aLIGOZeroDetHighPower"
 SAMPLE_RATE=2048
-F_MIN=19.
+F_MIN=20.
 N_WALKERS=5000
-N_ITERATIONS=10000
+N_ITERATIONS=25000
 N_CHECKPOINT=1000
 PROCESSING_SCHEME=cpu
 NPROCS=12

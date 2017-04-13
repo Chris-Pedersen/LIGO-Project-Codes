@@ -33,7 +33,7 @@ fp, parameters, _, samples = option_utils.results_from_cli(opts)
 
 ## Extract file location from argument
 directorys=opts.output_file
-folder=directorys[:21]
+folder=directorys[:22]
 
 ## Load dictionary and make array of injected parameters
 dic_name="paramDict.npy"
@@ -171,7 +171,7 @@ for aa in range(len(varargs)):
 
 print "save dictionary"
 savename=opts.output_file
-savename=savename+"_dic"
+savename=savename[:-2]+"_dic"
 numpy.save("%s" %  savename, MAPDic)
 
 fp.close()
