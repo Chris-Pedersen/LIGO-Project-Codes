@@ -172,6 +172,19 @@ J.~et~al. Aasi.
   first generation gravitational-wave detector network.
 \newblock {\em Phys. Rev. D}, 88:062001, Sep 2013.
 
+\bibitem{pe4}
+Archisman Ghosh, Walter Del~Pozzo, and Parameswaran Ajith.
+\newblock Estimating parameters of binary black holes from gravitational-wave
+  observations of their inspiral, merger, and ringdown.
+\newblock {\em Phys. Rev. D}, 94:104070, Nov 2016.
+
+\bibitem{waveforms}
+Alessandra Buonanno, Yanbei Chen, Yi~Pan, and Michele Vallisneri.
+\newblock Quasiphysical family of gravity-wave templates for precessing
+  binaries of spinning compact objects: Application to double-spin precessing
+  binaries.
+\newblock {\em Physical Review D}, 70(10), Nov 2004.
+
 \bibitem{imr}
 P.~Ajith, M.~Hannam, S.~Husa, Y.~Chen, B.~Br\"ugmann, N.~Dorband, D.~M\"uller,
   F.~Ohme, D.~Pollney, C.~Reisswig, L.~Santamar\'{\i}a, and J.~Seiler.
@@ -217,5 +230,17 @@ Patricia Schmidt, Frank Ohme, and Mark Hannam.
 \newblock Towards models of gravitational waveforms from generic binaries: Ii.
   modelling precession effects with a single effective precession parameter.
 \newblock {\em Phys. Rev. D}, 91:024043, Jan 2015.
+
+\bibitem{spin}
+Salvatore Vitale, Ryan Lynch, John Veitch, Vivien Raymond, and Riccardo
+  Sturani.
+\newblock Measuring the spin of black holes in binary systems using
+  gravitational waves.
+\newblock {\em Physical Review Letters}, 112(25), Jun 2014.
+
+\bibitem{modal}
+B.~P.~Abbott et~al.
+\newblock Astrophysical implications of the binary black-hole merger gw150914.
+\newblock {\em The Astrophysical Journal Letters}, 818(2):L22, 2016.
 
 \end{thebibliography}
