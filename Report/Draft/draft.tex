@@ -136,7 +136,7 @@ The qualitative idea behind current methods of parameter estimation is that the 
 \begin{equation}
 p(\vec{\theta})|d)=\frac{p(\vec{\theta})p(d|\vec{\theta})}{P(d)}
 \end{equation}
-where $\vec{\theta}$ is an $n$ dimensional vector in our parameter space of $n$ parameters\cite{pe2}. The first term in the numerator, $p(\vec{\theta})$ is known as the \textit{prior} distribution, and quantifies knowledge we already have about the system that should influence our estimation of its' parameters. In practice, in inference of BBHs, the priors are almost always uniform or isotropic distributions. The denomenator, $P(d)$, is essentially a normalisation factor ensuring that the posterior distribution integrats to unity. The crucial term is the \textit{likelihood} for a given set of parameters given the data, which is determined by
+where $\vec{\theta}$ is an $n$ dimensional vector in our parameter space of $n$ parameters\cite{pe2}. The first term in the numerator, $p(\vec{\theta})$ is known as the \textit{prior} distribution, and quantifies knowledge we already have about the system that should influence our estimation of its' parameters. In practice, in inference of BBHs, the priors are almost always uniform or isotropic distributions. The denominator, $P(d)$, is essentially a normalisation factor ensuring that the posterior distribution integrats to unity. The crucial term is the \textit{likelihood} for a given set of parameters given the data, which is determined by
 \begin{equation}
 p((d|\vec{\theta})\propto \exp\bigg(-\frac{1}{2}\sum_{k=1,2}\Big \langle h^M_k(\vec{\theta})-d_k \big\vert h^M_k-d_k(\vec{\theta} \Big \rangle\bigg)
 \end{equation}
