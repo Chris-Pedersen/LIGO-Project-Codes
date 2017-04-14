@@ -45,7 +45,7 @@ def findMeans(parameter):
       lower=np.mean(lower) ## Mean of earlier it
       upper=np.mean(upper) ## Mean of later it
       print lower
-      means[aa]=abs(lower-upper)/abs(lower) ## Relative change in mean
+      means[aa]=abs(lower-upper) ## Relative change in mean
    ## Plot results
    savename=folder+parameter
    plt.figure()
