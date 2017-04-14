@@ -1,5 +1,5 @@
-#import matplotlib
-#matplotlib.use("Agg")
+import matplotlib
+matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
 from pycbc.io import InferenceFile
@@ -10,11 +10,12 @@ print "Initialising..."
 ## Select file
 folder=sys.argv[1]
 #parameter=sys.argv[2]
-folder="jobs/"+folder+"/"
+folder="final/"+folder+"/"
 
 ## Combine inputs to form variables
 data_name="output.hdf"
 num_walkers=5000
+no_steps=50
 
 ## Function to extract posterior for a given parameter
 ## at a given iteration
@@ -33,9 +34,12 @@ def getParameter(parameter,iteration):
 
 ## Find relative change in mean for this parameter as a function of iteration
 def findMeans(parameter):
-   means=np.zeros(11)
-   for aa in range(11): ## Loop over iterations from start to finish
-      print 100*aa/11
+   int_step=np.linspace(0,19999,no_steps)
+   for bb in range(no_steps):
+      int_step[bb]=int(int_step[bb])
+   means=np.zeros(no_steps)
+   for aa in range(no_steps): ## Loop over iterations from start to finish
+      print 100*aa/no_steps
       lower=getParameter(parameter,aa) ## Earlier iteration
       upper=getParameter(parameter,aa+1) ## Later iteration
       lower=np.mean(lower) ## Mean of earlier it
@@ -43,16 +47,15 @@ def findMeans(parameter):
       print lower
       means[aa]=abs(lower-upper)/abs(lower) ## Relative change in mean
    ## Plot results
-   xaxis=np.linspace(1,12,11)
-   savename=folder+parameter+".png"
+   savename=folder+parameter
    plt.figure()
-   plt.plot(xaxis,means,'bx')
+   plt.plot(int_step,means,'bx')
    plt.title("Convergence of %s" % parameter)
    plt.xlabel("Iteration number")
    plt.ylabel("Relative change in mean")
    plt.grid()
    plt.show("hold")
-   plt.savefig("%s" % savename)
+   plt.savefig("%s_conv.png" % savename)
 
 findMeans("ra")
 findMeans("dec")
