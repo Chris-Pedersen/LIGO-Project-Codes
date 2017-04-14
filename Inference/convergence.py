@@ -57,5 +57,5 @@ def findMeans(parameter):
    plt.show("hold")
    plt.savefig("%s_conv.png" % savename)
 
-findMeans("ra")
-findMeans("dec")
+findMeans("inclination")
+findMeans("distance")
