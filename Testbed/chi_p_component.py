@@ -1,5 +1,5 @@
 import matplotlib
-#matplotlib.use('Agg')
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from pycbc.inference import distributions
 import numpy as np
@@ -20,7 +20,7 @@ dist_size=1000000
 ## Create distribution classes
 mass_dist=distributions.Uniform(mass1=(1.,80.),mass2=(1.,80.))
 polar_dist=distributions.SinAngle(s1_polar=(0,1),s2_polar=(0,1))
-spina_dist=distributions.Uniform(spin1_a=(0.,.9),spin2_a=(0.,.9))
+spina_dist=distributions.Uniform(spin1_a=(0.,1.),spin2_a=(0.,1.))
 
 ## Generate distribution arrays
 mass_samples=mass_dist.rvs(size=dist_size)
