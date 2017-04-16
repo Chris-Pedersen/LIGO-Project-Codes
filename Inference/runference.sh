@@ -2,7 +2,7 @@
 
 #Create new directory for this inference run
 #DIR=`date '+%Y%m%d-%H%M%S'`
-DIR=convtest1
+DIR=inc_highMR_4
 NAMEDIR=final/${DIR}
 mkdir ${NAMEDIR}
 PAR=${NAMEDIR}/parameters.txt
@@ -17,7 +17,7 @@ RA=2.21535724066
 DEC=-1.23649695537
 THETA_JN=2.7  ### <<---- this parameter is no longer relevant
 ## Inclination calculated manually currently using findTheta.py
-INC=2.7
+INC=1.89
 COA_PHASE=1.5
 POLARIZATION=0.8
 DISTANCE=800000 # in kpc
@@ -53,7 +53,7 @@ STRAIN="H1:aLIGOZeroDetHighPower L1:aLIGOZeroDetHighPower"
 SAMPLE_RATE=2048
 F_MIN=20.
 N_WALKERS=5000
-N_ITERATIONS=25000
+N_ITERATIONS=12000
 N_CHECKPOINT=1000
 PROCESSING_SCHEME=cpu
 NPROCS=12

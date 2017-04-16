@@ -28,16 +28,17 @@ parser.add_argument('--plot-map-waveforms', action='store_true', default=False)
 parser.add_argument('--output-file', required=True)
 parser.add_argument('--min-xlim')
 opts = parser.parse_args()
-print type(opts.min_xlim)
 fp, parameters, _, samples = option_utils.results_from_cli(opts)
 
 ## Extract file location from argument
 directorys=opts.output_file
-folder=directorys[:22]
+folder=directorys[:19]
+print folder
 
 ## Load dictionary and make array of injected parameters
 dic_name="paramDict.npy"
 dict_load=folder+dic_name
+print dict_load
 injected=numpy.load("%s" % dict_load).item()
 ## Generate array manually
 inj_vals=list([1126259462.0,     # time
@@ -171,6 +172,7 @@ for aa in range(len(varargs)):
 
 print "save dictionary"
 savename=opts.output_file
+print savename
 savename=savename[:-2]+"_dic"
 numpy.save("%s" %  savename, MAPDic)
 
