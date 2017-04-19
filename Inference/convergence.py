@@ -8,14 +8,14 @@ import sys
 print "Initialising..."
 
 ## Select file
-folder=sys.argv[1]
+folder="convtest1"
 #parameter=sys.argv[2]
 folder="final/"+folder+"/"
 
 ## Combine inputs to form variables
 data_name="output.hdf"
 num_walkers=5000
-no_steps=50
+no_steps=10
 
 ## Function to extract posterior for a given parameter
 ## at a given iteration
@@ -92,15 +92,16 @@ def chi_effect(it_no):
 
 ## Find relative change in mean for this parameter as a function of iteration
 def findMeans(parameter):
+   print "Performing convergence test for %s" % parameter
    if parameter=="chi_p":
       int_step=np.linspace(0,19999,no_steps)
       for bb in range(no_steps):
          int_step[bb]=int(int_step[bb])
       means=np.zeros(no_steps)
       for aa in range(no_steps): ## Loop over iterations from start to finish
-         print "%.2f %% complete" % 100*aa/no_steps
-         lower=chi_p(aa) ## Earlier iteration
-         upper=chi_p(aa+1) ## Later iteration
+         print "%.2f %% complete" % (100*aa/no_steps)
+         lower=chi_prec(aa) ## Earlier iteration
+         upper=chi_prec(aa+1) ## Later iteration
          lower=np.mean(lower) ## Mean of earlier it
          upper=np.mean(upper) ## Mean of later it
          means[aa]=abs(lower-upper) ## Relative change in mean
@@ -110,9 +111,9 @@ def findMeans(parameter):
          int_step[bb]=int(int_step[bb])
       means=np.zeros(no_steps)
       for aa in range(no_steps): ## Loop over iterations from start to finish
-         print "%.2f %% complete" % 100*aa/no_steps
-         lower=chi_eff(aa) ## Earlier iteration
-         upper=chi_eff(aa+1) ## Later iteration
+         print "%.2f %% complete" % (100*aa/no_steps)
+         lower=chi_effect(aa) ## Earlier iteration
+         upper=chi_effect(aa+1) ## Later iteration
          lower=np.mean(lower) ## Mean of earlier it
          upper=np.mean(upper) ## Mean of later it
          means[aa]=abs(lower-upper) ## Relative change in mean
@@ -123,7 +124,7 @@ def findMeans(parameter):
          int_step[bb]=int(int_step[bb])
       means=np.zeros(no_steps)
       for aa in range(no_steps): ## Loop over iterations from start to finish
-         print "%.2f %% complete" % 100*aa/no_steps
+         print "%.2f %% complete" % (100*aa/no_steps)
          lower=getParameter(parameter,aa) ## Earlier iteration
          upper=getParameter(parameter,aa+1) ## Later iteration
          lower=np.mean(lower) ## Mean of earlier it
@@ -140,5 +141,5 @@ def findMeans(parameter):
    plt.show("hold")
    plt.savefig("%s_conv.png" % savename)
 
-findMeans("inclination")
-findMeans("distance")
+findMeans("chi_eff")
+findMeans("chi_p")
