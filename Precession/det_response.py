@@ -9,7 +9,7 @@ fig = pyplot.figure()
 xmin=-0.5
 xmax=0.05
 
-for ifo in ['H1', 'L1', 'V1', 'I1', 'K1']:
+for ifo in ['H1', 'L1', 'V1']:
    ii+=1
    delta_t=1./2048
    fmin=20
