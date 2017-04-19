@@ -2,7 +2,7 @@
 
 #Create new directory for this inference run
 #DIR=`date '+%Y%m%d-%H%M%S'`
-DIR=close_highMR_3
+DIR=close_highMR_2
 NAMEDIR=final/${DIR}
 mkdir ${NAMEDIR}
 PAR=${NAMEDIR}/parameters.txt
@@ -17,7 +17,7 @@ RA=2.21535724066
 DEC=-1.23649695537
 THETA_JN=2.7  ### <<---- this parameter is no longer relevant
 ## Inclination calculated manually currently using findTheta.py
-INC=1.26 
+INC=0.63 
 COA_PHASE=1.5
 POLARIZATION=0.8
 DISTANCE=200000 # in kpc
@@ -84,10 +84,10 @@ lalapps_inspinj \
     --min-distance ${DISTANCE} \
     --max-distance ${DISTANCE} \
     --i-distr fixed \
-    --fixed-inc ${INC} \
+    --fixed-inc ${INC_inj} \
     --coa-phase-distr fixed \
     --fixed-coa-phase ${COA_PHASE} \
-    --polarization ${POLARIZATION} \
+    --polarization ${POLARIZATION_inj} \
     --m-distr fixMasses \
     --fixed-mass1 ${MASS1} \
     --fixed-mass2 ${MASS2} \
