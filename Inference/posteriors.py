@@ -214,6 +214,24 @@ def plotPosterior(parameter):
       ## Injected value
       injected_value=injected["mass2"]/injected["mass1"]
 
+   ## Ensure m1>m2 in posteriors
+   elif parameter=="mass1":
+      mass1=getParameter("mass1")
+      mass2=getParameter("mass2")
+      parameter_values=np.zeros(len(mass1))
+      for aa in range(len(mass1)):
+         parameter_values[aa]=max(mass1[aa],mass2[aa])
+      injected_value=max(injected["mass1"],injected["mass2"])
+ 
+   ## Ensure m2>m1 in posteriors
+   elif parameter=="mass2":
+      mass1=getParameter("mass1")
+      mass2=getParameter("mass2")
+      parameter_values=np.zeros(len(mass1))
+      for aa in range(len(mass1)):
+         parameter_values[aa]=min(mass1[aa],mass2[aa])
+      injected_value=min(injected["mass1"],injected["mass2"])
+
    else:
       parameter_values=getParameter(parameter)
       values=len(parameter_values)
