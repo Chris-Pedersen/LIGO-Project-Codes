@@ -1,5 +1,8 @@
-#import matplotlib
-#matplotlib.use('Agg')
+phase2=0.78539816
+savename="phase1"
+
+import matplotlib
+matplotlib.use('Agg')
 from pycbc.waveform import get_td_waveform
 from pycbc.filter import match
 from pycbc.psd import aLIGOZeroDetHighPower
@@ -12,17 +15,17 @@ approx1="IMRPhenomPv2"
 approx2="IMRPhenomPv2"
 
 ## Masses
-m1_1=30.
+m1_1=55.
 m2_1=15.
-m1_2=30.
+m1_2=55.
 m2_2=15.
 
 ## Inclination
-inc_1=0.
-inc_2=0.
+inc_1=1.62
+inc_2=1.62
 
 ## Polarisation
-psi_1=0.
+psi_1=0.8
 psi_2=0.8
 
 ## Spin parameters
@@ -32,6 +35,10 @@ s1z=0.
 s2x=0.
 s2y=0.
 s2z=0.
+
+## Phase
+phase1=0.0
+
 
 ## Spin parameters for 2nd waveform
 s1x_2=0.9
@@ -55,6 +62,7 @@ hp, hc = get_td_waveform(approximant=approx1,
                       spin1y=s1y,spin1x=s1x,spin1z=s1z,
                       spin2y=s2y,spin2x=s2x,spin2z=s2z,
                       f_lower=f_low,inclination=inc_1,
+                      coa_phase=phase1,
                       delta_t=1.0/sample_rate)
 
 # MAP waveform
@@ -64,6 +72,7 @@ sp, sc = get_td_waveform(approximant=approx2,
                       spin1y=s1y_2,spin1x=s1x_2,spin1z=s1z_2,
                       spin2y=s2y_2,spin2x=s2x_2,spin2z=s2z_2,
                       f_lower=f_low,inclination=inc_2,
+                      coa_phase=phase2,
                       delta_t=1.0/sample_rate)
 
 # Mix polarisations
@@ -85,12 +94,12 @@ m, i = match(h, s, psd=psd, low_frequency_cutoff=f_low)
 
 print 'The match is: %1.3f' % m
 plt.figure()
-plt.plot(hp.sample_times,hp,'b-',label="psi = %1.2f" % psi_1)#  % approx1)
-plt.plot(sp.sample_times,sp,'r-',label="psi = %1.2f" % psi_2)# % approx2)
+plt.plot(hp.sample_times,hp,'b-',label="phi = %1.2f" % phase1)
+plt.plot(sp.sample_times,sp,'r-',label="phi = %1.2f" % phase2)
 plt.xlabel("Time (s)")
 plt.ylabel("Strain")
 plt.title("m1=%1.0f,m2=%1.0f,Inc=%1.2f, Match = %1.3f" % (m1_1,m2_1,inc_1,m))
 plt.legend(loc="best")
 plt.xlim(hp.sample_times[0],hp.sample_times[-1])
-plt.savefig("Individuals/0inc_polarisation_prec.png")
+plt.savefig("Individuals/%s.png" % savename)
 plt.show("hold")
