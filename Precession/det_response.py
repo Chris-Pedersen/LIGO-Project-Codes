@@ -1,6 +1,6 @@
+import matplotlib
+matplotlib.use('Agg')
 from matplotlib import pyplot
-
-
 
 injection_file_name="injection.xml.gz"
 ii=0
@@ -21,4 +21,4 @@ for ifo in ['H1', 'L1', 'V1', 'I1', 'K1']:
    ax.plot(h.sample_times.numpy(), h)
    pyplot.title("%s" % ifo)
    #pyplot.xlim(-0.5,0.05)
-pyplot.show("hold")
+pyplot.savefig("det_strain.png")
