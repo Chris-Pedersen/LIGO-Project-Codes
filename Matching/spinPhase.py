@@ -7,14 +7,14 @@ import numpy as np
 import pickle
 
 ## Finds the minimum spin difference for the match  between a precessing
-## and a non-precessing waveform to drop below 0.95 for a range of masses
+## and a non-precessing waveform to drop below 0.95 for a range of phases
 ## and inclinations
 
 ## Computational parameters
 match_lim=0.95 # Set limit to distinguish between spinning and non spinning
 mass1=55 # Mass of dominant body - this body is whose spin we vary
-mass2_low=15 # Upper mass boundary
-mass2_high=55 # Lower mass boundary
+mass2_low=0 # Upper mass boundary
+mass2_high=2*np.pi # Lower mass boundary
 spin_resolution=100 # Number of spin values to 'check' for each gridpoint
 dimensions=100 # Number of mass and inclination values - grid resolution
 
@@ -24,7 +24,7 @@ approx1="IMRPhenomPv2"
 approx2="IMRPhenomPv2"
 f_low = 20
 sample_rate = 4096
-savename="2D_data/s2_095z_cross.p"
+savename="2D_data/phase_inc_psi0.p"
 
 ## Spin parameters
 phi_JL=0 ## Polarisation angle perhaps?
@@ -39,13 +39,13 @@ specs=np.array([mass1,match_lim,approx,"Inclination","Spin difference required"]
 def match_inc(inc,spin_1,mass2):
    # Allow masses to vary as parameters
    m1_1=mass1
-   m2_1=mass2
+   m2_1=15
    m1_2=mass1
-   m2_2=mass2
+   m2_2=15
    
    # Phases
-   phase1=0
-   phase2=0
+   phase1=mass2
+   phase2=mass2
    # Convert to precessing coords
    inc_1,s1x,s1y,s1z,s2x,s2y,s2z=SimInspiralTransformPrecessingNewInitialConditions(
                          inc, #theta_JN
