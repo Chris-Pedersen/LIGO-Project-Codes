@@ -34,7 +34,8 @@ params=np.array(["q",
                 "chi_p",
                 "chi_eff",
                 "ra",
-                "dec"])
+                "dec",
+                "phase"])
 
 ## Load in dictionary
 dic_name="paramDict.npy"
@@ -231,6 +232,11 @@ def plotPosterior(parameter):
       for aa in range(len(mass1)):
          parameter_values[aa]=min(mass1[aa],mass2[aa])
       injected_value=min(injected["mass1"],injected["mass2"])
+
+   elif parameter=="phase":
+      parameter_values=getParameter("coa_phase")
+      values=len(parameter_values)
+      injected_value=injected[parameter]
 
    else:
       parameter_values=getParameter(parameter)
