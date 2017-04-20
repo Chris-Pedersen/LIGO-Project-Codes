@@ -10,6 +10,9 @@ import pickle
 ## and a non-precessing waveform to drop below 0.95 for a range of masses
 ## and inclinations
 
+## WARNING
+## CURRENTLY ONLY MATCHES CROSS POLARISATIONS
+
 ## Computational parameters
 match_lim=0.95 # Set limit to distinguish between spinning and non spinning
 mass1=55 # Mass of dominant body - this body is whose spin we vary
