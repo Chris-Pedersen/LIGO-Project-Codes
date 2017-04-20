@@ -47,7 +47,7 @@ hp, hc = get_td_waveform(approximant=approx1,
                       ra=injected["ra"],
                       dec=injected["dec"],
                       delta_t=1.0/sample_rate,
-                      coa_phase=1.5)
+                      coa_phase=injected["phase"])
 
 # Find spin angles from MAP Cartesian values
 s1_a=maps["spin1_a"]
@@ -69,7 +69,8 @@ sp, sc = get_td_waveform(approximant=approx2,
                       f_lower=19.,inclination=maps["inclination"],
                       ra=maps["ra"],
                       dec=maps["dec"],
-                      delta_t=1.0/sample_rate)
+                      delta_t=1.0/sample_rate,
+                      coa_phase=maps["coa_phase"])
 
 ## Mix polarisation angles
 psi_1=injected["polarization"]
