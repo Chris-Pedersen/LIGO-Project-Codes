@@ -90,16 +90,16 @@ def match_inc(inc,spin_1,mass2):
                          coa_phase=phase2,
                          delta_t=1.0/sample_rate)
    # Resize the waveforms to the same length
-   tlen = max(len(sc), len(hc))
-   sc.resize(tlen)
-   hc.resize(tlen)
+   tlen = max(len(sp), len(hp))
+   sp.resize(tlen)
+   hp.resize(tlen)
    # Generate the aLIGO ZDHP PSD
    delta_f = 1.0 / sc.duration
    flen = tlen/2 + 1
    psd = aLIGOZeroDetHighPower(flen, delta_f, f_low)
    # Note: This takes a while the first time as an FFT plan is generated
    # subsequent calls are much faster.
-   m, i = match(hc, sc, psd=psd, low_frequency_cutoff=f_low)
+   m, i = match(hp, sp, psd=psd, low_frequency_cutoff=f_low)
    #print 'The match is: %1.3f' % m
    return m
 
