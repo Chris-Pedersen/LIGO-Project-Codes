@@ -1,6 +1,3 @@
-phase2=0.78539816
-savename="phase1"
-
 import matplotlib
 matplotlib.use('Agg')
 from pycbc.waveform import get_td_waveform
@@ -10,6 +7,9 @@ import matplotlib.pyplot as plt
 from lalsimulation import SimInspiralTransformPrecessingNewInitialConditions
 import numpy as np
 import sys
+
+savename="indi"
+
 
 approx1="IMRPhenomPv2"
 approx2="IMRPhenomPv2"
@@ -21,32 +21,32 @@ m1_2=55.
 m2_2=15.
 
 ## Inclination
-inc_1=1.62
-inc_2=1.62
+inc_1=1.55
+inc_2=1.55
 
 ## Polarisation
-psi_1=0.8
-psi_2=0.8
+psi_1=np.pi/2.
+psi_2=np.pi/2.
 
 ## Spin parameters
-s1x=0.9
+s1x=0.
 s1y=0.
 s1z=0.
 s2x=0.
 s2y=0.
-s2z=0.
-
-## Phase
-phase1=0.0
-
+s2z=0.95
 
 ## Spin parameters for 2nd waveform
-s1x_2=0.9
+s1x_2=0.15
 s1y_2=0.
 s1z_2=0.
 s2x_2=0.
 s2y_2=0.
-s2z_2=0.
+s2z_2=0.95
+
+## Phase
+phase1=np.pi
+phase2=np.pi
 
 f_low=20
 sample_rate=4096
@@ -94,8 +94,8 @@ m, i = match(h, s, psd=psd, low_frequency_cutoff=f_low)
 
 print 'The match is: %1.3f' % m
 plt.figure()
-plt.plot(hp.sample_times,hp,'b-',label="phi = %1.2f" % phase1)
-plt.plot(sp.sample_times,sp,'r-',label="phi = %1.2f" % phase2)
+plt.plot(hp.sample_times,h,'b-',label="phi = %1.2f" % phase1)
+plt.plot(sp.sample_times,s,'r-',label="phi = %1.2f" % phase2)
 plt.xlabel("Time (s)")
 plt.ylabel("Strain")
 plt.title("m1=%1.0f,m2=%1.0f,Inc=%1.2f, Match = %1.3f" % (m1_1,m2_1,inc_1,m))
