@@ -32,7 +32,7 @@ fp, parameters, _, samples = option_utils.results_from_cli(opts)
 
 ## Extract file location from argument
 directorys=opts.output_file
-folder=directorys[:19]
+folder=directorys[:21]
 print folder
 
 ## Load dictionary and make array of injected parameters

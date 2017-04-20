@@ -18,7 +18,7 @@ DEC=-1.23649695537
 THETA_JN=2.7  ### <<---- this parameter is no longer relevant
 ## Inclination calculated manually currently using findTheta.py
 INC=0.63 
-COA_PHASE=1.5
+COA_PHASE=0.
 POLARIZATION=0.8
 DISTANCE=200000 # in kpc
 INJ_F_MIN=20.
@@ -86,7 +86,7 @@ lalapps_inspinj \
     --i-distr fixed \
     --fixed-inc ${INC_inj} \
     --coa-phase-distr fixed \
-    --fixed-coa-phase ${COA_PHASE} \
+    --fixed-coa-phase ${COA_PHASE_inj} \
     --polarization ${POLARIZATION_inj} \
     --m-distr fixMasses \
     --fixed-mass1 ${MASS1} \

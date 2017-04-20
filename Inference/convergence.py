@@ -15,7 +15,7 @@ folder="final/"+folder+"/"
 ## Combine inputs to form variables
 data_name="output.hdf"
 num_walkers=5000
-no_steps=10
+no_steps=50
 
 ## Function to extract posterior for a given parameter
 ## at a given iteration
