@@ -24,7 +24,11 @@ approx1="IMRPhenomPv2"
 approx2="IMRPhenomPv2"
 f_low = 20
 sample_rate = 4096
-savename="2D_data/phase_inc_psi0.p"
+savename="2D_data/phase_inc_mixed.p"
+
+## Polarisation angle
+psi_1=np.pi/4.
+psi_2=np.pi/4.
 
 ## Spin parameters
 phi_JL=0 ## Polarisation angle perhaps?
@@ -89,19 +93,24 @@ def match_inc(inc,spin_1,mass2):
                          f_lower=f_low,inclination=inc_2,
                          coa_phase=phase2,
                          delta_t=1.0/sample_rate)
+   # Add polarisation mixing
+   h=hp*np.cos(2*psi_1)+hc*np.sin(2*psi_1)
+   s=sp*np.cos(2*psi_2)+sc*np.sin(2*psi_2)
+
    # Resize the waveforms to the same length
-   tlen = max(len(sp), len(hp))
-   sp.resize(tlen)
-   hp.resize(tlen)
+   tlen = max(len(s), len(h))
+   s.resize(tlen)
+   h.resize(tlen)
    # Generate the aLIGO ZDHP PSD
-   delta_f = 1.0 / sc.duration
+   delta_f = 1.0 / s.duration
    flen = tlen/2 + 1
    psd = aLIGOZeroDetHighPower(flen, delta_f, f_low)
    # Note: This takes a while the first time as an FFT plan is generated
    # subsequent calls are much faster.
-   m, i = match(hp, sp, psd=psd, low_frequency_cutoff=f_low)
+   m, i = match(h, s, psd=psd, low_frequency_cutoff=f_low)
    #print 'The match is: %1.3f' % m
    return m
+
 
 # For a mass value, find the minimum spin difference required to distinguish
 # between precessing and non-precessing waveforms for ALL inclinations
