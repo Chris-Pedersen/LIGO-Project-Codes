@@ -158,7 +158,7 @@ for ifo in ['H1', 'L1']:
     print "Match between map and injected is %.2f" % m
     ax.set_xlim(xmin, xmax)
     ax.set_ylim(ylim)
-    ax.text(xmin, ylim[0], 'Match=%.2f' % m, ha='right', va='top', fontsize=22)
+    ax.text(xmin, ylim[0], 'Match=%.2f' % m, ha='left', va='bottom', fontsize=12)
     ax.set_ylabel('{} whitened strain'.format(ifo))
     if ii == 2:
         ax.set_xlabel('GPS time - {} (s)'.format(gps_time))
