@@ -153,6 +153,12 @@ Emily Baird, Stephen Fairhurst, Mark Hannam, and Patricia Murphy.
 \newblock Degeneracy between mass and spin in black-hole-binary waveforms.
 \newblock {\em Physical Review D}, 87(2), Jan 2013.
 
+\bibitem{oldest_pe}
+Curt Cutler and \'Eanna~E. Flanagan.
+\newblock Gravitational waves from merging compact binaries: How accurately can
+  one extract the binary's parameters from the inspiral waveform?
+\newblock {\em Phys. Rev. D}, 49:2658--2697, Mar 1994.
+
 \bibitem{pe2}
 J.~Veitch et~al.
 \newblock Parameter estimation for compact binaries with ground-based
@@ -237,6 +243,15 @@ Salvatore Vitale, Ryan Lynch, John Veitch, Vivien Raymond, and Riccardo
 \newblock Measuring the spin of black holes in binary systems using
   gravitational waves.
 \newblock {\em Physical Review Letters}, 112(25), Jun 2014.
+
+\bibitem{eob}
+Andrea Taracchini, Alessandra Buonanno, Yi~Pan, Tanja Hinderer, Michael Boyle,
+  Daniel~A. Hemberger, Lawrence~E. Kidder, Geoffrey Lovelace, Abdul~H. Mrou\'e,
+  Harald~P. Pfeiffer, Mark~A. Scheel, B\'ela Szil\'agyi, Nicholas~W. Taylor,
+  and Anil Zenginoglu.
+\newblock Effective-one-body model for black-hole binaries with generic mass
+  ratios and spins.
+\newblock {\em Phys. Rev. D}, 89:061502, Mar 2014.
 
 \bibitem{modal}
 B.~P.~Abbott et~al.

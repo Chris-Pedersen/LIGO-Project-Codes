@@ -1,4 +1,4 @@
-This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
+This is BibTeX, Version 0.99d (TeX Live 2016)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: draft.aux
 The style file: unsrt.bst
@@ -10,45 +10,45 @@ I'm skipping whatever remains of this entry
 Warning--there's a number but no volume in eins1
 Warning--there's a number but no volume in eins2
 Warning--empty journal in noise2
-You've used 42 entries,
+You've used 44 entries,
             1791 wiz_defined-function locations,
-            673 strings with 9750 characters,
-and the built_in function-call counts, 7894 in all, are:
-= -- 633
-> -- 382
+            682 strings with 10333 characters,
+and the built_in function-call counts, 8520 in all, are:
+= -- 678
+> -- 434
 < -- 0
-+ -- 150
-- -- 108
-* -- 593
-:= -- 1358
-add.period$ -- 124
-call.type$ -- 42
-change.case$ -- 39
++ -- 168
+- -- 124
+* -- 654
+:= -- 1468
+add.period$ -- 130
+call.type$ -- 44
+change.case$ -- 41
 chr.to.int$ -- 0
-cite$ -- 45
-duplicate$ -- 349
-empty$ -- 780
-format.name$ -- 108
-if$ -- 1676
+cite$ -- 47
+duplicate$ -- 367
+empty$ -- 827
+format.name$ -- 124
+if$ -- 1802
 int.to.chr$ -- 0
-int.to.str$ -- 42
-missing$ -- 40
-newline$ -- 211
-num.names$ -- 41
-pop$ -- 77
+int.to.str$ -- 44
+missing$ -- 42
+newline$ -- 221
+num.names$ -- 43
+pop$ -- 79
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 141
+skip$ -- 148
 stack$ -- 0
-substring$ -- 350
-swap$ -- 41
+substring$ -- 399
+swap$ -- 43
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 3
-while$ -- 66
-width$ -- 44
-write$ -- 450
+while$ -- 71
+width$ -- 46
+write$ -- 472
 (There was 1 error message)

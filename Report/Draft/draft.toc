@@ -1,0 +1,15 @@
+\contentsline {section}{\numberline {1}Introduction}{2}
+\contentsline {subsection}{\numberline {1.1}A Brief History}{2}
+\contentsline {subsection}{\numberline {1.2}Gravitational waves and their sources}{3}
+\contentsline {subsection}{\numberline {1.3}LIGO}{4}
+\contentsline {subsection}{\numberline {1.4}Parameter estimation}{5}
+\contentsline {subsection}{\numberline {1.5}Precession and its astrophysical importance}{8}
+\contentsline {section}{\numberline {2}Precessing waveforms}{9}
+\contentsline {section}{\numberline {3}Matching}{10}
+\contentsline {section}{\numberline {4}Software injections}{11}
+\contentsline {subsection}{\numberline {4.1}Signal extraction}{11}
+\contentsline {subsection}{\numberline {4.2}Inference pipeline}{11}
+\contentsline {subsection}{\numberline {4.3}Inference runs}{11}
+\contentsline {subsection}{\numberline {4.4}Impact of Virgo}{11}
+\contentsline {section}{\numberline {5}Conclusions and implications}{12}
+\contentsline {section}{\numberline {6}Reflective Statement}{12}
