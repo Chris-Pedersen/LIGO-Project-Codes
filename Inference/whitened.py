@@ -1,5 +1,4 @@
 #! /usr/bin/env python
-
 import h5py
 import copy
 import argparse
@@ -38,7 +37,6 @@ print folder
 ## Load dictionary and make array of injected parameters
 dic_name="paramDict.npy"
 dict_load=folder+dic_name
-print dict_load
 injected=numpy.load("%s" % dict_load).item()
 ## Generate array manually
 inj_vals=list([1126259462.0,     # time
@@ -160,6 +158,7 @@ for ifo in ['H1', 'L1']:
     print "Match between map and injected is %.2f" % m
     ax.set_xlim(xmin, xmax)
     ax.set_ylim(ylim)
+    ax.text(xmin, ylim[0], 'Match=%.2f' % m, ha='right', va='top', fontsize=22)
     ax.set_ylabel('{} whitened strain'.format(ifo))
     if ii == 2:
         ax.set_xlabel('GPS time - {} (s)'.format(gps_time))
