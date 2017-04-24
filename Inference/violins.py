@@ -36,6 +36,7 @@ from pycbc.waveform import get_td_waveform
 
 ## Custom parameters
 pref="close_highMR_"
+whatDo=sys.argv[1]
 
 ## Static parameters
 data_name="output.hdf"
@@ -57,7 +58,7 @@ def getParameter(parameter,folder):
       parameter_values=np.append(parameter_values,temp[-1])
    return parameter_values
 
-def chi_effect():
+def chi_effect(folder):
    ## chi_eff is given by (S1/m1+S2/m2) dot L/M where M is total mass
    ## So for this we need m1, m2, s1_a, s2_a, s1_polar, s2_polar... fak me
    chi_eff=np.zeros(num_walkers)
@@ -79,7 +80,7 @@ def chi_effect():
    chi_eff=(s1_z/m1+s2_z/m2)/M
    return chi_eff
 
-def chi_prec():
+def chi_prec(folder):
    ## chi_p is given by (1/B1m1^2)*max(B1*S1perp,B2*S2perp)
    ## with B1=2+3/2q, B2=2+3q/2
    ## so we need m1, q, s1_a, s1_polar, s2_a, s2_polar
@@ -133,7 +134,7 @@ def getPosterior(parameter,folder):
       #injected_value=((m1_inj*m2_inj)**(3./5.))/(M_inj**(1./5.))
 
    elif parameter=="chi_eff":
-      parameter_values=chi_effect()
+      parameter_values=(chi_effect,folder)
       '''
 
       ## Find #injected value
@@ -150,7 +151,7 @@ def getPosterior(parameter,folder):
       '''
 
    elif parameter=="chi_p":
-      parameter_values=chi_prec()
+      parameter_values=chi_prec(folder)
       '''
       ## Derive #injected value
       m1=injected["mass1"]
@@ -231,5 +232,5 @@ def violinMe(parameter,pref):
    print "--Figure saved--"
 
 ## Add violin plot functions - need to check documentation for this
-violinMe("distance",pref)
+violinMe("chi_p",pref)
 
