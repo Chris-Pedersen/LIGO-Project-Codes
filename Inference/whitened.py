@@ -181,9 +181,9 @@ figname=savename[:-2]+"_SNR"
 ## Plot and save SNRs
 print "saving SNR figures"
 jj=0
+pyplot.figure()
 for ifo in ['H1', 'L1']: ### Will need to manually extend this for Virgo
     jj+=1
-    pyplot.figure()
     map_snr=snr_list[jj-1]
     inj_snr=snr_list[jj]
     pyplot.subplot(2,1,jj)
