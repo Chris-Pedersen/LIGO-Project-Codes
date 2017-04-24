@@ -36,7 +36,7 @@ from pycbc.waveform import get_td_waveform
 
 ## Custom parameters
 pref="close_highMR_"
-whatDo=sys.argv[1]
+whatDo=str(sys.argv[1])
 
 ## Static parameters
 data_name="output.hdf"
@@ -61,7 +61,7 @@ def getParameter(parameter,folder):
 def chi_effect(folder):
    ## chi_eff is given by (S1/m1+S2/m2) dot L/M where M is total mass
    ## So for this we need m1, m2, s1_a, s2_a, s1_polar, s2_polar... fak me
-   chi_eff=np.zeros(num_walkers)
+   #chi_eff=np.zeros(num_walkers)
    print "   Extracting intrinsic parameters..."
    ## Generate arrays for each paramter
    s1_a=getParameter("spin1_a",folder)
@@ -77,8 +77,8 @@ def chi_effect(folder):
    s2_z=m2*m2*s2_a*np.cos(s2_polar)
 
    print "   Calculating derived parameters..."
-   chi_eff=(s1_z/m1+s2_z/m2)/M
-   return chi_eff
+   chi_e=(s1_z/m1+s2_z/m2)/M
+   return chi_e
 
 def chi_prec(folder):
    ## chi_p is given by (1/B1m1^2)*max(B1*S1perp,B2*S2perp)
@@ -134,7 +134,7 @@ def getPosterior(parameter,folder):
       #injected_value=((m1_inj*m2_inj)**(3./5.))/(M_inj**(1./5.))
 
    elif parameter=="chi_eff":
-      parameter_values=(chi_effect,folder)
+      parameter_values=chi_effect(folder)
       '''
 
       ## Find #injected value
@@ -230,5 +230,5 @@ def violinMe(parameter,pref):
    print "--Figure saved--"
 
 ## Add violin plot functions - need to check documentation for this
-violinMe("chi_p",pref)
+violinMe(whatDo,pref)
 
