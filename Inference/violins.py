@@ -35,7 +35,7 @@ from pycbc.waveform import get_td_waveform
 
 
 ## Custom parameters
-prefix="close_highMR_"
+pref="close_highMR_"
 
 ## Static parameters
 data_name="output.hdf"
@@ -213,8 +213,11 @@ def getPosterior(parameter,folder):
 
 def violinMe(parameter,pref):
    for x_sample in range(1,5): ## Loop over samples of the x axis
-      thisFolder=pref+x_xample  ## Select specific folder for this sample
-      posterior=getPosterior(parameter,thisFolder ## Extract desired posterior from the hdf file
+      thisFolder=pref+str(x_sample)  ## Select specific folder for this sample
+      posterior=getPosterior(parameter,thisFolder) ## Extract desired posterior from the hdf file
+      print thisFolder
+      print(posterior[1])
 
 ## Add violin plot functions - need to check documentation for this
-
+## Going to first check that everything is imported correctly
+violinMe("distance",pref)
