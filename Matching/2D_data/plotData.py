@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import pickle
 import numpy as np
 
-fname="phase_inc_mixed"
+fname="phase_s20psi4"
 
 #Data saved in the form of x values, y values, z values
 x,y,z,specs=pickle.load(open("%s.p" % fname,"rb"))
