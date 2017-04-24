@@ -13,16 +13,18 @@ hp, hc = get_td_waveform(approximant=apx,inclination=inc,
                                  mass1=30,
                                  mass2=10,
                                  spin1z=0.0,
-                                 spin1x=0.2,
+                                 spin1x=0.0,
                                  delta_t=1.0/4096,
+                                 coa_phase=0.0,
                                  f_lower=20)
 
 
 sp, sc = get_td_waveform(approximant=apx,inclination=inc,
                                  mass1=30,
                                  mass2=10,
-                                 spin1x=0.55,
+                                 spin1x=0.0,
                                  spin1z=0.0,
+                                 coa_phase=1.5,
                                  delta_t=1.0/4096,
                                  f_lower=20)
 
@@ -30,16 +32,18 @@ sp, sc = get_td_waveform(approximant=apx,inclination=inc,
 gp, gc = get_td_waveform(approximant=apx,inclination=inc,
                                  mass1=30,
                                  mass2=10,
-                                 spin1x=0.98,
+                                 spin1x=0.9,
                                  spin1z=0.0,
+                                 coa_phase=0.0,
                                  delta_t=1.0/4096,
                                  f_lower=20)
 
 pp, pc = get_td_waveform(approximant=apx,inclination=inc,
                                  mass1=30,
                                  mass2=10,
-                                 spin1x=0.98,
+                                 spin1x=0.9,
                                  spin1z=0.0,
+                                 coa_phase=1.5,
                                  delta_t=1.0/4096,
                                  f_lower=20)
 
@@ -69,10 +73,10 @@ psd = aLIGOZeroDetHighPower(flen, delta_f, f_low)
 m1, i = match(h, s, psd=psd, low_frequency_cutoff=f_low)
 m2, i = match(g, p, psd=psd, low_frequency_cutoff=f_low)
 
-lowlim=-2.45
-plt.figure()
-plt.subplot(1,2,1)
+lowlim=-2.
+plt.figure(figsize=(20,10))
 plt.title("Phase affect on precessing and non-precessing waveforms")
+plt.subplot(1,2,1)
 plt.plot(hp.sample_times, h, label="Phase=0.0")
 plt.plot(sp.sample_times, s, label="Phase=1.5")
 plt.ylabel('Strain')
