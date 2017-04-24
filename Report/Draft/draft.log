@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.9.5)  21 APR 2017 16:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.9.5)  24 APR 2017 08:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -8,8 +8,8 @@ LaTeX2e <2016/03/31>
 Babel <3.9r> and hyphenation patterns for 83 language(s) loaded.
 (/usr/local/texlive/2016/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
-(/usr/local/texlive/2016/texmf-dist/tex/latex/base/size10.clo
-File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/base/size11.clo
+File: size11.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
 \c@section=\count80
@@ -217,89 +217,79 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 [1
 
 {/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+[2]
 
-LaTeX Warning: Citation `pycbc' on page 2 undefined on input line 32.
+LaTeX Warning: Citation `pycbc' on page 3 undefined on input line 30.
 
-[2] <fig1.jpg, id=18, 501.875pt x 282.05376pt>
+[3] [4] <fig1.jpg, id=27, 501.875pt x 282.05376pt>
 File: fig1.jpg Graphic file (type jpg)
  <use fig1.jpg>
-Package pdftex.def Info: fig1.jpg used on input line 66.
+Package pdftex.def Info: fig1.jpg used on input line 64.
 (pdftex.def)             Requested size: 301.12732pt x 169.23355pt.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<fig2.jpg, id=19, 622.325pt x 333.245pt>
+<fig2.jpg, id=28, 622.325pt x 333.245pt>
 File: fig2.jpg Graphic file (type jpg)
  <use fig2.jpg>
-Package pdftex.def Info: fig2.jpg used on input line 75.
+Package pdftex.def Info: fig2.jpg used on input line 73.
 (pdftex.def)             Requested size: 373.39787pt x 199.94853pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[3] <fig3.png, id=28, 462.528pt x 346.896pt>
+ [5 <./fig1.jpg> <./fig2.jpg>] <fig3.png, id=32, 462.528pt x 346.896pt>
 File: fig3.png Graphic file (type png)
  <use fig3.png>
-Package pdftex.def Info: fig3.png used on input line 96.
+Package pdftex.def Info: fig3.png used on input line 94.
 (pdftex.def)             Requested size: 277.51894pt x 208.13919pt.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<fig4.png, id=30, 803.0pt x 526.96875pt>
+<fig4.png, id=34, 803.0pt x 526.96875pt>
 File: fig4.png Graphic file (type png)
  <use fig4.png>
-Package pdftex.def Info: fig4.png used on input line 106.
+Package pdftex.def Info: fig4.png used on input line 104.
 (pdftex.def)             Requested size: 361.34666pt x 237.13374pt.
 
-<fig5.png, id=31, 734.745pt x 566.115pt>
+<fig5.png, id=35, 734.745pt x 566.115pt>
 File: fig5.png Graphic file (type png)
  <use fig5.png>
-Package pdftex.def Info: fig5.png used on input line 110.
+Package pdftex.def Info: fig5.png used on input line 108.
 (pdftex.def)             Requested size: 293.89279pt x 226.44199pt.
- [4 <./fig1.jpg>]
-[5 <./fig2.jpg>]
-Overfull \hbox (10.30527pt too wide) in paragraph at lines 139--141
-\OT1/cmr/m/n/10 A va-ri-ety of meth-ods have been em-ployed to sam-ple the pa-r
-am-e-ter space, in-clud-ing nested sampling[[]]
- []
-
-[6 <./fig3.png>] [7 <./fig4.png (PNG copy)> <./fig5.png (PNG copy)>]
-<fig6.jpg, id=47, 444.15938pt x 295.85532pt>
+ [6 <./fig3.png>]
+[7 <./fig4.png (PNG copy)> <./fig5.png (PNG copy)>] [8] [9]
+<fig6.jpg, id=51, 444.15938pt x 295.85532pt>
 File: fig6.jpg Graphic file (type jpg)
  <use fig6.jpg>
-Package pdftex.def Info: fig6.jpg used on input line 157.
+Package pdftex.def Info: fig6.jpg used on input line 155.
 (pdftex.def)             Requested size: 333.1187pt x 221.89093pt.
- [8 <./fig6.jpg>]
-<fig7.png, id=51, 462.528pt x 346.896pt>
+
+Overfull \hbox (7.72676pt too wide) in paragraph at lines 153--161
+\OT1/cmr/m/n/10.95 Considerable re-search has been done on study-ing non-spinni
+ng bi-na-ries and on non-precessing
+ []
+
+[10 <./fig6.jpg>] <fig7.png, id=55, 462.528pt x 346.896pt>
 File: fig7.png Graphic file (type png)
  <use fig7.png>
-Package pdftex.def Info: fig7.png used on input line 172.
+Package pdftex.def Info: fig7.png used on input line 170.
 (pdftex.def)             Requested size: 462.52686pt x 346.89514pt.
 
-Overfull \hbox (32.52686pt too wide) in paragraph at lines 172--174
+Overfull \hbox (32.52686pt too wide) in paragraph at lines 170--172
  [][] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<fig8.png, id=52, 462.528pt x 346.896pt>
+<fig8.png, id=56, 462.528pt x 346.896pt>
 File: fig8.png Graphic file (type png)
  <use fig8.png>
-Package pdftex.def Info: fig8.png used on input line 181.
+Package pdftex.def Info: fig8.png used on input line 180.
 (pdftex.def)             Requested size: 462.52686pt x 346.89514pt.
 
-Overfull \hbox (32.52686pt too wide) in paragraph at lines 181--183
+Overfull \hbox (32.52686pt too wide) in paragraph at lines 180--182
  [][] 
  []
 
-[9]
+[11]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[10 <./fig7.png>] [11 <./fig8.png>] (./draft.bbl
+[12 <./fig7.png>] [13 <./fig8.png>] (./draft.bbl
 Missing character: There is no Ã in font cmr10!
 Missing character: There is no ¤ in font cmr10!
 Missing character: There is no Ã in font cmti10!
@@ -308,7 +298,7 @@ Missing character: There is no Ã in font cmr10!
 Missing character: There is no œ in font cmr10!
 Missing character: There is no Ã in font cmti10!
 Missing character: There is no ¶ in font cmti10!
-
+ [14]
 ! Undefined control sequence.
 <recently read> \mathplus 
                           
@@ -366,49 +356,47 @@ really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
 
-Overfull \hbox (193.37502pt too wide) in paragraph at lines 96--100
-[]\OT1/cmr/m/n/10 Advanced ligo fig.  https://upload.wikimedia.org/wikipedia/co
-mmons/d/d5/Simplified$[]\OML/cmm/m/it/10 iagram[]f[]n[]dvanced[]IGO[]etector:pn
-g: Accessed \OT1/cmr/m/n/10 :
+Overfull \hbox (251.04688pt too wide) in paragraph at lines 96--100
+[]\OT1/cmr/m/n/10.95 Advanced ligo fig.  https://upload.wikimedia.org/wikipedia
+/commons/d/d5/Simplified$[]\OML/cmm/m/it/10.95 iagram[]f[]n[]dvanced[]IGO[]etec
+tor:png: Accessed \OT1/cmr/m/n/10.95 :
  []
 
-[12]
+[15]
 Missing character: There is no Ã in font cmr10!
 Missing character: There is no ¶ in font cmr10!
- [13]
+ [16]
 Missing character: There is no Ã in font cmr10!
 Missing character: There is no ¶ in font cmr10!
-) [14] (./draft.aux)
+) [17] (./draft.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 2493 strings out of 493014
- 32513 string characters out of 6133352
- 99593 words of memory out of 5000000
- 5988 multiletter control sequences out of 15000+600000
- 13075 words of font info for 50 fonts, out of 8000000 for 9000
+ 2486 strings out of 493014
+ 32493 string characters out of 6133352
+ 97622 words of memory out of 5000000
+ 5985 multiletter control sequences out of 15000+600000
+ 12627 words of font info for 47 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  38i,7n,26p,1883b,227s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
-</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></
-usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></u
-sr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></us
-r/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/
-local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/lo
-cal/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/loca
-l/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/
-texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/tex
-live/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texliv
-e/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive
-/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2
-016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/20
-16/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on draft.pdf (14 pages, 1043170 bytes).
+</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
+/usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></
+usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></us
+r/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/
+local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/lo
+cal/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/loca
+l/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/t
+exlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/te
+xlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texl
+ive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texli
+ve/2016/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on draft.pdf (17 pages, 1019011 bytes).
 PDF statistics:
- 122 PDF objects out of 1000 (max. 8388607)
+ 123 PDF objects out of 1000 (max. 8388607)
  79 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  41 words of extra memory for PDF output out of 10000 (max. 10000000)
