@@ -11,7 +11,7 @@ psi=0.
 apx="IMRPhenomPv2"
 hp, hc = get_td_waveform(approximant=apx,inclination=inc,
                                  mass1=40,
-                                 mass2=15,
+                                 mass2=25,
                                  spin1z=0.0,
                                  spin1x=0.0,
                                  delta_t=1.0/4096,
@@ -21,7 +21,7 @@ hp, hc = get_td_waveform(approximant=apx,inclination=inc,
 
 sp, sc = get_td_waveform(approximant=apx,inclination=inc,
                                  mass1=40,
-                                 mass2=15,
+                                 mass2=25,
                                  spin1x=0.0,
                                  spin1z=0.0,
                                  coa_phase=1.5,
@@ -31,7 +31,7 @@ sp, sc = get_td_waveform(approximant=apx,inclination=inc,
 
 gp, gc = get_td_waveform(approximant=apx,inclination=inc,
                                  mass1=40,
-                                 mass2=15,
+                                 mass2=25,
                                  spin1x=0.9,
                                  spin1z=0.0,
                                  coa_phase=0.0,
@@ -40,7 +40,7 @@ gp, gc = get_td_waveform(approximant=apx,inclination=inc,
 
 pp, pc = get_td_waveform(approximant=apx,inclination=inc,
                                  mass1=40,
-                                 mass2=15,
+                                 mass2=25,
                                  spin1x=0.9,
                                  spin1z=0.0,
                                  coa_phase=1.5,
@@ -74,13 +74,13 @@ m1, i = match(h, s, psd=psd, low_frequency_cutoff=f_low)
 m2, i = match(g, p, psd=psd, low_frequency_cutoff=f_low)
 
 lowlim=-2.
-plt.figure(figsize=(10,4))
+plt.figure(figsize=(10,4.5))
 plt.title("Phase affect on precessing and non-precessing waveforms")
 plt.subplot(1,2,1)
 plt.plot(hp.sample_times, h,'r-', label="Phase=0.0")
 plt.plot(sp.sample_times, s,'b-', label="Phase=1.5")
 plt.ylabel('Strain')
-plt.text(lowlim, min(h), 'Match=%.2f' % m1, ha='left', va='bottom', fontsize=12)
+plt.text(lowlim, min(min(h),min(s)), 'Match=%.2f' % m1, ha='left', va='bottom', fontsize=12)
 plt.xlim(lowlim,hp.sample_times[-1])
 plt.xlabel('Time (s)')
 plt.legend(loc="best")
@@ -90,7 +90,7 @@ plt.subplot(1,2,2)
 plt.plot(gp.sample_times, g,'r-', label="Phase=0.0")
 plt.plot(pp.sample_times, p,'b-', label="Phase=1.5")
 plt.xlabel('Time (s)')
-plt.text(lowlim, min(g), 'Match=%.2f' % m2, ha='left', va='bottom', fontsize=12)
+plt.text(lowlim, min(min(p),min(g)), 'Match=%.2f' % m2, ha='left', va='bottom', fontsize=12)
 plt.legend(loc="best")
 plt.xlim(lowlim,hp.sample_times[-1])
 plt.tight_layout()
