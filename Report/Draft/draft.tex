@@ -1,4 +1,4 @@
-\documentclass[]{article}
+\documentclass[11pt]{article}
 \usepackage{amssymb}
 \usepackage{amsmath}
 \usepackage{graphicx}
@@ -14,9 +14,7 @@
 \begin{document}
 \maketitle
 \begin{abstract}
-A complete understanding of the LIGO detectors' ability to accurately measure spin parameters is of key importance to understanding the astrophysics of binary black hole systems. Of particular significance is an ability to determine spin orientations as a means of distinguishing between binary formation models. In this work we overview the core physics of gravitational waves, relativistic precession in binary systems, the LIGO detectors and the techniques involved in parameter estimation. We then examine the specific effects of precession on a gravitational waveform. The technique of 'matching' between waveforms is used as a computationally cheap way to explore degeneracies in the parameter space. A series of signals are then injected into simulated detector noise, and a full parameter estimation is performed on the data segments. Using the match results as a guide, we target these injections to areas in the parameter space where we expect to be particularly sensitive and insensitive to spin parameters. Inference for a full range of inclinations and phases is performed, and we identify areas where spin orientations are consistently incorrectly recovered. We then briefly examine the impact the upcoming VIRGO detector will have on spin estimation.
-
-pdftotext draft.pdf - | wc -w 
+A complete understanding of the LIGO detectors' ability to accurately measure spin parameters is of key importance to understanding the astrophysics of binary black hole systems. Of particular significance is an ability to determine spin orientations as a means of distinguishing between binary formation models. In this work we overview the core physics of gravitational waves, relativistic precession in binary systems, the LIGO detectors, and the techniques involved in parameter estimation. We then examine the specific effects of precession on a gravitational waveform. The technique of 'matching' between waveforms is used as a computationally cheap way to explore degeneracies in the parameter space. A series of signals are then injected into simulated detector noise, and a full parameter estimation is performed on the data segments. Using the match results as a guide, we target these injections to areas in the parameter space where we expect to be particularly sensitive and insensitive to spin parameters. Inference for a full range of inclinations and phases is performed, and we identify areas where spin orientations are consistently incorrectly recovered. We then briefly examine the impact the upcoming VIRGO detector will have on spin estimation.
 \end{abstract}
 \tableofcontents
 \newpage
@@ -175,7 +173,8 @@ where $B1=2+3/(2q)$ and $B2=2+(3q)/2$. These parameters effectively quantify the
 	\centering
 \end{figure}
 The particular focus of this paper is on the challenges of inferring $\chi_p$ in precessing systems. This parameter is of particular importance due to its astrophysical implications, and as of yet there has been no comprehensive study into the effects of precession and it's amplitude modulation of the signal on the process of parameter estimation. The formation methods of compact binary systems of stellar mass black holes are currently unknown, and a variety of models have been proposed\cite{modal}. Of particular interest is whether the two black holes formed from a common accreting system, or whether the binary was formed by dynamical capture. The former model would imply that the spins on the black holes would generally tend to be aligned with one another and with the orbital angular momentum, however in the dynamical capture model we expect the spins to be more or less uniformly distributed. Given the large number of expected detections over the coming years, a thorough understanding of the detector's response to precessing waveforms and an accurate estimation of our ability to recover $\chi_p$ reliably will be crucial to answering these questions, and maximising the scientific yield from this remarkable technology.
-\section{Precessing waveforms}
+\section{Intrinsic degeneracies}
+\subsection{Precessing waveforms}
 We first consider in more detail the effects of precession on a GW waveform. This is important as understanding how precessive waveforms behave is key to understanding how the detector will respond to these signals, and understanding the detector response is the fundamental idea of parameter estimation. A closer look at equation (16), which essentially quantifies the amount of precession in a given binary, shows that it takes values in the range $[0,1]$, with the maximum reached when the spin on the larger BH is fully in-plane. Even for a maximally precessing signal however, many possible configurations of polarisation and inclination are possible which will affect the way the amplitude of the signal is modulated. We show this in Fig. 8, where from this particular perspective the precessive effect appears largest in the case of the in-plane spin being $0.5$, instead of the maximally precessing system with $|\vec{S}|=0.98$. In this case, this is due to the fact that the inclination angle is defined with respect to the total angular momentum. In the case of precessing binaries, $\vec{L}$ and $\vec{J}$ are not aligned, so when we say we are viewing a binary 'edge-on', i.e. at $\iota=\pi/2$, the actual orbital plane of the system will not necessarily be edge-on. As a result, it is not always the case that precession affects are most noticeable in systems with the most precession, and a lot depends on the specific combination of source location and the polarisation and inclination angles for a specific event.
 \begin{figure}[h]
 	\includegraphics[scale=1]{fig8.png}
@@ -184,10 +183,11 @@ We first consider in more detail the effects of precession on a GW waveform. Thi
 	\centering
 \end{figure}
 The situation is further complicated by the fact that the phase, $\phi_c$ is an important degree of freedom in precessing binaries, as shown in Fig. 9. In non-precessing binaries, the phase is very much a trivial parameter which contains no interesting information about the system, however in precessing binaries the phase has a significant affect on the signal modulation. This opens up the possibility of many different degeneracies between binaries with different intrinsic parameters but a certain combination of phase and source location, and makes studying precessing waveforms more challenging.
-\section{Matching}
-Describe matching, and how matches are used to run targeted software injections.
-Then identify parameter combinations where we are particularly sensitive to chi p, and those where we are not
-\section{Software injections}
+\subsection{Matching between waveforms}
+An extremely useful and computationally cheap way to identify some of these degeneracies is through the process of matching as defined in (13). In the \textit{PyCBC} framework, the match is maximised over extrinsic parameters such as distance and source location that only affect the amplitude of a signal, and so is a useful tool for examining the similarities in the morphologies of different waveforms. A match takes values in the range $[0,1]$, with identical waveforms having a match of 1. Waveform template banks 
+\subsection{Scanning the parameter space}
+2D match plots
+\section{Detector response simulations}
 Describe software injections
 \subsection{Signal extraction}
 Data whitening - basically LOSC stuff, how we go from raw data to a signal - move this to intro?
