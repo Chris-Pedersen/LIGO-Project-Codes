@@ -7,7 +7,7 @@
 \contentsline {section}{\numberline {2}Intrinsic degeneracies}{11}
 \contentsline {subsection}{\numberline {2.1}Precessing waveforms}{11}
 \contentsline {subsection}{\numberline {2.2}Matching between waveforms}{13}
-\contentsline {subsection}{\numberline {2.3}Scanning the parameter space}{13}
+\contentsline {subsection}{\numberline {2.3}Scanning the parameter space}{14}
 \contentsline {section}{\numberline {3}Detector response simulations}{14}
 \contentsline {subsection}{\numberline {3.1}Signal extraction}{14}
 \contentsline {subsection}{\numberline {3.2}Inference pipeline}{14}

@@ -62,12 +62,12 @@ def chi_effect():
    chi_eff=np.zeros(num_walkers)
    print "   Extracting intrinsic parameters..."
    ## Generate arrays for each paramter
-   s1_a=getParameter("spin1_a")
-   s1_polar=getParameter("spin1_polar")
-   s2_a=getParameter("spin2_a")
-   s2_polar=getParameter("spin2_polar")
-   m1=getParameter("mass1")
-   m2=getParameter("mass2")
+   s1_a=getParameter("spin1_a",folder)
+   s1_polar=getParameter("spin1_polar",folder)
+   s2_a=getParameter("spin2_a",folder)
+   s2_polar=getParameter("spin2_polar",folder)
+   m1=getParameter("mass1",folder)
+   m2=getParameter("mass2",folder)
    M=m1+m2
 
    ## Find spins along z-axis
@@ -86,12 +86,12 @@ def chi_prec():
    chi_p=np.zeros(num_walkers)
    print "   Extracting intrinsic parameters..."
    ## Generate arrays for each parameter
-   s1_a=getParameter("spin1_a")
-   s1_polar=getParameter("spin1_polar")
-   s2_a=getParameter("spin2_a")
-   s2_polar=getParameter("spin2_polar")
-   mass1=getParameter("mass1")
-   mass2=getParameter("mass2")
+   s1_a=getParameter("spin1_a",folder)
+   s1_polar=getParameter("spin1_polar",folder)
+   s2_a=getParameter("spin2_a",folder)
+   s2_polar=getParameter("spin2_polar",folder)
+   mass1=getParameter("mass1",folder)
+   mass2=getParameter("mass2",folder)
    print "   Calculating derived parameters..."
    for aa in range(len(mass1)):  ## Standard chi_p function]
       if mass1[aa]>mass2[aa]:
@@ -120,21 +120,22 @@ def getPosterior(parameter,folder):
 
    if parameter=="mchirp":
       ## Find chirp mass
-      m1=getParameter("mass1")
-      m2=getParameter("mass2")
+      m1=getParameter("mass1",folder)
+      m2=getParameter("mass2",folder)
       M=m1+m2
       parameter_values=((m1*m2)**(3./5.))/(M**(1./5.))
 
-      ## Injected parameter
-      m1_inj=injected["mass1"]
-      m2_inj=injected["mass2"]
-      M_inj=m1_inj+m2_inj
-      injected_value=((m1_inj*m2_inj)**(3./5.))/(M_inj**(1./5.))
+      ## #injected parameter
+      #m1_inj=injected["mass1"]
+      #m2_inj=injected["mass2"]
+      #M_inj=m1_inj+m2_inj
+      #injected_value=((m1_inj*m2_inj)**(3./5.))/(M_inj**(1./5.))
 
    elif parameter=="chi_eff":
       parameter_values=chi_effect()
+      '''
 
-      ## Find injected value
+      ## Find #injected value
       m2=injected["mass2"]
       m1=injected["mass1"]
       s1a=injected["spin1_a"]
@@ -144,11 +145,13 @@ def getPosterior(parameter,folder):
       s1z=m1*m1*s1a*np.cos(s1_polar)
       s2z=m2*m2*s2a*np.cos(s2_polar)
       chi_eff=(s1z/m1+s2z/m2)/(m1+m2)
-      injected_value=chi_eff
+      #injected_value=chi_eff
+      '''
 
    elif parameter=="chi_p":
       parameter_values=chi_prec()
-      ## Derive injected value
+      '''
+      ## Derive #injected value
       m1=injected["mass1"]
       m2=injected["mass1"]
       s1a=injected["spin1_a"]
@@ -164,46 +167,47 @@ def getPosterior(parameter,folder):
       B2=2.+(3./(2.*q))
 
       chi_p=(1./(B1*m1*m1))*max((B1*s1_per,B2*s2_per))
-      injected_value=chi_p
+      #injected_value=chi_p
+      '''
 
    elif parameter=="q":
-      mass1=getParameter("mass1")
-      mass2=getParameter("mass2")
+      mass1=getParameter("mass1",folder)
+      mass2=getParameter("mass2",folder)
       q=np.zeros(len(mass1))
 
       for aa in range(len(mass1)): ## Have to ensure 0<q<1 by making sure the larger mass is the denom
          q[aa]=min((mass1[aa]/mass2[aa]),(mass2[aa]/mass1[aa]))
 
       parameter_values=q
-      ## Injected value
-      injected_value=injected["mass2"]/injected["mass1"]
+      ## #injected value
+      #injected_value=injected["mass2"]/injected["mass1"]
 
    ## Ensure m1>m2 in posteriors
    elif parameter=="mass1":
-      mass1=getParameter("mass1")
-      mass2=getParameter("mass2")
+      mass1=getParameter("mass1",folder)
+      mass2=getParameter("mass2",folder)
       parameter_values=np.zeros(len(mass1))
       for aa in range(len(mass1)):
          parameter_values[aa]=max(mass1[aa],mass2[aa])
-      injected_value=max(injected["mass1"],injected["mass2"])
+      #injected_value=max(injected["mass1"],injected["mass2"])
    ## Ensure m2>m1 in posteriors
    elif parameter=="mass2":
-      mass1=getParameter("mass1")
-      mass2=getParameter("mass2")
+      mass1=getParameter("mass1",folder)
+      mass2=getParameter("mass2",folder)
       parameter_values=np.zeros(len(mass1))
       for aa in range(len(mass1)):
          parameter_values[aa]=min(mass1[aa],mass2[aa])
-      injected_value=min(injected["mass1"],injected["mass2"])
+      #injected_value=min(injected["mass1"],injected["mass2"])
 
    elif parameter=="phase":
-      parameter_values=getParameter("coa_phase")
+      parameter_values=getParameter("coa_phase",folder)
       values=len(parameter_values)
-      injected_value=injected[parameter]
+      #injected_value=injected[parameter]
 
    else:
       parameter_values=getParameter(parameter)
       values=len(parameter_values)
-      injected_value=injected[parameter]
+      #injected_value=injected[parameter]
 
    parameter_values=np.sort(parameter_values)
    return parameter_values
