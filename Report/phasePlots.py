@@ -1,5 +1,11 @@
+import matplotlib
+matplotlib.use("Agg")
+import numpy as np
 import matplotlib.pyplot as plt
 from pycbc.waveform import get_td_waveform
+from pycbc.filter import match
+from pycbc.psd import aLIGOZeroDetHighPower
+
 inc=1.56
 psi=0.
 apx="IMRPhenomPv2"
@@ -52,6 +58,7 @@ s.resize(tlen)
 h.resize(tlen)
 g.resize(tlen)
 p.resize(tlen)
+f_low=20
 # Generate the aLIGO ZDHP PSD
 delta_f = 1.0 / sp.duration
 flen = tlen/2 + 1
@@ -81,4 +88,4 @@ plt.xlabel('Time (s)')
 plt.legend(loc="best")
 plt.xlim(lowlim,hp.sample_times[-1])
 plt.show("hold")
-plt.savefig("precessfig")
+plt.savefig("phasefig.png")
