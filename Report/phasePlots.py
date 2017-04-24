@@ -10,8 +10,8 @@ inc=1.56
 psi=0.
 apx="IMRPhenomPv2"
 hp, hc = get_td_waveform(approximant=apx,inclination=inc,
-                                 mass1=30,
-                                 mass2=10,
+                                 mass1=40,
+                                 mass2=15,
                                  spin1z=0.0,
                                  spin1x=0.0,
                                  delta_t=1.0/4096,
@@ -20,8 +20,8 @@ hp, hc = get_td_waveform(approximant=apx,inclination=inc,
 
 
 sp, sc = get_td_waveform(approximant=apx,inclination=inc,
-                                 mass1=30,
-                                 mass2=10,
+                                 mass1=40,
+                                 mass2=15,
                                  spin1x=0.0,
                                  spin1z=0.0,
                                  coa_phase=1.5,
@@ -30,8 +30,8 @@ sp, sc = get_td_waveform(approximant=apx,inclination=inc,
 
 
 gp, gc = get_td_waveform(approximant=apx,inclination=inc,
-                                 mass1=30,
-                                 mass2=10,
+                                 mass1=40,
+                                 mass2=15,
                                  spin1x=0.9,
                                  spin1z=0.0,
                                  coa_phase=0.0,
@@ -39,8 +39,8 @@ gp, gc = get_td_waveform(approximant=apx,inclination=inc,
                                  f_lower=20)
 
 pp, pc = get_td_waveform(approximant=apx,inclination=inc,
-                                 mass1=30,
-                                 mass2=10,
+                                 mass1=40,
+                                 mass2=15,
                                  spin1x=0.9,
                                  spin1z=0.0,
                                  coa_phase=1.5,
@@ -74,7 +74,7 @@ m1, i = match(h, s, psd=psd, low_frequency_cutoff=f_low)
 m2, i = match(g, p, psd=psd, low_frequency_cutoff=f_low)
 
 lowlim=-2.
-plt.figure(figsize=(10,5))
+plt.figure(figsize=(10,4))
 plt.title("Phase affect on precessing and non-precessing waveforms")
 plt.subplot(1,2,1)
 plt.plot(hp.sample_times, h,'r-', label="Phase=0.0")
@@ -82,8 +82,8 @@ plt.plot(sp.sample_times, s,'b-', label="Phase=1.5")
 plt.ylabel('Strain')
 plt.text(lowlim, min(h), 'Match=%.2f' % m1, ha='left', va='bottom', fontsize=12)
 plt.xlim(lowlim,hp.sample_times[-1])
+plt.xlabel('Time (s)')
 plt.legend(loc="best")
-plt.ylabel('Strain')
 plt.legend(loc="best")
 plt.xlim(lowlim,hp.sample_times[-1])
 plt.subplot(1,2,2)
