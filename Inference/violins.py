@@ -214,20 +214,18 @@ def getPosterior(parameter,folder):
    parameter_values=np.sort(parameter_values)
    return parameter_values
 
-## Will need to loop over hdf folders
-## go a little something like
-
+xaxis=np.linspace(0,np.pi,6)
 def violinMe(parameter,pref):
    print "Extracting data for %s" % parameter
    out=[]
-   for x_sample in range(1,6): ## Loop over samples of the x axis
+   for x_sample in [1,2,3,4,5,1]: ## Loop over samples of the x axis
       thisFolder=pref+str(x_sample)  ## Select specific folder for this sample
       posterior=getPosterior(parameter,thisFolder) ## Extract desired posterior from the hdf file
       print "   ---%s completed" % thisFolder
       out.append(posterior)
    plt.figure()
    plt.title("Violin plots for %s" % parameter)
-   plt.violinplot(out,showmeans=True,widths=0.8)
+   plt.violinplot(out,xaxis,showmeans=True,widths=0.8)
    plt.savefig("figures/%sviolins_%s.png" % (pref, parameter))
    print "--Figure saved--"
 
