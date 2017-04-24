@@ -73,7 +73,7 @@ psd = aLIGOZeroDetHighPower(flen, delta_f, f_low)
 m1, i = match(h, s, psd=psd, low_frequency_cutoff=f_low)
 m2, i = match(g, p, psd=psd, low_frequency_cutoff=f_low)
 
-lowlim=-2.
+lowlim=-0.75
 plt.figure(figsize=(10,4.5))
 plt.title("Phase affect on precessing and non-precessing waveforms")
 plt.subplot(1,2,1)
