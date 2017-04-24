@@ -224,12 +224,11 @@ def violinMe(parameter,pref):
       posterior=getPosterior(parameter,thisFolder) ## Extract desired posterior from the hdf file
       print "   ---%s completed" % thisFolder
       out.append(posterior)
-   return out
+   plt.figure()
+   plt.violinplot(out)
+   plt.savefig("figures/%sviolins_%s.png" % (pref, parameter))
+   print "--Figure saved--"
 
 ## Add violin plot functions - need to check documentation for this
-out=violinMe("distance",pref)
+violinMe("distance",pref)
 
-
-plt.figure()
-plt.violinplot(out[0])
-plt.savefig("violins.png")
