@@ -225,7 +225,8 @@ def violinMe(parameter,pref):
       print "   ---%s completed" % thisFolder
       out.append(posterior)
    plt.figure()
-   plt.violinplot(out)
+   plt.title("Violin plots for %s" % parameter)
+   plt.violinplot(out,showmeans=True,widths=0.8)
    plt.savefig("figures/%sviolins_%s.png" % (pref, parameter))
    print "--Figure saved--"
 
