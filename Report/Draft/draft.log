@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.9.5)  24 APR 2017 11:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.9.5)  24 APR 2017 13:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -217,208 +217,48 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 [1
 
 {/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-[2]
-
-LaTeX Warning: Citation `obs' on page 3 undefined on input line 24.
-
-
-LaTeX Warning: Citation `obs2' on page 3 undefined on input line 24.
-
-
-LaTeX Warning: Citation `eins1' on page 3 undefined on input line 24.
-
-
-LaTeX Warning: Citation `eins2' on page 3 undefined on input line 24.
-
-
-LaTeX Warning: Citation `gw1' on page 3 undefined on input line 24.
-
-
-LaTeX Warning: Citation `eins3' on page 3 undefined on input line 24.
-
-
-LaTeX Warning: Citation `hulse' on page 3 undefined on input line 24.
-
-
-LaTeX Warning: Citation `mm' on page 3 undefined on input line 26.
-
-
-LaTeX Warning: Citation `mm2' on page 3 undefined on input line 26.
-
-
-LaTeX Warning: Citation `gr1' on page 3 undefined on input line 26.
-
-
-LaTeX Warning: Citation `gr2' on page 3 undefined on input line 26.
-
-
-LaTeX Warning: Citation `qgrav' on page 3 undefined on input line 26.
-
-
-LaTeX Warning: Citation `lisa' on page 3 undefined on input line 26.
-
-
-LaTeX Warning: Citation `pycbc' on page 3 undefined on input line 30.
-
-[3]
-
-LaTeX Warning: Citation `hartle' on page 4 undefined on input line 33.
-
-[4] <fig1.jpg, id=27, 501.875pt x 282.05376pt>
+[2] [3] [4] <fig1.jpg, id=27, 501.875pt x 282.05376pt>
 File: fig1.jpg Graphic file (type jpg)
  <use fig1.jpg>
 Package pdftex.def Info: fig1.jpg used on input line 64.
 (pdftex.def)             Requested size: 301.12732pt x 169.23355pt.
-
-
-LaTeX Warning: Citation `fig1' on page 5 undefined on input line 66.
-
-
-LaTeX Warning: Citation `fig1' on page 5 undefined on input line 66.
-
-
-LaTeX Warning: Citation `blanch' on page 5 undefined on input line 70.
 
 <fig2.jpg, id=28, 622.325pt x 333.245pt>
 File: fig2.jpg Graphic file (type jpg)
  <use fig2.jpg>
 Package pdftex.def Info: fig2.jpg used on input line 73.
 (pdftex.def)             Requested size: 373.39787pt x 199.94853pt.
-
-
-LaTeX Warning: Citation `fig2' on page 5 undefined on input line 75.
-
-[5 <./fig1.jpg> <./fig2.jpg>] <fig3.png, id=32, 462.528pt x 346.896pt>
+ [5 <./fig1.jpg> <./fig2.jpg>] <fig3.png, id=32, 462.528pt x 346.896pt>
 File: fig3.png Graphic file (type png)
-
-<use fig3.png>
+ <use fig3.png>
 Package pdftex.def Info: fig3.png used on input line 94.
 (pdftex.def)             Requested size: 277.51894pt x 208.13919pt.
- <fig4.png, id=34, 803.0pt x 526.96875pt>
+
+<fig4.png, id=34, 803.0pt x 526.96875pt>
 File: fig4.png Graphic file (type png)
  <use fig4.png>
 Package pdftex.def Info: fig4.png used on input line 104.
 (pdftex.def)             Requested size: 361.34666pt x 237.13374pt.
-
-
-LaTeX Warning: Citation `advfig' on page 6 undefined on input line 106.
-
-
-LaTeX Warning: Citation `advfig' on page 6 undefined on input line 106.
 
 <fig5.png, id=35, 734.745pt x 566.115pt>
 File: fig5.png Graphic file (type png)
  <use fig5.png>
 Package pdftex.def Info: fig5.png used on input line 108.
 (pdftex.def)             Requested size: 293.89279pt x 226.44199pt.
-
-
-LaTeX Warning: Citation `noisecurve' on page 6 undefined on input line 110.
-
-
-LaTeX Warning: Citation `noise' on page 6 undefined on input line 113.
-
-
-LaTeX Warning: Citation `noise2' on page 6 undefined on input line 113.
-
-
-LaTeX Warning: Citation `lasers' on page 6 undefined on input line 113.
-
-
-LaTeX Warning: Citation `noise3' on page 6 undefined on input line 113.
-
-[6 <./fig3.png>] [7 <./fig4.png (PNG copy)> <./fig5.png (PNG copy)>]
-
-LaTeX Warning: Citation `beampat' on page 8 undefined on input line 117.
-
-
-LaTeX Warning: Citation `lasers' on page 8 undefined on input line 124.
-
-
-LaTeX Warning: Citation `search1' on page 8 undefined on input line 124.
-
-
-LaTeX Warning: Citation `search2' on page 8 undefined on input line 124.
-
-
-LaTeX Warning: Citation `props' on page 8 undefined on input line 127.
-
-[8]
-
-LaTeX Warning: Citation `spindegen' on page 9 undefined on input line 132.
-
-
-LaTeX Warning: Citation `oldest_pe' on page 9 undefined on input line 138.
-
-
-LaTeX Warning: Citation `pe2' on page 9 undefined on input line 138.
-
-
-LaTeX Warning: Citation `props' on page 9 undefined on input line 138.
-
-
-LaTeX Warning: Citation `inj' on page 9 undefined on input line 138.
-
-
-LaTeX Warning: Citation `pe' on page 9 undefined on input line 138.
-
-
-LaTeX Warning: Citation `pe4' on page 9 undefined on input line 138.
-
-
-LaTeX Warning: Citation `pe2' on page 9 undefined on input line 142.
-
-
-LaTeX Warning: Citation `waveforms' on page 9 undefined on input line 147.
-
-
-LaTeX Warning: Citation `imr' on page 9 undefined on input line 147.
-
-[9]
-
-LaTeX Warning: Citation `pe3' on page 10 undefined on input line 153.
-
-
-LaTeX Warning: Citation `sloos' on page 10 undefined on input line 153.
-
-
-LaTeX Warning: Citation `pe_latest' on page 10 undefined on input line 153.
-
-
-LaTeX Warning: Citation `precess1' on page 10 undefined on input line 153.
-
-
-LaTeX Warning: Citation `precess2' on page 10 undefined on input line 153.
-
+ [6 <./fig3.png>]
+[7 <./fig4.png (PNG copy)> <./fig5.png (PNG copy)>] [8] [9]
 <fig6.jpg, id=51, 444.15938pt x 295.85532pt>
 File: fig6.jpg Graphic file (type jpg)
  <use fig6.jpg>
 Package pdftex.def Info: fig6.jpg used on input line 155.
 (pdftex.def)             Requested size: 333.1187pt x 221.89093pt.
 
-
-LaTeX Warning: Citation `imr' on page 10 undefined on input line 160.
-
-
-LaTeX Warning: Citation `chip' on page 10 undefined on input line 160.
-
-
 Overfull \hbox (7.72676pt too wide) in paragraph at lines 153--161
 \OT1/cmr/m/n/10.95 Considerable re-search has been done on study-ing non-spinni
 ng bi-na-ries and on non-precessing
  []
 
-[10 <./fig6.jpg>]
-
-LaTeX Warning: Citation `spin' on page 11 undefined on input line 168.
-
-
-LaTeX Warning: Citation `eob' on page 11 undefined on input line 168.
-
-
-LaTeX Warning: Citation `pe_latest' on page 11 undefined on input line 168.
-
-<fig7.png, id=55, 462.528pt x 346.896pt>
+[10 <./fig6.jpg>] <fig7.png, id=55, 462.528pt x 346.896pt>
 File: fig7.png Graphic file (type png)
  <use fig7.png>
 Package pdftex.def Info: fig7.png used on input line 170.
@@ -427,9 +267,6 @@ Package pdftex.def Info: fig7.png used on input line 170.
 Overfull \hbox (32.52686pt too wide) in paragraph at lines 170--172
  [][] 
  []
-
-
-LaTeX Warning: Citation `modal' on page 11 undefined on input line 175.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -448,36 +285,123 @@ Overfull \hbox (32.52686pt too wide) in paragraph at lines 180--182
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[12 <./fig7.png>] [13 <./fig8.png>] [14] (./draft.aux)
+[12 <./fig7.png>] <fig9.png, id=64, 722.7pt x 325.215pt>
+File: fig9.png Graphic file (type png)
+ <use fig9.png>
+Package pdftex.def Info: fig9.png used on input line 189.
+(pdftex.def)             Requested size: 419.16629pt x 188.62483pt.
 
-LaTeX Warning: There were undefined references.
 
- ) 
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[13 <./fig8.png>] [14 <./fig9.png>] (./draft.bbl
+Missing character: There is no Ã in font cmr10!
+Missing character: There is no ¤ in font cmr10!
+Missing character: There is no Ã in font cmti10!
+Missing character: There is no ¶ in font cmti10!
+Missing character: There is no Ã in font cmr10!
+Missing character: There is no œ in font cmr10!
+Missing character: There is no Ã in font cmti10!
+Missing character: There is no ¶ in font cmti10!
+
+! Undefined control sequence.
+<recently read> \mathplus 
+                          
+l.39   binary pulsar {PSR} 1913$\mathplus
+                                         $16.
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no Ã in font cmr10!
+Missing character: There is no ± in font cmr10!
+[15]
+! Undefined control sequence.
+l.108   \url
+            {https://upload.wikimedia.org/wikipedia/commons/d/d5/Simplified_...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.108 ...ia.org/wikipedia/commons/d/d5/Simplified_
+                                                  diagram_of_an_Advanced_LIG...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+l.108 ...diagram_of_an_Advanced_LIGO_detector.png}
+                                                  .
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.110 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.110 
+      
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+Overfull \hbox (251.04688pt too wide) in paragraph at lines 106--110
+[]\OT1/cmr/m/n/10.95 Advanced ligo fig.  https://upload.wikimedia.org/wikipedia
+/commons/d/d5/Simplified$[]\OML/cmm/m/it/10.95 iagram[]f[]n[]dvanced[]IGO[]etec
+tor:png: Accessed \OT1/cmr/m/n/10.95 :
+ []
+
+[16]
+Missing character: There is no Ã in font cmr10!
+Missing character: There is no ¶ in font cmr10!
+Missing character: There is no Ã in font cmr10!
+Missing character: There is no ¶ in font cmr10!
+ [17]) [18] (./draft.aux) ) 
 Here is how much of TeX's memory you used:
- 2476 strings out of 493014
- 32412 string characters out of 6133352
- 98455 words of memory out of 5000000
- 5978 multiletter control sequences out of 15000+600000
+ 2491 strings out of 493014
+ 32552 string characters out of 6133352
+ 98626 words of memory out of 5000000
+ 5989 multiletter control sequences out of 15000+600000
  12627 words of font info for 47 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,7n,26p,1893b,227s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
-></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
-</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
-/usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></
-usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></us
-r/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/
-local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/lo
-cal/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/loca
-l/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/t
-exlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/te
-xlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texl
-ive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texli
-ve/2016/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on draft.pdf (14 pages, 1001724 bytes).
+ 38i,7n,26p,1883b,227s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2016/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmex10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmmi10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmmi8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmr10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmr12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmr17.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmr8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmsy10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/c
+msy8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmt
+i10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/symbols
+/msam10.pfb>
+Output written on draft.pdf (18 pages, 1131402 bytes).
 PDF statistics:
- 114 PDF objects out of 1000 (max. 8388607)
- 73 compressed objects within 1 object stream
+ 128 PDF objects out of 1000 (max. 8388607)
+ 81 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 41 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 46 words of extra memory for PDF output out of 10000 (max. 10000000)
 

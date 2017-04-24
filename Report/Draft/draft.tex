@@ -185,6 +185,12 @@ We first consider in more detail the effects of precession on a GW waveform. Thi
 The situation is further complicated by the fact that the phase, $\phi_c$ is an important degree of freedom in precessing binaries, as shown in Fig. 9. In non-precessing binaries, the phase is very much a trivial parameter which contains no interesting information about the system, however in precessing binaries the phase has a significant affect on the signal modulation. This opens up the possibility of many different degeneracies between binaries with different intrinsic parameters but a certain combination of phase and source location, and makes studying precessing waveforms more challenging. When considering precession it is also important to note that heavier total mass binaries have considerably shorter inspiral phases, and therefore fewer oscillation cycles within the detection frequency band. So while they will have a stronger signal, there is less opportunity for precessive effects to manifest.
 \subsection{Matching between waveforms}
 An extremely useful and computationally cheap way to identify some of these degeneracies is through the process of matching as defined in (13). In the \textit{PyCBC} framework, the match is maximised over extrinsic parameters such as distance and source location that only affect the amplitude of a signal, and so is a useful tool for examining the similarities in the morphologies of different waveforms. A match takes values in the range $[0,1]$, with identical waveforms having a match of 1.
+\begin{figure}[h]
+	\includegraphics[scale=0.58]{fig9.png}
+	\centering
+	\caption{Affect of phase on non-precessing and precessing waveforms. Precession adds an extra degree of freedom in that the morphology of precessing waveforms is different for different phases.}
+	\centering
+\end{figure}
 \subsection{Scanning the parameter space}
 2D match plots
 \section{Detector response simulations}
@@ -201,5 +207,5 @@ A look at how Virgo will influence PE, especially chi p estimation.
 Summary of results on PE and estimation of chi p, and a prospect on Virgo's impact.
 \section{Reflective Statement}
 I now need a therapist
-%\bibliography{draftbib.bib}
+\bibliography{draftbib.bib}
 \end{document}
