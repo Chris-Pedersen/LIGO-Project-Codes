@@ -39,6 +39,7 @@ pref="close_highMR_"
 
 ## Static parameters
 data_name="output.hdf"
+num_walkers=5000
 
 ## Functions for derived parameters
 ## Function to extract posterior for a given parameter
@@ -205,7 +206,7 @@ def getPosterior(parameter,folder):
       #injected_value=injected[parameter]
 
    else:
-      parameter_values=getParameter(parameter)
+      parameter_values=getParameter(parameter,folder)
       values=len(parameter_values)
       #injected_value=injected[parameter]
 
@@ -216,12 +217,19 @@ def getPosterior(parameter,folder):
 ## go a little something like
 
 def violinMe(parameter,pref):
-   for x_sample in range(1,5): ## Loop over samples of the x axis
+   print "Extracting data for %s" % parameter
+   out=[]
+   for x_sample in range(1,6): ## Loop over samples of the x axis
       thisFolder=pref+str(x_sample)  ## Select specific folder for this sample
       posterior=getPosterior(parameter,thisFolder) ## Extract desired posterior from the hdf file
-      print thisFolder
-      print(posterior[1])
+      print "   ---%s completed" % thisFolder
+      out.append(posterior)
+   return out
 
 ## Add violin plot functions - need to check documentation for this
-## Going to first check that everything is imported correctly
-violinMe("distance",pref)
+out=violinMe("distance",pref)
+
+
+plt.figure()
+plt.violinplot(out[0])
+plt.savefig("violins.png")
