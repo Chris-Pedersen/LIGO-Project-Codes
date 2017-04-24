@@ -2,7 +2,7 @@
 
 #Create new directory for this inference run
 #DIR=`date '+%Y%m%d-%H%M%S'`
-DIR=close_highMR_5
+DIR=800mp_highMR_4
 NAMEDIR=final/${DIR}
 mkdir ${NAMEDIR}
 PAR=${NAMEDIR}/parameters.txt
@@ -17,10 +17,10 @@ RA=2.21535724066
 DEC=-1.23649695537
 THETA_JN=2.7  ### <<---- this parameter is no longer relevant
 ## Inclination calculated manually currently using findTheta.py
-INC=2.51327412
+INC=1.88495559
 COA_PHASE=0.
 POLARIZATION=0.8
-DISTANCE=200000 # in kpc
+DISTANCE=800000 # in kpc
 INJ_F_MIN=20.
 TAPER="start"
 
