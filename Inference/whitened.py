@@ -174,7 +174,7 @@ for ifo in ['H1', 'L1']:
     snr_map = snr[len(snr_map) / 4: len(snr_map) * 3 / 4]
     snr_list.append(snr)
     snr_list.append(snr_map)
-
+'''
 savename=opts.output_file
 print savename
 figname=savename[:-2]+"_SNR"
@@ -191,7 +191,7 @@ for ifo in ['H1', 'L1']: ### Will need to manually extend this for Virgo
     pyplot.ylabel("SNR")
 pyplot.xlabel("Time")
 pyplot.savefig("%s.png" % figname)
-
+'''
 
 
 print "saving MAP values to dictionary"
