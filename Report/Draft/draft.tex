@@ -157,7 +157,14 @@ Considerable research has been done on studying non-spinning binaries and on non
 	\caption{Illustration of a precessing binary system https://phys.org/news/2015-03-insights-black-hole-collisions.html}
 	\centering
 \end{figure}
-This causes the signal in the detector to have an overall amplitude modulation as a function of time due to the change in orientation of the source, and therefore the change in direction of peak emission of GWs. This can be seen in Fig. 7, where we compare a very slightly precessing system with a maximally precessing one. Due to the computational intensity of dealing with both the generation of waveforms and inference process involving precessing systems, significant efforts have been made to reduce the size of the parameter space using the degenerecies between specific spin combinations to parametrise the spins of a binary. The most successful of these is the adoption of two spin parameters\cite{imr}\cite{chip} that describe the whole binary system, where we replace the six spin parameters with two:
+This causes the signal in the detector to have an overall amplitude modulation as a function of time due to the change in orientation of the source, and therefore the change in direction of peak emission of GWs. This can be seen in Fig. 7, where we compare a very slightly precessing system with a maximally precessing one.
+\begin{figure}[h]
+	\includegraphics[scale=1]{fig7.png}
+	\centering
+	\caption{Waveforms for three BBH mergers with $m1=30$, $m2=10$ and with spins only in the $x$ direction on the heavier black hole. The inclination is such that the binary is viewed edge-on. LEGEND ON THIS FIGURE IS WRONG, FIX BEFORE SUBMIT}
+	\centering
+\end{figure}
+Due to the computational intensity of dealing with both the generation of waveforms and inference process involving precessing systems, significant efforts have been made to reduce the size of the parameter space using the degenerecies between specific spin combinations to parametrise the spins of a binary. The most successful of these is the adoption of two spin parameters\cite{imr}\cite{chip} that describe the whole binary system, where we replace the six spin parameters with two:
 \begin{equation}
 \chi_{\text{eff}}=\bigg(\frac{\mathbf{S}_1}{m_1}+\frac{\mathbf{S}_2}{m_2}\bigg)\cdot\frac{\mathbf{\hat{L}}}{M}
 \end{equation}
@@ -166,12 +173,7 @@ and
 \chi_\text{p}=\frac{1}{B_1m^2_1}\text{max}(B_1S_{1\perp},B_2S_{2\perp})
 \end{equation}
 where $B1=2+3/(2q)$ and $B2=2+(3q)/2$. These parameters effectively quantify the amount of in-plane and out of plane spin of the total binary, removing large degenerate portions of the parameter space. As different spin configuations within these parameters are effectively degenerate, no loss of information occurs in this re-parametrisation. The recent adoption of this parametrisation in the generation of template waveform banks (the IMRPhenomPv2 waveforms which, we use in this work) has made exploring the precessing parameter space computationally viable, as it reduces the computation time by an order of magnitude. The results of these waveforms agree well when compared with waveforms generated using the full spin parameter space (known as the Spinning Effective One Body Numerical Relativity, or SEOBNR waveforms)\cite{spin}\cite{eob}, so the recent availability of a computationally efficient precessing waveform bank makes this an opportune time to conduct this research. Indeed the first full survey of an isotropic distribution of spins for a large number of simulations (200) has only very recently been published a matter of weeks ago\cite{pe_latest}.
-\begin{figure}[h]
-	\includegraphics[scale=1]{fig7.png}
-	\centering
-	\caption{Waveforms for three BBH mergers with $m1=30$, $m2=10$ and with spins only in the $x$ direction on the heavier black hole. The inclination is such that the binary is viewed edge-on. LEGEND ON THIS FIGURE IS WRONG, FIX BEFORE SUBMIT}
-	\centering
-\end{figure}
+
 The particular focus of this paper is on the challenges of inferring $\chi_p$ in precessing systems. This parameter is of particular importance due to its astrophysical implications, and as of yet there has been no comprehensive study into the effects of precession and it's amplitude modulation of the signal on the process of parameter estimation. The formation methods of compact binary systems of stellar mass black holes are currently unknown, and a variety of models have been proposed\cite{modal}. Of particular interest is whether the two black holes formed from a common accreting system, or whether the binary was formed by dynamical capture. The former model would imply that the spins on the black holes would generally tend to be aligned with one another and with the orbital angular momentum, however in the dynamical capture model we expect the spins to be more or less uniformly distributed. Given the large number of expected detections over the coming years, a thorough understanding of the detector's response to precessing waveforms and an accurate estimation of our ability to recover $\chi_p$ reliably will be crucial to answering these questions, and maximising the scientific yield from this remarkable technology.
 \section{Intrinsic degeneracies}
 \subsection{Precessing waveforms}
@@ -183,22 +185,34 @@ We first consider in more detail the effects of precession on a GW waveform. Thi
 	\centering
 \end{figure}
 The situation is further complicated by the fact that the phase, $\phi_c$ is an important degree of freedom in precessing binaries, as shown in Fig. 9. In non-precessing binaries, the phase is very much a trivial parameter which contains no interesting information about the system, however in precessing binaries the phase has a significant affect on the signal modulation. This opens up the possibility of many different degeneracies between binaries with different intrinsic parameters but a certain combination of phase and source location, and makes studying precessing waveforms more challenging. When considering precession it is also important to note that heavier total mass binaries have considerably shorter inspiral phases, and therefore fewer oscillation cycles within the detection frequency band. So while they will have a stronger signal, there is less opportunity for precessive effects to manifest.
-\subsection{Matching between waveforms}
-An extremely useful and computationally cheap way to identify some of these degeneracies is through the process of matching as defined in (13). In the \textit{PyCBC} framework, the match is maximised over extrinsic parameters such as distance and source location that only affect the amplitude of a signal, and so is a useful tool for examining the similarities in the morphologies of different waveforms. A match takes values in the range $[0,1]$, with identical waveforms having a match of 1.
+\subsection{Matching and exploring the parameter space}
+An extremely useful and computationally cheap way to identify some of these degeneracies is through the process of matching as defined in (13). In the \textit{PyCBC} framework, the match is maximised over extrinsic parameters such as distance and source location that only affect the amplitude of a signal, and so is a useful tool for examining the similarities in the morphologies of different waveforms. A match takes values in the range $[0,1]$, with identical waveforms having a match of 1. It is also important to note that the inclination parameter has a similar nature of that of the initial phase, in that in matches of non-precessing binaries it can be maximised over as it does not affect signal morphology, however once precession is added, waveforms at different inclinations no longer match, further adding to the complexity of the parameter space. In this section we intend to get some idea of the areas in which we expect the detector to be most sensitive to precession, and those in which precessing signals are intrinsically degenerate with non-precessing waveforms. This is done by incrementally changing waveform parameters and seeing how the match between the waveforms changes as a result. 
 \begin{figure}[h]
 	\includegraphics[scale=0.58]{fig9.png}
 	\centering
 	\caption{Affect of phase on non-precessing and precessing waveforms. Precession adds an extra degree of freedom in that the morphology of precessing waveforms is different for different phases.}
 	\centering
 \end{figure}
-\subsection{Scanning the parameter space}
-2D match plots
+Fig. 10 shows how the matches between precessing and non-precessing waveforms change with inclination for four different mass ratios. The dark regions of the match is where the signals have significant mismatch, and the waveforms should be well distinguished, and hte light regions are where the waveforms are effectively degenerate. It is apparent that the degeneracy is far stronger for close to equal mass binaries, where only maximally precessing systems at edge-on inclinations will have noticeably different waveforms. Here we plot the 0.97 match contour as it is generally expected that the advanced LIGO detectors should be able to distinguish between waveforms with a match of 0.97. For al but the most extreme mass ratios, a combination of significant in-plane spin (>0.6) and/or strong inclination is necessary to have any significant deviation from a precessing waveform. It is important to note here that as we change the inclination, the overall strength of the signal will drop (with strongest at $\iota=0$), and the matching process does not account for this change in signal strength.
+\begin{figure}[h]
+	\includegraphics[scale=0.55]{fig10.png}
+	\centering
+	\caption{Matches between precessing and non-precessing waveforms for a range of inclinations}
+	\centering
+\end{figure}
 \section{Detector response simulations}
-Describe software injections
+In this section we describe the process of inserting signals into simulated detector noise, and then perform a full parameter estimation.
 \subsection{Signal extraction}
 Data whitening - basically LOSC stuff, how we go from raw data to a signal - move this to intro?
 \subsection{Inference pipeline}
-Describe the structure of the inference pipeline
+A large number of software injections were going to be necessary to generate any interesting results due to the large size and complexity of the parameter space as revealed by the match results. So it was key that they could be performed efficiently and in an organised way. This required the construction of an inference pipeline which formed the bulk of the computational work of the project. This was ultimately one bash script that would create a new folder for each run, generate the injection file and run the inference MCMC.  It also saves the injected parameters as a python dictionary, plots all posteriors overlaid with injected parameters, plots the injected waveform, and the recovered (maximum posterior, or MAP waveform) and injected waveforms overlaid on the whitened detector strain data, and return matches between the MAP and injected waveforms. This meant that all the relevant analysis and data processing needed for each inference run was fully automated. A flow chart of this process is shown in Fig. 12.
+This project work was also split between a number of different LIGO clusters, as well as work on several different local PCs, and so the pipeline along with all the relevant match and precession scripts were maintained as part of a GitHub repository which meant that the codes could be developed effectively and without conflict.
+\begin{figure}[h]
+	\includegraphics[scale=0.55]{fig12.png}
+	\centering
+	\caption{Flow chart of the inference pipeline. The ellipses represent data files that were generated during the pipeline and stored in case further analysis was necessary. The boxes at the bottom represent the final output of the pipeline.}
+	\centering
+\end{figure}
 \subsection{Inference runs}
 Posteriors and discussion of inference results. Great result that injected appears to match the signal better. Weakness in the inference pipeline? Perhaps its the case that match drops here due to the fact that precessive waveforms can often only really be significantly distinguished during the peaks of the merger phase. These are obviously susceptible to random noise fluctuations. Strong conclusion here.
 \subsection{Impact of Virgo}
@@ -207,5 +221,5 @@ A look at how Virgo will influence PE, especially chi p estimation.
 Summary of results on PE and estimation of chi p, and a prospect on Virgo's impact.
 \section{Reflective Statement}
 I now need a therapist
-\bibliography{draftbib.bib}
+%\bibliography{draftbib.bib}
 \end{document}
