@@ -8,6 +8,7 @@ from pycbc.inference import option_utils
 from pycbc.types import TimeSeries, FrequencySeries
 from pycbc import strain as pystrain
 from pycbc import waveform
+from pycbc.filter import highpass_fir, matched_filter
 import numpy
 import matplotlib
 matplotlib.use('Agg')
@@ -55,6 +56,7 @@ inj_vals=list([1126259462.0,     # time
               injected["ra"],
               injected["dec"]])
 
+snr_list=[]
 
 fig = pyplot.figure()
 ii = 0
@@ -162,6 +164,34 @@ for ifo in ['H1', 'L1']:
     ax.set_ylabel('{} whitened strain'.format(ifo))
     if ii == 2:
         ax.set_xlabel('GPS time - {} (s)'.format(gps_time))
+
+    ## Find and save SNR
+    snr = matched_filter(ti, y, psd=psd, low_frequency_cutoff=20.0) ## Should be SNR between injected waveform and whitened data
+    snr_map=matched_filter(ts, y, psd=psd, low_frequency_cutoff=20.0) ## SNR between MAP waveform and whitened data
+
+    # Remove regions corrupted by filter wraparound
+    snr = snr[len(snr) / 4: len(snr) * 3 / 4]
+    snr_map = snr[len(snr_map) / 4: len(snr_map) * 3 / 4]
+    snr_list.append(snr)
+    snr_list.append(snr_map)
+'''
+savename=opts.output_file
+print savename
+figname=savename[:-2]+"_SNR"
+## Plot and save SNRs
+print "saving SNR figures"
+jj=0
+pyplot.figure()
+for ifo in ['H1', 'L1']: ### Will need to manually extend this for Virgo
+    jj+=1
+    map_snr=snr_list[jj-1]
+    inj_snr=snr_list[jj]
+    pyplot.subplot(2,1,jj)
+    pyplot.plot(map_snr.sample_times,abs(map_snr))
+    pyplot.ylabel("SNR")
+pyplot.xlabel("Time")
+pyplot.savefig("%s.png" % figname)
+'''
 
 
 print "saving MAP values to dictionary"
