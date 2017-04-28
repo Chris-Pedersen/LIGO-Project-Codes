@@ -21,7 +21,7 @@ m2=specs[1]
 plt.figure()
 plt.subplot(2,2,1)
 plt.contourf(x,y,z,200,cmap="inferno")
-plt.colorbar()
+plt.colorbar(shrink=0.8)
 plt.ylabel("Phase")
 plt.subplot(2,2,2)
 plt.contourf(x2,y,z2,200,cmap="inferno")
