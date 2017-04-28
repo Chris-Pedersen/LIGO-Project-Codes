@@ -9,6 +9,7 @@ fname2="phase_s20psi2"
 fname3="phase_s20psi3"
 fname4="phase_s20psi4"
 
+levels = np.linspace(0, 0.7, 200)
 
 #Data saved in the form of x values, y values, z values
 x,y,z,specs=pickle.load(open("%s.p" % fname,"rb"))
@@ -20,19 +21,19 @@ m2=specs[1]
 
 plt.figure()
 plt.subplot(2,2,1)
-plt.contourf(x,y,z,200,cmap="inferno")
+plt.contourf(x,y,z,200,levels=levels,cmap="inferno")
 plt.colorbar(shrink=0.8)
 plt.ylabel("Phase")
 plt.subplot(2,2,2)
-plt.contourf(x2,y,z2,200,cmap="inferno")
+plt.contourf(x2,y,z2,200,levels=levels,cmap="inferno")
 plt.colorbar()
 plt.subplot(2,2,3)
-plt.contourf(x3,y,z3,200,cmap="inferno")
+plt.contourf(x3,y,z3,200,levels=levels,cmap="inferno")
 plt.colorbar()
 plt.xlabel("Inclination")
 plt.ylabel("Phase")
 plt.subplot(2,2,4)
-plt.contourf(x4,y,z4,200,cmap="inferno")
+plt.contourf(x4,y,z4,200,levels=levels,cmap="inferno")
 plt.colorbar()
 plt.xlabel("Inclination")
 plt.show("hold")
