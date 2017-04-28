@@ -14,10 +14,16 @@ m1=specs[0]
 m2=specs[1]
 
 plt.figure()
-plt.subplot(1,2,1)
+plt.subplot(2,2,1)
 plt.contourf(x,y,z,200,cmap="inferno")
 plt.colorbar()
-plt.subplot(1,2,2)
+plt.subplot(2,2,2)
+plt.contourf(x2,y,z,200,cmap="inferno")
+plt.colorbar()
+plt.subplot(2,2,3)
+plt.contourf(x2,y,z,200,cmap="inferno")
+plt.colorbar()
+plt.subplot(2,2,4)
 plt.contourf(x2,y,z,200,cmap="inferno")
 plt.colorbar()
 plt.ylabel("phase")
