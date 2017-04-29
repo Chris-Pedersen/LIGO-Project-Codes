@@ -193,13 +193,24 @@ An extremely useful and computationally cheap way to identify some of these dege
 	\caption{Affect of phase on non-precessing and precessing waveforms. Precession adds an extra degree of freedom in that the morphology of precessing waveforms is different for different phases.}
 	\centering
 \end{figure}
-Fig. 10 shows how the matches between precessing and non-precessing waveforms change with inclination for four different mass ratios. The dark regions of the match is where the signals have significant mismatch, and the waveforms should be well distinguished, and hte light regions are where the waveforms are effectively degenerate. It is apparent that the degeneracy is far stronger for close to equal mass binaries, where only maximally precessing systems at edge-on inclinations will have noticeably different waveforms. Here we plot the 0.97 match contour as it is generally expected that the advanced LIGO detectors should be able to distinguish between waveforms with a match of 0.97. For al but the most extreme mass ratios, a combination of significant in-plane spin (>0.6) and/or strong inclination is necessary to have any significant deviation from a precessing waveform. It is important to note here that as we change the inclination, the overall strength of the signal will drop (with strongest at $\iota=0$), and the matching process does not account for this change in signal strength.
+Fig. 10 shows how the matches between precessing and non-precessing waveforms change with inclination for four different mass ratios. The dark regions of the match is where the signals have significant mismatch, and the waveforms should be well distinguished, and hte light regions are where the waveforms are effectively degenerate. It is apparent that the degeneracy is far stronger for close to equal mass binaries, where only maximally precessing systems at edge-on inclinations will have noticeably different waveforms. Here we plot the 0.97 match contour as it is generally expected that the advanced LIGO detectors should be able to distinguish between waveforms with a match of 0.97. For all but the most extreme mass ratios, a combination of significant in-plane spin ($/geq0.6$) and/or strong inclination is necessary to have any significant deviation for systems with high precession. It is important to remember here that as we change the inclination, the overall strength of the signal will drop (with strongest at $\iota=0$), and the matching process does not account for this change in signal strength.
+
 \begin{figure}[h]
 	\includegraphics[scale=0.55]{fig10.png}
 	\centering
-	\caption{Matches between precessing and non-precessing waveforms for a range of inclinations}
+	\caption{Matches between precessing and non-precessing waveforms for a range of inclinations and mass ratios.(make this more compact before submit)}
 	\centering
 \end{figure}
+
+--Fig 11 will be spinDegen for 3 spins on 2nd BH
+
+\begin{figure}[h]
+	\includegraphics[scale=0.85]{fig12.png}
+	\centering
+	\caption{Match limit plots for a range of inclinations and phases for 4 polarisations.}
+	\centering
+\end{figure}
+
 \section{Detector response simulations}
 In this section we describe the process of inserting signals into simulated detector noise, and then perform a full parameter estimation.
 \subsection{Signal extraction}
@@ -208,7 +219,7 @@ Data whitening - basically LOSC stuff, how we go from raw data to a signal - mov
 A large number of software injections were going to be necessary to generate any interesting results due to the large size and complexity of the parameter space as revealed by the match results. So it was key that they could be performed efficiently and in an organised way. This required the construction of an inference pipeline which formed the bulk of the computational work of the project. This was ultimately one bash script that would create a new folder for each run, generate the injection file and run the inference MCMC.  It also saves the injected parameters as a python dictionary, plots all posteriors overlaid with injected parameters, plots the injected waveform, and the recovered (maximum posterior, or MAP waveform) and injected waveforms overlaid on the whitened detector strain data, and return matches between the MAP and injected waveforms. This meant that all the relevant analysis and data processing needed for each inference run was fully automated. A flow chart of this process is shown in Fig. 12.
 This project work was also split between a number of different LIGO clusters, as well as work on several different local PCs, and so the pipeline along with all the relevant match and precession scripts were maintained as part of a GitHub repository which meant that the codes could be developed effectively and without conflict.
 \begin{figure}[h]
-	\includegraphics[scale=0.55]{fig12.png}
+	\includegraphics[scale=0.55]{fig13.png}
 	\centering
 	\caption{Flow chart of the inference pipeline. The ellipses represent data files that were generated during the pipeline and stored in case further analysis was necessary. The boxes at the bottom represent the final output of the pipeline.}
 	\centering
@@ -221,5 +232,18 @@ A look at how Virgo will influence PE, especially chi p estimation.
 Summary of results on PE and estimation of chi p, and a prospect on Virgo's impact.
 \section{Reflective Statement}
 I now need a therapist
-%\bibliography{draftbib.bib}
+
+Still to do:
+
+1. SNR equation
+2. MCMC description
+3. Match plots for phase and inclination
+4. Inference results - 2D posteriors
+4. Inference results - strain plots
+4. Inference results - Violin plots
+5. Virgo results
+6. Conclusions
+7. Proper references of pics
+
+\bibliography{draftbib.bib}
 \end{document}
