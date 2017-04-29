@@ -35,7 +35,7 @@ from pycbc.waveform import get_td_waveform
 
 
 ## Custom parameters
-pref="close_highMR_"
+pref="800mp_highMR_"
 whatDo=str(sys.argv[1])
 
 ## Static parameters
