@@ -17,7 +17,7 @@ x3,y,z3,specs=pickle.load(open("%s.p" % fname3,"rb"))
 m1=specs[0]
 m2=specs[1]
 
-plt.figure()
+plt.figure(figsize=(10,5))
 plt.subplot(1,3,1)
 plt.contourf(x,y,z,200,levels=levels,cmap="inferno")
 plt.ylabel("Mass2")
