@@ -6,7 +6,7 @@ import numpy as np
 
 fname="s2_00z_plus"
 fname2="s2_98z_plus"
-fname3="s2_98z_plus"
+fname3="s2_98p_plus"
 
 levels = np.linspace(0, 1, 200)
 
@@ -21,13 +21,16 @@ plt.figure(figsize=(10,5))
 plt.subplot(1,3,1)
 plt.contourf(x,y,z,200,levels=levels,cmap="inferno")
 plt.ylabel("Mass2")
+plt.title("Spin2=0")
 plt.xlabel("Inclination")
 plt.subplot(1,3,2)
 plt.contourf(x2,y,z2,200,levels=levels,cmap="inferno")
 plt.xlabel("Inclination")
+plt.title("Spin2 Aligned")
 plt.subplot(1,3,3)
 plt.contourf(x3,y,z3,200,levels=levels,cmap="inferno")
 plt.xlabel("Inclination")
+plt.title("Spin2 in-plane")
 plt.tight_layout()
 plt.show("hold")
 plt.savefig("multi_mr.png")
