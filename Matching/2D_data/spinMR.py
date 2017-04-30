@@ -8,7 +8,7 @@ fname="s2_00z_plus"
 fname2="s2_98z_plus"
 fname3="s2_98p_plus"
 
-levels = np.linspace(0, 1, 200)
+levels = np.linspace(0.2, 1, 200)
 
 #Data saved in the form of x values, y values, z values
 x,y,z,specs=pickle.load(open("%s.p" % fname,"rb"))
