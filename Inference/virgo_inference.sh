@@ -200,7 +200,7 @@ pycbc_inference --verbose \
 
 ###### NEXT JOB
 # For each run, need to change dir and inc and re run everything
-DIR=800mp_highMR_2
+DIR=virgo_highMR_2
 INC=0.628
 
 ## Redefine these
@@ -345,7 +345,7 @@ pycbc_inference --verbose \
     --nprocesses ${NPROCS}
 ###### NEXT JOB
 # For each run, need to change dir and inc and re run everything
-DIR=800mp_highMR_3
+DIR=virgo_highMR_3
 INC=1.257
 
 ## Redefine these
@@ -491,7 +491,7 @@ pycbc_inference --verbose \
 
 ###### NEXT JOB
 # For each run, need to change dir and inc and re run everything
-DIR=800mp_highMR_4
+DIR=virgo_highMR_4
 INC=1.885
 
 ## Redefine these
@@ -637,7 +637,7 @@ pycbc_inference --verbose \
 
 ###### NEXT JOB
 # For each run, need to change dir and inc and re run everything
-DIR=800mp_highMR_5
+DIR=virgo_highMR_5
 INC=2.513
 
 ## Redefine these

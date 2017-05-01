@@ -261,8 +261,8 @@ def plotPosterior(parameter):
    elif parameter=="chi_eff":
       prior=np.loadtxt("priors/chi_eff_prior.txt")
       plt.hist(prior,50,normed=True,alpha=0.6)
-      plt.xlabel(r'$\chi_eff$')
-   print "   --%s added" % parameter
+      plt.xlabel(r'$\chi_{eff}$')
+   print "  --%s added" % parameter
 
 plt.figure(figsize=(6,7))
 ## Plot loop
