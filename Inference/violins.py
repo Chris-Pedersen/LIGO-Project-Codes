@@ -35,7 +35,7 @@ from pycbc.waveform import get_td_waveform
 
 
 ## Custom parameters
-pref="800mp_highMR_"
+pref="close_highMR_"
 whatDo=str(sys.argv[1])
 
 ## Static parameters
@@ -224,6 +224,7 @@ def violinMe(parameter,pref):
       print "   ---%s completed" % thisFolder
       out.append(posterior)
    plt.figure()
+   plt.title("200Mpc")
    plt.xlabel("Inclination")
    plt.ylabel("%s" % parameter)
    if parameter=="chi_p":
