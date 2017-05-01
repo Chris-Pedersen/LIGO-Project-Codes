@@ -224,7 +224,14 @@ def violinMe(parameter,pref):
       print "   ---%s completed" % thisFolder
       out.append(posterior)
    plt.figure()
-   plt.title("Violin plots for %s" % parameter)
+   plt.xlabel("Inclination")
+   plt.ylabel("%s" % parameter)
+   if parameter=="chi_p":
+      plt.ylabel(r"$\chi_p$")
+      plt.axhline(y=0.9,linewidth=2,color='r')
+   if parameter=="chi_eff":
+      plt.ylabel(r"$\chi_eff$")
+      plt.axhline(y=0.,linewidth=2,color='r')
    plt.violinplot(out,xaxis,showmeans=True,widths=0.8)
    plt.savefig("figures/%sviolins_%s.png" % (pref, parameter))
    print "--Figure saved--"
