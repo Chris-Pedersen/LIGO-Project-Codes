@@ -265,7 +265,7 @@ def plotPosterior(parameter):
 
 plt.figure()
 ## Plot loop
-for aa in range(1,12):
+for aa in range(1,13):
    plt.subplot(4,3,aa)
    plotPosterior(params[aa-1])
 plt.savefig("figures/%s_fullpost.png" % run)
