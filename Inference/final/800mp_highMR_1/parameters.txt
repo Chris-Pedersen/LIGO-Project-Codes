@@ -1,0 +1,33 @@
+Injection approximant = IMRPhenomPv2threePointFivePN 
+Trigger time = 1126259462.0 
+Mass 1 = 50. 
+Mass 2 = 15. 
+RA = 2.21535724066 
+Declination = -1.23649695537 
+Inclination = 0. 
+Phase = 0. 
+Polarisation = 0.8 
+Theta_JN = 2.7 
+Distance (kpc) = 800000 
+Minimum frequency injected = 20. 
+Sampler min frequency = 20. 
+ 
+Spin parameters: 
+Spin1 min = 0.9 
+Spin1 max = 0.9 
+Spin1 min kappa = 0.0 
+Spin1 max kappa = 0.0 
+Spin2 min = 0.0 
+Spin2 max = 0.0 
+Spin2 min kappa = 0.9 
+Spin2 max kappa = 0.9 
+ 
+Sampler parameters: 
+Number of walkers = 5000 
+Number of checkpoints = 1000 
+Number of iterations = 12000 
+Number of processors = 12 
+ 
+Other parameters> 
+Detectors = H1 L1 
+Strain = H1:aLIGOZeroDetHighPower L1:aLIGOZeroDetHighPower 
