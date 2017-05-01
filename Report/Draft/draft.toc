@@ -7,10 +7,10 @@
 \contentsline {section}{\numberline {2}Intrinsic degeneracies}{11}
 \contentsline {subsection}{\numberline {2.1}Precessing waveforms}{11}
 \contentsline {subsection}{\numberline {2.2}Matching and exploring the parameter space}{12}
-\contentsline {section}{\numberline {3}Detector response simulations}{14}
-\contentsline {subsection}{\numberline {3.1}Signal extraction}{14}
-\contentsline {subsection}{\numberline {3.2}Inference pipeline}{14}
-\contentsline {subsection}{\numberline {3.3}Inference runs}{15}
-\contentsline {subsection}{\numberline {3.4}Impact of Virgo}{15}
-\contentsline {section}{\numberline {4}Conclusions and implications}{15}
-\contentsline {section}{\numberline {5}Reflective Statement}{15}
+\contentsline {section}{\numberline {3}Detector response simulations}{15}
+\contentsline {subsection}{\numberline {3.1}Signal extraction}{15}
+\contentsline {subsection}{\numberline {3.2}Inference pipeline}{15}
+\contentsline {subsection}{\numberline {3.3}Inference runs}{16}
+\contentsline {subsection}{\numberline {3.4}Impact of Virgo}{17}
+\contentsline {section}{\numberline {4}Conclusions and implications}{17}
+\contentsline {section}{\numberline {5}Reflective Statement}{18}
