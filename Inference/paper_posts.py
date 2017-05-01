@@ -1,5 +1,5 @@
-import matplotlib
-matplotlib.use('Agg')
+#import matplotlib
+#matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import numpy as np
 from pycbc.io import InferenceFile
@@ -253,21 +253,24 @@ def plotPosterior(parameter):
    plt.axvline(x=mean_val,linewidth=2, color='k')
    plt.axvline(x=upper_90,linewidth=2,linestyle='dashed',color='k')
    plt.xlabel("%s" % parameter)
-   plt.grid()
    ## Plot priors for derived spin parameters
    if parameter=="chi_p":
       prior=np.loadtxt("priors/chi_p_prior.txt")
       plt.hist(prior,50,normed=True,alpha=0.6)
+      plt.xlabel(r'$\chi_p$')
    elif parameter=="chi_eff":
       prior=np.loadtxt("priors/chi_eff_prior.txt")
       plt.hist(prior,50,normed=True,alpha=0.6)
+      plt.xlabel(r'$\chi_eff$')
    print "   --%s added" % parameter
 
-plt.figure()
+plt.figure(figsize=(6,7))
 ## Plot loop
 for aa in range(1,13):
    plt.subplot(4,3,aa)
    plotPosterior(params[aa-1])
+plt.tight_layout()
 plt.savefig("figures/%s_fullpost.png" % run)
+plt.show("hold")
 
 print "DONE"
