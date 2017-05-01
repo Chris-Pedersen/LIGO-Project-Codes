@@ -124,7 +124,7 @@ h_\times(t)=-2A_{GW}(t)\cos(\iota)\sin(\phi(t))
 and binaries that are face on (with $\iota=0$) emit circularly polarised waves, and edge-on binaries emit linearly (either cross or plus) polarised GWs. On completion of the advanced LIGO upgrade in 2015 the network had a detection band of 10-7000 Hz, allowing BBH mergers to be detected up to a redshift of z=0.4\cite{lasers}. A variety of search algorithms continuously scan the data for a variety of signals\cite{search1}\cite{search2} using tailored triggers and template banks depending on the kind of search being conducted. Once a candidate signal is identified, the data around the event is then separated, and a more targeted and computationally intensive parameter estimation analysis is performed on it.
 
 \subsection{Parameter estimation}
-A signal is described by a total of 16 parameters\cite{props} - time and phase of coalesence $t_c$ and $\phi_c$, two parameters to describe sky location (right ascension, $\alpha$ and declination $\delta$), luminosity distance $D_L$, inclination angle $\iota$ describing the orientation of the binary's total angular momentum with respect to the line of sight, polarisation angle $\psi$, the masses $m_1$, $m_2$, six spin parameters to totally describe the spins on each of the two black holes $\vec{S}_1$, $\vec{S}_2$, and then two eccentricity parameters. In this work we ignore the eccentricity parameters and consider only circular orbits. The masses and spins of the component black holes are intrinsic parameters which determine the morphology of the waveform, and the remaining are extrinsic parameters. The maximum spin a black hole can have is $m^2$ in natural units, so the convention is to use a dimensionless spin magnitude $a=|\vec{S}|/m^2 \leq 1$. In the first order, the frequency evolution of the 'chirp' signal is approximated by a combination of the masses known as a the chirp mass
+A signal is described by a total of 16 parameters\cite{props} - time and phase of coalesence $t_c$ and $\phi_c$, two parameters to describe sky location (right ascension, $\alpha$ and declination $\delta$), luminosity distance $D_L$, inclination angle $\iota$ describing the orientation of the binary's total angular momentum with respect to the line of sight, polarisation angle $\psi$ which mixes plus and cross polarisations by $h=h_+\cos\psi+h_\times\sin\psi$, the masses $m_1$, $m_2$, six spin parameters to totally describe the spins on each of the two black holes $\vec{S}_1$, $\vec{S}_2$, and then two eccentricity parameters. In this work we ignore the eccentricity parameters and consider only circular orbits for the sake of constraining the size of the already large parameter space, although the effect of these parameters is an area of active research. The masses and spins of the component black holes are intrinsic parameters which determine the morphology of the waveform, and the remaining are extrinsic parameters. The maximum spin a black hole can have is $m^2$ in natural units, so the convention is to use a dimensionless spin magnitude $a=|\vec{S}|/m^2 \leq 1$. In the first order, the frequency evolution of the 'chirp' signal is approximated by a combination of the masses known as a the chirp mass
 \begin{equation}
 \mathcal{M}=\frac{(m_1m_2)^{3/5}}{(m_1+m_2)^{1/5}}\propto \bigg(f^{-11/3}\dot{f}\bigg)^{3/5}
 \end{equation}
@@ -202,6 +202,8 @@ In this section we intend to get some idea of the areas in which we expect the d
 	\centering
 	\caption{Matches between precessing and non-precessing waveforms for a range of inclinations and mass ratios.(make this more compact before submit)}
 	\centering
+\end{figure}
+\begin{figure}[h]
 	\includegraphics[scale=0.55]{fig11.png}
 	\centering
 	\caption{Spin difference required for the match between precessing and non-precessing waveforms to drop below 0.95}
@@ -226,7 +228,7 @@ In this section we describe the process of inserting signals into simulated dete
 \subsection{Signal extraction}
 Data whitening - basically LOSC stuff, how we go from raw data to a signal - move this to intro?
 \subsection{Inference pipeline}
-A large number of software injections were going to be necessary to generate any interesting results due to the large size and complexity of the parameter space as revealed by the match results. So it was key that they could be performed efficiently and in an organised way. This required the construction of an inference pipeline which formed the bulk of the computational work of the project. This was ultimately one bash script that would create a new folder for each run, generate the injection file and run the inference MCMC.  It also saves the injected parameters as a python dictionary, plots all posteriors overlaid with injected parameters, plots the injected waveform, and the recovered (maximum posterior, or MAP waveform) and injected waveforms overlaid on the whitened detector strain data, and return matches between the MAP and injected waveforms. This meant that all the relevant analysis and data processing needed for each inference run was fully automated. A flow chart of this process is shown in Fig. 12.
+A large number of software injections were going to be necessary to generate any interesting results due to the large size and complexity of the parameter space as revealed by the match results. So it was key that they could be performed efficiently and in an organised way. This required the construction of an inference pipeline which formed the bulk of the computational work of the project. This was ultimately one bash script that would create a new folder for each run, generate the injection file and run the inference MCMC.  It also saves the injected parameters as a python dictionary, plots all posteriors overlaid with injected parameters, plots the injected waveform, and the recovered (maximum posterior, or \textit{MAP} waveform) and injected waveforms overlaid on the whitened detector strain data, and return matches between the MAP and injected waveforms. This meant that all the relevant analysis and data processing needed for each inference run was fully automated. A flow chart of this process is shown in Fig. 12.
 This project work was also split between a number of different LIGO clusters, as well as work on several different local PCs, and so the pipeline along with all the relevant match and precession scripts were maintained as part of a GitHub repository which meant that the codes could be developed effectively and without conflict.
 \begin{figure}[h]
 	\includegraphics[scale=0.55]{fig13.png}
@@ -235,7 +237,20 @@ This project work was also split between a number of different LIGO clusters, as
 	\centering
 \end{figure}
 \subsection{Inference runs}
-In this section we present the results from a range of inference runs, attempt to assess the effectiveness of spin estimation and compare the inference results with the match results to evaluate how effective the match process is as a predictor of inference accuracy.
+In this section we present the results from a range of inference runs, attempt to assess the effectiveness of spin estimation and compare the inference results with the match results to evaluate how effective the match process is as a predictor of inference accuracy. For all injections we set $S_{1\perp}=0.9$ and $|\vec{S_2}|=0$ with $\chi_p=0.9$, and cover a uniform range of inclinations. We set the phase to be $\phi=0.$, and the polarisation angle $\psi=0.8$, so the signals are of mixed polarisation, but slightly cross dominated. The match results indicate that cross polarised signals generally have a higher spin resolution, but we want to avoid the signal drop at $\iota=\pi/2$, which is why a mixed but cross dominated polarisation angle was selected. The source location and coalesence time were also kept fixed for all injections. We also only examine high mass ratio binaries, as the match results indicate that precession is not significant in equal mass ratio binaries. Out of a total of ****** software injections that were performed, only **** instances where the injected $\chi_p$ value fell within the 90\% confidence interval. In Figs 14 and 15 we compare posteriors for two inferences, where $\chi_p$ was excluded and where it was recovered moderately well respectively. Even in the cases where the injected value was within the 90\% confidence intervals, it was always closer to the upper bound than to the mean, and a mean $\chi_p$ greater than 0.65 was never found.
+\begin{figure}[h]
+	\includegraphics[scale=1]{fig14.png}
+	\centering
+	\caption{Posteriors for an injection with $m1=50$, $m2=15$, $\iota=2.51$, $\phi=0$, $\psi=0.8$ at a distance of 200Mpc.}
+	\centering
+\end{figure}
+\begin{figure}[h]
+	\includegraphics[scale=1]{fig15.png}
+	\centering
+	\caption{Posteriors for an injection with the same parameters as in Fig. 14, expect here with an inclination of $\iota=0.63$}
+	\centering
+\end{figure}
+Neither sets of posteriors are consistently accurate, although overall the results in Fig. 14 are overall significantly more accurate than those in Fig. 15, with the exceptions of $\chi_p$ and $\iota$. The masses and source locations are recovered well, with the injected value lying within the 90\% confidence intervals. However the 'cost' of recovering $\chi_p$ seems to be having significant inaccuracies on a range of important parameters, with $\chi_{eff}$, $m2$, distance and chirp mass all being excluded. To examine the source of this inaccuracy, in Fig 16 we plot the whitened detector strain with the signal embedded into it, overlaid with the MAP waveform as recovered by the inference process, and the injected waveform. A match is also performed between the MAP and injected waveforms in each detector frame. This is a crucial part of the analysis, as it helps to distinguish between different sources of inaccuracy. If the inaccuracies are due to either detector noise or some error in the MCMC process, we should expect a low match between the MAP and injected waveform. However it is also possible that due to the large number of parameters, the MCMC algorithm has found certain combinations of different parameters that lead to an effectively degenerate waveform. In this case, we would expect a high match between the MAP waveform and injected waveform, despite the fact that they have vastly different parameters.
 \subsection{Impact of Virgo}
 A look at how Virgo will influence PE, especially chi p estimation.
 \section{Conclusions and implications}
@@ -243,7 +258,6 @@ Summary of results on PE and estimation of chi p, and a prospect on Virgo's impa
 \section{Reflective Statement}
 I now need a therapist
 
-$9.98\pm0.291\times10^{-3}$
 Still to do:
 
 1. SNR equation
