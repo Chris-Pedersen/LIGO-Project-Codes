@@ -240,13 +240,13 @@ This project work was also split between a number of different LIGO clusters, as
 In this section we present the results from a range of inference runs, attempt to assess the effectiveness of spin estimation and compare the inference results with the match results to evaluate how effective the match process is as a predictor of inference accuracy. For all injections we set $S_{1\perp}=0.9$ and $|\vec{S_2}|=0$ with $\chi_p=0.9$, and cover a uniform range of inclinations. We set the phase to be $\phi=0.$, and the polarisation angle $\psi=0.8$, so the signals are of mixed polarisation, but slightly cross dominated. The match results indicate that cross polarised signals generally have a higher spin resolution, but we want to avoid the signal drop at $\iota=\pi/2$, which is why a mixed but cross dominated polarisation angle was selected. The source location and coalesence time were also kept fixed for all injections. We also only examine high mass ratio binaries, as the match results indicate that precession is not significant in equal mass ratio binaries. Out of a total of ****** software injections that were performed, only **** instances where the injected $\chi_p$ value fell within the 90\% confidence interval. In Figs 14 and 15 we compare posteriors for two inferences, where $\chi_p$ was excluded and where it was recovered moderately well, and we refer to these as A and B respectively. Even in the cases where the injected value was within the 90\% confidence intervals, it was always closer to the upper bound than to the mean, and a mean $\chi_p$ greater than 0.65 was never found.
 
 \begin{figure}
-	\includegraphics[scale=1]{fig14.png}
+	\includegraphics[scale=0.70]{fig14.png}
 	\centering
 	\caption{Posteriors for an injection with $m1=50$, $m2=15$, $\iota=2.51$, $\phi=0$, $\psi=0.8$ at a distance of 200Mpc. Prior distributions are included for the derived spin parameters $\chi_p$ and $\chi_{eff}$, which result from uniform spin magnitude and isotropic orientation distributions.}
 	\centering
 \end{figure}
 \begin{figure}
-	\includegraphics[scale=1]{fig15.png}
+	\includegraphics[scale=0.70]{fig15.png}
 	\centering
 	\caption{Posteriors for an injection with the same parameters as in Fig. 14, expect here with an inclination of $\iota=0.63$}
 	\centering
@@ -266,20 +266,26 @@ The results shown in Fig. 16 show a stronger match for A, where the majority of 
 If two signals are degenerate for the majority of the inspiral and merger, and only during the end of the merger and ringdown do they differ, it will be extremely difficult for LIGO detectors to differentiate between them, as the very short time period where there is any mismatch will be swamped by noise. Returning to Fig. 14, we can see that even though the match is strong, there are significant inaccuracies on $\chi_p$ and $\iota$. So in A and B we have examples of each inaccuracy as described earlier - one down to poor signal recovery and one down to an intrinsic degeneracy. In Figs 17 and 18, results are shown for case C, which was selected as its waveform had the strongest visible precessive effects in both H1 and L1 detector frames.
 
 From Fig. 18 it can be seen that the amplitude of the signal noticeably drops towards the end of the inspiral and just before the merger, implying that this would be an ideal signal to recover a high value of $\chi_p$ from. The posteriors shown in Fig. 17 are mostly accurate, with the majority of injected parameters lying inside the 90\% confidence intervals, however once again $\chi_p$ is excluded, and significantly underestimated. The match values shown in Fig. 18 are strong, with both detectors giving a match of 0.96 between the injected and MAP waveforms. This is further evidence of an intrinsic degeneracy that prevents high $\chi_p$ MAP values from being found. For all posteriors shown, both $\phi$ and $\psi$ are broadly uniform, and in the case where they are not uniform, they are largely inaccurate. However in section 2 it was observed that $\psi$ and especially $\phi$ have a significant effect on the structure of the parameter space, and the match between precessing and non-precessing waveforms. One possible explanation for this uniformity is that for each stochastically selected phase and polarisation, the MCMC algorithm readily finds a good match between the injected signal and the strain data simply by tweaking the other remaining parameters slightly. If this is the case, since there are a larger number of waveforms in the template bank with lower values of $\chi_p$ (as shown in the prior distributions), if these waveforms can still match the signal well just by slightly changing inclination, source location and masses, we would expect the MCMC algorithm to favour lower values of $\chi_p$ but with slightly larger uncertanties on the other posteriors. This explanation is exemplified by the waveforms in Fig. 8, where it is shown that the magnitude of the precessive effect is not necessarily proportional to $\chi_p$. It is also interesting to note that $\chi_{eff}$ parameters are generally relatively accurate, which implies it is mainly spin magnitude that is being underestimated, but the orientations are recovered accurately.
-\begin{figure}
-	\includegraphics[scale=1]{fig17.png}
+\begin{figure}[h]
+	\includegraphics[scale=0.70]{fig17.png}
 	\centering
 	\caption{Posteriors for injection C, which has the same parameters as in Fig. 14, but with an inclination of $\iota=1.26$ and at a distance of 800Mpc.}
 	\centering
 \end{figure}
-\begin{figure}
-	\includegraphics[scale=0.9]{fig18.png}
+\begin{figure}[h]
+	\includegraphics[scale=0.3]{fig18.png}
 	\centering
 	\caption{Strain plot of injection C, a waveform with strong precessive modulation.}
 	\centering
 \end{figure}
 \subsection{Inclination and precession}
 Next we examine the effect of inclination on $\chi_p$ recovery. Software injections were performed for a range of inclinations at two distances, 200Mpc and 800Mpc, which simulate a strong and weak signal respectively.
+\begin{figure}[h]
+	\includegraphics[scale=1]{fig19.png}
+	\centering
+	\caption{Comparisons of derived spin parameters as a function inclination for strong and weak signals. All other parameters are kept the same as listed in Fig. 14.}
+	\centering
+\end{figure}
 \subsection{Impact of Virgo}
 A look at how Virgo will influence PE, especially chi p estimation.
 \section{Conclusions}
