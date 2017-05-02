@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.12.4)  1 MAY 2017 18:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.12.4)  1 MAY 2017 22:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -216,84 +216,84 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
 
-LaTeX Warning: Citation `obs' on page 2 undefined on input line 24.
-
-
-LaTeX Warning: Citation `obs2' on page 2 undefined on input line 24.
+LaTeX Warning: Citation `obs' on page 3 undefined on input line 24.
 
 
-LaTeX Warning: Citation `eins1' on page 2 undefined on input line 24.
+LaTeX Warning: Citation `obs2' on page 3 undefined on input line 24.
 
 
-LaTeX Warning: Citation `eins2' on page 2 undefined on input line 24.
+LaTeX Warning: Citation `eins1' on page 3 undefined on input line 24.
 
 
-LaTeX Warning: Citation `gw1' on page 2 undefined on input line 24.
+LaTeX Warning: Citation `eins2' on page 3 undefined on input line 24.
 
 
-LaTeX Warning: Citation `eins3' on page 2 undefined on input line 24.
+LaTeX Warning: Citation `gw1' on page 3 undefined on input line 24.
 
 
-LaTeX Warning: Citation `hulse' on page 2 undefined on input line 24.
+LaTeX Warning: Citation `eins3' on page 3 undefined on input line 24.
 
 
-LaTeX Warning: Citation `mm' on page 2 undefined on input line 26.
+LaTeX Warning: Citation `hulse' on page 3 undefined on input line 24.
 
 
-LaTeX Warning: Citation `mm2' on page 2 undefined on input line 26.
+LaTeX Warning: Citation `mm' on page 3 undefined on input line 26.
 
 
-LaTeX Warning: Citation `gr1' on page 2 undefined on input line 26.
+LaTeX Warning: Citation `mm2' on page 3 undefined on input line 26.
 
 
-LaTeX Warning: Citation `gr2' on page 2 undefined on input line 26.
+LaTeX Warning: Citation `gr1' on page 3 undefined on input line 26.
 
 
-LaTeX Warning: Citation `qgrav' on page 2 undefined on input line 26.
+LaTeX Warning: Citation `gr2' on page 3 undefined on input line 26.
 
 
-LaTeX Warning: Citation `lisa' on page 2 undefined on input line 26.
+LaTeX Warning: Citation `qgrav' on page 3 undefined on input line 26.
 
 
-LaTeX Warning: Citation `pycbc' on page 2 undefined on input line 30.
+LaTeX Warning: Citation `lisa' on page 3 undefined on input line 26.
 
-[2]
 
-LaTeX Warning: Citation `hartle' on page 3 undefined on input line 33.
+LaTeX Warning: Citation `pycbc' on page 3 undefined on input line 30.
 
-[3] <fig1.jpg, id=24, 501.875pt x 282.05376pt>
+[3]
+
+LaTeX Warning: Citation `hartle' on page 4 undefined on input line 33.
+
+[4] <fig1.jpg, id=27, 501.875pt x 282.05376pt>
 File: fig1.jpg Graphic file (type jpg)
  <use fig1.jpg>
 Package pdftex.def Info: fig1.jpg used on input line 64.
 (pdftex.def)             Requested size: 301.12732pt x 169.23355pt.
 
 
-LaTeX Warning: Citation `fig1' on page 4 undefined on input line 66.
+LaTeX Warning: Citation `fig1' on page 5 undefined on input line 66.
 
 
-LaTeX Warning: Citation `fig1' on page 4 undefined on input line 66.
+LaTeX Warning: Citation `fig1' on page 5 undefined on input line 66.
 
 
-LaTeX Warning: Citation `blanch' on page 4 undefined on input line 70.
+LaTeX Warning: Citation `blanch' on page 5 undefined on input line 70.
 
-<fig2.jpg, id=25, 622.325pt x 333.245pt>
+<fig2.jpg, id=28, 622.325pt x 333.245pt>
 File: fig2.jpg Graphic file (type jpg)
  <use fig2.jpg>
 Package pdftex.def Info: fig2.jpg used on input line 73.
 (pdftex.def)             Requested size: 373.39787pt x 199.94853pt.
 
 
-LaTeX Warning: Citation `fig2' on page 4 undefined on input line 75.
+LaTeX Warning: Citation `fig2' on page 5 undefined on input line 75.
 
-[4 <./fig1.jpg> <./fig2.jpg>] <fig3.png, id=29, 462.528pt x 346.896pt>
+<fig3.png, id=29, 462.528pt x 346.896pt>
 File: fig3.png Graphic file (type png)
-
-<use fig3.png>
+ <use fig3.png>
 Package pdftex.def Info: fig3.png used on input line 94.
 (pdftex.def)             Requested size: 277.51894pt x 208.13919pt.
- <fig4.png, id=31, 803.0pt x 526.96875pt>
+
+<fig4.png, id=31, 803.0pt x 526.96875pt>
 File: fig4.png Graphic file (type png)
  <use fig4.png>
 Package pdftex.def Info: fig4.png used on input line 104.
@@ -314,19 +314,19 @@ Package pdftex.def Info: fig5.png used on input line 108.
 
 LaTeX Warning: Citation `noisecurve' on page 5 undefined on input line 110.
 
+[5 <./fig1.jpg>] [6 <./fig2.jpg> <./fig3.png>]
 
-LaTeX Warning: Citation `noise' on page 5 undefined on input line 113.
-
-
-LaTeX Warning: Citation `noise2' on page 5 undefined on input line 113.
+LaTeX Warning: Citation `noise' on page 7 undefined on input line 113.
 
 
-LaTeX Warning: Citation `lasers' on page 5 undefined on input line 113.
+LaTeX Warning: Citation `noise2' on page 7 undefined on input line 113.
 
 
-LaTeX Warning: Citation `noise3' on page 5 undefined on input line 113.
+LaTeX Warning: Citation `lasers' on page 7 undefined on input line 113.
 
-[5 <./fig3.png>] [6 <./fig4.png (PNG copy)> <./fig5.png (PNG copy)>]
+
+LaTeX Warning: Citation `noise3' on page 7 undefined on input line 113.
+
 
 LaTeX Warning: Citation `beampat' on page 7 undefined on input line 117.
 
@@ -342,60 +342,60 @@ LaTeX Warning: Citation `search2' on page 7 undefined on input line 124.
 
 LaTeX Warning: Citation `props' on page 7 undefined on input line 127.
 
-[7]
+[7] [8 <./fig4.png (PNG copy)> <./fig5.png (PNG copy)>]
 
-LaTeX Warning: Citation `spindegen' on page 8 undefined on input line 132.
-
-
-LaTeX Warning: Citation `oldest_pe' on page 8 undefined on input line 138.
+LaTeX Warning: Citation `spindegen' on page 9 undefined on input line 132.
 
 
-LaTeX Warning: Citation `pe2' on page 8 undefined on input line 138.
+LaTeX Warning: Citation `oldest_pe' on page 9 undefined on input line 138.
 
 
-LaTeX Warning: Citation `props' on page 8 undefined on input line 138.
+LaTeX Warning: Citation `pe2' on page 9 undefined on input line 138.
 
 
-LaTeX Warning: Citation `inj' on page 8 undefined on input line 138.
+LaTeX Warning: Citation `props' on page 9 undefined on input line 138.
 
 
-LaTeX Warning: Citation `pe' on page 8 undefined on input line 138.
+LaTeX Warning: Citation `inj' on page 9 undefined on input line 138.
 
 
-LaTeX Warning: Citation `pe4' on page 8 undefined on input line 138.
+LaTeX Warning: Citation `pe' on page 9 undefined on input line 138.
 
 
-LaTeX Warning: Citation `pe2' on page 8 undefined on input line 142.
+LaTeX Warning: Citation `pe4' on page 9 undefined on input line 138.
 
 
-LaTeX Warning: Citation `waveforms' on page 8 undefined on input line 147.
+LaTeX Warning: Citation `pe2' on page 9 undefined on input line 142.
+
+[9]
+
+LaTeX Warning: Citation `waveforms' on page 10 undefined on input line 147.
 
 
-LaTeX Warning: Citation `imr' on page 8 undefined on input line 147.
-
-[8]
-
-LaTeX Warning: Citation `pe3' on page 9 undefined on input line 153.
+LaTeX Warning: Citation `imr' on page 10 undefined on input line 147.
 
 
-LaTeX Warning: Citation `sloos' on page 9 undefined on input line 153.
+LaTeX Warning: Citation `pe3' on page 10 undefined on input line 153.
 
 
-LaTeX Warning: Citation `pe_latest' on page 9 undefined on input line 153.
+LaTeX Warning: Citation `sloos' on page 10 undefined on input line 153.
 
 
-LaTeX Warning: Citation `precess1' on page 9 undefined on input line 153.
+LaTeX Warning: Citation `pe_latest' on page 10 undefined on input line 153.
 
 
-LaTeX Warning: Citation `precess2' on page 9 undefined on input line 153.
+LaTeX Warning: Citation `precess1' on page 10 undefined on input line 153.
 
-<fig6.jpg, id=48, 444.15938pt x 295.85532pt>
+
+LaTeX Warning: Citation `precess2' on page 10 undefined on input line 153.
+
+<fig6.jpg, id=51, 444.15938pt x 295.85532pt>
 File: fig6.jpg Graphic file (type jpg)
  <use fig6.jpg>
 Package pdftex.def Info: fig6.jpg used on input line 155.
 (pdftex.def)             Requested size: 333.1187pt x 221.89093pt.
 
-<fig7.png, id=49, 462.528pt x 346.896pt>
+<fig7.png, id=52, 462.528pt x 346.896pt>
 File: fig7.png Graphic file (type png)
  <use fig7.png>
 Package pdftex.def Info: fig7.png used on input line 162.
@@ -406,10 +406,10 @@ Overfull \hbox (32.52686pt too wide) in paragraph at lines 162--164
  []
 
 
-LaTeX Warning: Citation `imr' on page 9 undefined on input line 167.
+LaTeX Warning: Citation `imr' on page 10 undefined on input line 167.
 
 
-LaTeX Warning: Citation `chip' on page 9 undefined on input line 167.
+LaTeX Warning: Citation `chip' on page 10 undefined on input line 167.
 
 
 Overfull \hbox (7.72676pt too wide) in paragraph at lines 153--168
@@ -417,10 +417,6 @@ Overfull \hbox (7.72676pt too wide) in paragraph at lines 153--168
 ng bi-na-ries and on non-precessing
  []
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[9 <./fig6.jpg>]
 
 LaTeX Warning: Citation `spin' on page 10 undefined on input line 175.
 
@@ -430,11 +426,11 @@ LaTeX Warning: Citation `eob' on page 10 undefined on input line 175.
 
 LaTeX Warning: Citation `pe_latest' on page 10 undefined on input line 175.
 
-[10 <./fig7.png>]
+[10]
 
 LaTeX Warning: Citation `modal' on page 11 undefined on input line 177.
 
-<fig8.png, id=57, 462.528pt x 346.896pt>
+<fig8.png, id=56, 462.528pt x 346.896pt>
 File: fig8.png Graphic file (type png)
  <use fig8.png>
 Package pdftex.def Info: fig8.png used on input line 182.
@@ -444,53 +440,38 @@ Overfull \hbox (32.52686pt too wide) in paragraph at lines 182--184
  [][] 
  []
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[11] [12 <./fig8.png>] <fig9.png, id=65, 722.7pt x 325.215pt>
+[11 <./fig6.jpg>] [12 <./fig7.png>] <fig9.png, id=64, 722.7pt x 325.215pt>
 File: fig9.png Graphic file (type png)
- <use fig9.png>
+
+<use fig9.png>
 Package pdftex.def Info: fig9.png used on input line 192.
 (pdftex.def)             Requested size: 419.16629pt x 188.62483pt.
-
-<fig10.png, id=66, 775.89874pt x 598.235pt>
+ [13] [14 <./fig8.png>]
+<fig10.png, id=73, 775.89874pt x 598.235pt>
 File: fig10.png Graphic file (type png)
  <use fig10.png>
 Package pdftex.def Info: fig10.png used on input line 201.
 (pdftex.def)             Requested size: 426.74562pt x 329.03026pt.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<fig11.png, id=67, 722.7pt x 361.35pt>
+<fig11.png, id=74, 722.7pt x 361.35pt>
 File: fig11.png Graphic file (type png)
  <use fig11.png>
 Package pdftex.def Info: fig11.png used on input line 207.
 (pdftex.def)             Requested size: 397.48622pt x 198.74312pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[13 <./fig9.png>] <fig12.png, id=73, 462.528pt x 346.896pt>
+ [15 <./fig9.png>]
+[16 <./fig10.png> <./fig11.png>] <fig12.png, id=84, 462.528pt x 346.896pt>
 File: fig12.png Graphic file (type png)
- <use fig12.png>
+
+<use fig12.png>
 Package pdftex.def Info: fig12.png used on input line 218.
 (pdftex.def)             Requested size: 393.15065pt x 294.86298pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[14 <./fig10.png>] <fig13.png, id=78, 539.01375pt x 385.44pt>
+ <fig13.png, id=85, 539.01375pt x 385.44pt>
 File: fig13.png Graphic file (type png)
  <use fig13.png>
 Package pdftex.def Info: fig13.png used on input line 234.
 (pdftex.def)             Requested size: 296.45847pt x 211.99265pt.
 
-[15 <./fig11.png>]
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<fig14.png, id=83, 433.62pt x 505.89pt>
+[17 <./fig12.png>] <fig14.png, id=90, 433.62pt x 505.89pt>
 File: fig14.png Graphic file (type png)
  <use fig14.png>
 Package pdftex.def Info: fig14.png used on input line 242.
@@ -500,7 +481,7 @@ Overfull \hbox (3.61894pt too wide) in paragraph at lines 242--244
  [][] 
  []
 
-<fig15.png, id=84, 433.62pt x 505.89pt>
+<fig15.png, id=91, 433.62pt x 505.89pt>
 File: fig15.png Graphic file (type png)
  <use fig15.png>
 Package pdftex.def Info: fig15.png used on input line 248.
@@ -510,23 +491,26 @@ Overfull \hbox (3.61894pt too wide) in paragraph at lines 248--250
  [][] 
  []
 
+<fig16.png, id=92, 1174.3875pt x 1786.675pt>
+File: fig16.png Graphic file (type png)
+ <use fig16.png>
+Package pdftex.def Info: fig16.png used on input line 255.
+(pdftex.def)             Requested size: 352.31897pt x 536.00664pt.
+ [18 <./fig13.png>]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[16 <./fig12.png>] [17 <./fig13.png>] [18] [19 <./fig14.png>] [20 <./fig15.png>
-] (./draft.aux)
+[19] [20 <./fig14.png>] [21 <./fig15.png>] [22] [23 <./fig16.png>] (./draft.aux
+)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 2512 strings out of 494953
- 32485 string characters out of 6180977
- 91656 words of memory out of 5000000
- 5750 multiletter control sequences out of 15000+600000
+ 2517 strings out of 494953
+ 32549 string characters out of 6180977
+ 95656 words of memory out of 5000000
+ 5754 multiletter control sequences out of 15000+600000
  12627 words of font info for 47 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  38i,7n,26p,1893b,227s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -543,10 +527,10 @@ amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 sy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pf
 b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb
 >
-Output written on draft.pdf (20 pages, 1570685 bytes).
+Output written on draft.pdf (23 pages, 1922912 bytes).
 PDF statistics:
- 147 PDF objects out of 1000 (max. 8388607)
- 86 compressed objects within 1 object stream
+ 158 PDF objects out of 1000 (max. 8388607)
+ 92 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 76 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 81 words of extra memory for PDF output out of 10000 (max. 10000000)
 
