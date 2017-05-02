@@ -1,5 +1,3 @@
-import matplotlib
-matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import numpy as np
 from pycbc.io import InferenceFile
@@ -242,6 +240,7 @@ violinMe("chi_p","800mp_highMR_",800)
 plt.subplot(2,2,4)
 violinMe("chi_eff","800mp_highMR_",800)
 plt.savefig("figures/mega_violin.png")
+plt.tight_layout()
 plt.show("hold")
 print "Fig saved as figures/mega_violin.png"
 print "DONE"
