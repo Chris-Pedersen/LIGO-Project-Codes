@@ -2,6 +2,7 @@
 \usepackage{amssymb}
 \usepackage{amsmath}
 \usepackage{graphicx}
+\usepackage{float}
 \bibliographystyle{unsrt}
 \textwidth=430pt
 \textheight=640pt
@@ -143,11 +144,15 @@ where $\vec{\theta}$ is an $n$ dimensional vector in our parameter space of $n$ 
 \begin{equation}
 p(d|\vec{\theta})\propto \exp\bigg(-\frac{1}{2}\sum_{k=1,2}\Big \langle h^M_k(\vec{\theta})-d_k \big\vert h^M_k(\vec{\theta})-d_k \Big \rangle\bigg)
 \end{equation}
-where the inner product is that defined in (13), $d_k$ is the observed strain in the detector, and $h_k^M(t;\vec{\theta})$ is the simulated detector response for a given set of parameters $\vec{\theta}$ given by (9).
-Various methods of waveform generation (known as \textit{approximants}) have been attempted, with varying degrees of computational intensity. In general, Post-Newtonian expansions are used in the inspiral phase where the gravitational field is weak enough for approximations to be sufficient. During the merger and ringdown, full numerical relativity simulations are required as the curvature is sufficiently strong that Post-Newtonian approximations are no longer valid\cite{waveforms}\cite{imr}. These require significantly more computation time, and as such it is only in recent years that waveforms describing the full inspiral, merger and ringdown phases have become available.
+where the inner product is that defined in (13), $d_k$ is the observed strain in the detector, and $h_k^M(t;\vec{\theta})$ is the simulated detector response for a given set of parameters $\vec{\theta}$ given by (9). The SNR is given by
 
---- some equation for SNR
---- overview of MCMCs that will be used for inference
+\begin{equation}
+\mathrm{SNR}=\sqrt{\sum_{\mathrm{det}}^{}\int_{f_{\mathrm{low}}}^{f_{\mathrm{high}}}\frac{|h_{\mathrm{det}}(f,\vec{\theta})|}{S_{\mathrm{det}}(f)}\mathrm{d}f}
+\end{equation}
+
+\noindent where the sum is over the detectors, and $h_{\mathrm{det}}(f,\vec{\theta})$ is the signal in the detector, and $S_{\mathrm{det}}(f)$ is the noise. The posterior distributions are sampled stochastically using a Markov-Chain Monte Carlo process and the Metropolis-Hasting algorithm. The qualitative idea behind this is that a sampler random walks across the parameter space. At each iteration, a random step in the parameter space is proposed, and the posterior is sampled at this new point. If the posterior has a higher value, this new point is used as the starting point for the next iteration. However if the posterior is lower, then the sampler only has a probability to jump to this new step proportional to the ratio of the posteriors at the current and proposed steps. In this way, after each iteration the distribution of samplers gets a step closer to accurately representing the posterior.
+
+Various methods of waveform generation (known as \textit{approximants}) have been employed, with varying degrees of computational intensity. In general, Post-Newtonian expansions are used in the inspiral phase where the gravitational field is weak enough for approximations to be sufficient. During the merger and ringdown, full numerical relativity simulations are required as the curvature is sufficiently strong that Post-Newtonian approximations are no longer valid\cite{waveforms}\cite{imr}. These require significantly more computation time, and as such it is only in recent years that waveforms describing the full inspiral, merger and ringdown phases have become available.
 
 \subsection{Precession and its astrophysical importance}
 Considerable research has been done on studying non-spinning binaries and on non-precessing binaries where the spins are aligned or anti-aligned with the orbital angular momentum $\vec{\hat{L}}$\cite{pe3}, but it is only recently that a more complete study of the parameter space has begun\cite{sloos}\cite{pe_latest}. This is partly down to computational resources, as ignoring spin effects leads to a reduced parameter space and less computationally intensive waveforms. There are a unique set of challenges when considering binaries where the spins of the component black holes are not aligned $\vec{L}$, as due to relativistic effects, these binaries precess around the axis of total angular momentum $\vec{\hat{J}}$, giving a time dependence to the orbital plane of the binary\cite{precess1}\cite{precess2}.
@@ -195,27 +200,27 @@ An extremely useful and computationally cheap way to identify some of these dege
 	\centering
 \end{figure}
 
-In this section we intend to get some idea of the areas in which we expect the detector to be most sensitive to precession, and those in which precessing signals are intrinsically degenerate with non-precessing waveforms. This is done by finding the match between waveforms with and without in-plane spin for a range of parameters. In the case of a strong match ($>0.95$), it is unlikely that $chi_p$ can be accurately and precisely recovered for signals with those parameters due to an intrinsic similarity of the waveforms.
+In this section we intend to get some idea of the areas in which we expect the detector to be most sensitive to precession, and those in which precessing signals are intrinsically degenerate with non-precessing waveforms. This is done by finding the match between waveforms with and without in-plane spin for a range of parameters. In the case of a strong match ($>0.95$), it is unlikely that $\chi_p$ can be accurately and precisely recovered for signals with those parameters due to an intrinsic similarity of the waveforms.
 
 \begin{figure}
-	\includegraphics[scale=0.55]{fig10.png}
+	\includegraphics[width=1\textwidth]{fig10.png}
 	\centering
 	\caption{Matches between precessing and non-precessing waveforms for a range of inclinations and mass ratios.(make this more compact before submit)}
 	\centering
 \end{figure}
 \begin{figure}
-	\includegraphics[scale=0.55]{fig11.png}
+	\includegraphics[width=1\textwidth]{fig11.png}
 	\centering
 	\caption{Spin difference required for the match between precessing and non-precessing waveforms to drop below 0.95}
 	\centering
 \end{figure}
 
-Fig. 10 shows how the matches between precessing and non-precessing waveforms change with inclination for four different mass ratios. The dark regions of the match is where the signals have significant mismatch, and the waveforms should be well distinguished, and hte light regions are where the waveforms are effectively degenerate. It is apparent that the degeneracy is far stronger for close to equal mass binaries, where only maximally precessing systems at edge-on inclinations will have noticeably different waveforms. Here we plot the 0.97 match contour as it is generally expected that the advanced LIGO detectors should be able to distinguish between waveforms with a match of 0.97. For all but the most extreme mass ratios, a combination of significant in-plane spin ($/geq0.6$) and/or strong inclination is necessary to have any significant deviation for systems with high precession. It is important to remember here that as we change the inclination, the overall strength of the signal will drop (with strongest at $\iota=0$), and the matching process does not account for this change in signal strength.
+Fig. 10 shows how the matches between precessing and non-precessing waveforms change with inclination for four different mass ratios. The dark regions of the match is where the signals have significant mismatch, and the waveforms should be well distinguished, and hte light regions are where the waveforms are effectively degenerate. It is apparent that the degeneracy is far stronger for close to equal mass binaries, where only maximally precessing systems at edge-on inclinations will have noticeably different waveforms. Here we plot the 0.97 match contour as it is generally expected that the advanced LIGO detectors should be able to distinguish between waveforms with a match of 0.97. For all but the most extreme mass ratios, a combination of significant in-plane spin ($\geq0.6$) and/or strong inclination is necessary to have any significant deviation for systems with high precession. It is important to remember here that as we change the inclination, the overall strength of the signal will drop as the amplitude of the gravitational wave is lower (with the peak at $\iota=0$), and the matching process does not account for this change in signal strength.
 
 In Fig. 11, we examine the effect of the spin on the lower mass black hole on matches between precessing and non-precessing waveforms. In these figures, for a ranges of inclinations and mass ratios, we find the minimum spin difference required for the match between waveforms to drop below 0.95. This is an efficient way of quantifying the precessing degeneracy for a range of parameters. The dark regions are areas where only a small difference in spin is required for the match to drop, and the light areas show where the waveforms are degenerate. In Fig. 11 we compare results for systems with no spin, spin aligned with $\vec{L}$ and fully in-plane spin on the smaller black hole. The spin on the smaller black hole appears to only have a significant effect the matches around an inclination of 1.5, where the system is edge on, but other than that it does not drastically change the structure of the parameter space. This is convenient as it indicates that inference results for systems with $|\vec{S_2}|=0$ should be broadly applicable to those with arbitrary spins on the smaller black hole. It is also evident that the mass ratio does not appear to affect the shape of the parameter space, but more the intensity with which the match changes as a function of inclination. So we can expect the same behaviour at different mass ratios, just with the degeneracies being weaker or higher for extreme and close mass ratios respectively.
 
 \begin{figure}
-	\includegraphics[scale=0.85]{fig12.png}
+	\includegraphics[width=1\textwidth]{fig12.png}
 	\centering
 	\caption{Match limit plots for a range of inclinations and phases for 4 polarisations.}
 	\centering
@@ -237,23 +242,20 @@ This project work was also split between a number of different LIGO clusters, as
 	\centering
 \end{figure}
 \subsection{Inference results}
-In this section we present the results from a range of inference runs, attempt to assess the effectiveness of spin estimation and compare the inference results with the match results to evaluate how effective the match process is as a predictor of inference accuracy. For all injections we set $S_{1\perp}=0.9$ and $|\vec{S_2}|=0$ with $\chi_p=0.9$, and cover a uniform range of inclinations. We set the phase to be $\phi=0.$, and the polarisation angle $\psi=0.8$, so the signals are of mixed polarisation, but slightly cross dominated. The match results indicate that cross polarised signals generally have a higher spin resolution, but we want to avoid the signal drop at $\iota=\pi/2$, which is why a mixed but cross dominated polarisation angle was selected. The source location and coalesence time were also kept fixed for all injections. We also only examine high mass ratio binaries, as the match results indicate that precession is not significant in equal mass ratio binaries. Out of a total of ****** software injections that were performed, only **** instances where the injected $\chi_p$ value fell within the 90\% confidence interval. In Figs 14 and 15 we compare posteriors for two inferences, where $\chi_p$ was excluded and where it was recovered moderately well, and we refer to these as A and B respectively. Even in the cases where the injected value was within the 90\% confidence intervals, it was always closer to the upper bound than to the mean, and a mean $\chi_p$ greater than 0.65 was never found.
+In this section we present the results from a range of inference runs, attempt to assess the effectiveness of spin estimation and compare the inference results with the match results to evaluate how effective the match process is as a predictor of inference accuracy. For all injections we set $S_{1\perp}=0.9$ and $|\vec{S_2}|=0$ with $\chi_p=0.9$, and cover a uniform range of inclinations. We set the phase to be $\phi=0.$, and the polarisation angle $\psi=0.8$, so the signals are of mixed polarisation, but slightly cross dominated. The match results indicate that cross polarised signals generally have a higher spin resolution, but we want to avoid the signal drop at $\iota=\pi/2$, which is why a mixed but cross dominated polarisation angle was selected. The source location and coalesence time were also kept fixed for all injections. We also only examine high mass ratio binaries, as the match results indicate that precession is not significant in equal mass ratio binaries. Prior distributions are all uniform, with mass ranging $[5,80]$ and distance in the range $[100,1000]$, and sky location and spin orientations all have isotropic priors. Out of a total of ****** software injections that were performed, there were only **** instances where the injected $\chi_p$ value fell within the 90\% confidence interval. In Figs 14 and 15 we compare posteriors for two inferences, where $\chi_p$ was excluded and where it was recovered moderately well, and we refer to these as A and B respectively. Even in the cases where the injected value was within the 90\% confidence intervals, it was always closer to the upper bound than to the mean, and a mean $\chi_p$ greater than 0.65 was never found.
 
 \begin{figure}
-	\includegraphics[scale=0.70]{fig14.png}
+	\includegraphics[width=1\textwidth]{fig14.png}
 	\centering
-	\caption{Posteriors for an injection with $m1=50$, $m2=15$, $\iota=2.51$, $\phi=0$, $\psi=0.8$ at a distance of 200Mpc. Prior distributions are included for the derived spin parameters $\chi_p$ and $\chi_{eff}$, which result from uniform spin magnitude and isotropic orientation distributions.}
+	\caption{Posteriors for an injection with $m1=50$, $m2=15$, $\iota=2.51$, $\phi=0$, $\psi=0.8$ at a distance of 200Mpc. Prior distributions are included for the derived spin parameters $\chi_p$ and $\chi_{eff}$, which result from uniform spin magnitude and isotropic orientation distributions. The red bar shows the injected value, with the black solid line showing the mean of the posterior, and the black dashed line showing the 90\% confidence intervals, which are the standard error margins quoted on LIGO inference results.}
 	\centering
 \end{figure}
 \begin{figure}
-	\includegraphics[scale=0.70]{fig15.png}
+	\includegraphics[width=1\textwidth]{fig15.png}
 	\centering
-	\caption{Posteriors for an injection with the same parameters as in Fig. 14, expect here with an inclination of $\iota=0.63$}
+	\caption{Posteriors for an injection with the same parameters as in Fig. 14, except here with an inclination of $\iota=0.63$}
 	\centering
 \end{figure}
-
-Neither sets of posteriors are consistently accurate, although overall the results of injection A are overall significantly more accurate than those for B, with the exceptions of $\chi_p$ and $\iota$. The masses and source locations are recovered well, with the injected value lying within the 90\% confidence intervals. However the 'cost' of recovering $\chi_p$ seems to be having significant inaccuracies on a range of important parameters, with $\chi_{eff}$, $m2$, distance and chirp mass all being excluded. To examine the source of this inaccuracy, in Fig 16 we plot the whitened detector strain with the signal embedded into it, overlaid with the MAP waveform as recovered by the inference process, and the injected waveform. A match is also performed between the MAP and injected waveforms in each detector frame. This is a crucial part of the analysis, as it helps to distinguish between different sources of inaccuracy. If the inaccuracies are due to either detector noise or some error in the MCMC process, we should expect a low match between the MAP and injected waveform. However it is also possible that due to the large number of parameters, the MCMC algorithm has found certain combinations of different parameters that lead to an effectively degenerate waveform. In this case, we would expect a high match between the MAP waveform and injected waveform, despite the fact that they have vastly different parameters.
-
 \begin{figure}[h]
 	\includegraphics[scale=0.3]{fig16.png}
 	\centering
@@ -261,13 +263,17 @@ Neither sets of posteriors are consistently accurate, although overall the resul
 	\centering
 \end{figure}
 
-The results shown in Fig. 16 show a stronger match for A, where the majority of parameters were more accurately recovered. In particular, for B, L1 shows a low match of 0.93 between MAP and injected waveforms. This is likely due to the precessive effects which are most apparent around $~-0.4s$, where the injected signal is almost entirely flat, and later on during the inspiral around $~-0.2s$ where there is noteable disagreement between the signals. In this case, it is clear that the inference process has not found an optimal template waveform to replicate the injected signal. However in the case of A there is a strong match between waveforms, and it is clear from the strain plot that the MAP waveform matches the strain data extremely well. There is, however, a mild disagreement during the late merger and ringdown, which is the source of the mismatches of 0.01 and 0.02. Since the match is so strong, the waveforms themselves must be intrinsically degenerate up to deviation that occurs at the merger.
+
+Neither sets of posteriors are consistently accurate, although overall the results of injection A are overall significantly more accurate than those for B, with the exceptions of $\chi_p$ and $\iota$. The masses and source locations are recovered well, with the injected value lying within the 90\% confidence intervals. However the 'cost' of recovering $\chi_p$ seems to be having significant inaccuracies on a range of important parameters, with $\chi_{eff}$, $m2$, distance and chirp mass all being excluded. To examine the source of this inaccuracy, in Fig 16 we plot the whitened detector strain with the signal embedded into it, overlaid with the MAP waveform as recovered by the inference process, and the injected waveform. A match is also performed between the MAP and injected waveforms in each detector frame. This is a crucial part of the analysis, as it helps to distinguish between different sources of inaccuracy. If the inaccuracies are due to either detector noise or some error in the MCMC process, we should expect a low match between the MAP and injected waveform. However it is also possible that due to the large number of parameters, the MCMC algorithm has found certain combinations of different parameters that lead to an effectively degenerate waveform. In this case, we would expect a high match between the MAP waveform and injected waveform, despite the fact that they have vastly different parameters.
+
+
+
+The results shown in Fig. 16 show a stronger match for A, where the majority of parameters were more accurately recovered. In particular, for B, L1 shows a low match of 0.93 between MAP and injected waveforms. This is likely due to the precessive effects which are most apparent around $-0.4s$, where the injected signal is almost entirely flat, and later on during the inspiral around $-0.2s$ where there is noteable disagreement between the signals. In this case, it is clear that the inference process has not found an optimal template waveform to replicate the injected signal. However in the case of A there is a strong match between waveforms, and it is clear from the strain plot that the MAP waveform matches the strain data extremely well. There is, however, a mild disagreement during the late merger and ringdown, which is the source of the mismatches of 0.01 and 0.02. Since the match is so strong, the waveforms themselves must be intrinsically degenerate up to deviation that occurs at the merger.
 
 If two signals are degenerate for the majority of the inspiral and merger, and only during the end of the merger and ringdown do they differ, it will be extremely difficult for LIGO detectors to differentiate between them, as the very short time period where there is any mismatch will be swamped by noise. Returning to Fig. 14, we can see that even though the match is strong, there are significant inaccuracies on $\chi_p$ and $\iota$. So in A and B we have examples of each inaccuracy as described earlier - one down to poor signal recovery and one down to an intrinsic degeneracy. In Figs 17 and 18, results are shown for case C, which was selected as its waveform had the strongest visible precessive effects in both H1 and L1 detector frames.
 
-From Fig. 18 it can be seen that the amplitude of the signal noticeably drops towards the end of the inspiral and just before the merger, implying that this would be an ideal signal to recover a high value of $\chi_p$ from. The posteriors shown in Fig. 17 are mostly accurate, with the majority of injected parameters lying inside the 90\% confidence intervals, however once again $\chi_p$ is excluded, and significantly underestimated. The match values shown in Fig. 18 are strong, with both detectors giving a match of 0.96 between the injected and MAP waveforms. This is further evidence of an intrinsic degeneracy that prevents high $\chi_p$ MAP values from being found. For all posteriors shown, both $\phi$ and $\psi$ are broadly uniform, and in the case where they are not uniform, they are largely inaccurate. However in section 2 it was observed that $\psi$ and especially $\phi$ have a significant effect on the structure of the parameter space, and the match between precessing and non-precessing waveforms. One possible explanation for this uniformity is that for each stochastically selected phase and polarisation, the MCMC algorithm readily finds a good match between the injected signal and the strain data simply by tweaking the other remaining parameters slightly. If this is the case, since there are a larger number of waveforms in the template bank with lower values of $\chi_p$ (as shown in the prior distributions), if these waveforms can still match the signal well just by slightly changing inclination, source location and masses, we would expect the MCMC algorithm to favour lower values of $\chi_p$ but with slightly larger uncertanties on the other posteriors. This explanation is exemplified by the waveforms in Fig. 8, where it is shown that the magnitude of the precessive effect is not necessarily proportional to $\chi_p$. It is also interesting to note that $\chi_{eff}$ parameters are generally relatively accurate, which implies it is mainly spin magnitude that is being underestimated, but the orientations are recovered accurately.
 \begin{figure}[h]
-	\includegraphics[scale=0.70]{fig17.png}
+	\includegraphics[width=1\textwidth]{fig17.png}
 	\centering
 	\caption{Posteriors for injection C, which has the same parameters as in Fig. 14, but with an inclination of $\iota=1.26$ and at a distance of 800Mpc.}
 	\centering
@@ -278,16 +284,36 @@ From Fig. 18 it can be seen that the amplitude of the signal noticeably drops to
 	\caption{Strain plot of injection C, a waveform with strong precessive modulation.}
 	\centering
 \end{figure}
+
+From Fig. 18 it can be seen that the amplitude of the signal noticeably drops towards the end of the inspiral and just before the merger, implying that this would be an ideal signal to recover a high value of $\chi_p$ from. The posteriors shown in Fig. 17 are mostly accurate, with the majority of injected parameters lying inside the 90\% confidence intervals, however once again $\chi_p$ is excluded, and significantly underestimated. The match values shown in Fig. 18 are strong, with both detectors giving a match of 0.96 between the injected and MAP waveforms. This is further evidence of an intrinsic degeneracy that prevents high $\chi_p$ MAP values from being found. For all posteriors shown, both $\phi$ and $\psi$ are broadly uniform, and in the case where they are not uniform, they are largely inaccurate. However in section 2 it was observed that $\psi$ and especially $\phi$ have a significant effect on the structure of the parameter space, and the match between precessing and non-precessing waveforms.
+
+One possible explanation for this uniformity is that for each stochastically selected phase and polarisation, the MCMC algorithm readily finds a good match between the injected signal and the strain data simply by tweaking the other remaining parameters slightly. If this is the case, since there are a larger number of waveforms in the template bank with lower values of $\chi_p$ (as shown in the prior distributions), if these waveforms can still match the signal well just by slightly changing inclination, source location and masses, we would expect the MCMC algorithm to favour lower values of $\chi_p$ but with slightly larger uncertanties on the other posteriors. This explanation is exemplified by the waveforms in Fig. 8, where it is shown that the magnitude of the precessive effect is not necessarily proportional to $\chi_p$. It is also interesting to note that $\chi_{eff}$ parameters are generally relatively accurate, which implies it is mainly spin magnitude that is being underestimated, but the orientations are recovered accurately.
+
 \subsection{Inclination and precession}
-Next we examine the effect of inclination on $\chi_p$ recovery. Software injections were performed for a range of inclinations at two distances, 200Mpc and 800Mpc, which simulate a strong and weak signal respectively.
+
+Next we examine the effect of inclination on $\chi_p$ recovery. Software injections were performed for a range of inclinations at two distances, 200Mpc and 800Mpc, which simulate a strong and weak signal respectively. Posteriors for $\chi_p$ and $\chi_{eff}$ are shown in Fig. 19 for 6 inclinations in the range $[0,\pi]$, with the injected values shown by the red bar. Interestingly there is no apparent correlation between the trends for $\chi_p$ at 200Mpc and at 800Mpc. If anything the trends appear to be opposite, with the most greater accuracy at face-on for the signals at 200Mpc, and greatest accuracy close to edge-on for the 800Mpc signals. As in the previous results, $\chi_{eff}$ is recovered consistently well with the exception of two results around $\iota\approx2$ in the 200Mpc signals, again implying that spin orientation is accurate, but magnitude is underestimated. Therefore there appears to be no clear correlation between $\chi_p$ and $\chi_{eff}$ accuracy.
 \begin{figure}[h]
-	\includegraphics[scale=1]{fig19.png}
+	\includegraphics[width=1\textwidth]{fig19.png}
 	\centering
 	\caption{Comparisons of derived spin parameters as a function inclination for strong and weak signals. All other parameters are kept the same as listed in Fig. 14.}
 	\centering
 \end{figure}
+\begin{figure}[h]
+	\includegraphics[scale=0.6]{fig20.png}
+	\centering
+	\caption{Match between MAP and injected waveforms along with spin inaccuracy for the 200Mpc and 800Mpc runs as a function of inclination.}
+	\centering
+\end{figure}
+
+In Fig. 20 we attempt to identify how well the posteriors in Fig. 19 correlate with the predicted trends from the match results in Figs. 10 and 11. If the match process were a reliable method of predicting inference results, the posteriors for $\chi_p$ around inclinations of 1 to 2 should be the most accurate, as precessing waveforms are most distinct from precessing ones here. However the 200Mpc results in fact show the opposite trend, and accuracy drops to a minimum around this area. 
 \subsection{Impact of Virgo}
 A look at how Virgo will influence PE, especially chi p estimation.
+\begin{figure}[h]
+	\includegraphics[width=1\textwidth]{fig21.png}
+	\centering
+	\caption{Plots showing $\chi_p$ and $\chi_{eff}$ for a range of inclinations at 200Mpc with the VIRGO detector included in the inference process.}
+	\centering
+\end{figure}
 \section{Conclusions}
 Summary of results on PE and estimation of chi p, and a prospect on Virgo's impact.
 \section{Reflective Statement}
@@ -295,15 +321,8 @@ I now need a therapist
 
 Still to do:
 
-1. SNR equation
-2. MCMC description
-3. Match plots for phase and inclination
-4. Inference results - 2D posteriors
-4. Inference results - strain plots
-4. Inference results - Violin plots
-5. Virgo results
 6. Conclusions
 7. Proper references of pics
 
-%\bibliography{draftbib.bib}
+\bibliography{draftbib.bib}
 \end{document}
