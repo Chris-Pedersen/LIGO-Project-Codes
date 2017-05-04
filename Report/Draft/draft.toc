@@ -1,17 +1,17 @@
-\contentsline {section}{\numberline {1}Introduction}{3}
-\contentsline {subsection}{\numberline {1.1}A Brief History}{3}
-\contentsline {subsection}{\numberline {1.2}Gravitational waves and their sources}{4}
-\contentsline {subsection}{\numberline {1.3}LIGO}{7}
-\contentsline {subsection}{\numberline {1.4}Parameter estimation}{7}
-\contentsline {subsection}{\numberline {1.5}Precession and its astrophysical importance}{10}
-\contentsline {section}{\numberline {2}Intrinsic degeneracies}{13}
-\contentsline {subsection}{\numberline {2.1}Precessing waveforms}{13}
-\contentsline {subsection}{\numberline {2.2}Matching and exploring the parameter space}{15}
-\contentsline {section}{\numberline {3}Detector response simulations}{18}
-\contentsline {subsection}{\numberline {3.1}Signal extraction}{18}
-\contentsline {subsection}{\numberline {3.2}Inference pipeline}{18}
-\contentsline {subsection}{\numberline {3.3}Inference results}{18}
-\contentsline {subsection}{\numberline {3.4}Inclination and precession}{23}
-\contentsline {subsection}{\numberline {3.5}Impact of Virgo}{23}
-\contentsline {section}{\numberline {4}Conclusions}{24}
-\contentsline {section}{\numberline {5}Reflective Statement}{25}
+\contentsline {section}{\numberline {1}Introduction}{3}{section.1}
+\contentsline {subsection}{\numberline {1.1}A Brief History}{3}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}Gravitational waves and their sources}{4}{subsection.1.2}
+\contentsline {subsection}{\numberline {1.3}LIGO}{6}{subsection.1.3}
+\contentsline {subsection}{\numberline {1.4}Parameter estimation}{8}{subsection.1.4}
+\contentsline {subsection}{\numberline {1.5}Precession and its astrophysical importance}{10}{subsection.1.5}
+\contentsline {section}{\numberline {2}Intrinsic degeneracies}{13}{section.2}
+\contentsline {subsection}{\numberline {2.1}Precessing waveforms}{13}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Matching and exploring the parameter space}{14}{subsection.2.2}
+\contentsline {section}{\numberline {3}Detector response simulations}{17}{section.3}
+\contentsline {subsection}{\numberline {3.1}Inference pipeline}{17}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Inference results}{18}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Inclination and precession}{25}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.4}Impact of Virgo}{26}{subsection.3.4}
+\contentsline {section}{\numberline {4}Conclusions}{28}{section.4}
+\contentsline {section}{\numberline {5}Acknowledgements}{29}{section.5}
+\contentsline {section}{\numberline {6}Reflective Statement}{30}{section.6}

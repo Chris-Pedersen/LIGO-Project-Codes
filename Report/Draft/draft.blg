@@ -2,91 +2,57 @@ This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: draft.aux
 The style file: unsrt.bst
-I found no \bibdata command---while reading file draft.aux
-Warning--I didn't find a database entry for "obs"
-Warning--I didn't find a database entry for "obs2"
-Warning--I didn't find a database entry for "eins1"
-Warning--I didn't find a database entry for "eins2"
-Warning--I didn't find a database entry for "gw1"
-Warning--I didn't find a database entry for "eins3"
-Warning--I didn't find a database entry for "hulse"
-Warning--I didn't find a database entry for "mm"
-Warning--I didn't find a database entry for "mm2"
-Warning--I didn't find a database entry for "gr1"
-Warning--I didn't find a database entry for "gr2"
-Warning--I didn't find a database entry for "qgrav"
-Warning--I didn't find a database entry for "lisa"
-Warning--I didn't find a database entry for "pycbc"
-Warning--I didn't find a database entry for "hartle"
-Warning--I didn't find a database entry for "fig1"
-Warning--I didn't find a database entry for "blanch"
-Warning--I didn't find a database entry for "fig2"
-Warning--I didn't find a database entry for "advfig"
-Warning--I didn't find a database entry for "noisecurve"
-Warning--I didn't find a database entry for "noise"
-Warning--I didn't find a database entry for "noise2"
-Warning--I didn't find a database entry for "lasers"
-Warning--I didn't find a database entry for "noise3"
-Warning--I didn't find a database entry for "beampat"
-Warning--I didn't find a database entry for "search1"
-Warning--I didn't find a database entry for "search2"
-Warning--I didn't find a database entry for "props"
-Warning--I didn't find a database entry for "spindegen"
-Warning--I didn't find a database entry for "oldest_pe"
-Warning--I didn't find a database entry for "pe2"
-Warning--I didn't find a database entry for "inj"
-Warning--I didn't find a database entry for "pe"
-Warning--I didn't find a database entry for "pe4"
-Warning--I didn't find a database entry for "waveforms"
-Warning--I didn't find a database entry for "imr"
-Warning--I didn't find a database entry for "pe3"
-Warning--I didn't find a database entry for "sloos"
-Warning--I didn't find a database entry for "pe_latest"
-Warning--I didn't find a database entry for "precess1"
-Warning--I didn't find a database entry for "precess2"
-Warning--I didn't find a database entry for "chip"
-Warning--I didn't find a database entry for "spin"
-Warning--I didn't find a database entry for "eob"
-Warning--I didn't find a database entry for "modal"
-You've used 0 entries,
+Database file #1: draftbib.bib.bib
+You're missing a field part---line 154 of file draftbib.bib.bib
+ :  volume    = 
+ :              ,
+I'm skipping whatever remains of this entry
+"{" immediately follows a field part---line 185 of file draftbib.bib.bib
+ :  howpublished        = \url
+ :                            {{https://www.learner.org/courses/physics/visual/img_lrg/gravitational_waves.jpg}},
+I'm skipping whatever remains of this entry
+Warning--there's a number but no volume in eins1
+Warning--there's a number but no volume in eins2
+Warning--empty journal in noise2
+You've used 46 entries,
             1791 wiz_defined-function locations,
-            489 strings with 3738 characters,
-and the built_in function-call counts, 18 in all, are:
-= -- 0
-> -- 0
+            690 strings with 10655 characters,
+and the built_in function-call counts, 8725 in all, are:
+= -- 699
+> -- 433
 < -- 0
-+ -- 0
-- -- 0
-* -- 2
-:= -- 7
-add.period$ -- 0
-call.type$ -- 0
-change.case$ -- 0
++ -- 169
+- -- 123
+* -- 657
+:= -- 1483
+add.period$ -- 135
+call.type$ -- 46
+change.case$ -- 45
 chr.to.int$ -- 0
-cite$ -- 0
-duplicate$ -- 0
-empty$ -- 1
-format.name$ -- 0
-if$ -- 1
+cite$ -- 49
+duplicate$ -- 377
+empty$ -- 863
+format.name$ -- 123
+if$ -- 1860
 int.to.chr$ -- 0
-int.to.str$ -- 0
-missing$ -- 0
-newline$ -- 3
-num.names$ -- 0
-pop$ -- 0
+int.to.str$ -- 46
+missing$ -- 42
+newline$ -- 230
+num.names$ -- 42
+pop$ -- 92
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 1
+skip$ -- 156
 stack$ -- 0
-substring$ -- 0
-swap$ -- 0
+substring$ -- 399
+swap$ -- 45
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 0
-while$ -- 0
-width$ -- 0
-write$ -- 2
-(There was 1 error message)
+warning$ -- 3
+while$ -- 70
+width$ -- 48
+write$ -- 489
+(There were 2 error messages)
