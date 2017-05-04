@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.12.4)  4 MAY 2017 18:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.12.4)  4 MAY 2017 19:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -217,14 +217,14 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 16.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) (./draft.toc)
+) (./draft.toc
+[1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}])
 \tf@toc=\write3
 \openout3 = `draft.toc'.
 
-
-[1
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
+ [2]
 
 LaTeX Warning: Citation `obs' on page 3 undefined on input line 25.
 
@@ -271,7 +271,7 @@ LaTeX Warning: Citation `pycbc' on page 3 undefined on input line 31.
 
 LaTeX Warning: Citation `hartle' on page 4 undefined on input line 34.
 
-[4] <fig1.jpg, id=27, 501.875pt x 282.05376pt>
+[4] <fig1.jpg, id=28, 501.875pt x 282.05376pt>
 File: fig1.jpg Graphic file (type jpg)
  <use fig1.jpg>
 Package pdftex.def Info: fig1.jpg used on input line 65.
@@ -286,7 +286,7 @@ LaTeX Warning: Citation `fig1' on page 5 undefined on input line 67.
 
 LaTeX Warning: Citation `blanch' on page 5 undefined on input line 71.
 
-<fig2.jpg, id=28, 622.325pt x 333.245pt>
+<fig2.jpg, id=29, 622.325pt x 333.245pt>
 File: fig2.jpg Graphic file (type jpg)
  <use fig2.jpg>
 Package pdftex.def Info: fig2.jpg used on input line 74.
@@ -295,13 +295,13 @@ Package pdftex.def Info: fig2.jpg used on input line 74.
 
 LaTeX Warning: Citation `fig2' on page 5 undefined on input line 76.
 
-<fig3.png, id=29, 462.528pt x 346.896pt>
+<fig3.png, id=30, 462.528pt x 346.896pt>
 File: fig3.png Graphic file (type png)
  <use fig3.png>
 Package pdftex.def Info: fig3.png used on input line 95.
 (pdftex.def)             Requested size: 277.51894pt x 208.13919pt.
 
-<fig4.png, id=31, 803.0pt x 526.96875pt>
+<fig4.png, id=32, 803.0pt x 526.96875pt>
 File: fig4.png Graphic file (type png)
  <use fig4.png>
 Package pdftex.def Info: fig4.png used on input line 105.
@@ -313,7 +313,7 @@ LaTeX Warning: Citation `advfig' on page 5 undefined on input line 107.
 
 LaTeX Warning: Citation `advfig' on page 5 undefined on input line 107.
 
-<fig5.png, id=32, 734.745pt x 566.115pt>
+<fig5.png, id=33, 734.745pt x 566.115pt>
 File: fig5.png Graphic file (type png)
  <use fig5.png>
 Package pdftex.def Info: fig5.png used on input line 109.
@@ -397,13 +397,13 @@ LaTeX Warning: Citation `precess1' on page 10 undefined on input line 158.
 
 LaTeX Warning: Citation `precess2' on page 10 undefined on input line 158.
 
-<fig6.jpg, id=51, 444.15938pt x 295.85532pt>
+<fig6.jpg, id=52, 444.15938pt x 295.85532pt>
 File: fig6.jpg Graphic file (type jpg)
  <use fig6.jpg>
 Package pdftex.def Info: fig6.jpg used on input line 160.
 (pdftex.def)             Requested size: 333.1187pt x 221.89093pt.
 
-<fig7.png, id=52, 462.528pt x 346.896pt>
+<fig7.png, id=53, 462.528pt x 346.896pt>
 File: fig7.png Graphic file (type png)
  <use fig7.png>
 Package pdftex.def Info: fig7.png used on input line 167.
@@ -438,7 +438,7 @@ LaTeX Warning: Citation `pe_latest' on page 11 undefined on input line 180.
 
 LaTeX Warning: Citation `modal' on page 11 undefined on input line 182.
 
-[11 <./fig6.jpg>] [12 <./fig7.png>] <fig8.png, id=64, 462.528pt x 346.896pt>
+[11 <./fig6.jpg>] [12 <./fig7.png>] <fig8.png, id=65, 462.528pt x 346.896pt>
 File: fig8.png Graphic file (type png)
 
 <use fig8.png>
@@ -449,49 +449,49 @@ Overfull \hbox (32.52686pt too wide) in paragraph at lines 187--189
  [][] 
  []
 
-[13] [14 <./fig8.png>] <fig9.png, id=73, 722.7pt x 325.215pt>
+[13] [14 <./fig8.png>] <fig9.png, id=74, 722.7pt x 325.215pt>
 File: fig9.png Graphic file (type png)
  <use fig9.png>
 Package pdftex.def Info: fig9.png used on input line 197.
 (pdftex.def)             Requested size: 419.16629pt x 188.62483pt.
 
-<fig10.png, id=74, 723.70375pt x 576.1525pt>
+<fig10.png, id=75, 723.70375pt x 576.1525pt>
 File: fig10.png Graphic file (type png)
  <use fig10.png>
 Package pdftex.def Info: fig10.png used on input line 206.
 (pdftex.def)             Requested size: 430.0pt x 342.33585pt.
 
-<fig11.png, id=75, 1058.95625pt x 501.875pt>
+<fig11.png, id=76, 1058.95625pt x 501.875pt>
 File: fig11.png Graphic file (type png)
  <use fig11.png>
 Package pdftex.def Info: fig11.png used on input line 212.
 (pdftex.def)             Requested size: 430.0pt x 203.79431pt.
  [15 <./fig9.png>]
-[16 <./fig10.png> <./fig11.png>] <fig12.png, id=85, 690.58pt x 481.8pt>
+[16 <./fig10.png> <./fig11.png>] <fig12.png, id=86, 690.58pt x 481.8pt>
 File: fig12.png Graphic file (type png)
 
 <use fig12.png>
 Package pdftex.def Info: fig12.png used on input line 223.
 (pdftex.def)             Requested size: 430.0pt x 300.00679pt.
- [17 <./fig12.png>] <fig13.png, id=90, 539.01375pt x 385.44pt>
+ [17 <./fig12.png>] <fig13.png, id=91, 539.01375pt x 385.44pt>
 File: fig13.png Graphic file (type png)
 
 <use fig13.png>
 Package pdftex.def Info: fig13.png used on input line 239.
 (pdftex.def)             Requested size: 296.45847pt x 211.99265pt.
- [18] <fig14.png, id=94, 602.25pt x 702.625pt>
+ [18] <fig14.png, id=95, 602.25pt x 702.625pt>
 File: fig14.png Graphic file (type png)
  <use fig14.png>
 Package pdftex.def Info: fig14.png used on input line 248.
 (pdftex.def)             Requested size: 430.0pt x 501.6869pt.
 
-<fig15.png, id=95, 602.25pt x 702.625pt>
+<fig15.png, id=96, 602.25pt x 702.625pt>
 File: fig15.png Graphic file (type png)
  <use fig15.png>
 Package pdftex.def Info: fig15.png used on input line 254.
 (pdftex.def)             Requested size: 430.0pt x 501.6869pt.
 
-<fig16.png, id=96, 1174.3875pt x 1786.675pt>
+<fig16.png, id=97, 1174.3875pt x 1786.675pt>
 File: fig16.png Graphic file (type png)
  <use fig16.png>
 Package pdftex.def Info: fig16.png used on input line 260.
@@ -501,7 +501,7 @@ Package pdftex.def Info: fig16.png used on input line 260.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [19 <./fig13.png>] [20 <./fig14.png>] [21 <./fig15.png>]
-<fig17.png, id=110, 602.25pt x 702.625pt>
+<fig17.png, id=111, 602.25pt x 702.625pt>
 File: fig17.png Graphic file (type png)
  <use fig17.png>
 Package pdftex.def Info: fig17.png used on input line 276.
@@ -510,7 +510,7 @@ Package pdftex.def Info: fig17.png used on input line 276.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<fig18.png, id=111, 1174.3875pt x 872.25874pt>
+<fig18.png, id=112, 1174.3875pt x 872.25874pt>
 File: fig18.png Graphic file (type png)
  <use fig18.png>
 Package pdftex.def Info: fig18.png used on input line 282.
@@ -519,13 +519,13 @@ Package pdftex.def Info: fig18.png used on input line 282.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[22] <fig19.png, id=115, 462.528pt x 346.896pt>
+[22] <fig19.png, id=116, 462.528pt x 346.896pt>
 File: fig19.png Graphic file (type png)
  <use fig19.png>
 Package pdftex.def Info: fig19.png used on input line 296.
 (pdftex.def)             Requested size: 430.0pt x 322.51465pt.
 
-<fig20.png, id=116, 578.16pt x 433.62pt>
+<fig20.png, id=117, 578.16pt x 433.62pt>
 File: fig20.png Graphic file (type png)
  <use fig20.png>
 Package pdftex.def Info: fig20.png used on input line 302.
@@ -537,13 +537,13 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<fig21.png, id=117, 578.16pt x 289.08pt>
+<fig21.png, id=118, 578.16pt x 289.08pt>
 File: fig21.png Graphic file (type png)
  <use fig21.png>
 Package pdftex.def Info: fig21.png used on input line 312.
 (pdftex.def)             Requested size: 430.0pt x 214.99654pt.
 
-<fig22.png, id=118, 462.528pt x 346.896pt>
+<fig22.png, id=119, 462.528pt x 346.896pt>
 File: fig22.png Graphic file (type png)
  <use fig22.png>
 Package pdftex.def Info: fig22.png used on input line 319.
@@ -562,30 +562,31 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 2606 strings out of 494953
- 33699 string characters out of 6180977
+ 2616 strings out of 494953
+ 33805 string characters out of 6180977
  95023 words of memory out of 5000000
- 5833 multiletter control sequences out of 15000+600000
- 12627 words of font info for 47 fonts, out of 8000000 for 9000
+ 5841 multiletter control sequences out of 15000+600000
+ 14326 words of font info for 55 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  38i,7n,26p,1893b,231s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texl
 ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
-10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on draft.pdf (31 pages, 2419765 bytes).
+xmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
+8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on draft.pdf (31 pages, 2429010 bytes).
 PDF statistics:
- 201 PDF objects out of 1000 (max. 8388607)
- 113 compressed objects within 2 object streams
+ 205 PDF objects out of 1000 (max. 8388607)
+ 116 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  111 words of extra memory for PDF output out of 10000 (max. 10000000)
 
