@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.12.4)  5 MAY 2017 12:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.12.4)  5 MAY 2017 13:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -325,56 +325,63 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 48.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1
+)
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ú in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ù in font cmr10!
+ [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./logos.jpg>]pdfTeX warnin
 g (ext4): destination with the same identifier (name{page.1}) has been already 
 used, duplicate ignored
 <to be read again> 
                    \relax 
-l.81 \newpage
+l.96 \newpage
               [1] (./draft.toc)
 \tf@toc=\write4
 \openout4 = `draft.toc'.
 
  [2] [3] [4]
-<fig1.jpg, id=160, 501.875pt x 282.05376pt>
+<fig1.jpg, id=161, 501.875pt x 282.05376pt>
 File: fig1.jpg Graphic file (type jpg)
  <use fig1.jpg>
-Package pdftex.def Info: fig1.jpg used on input line 126.
+Package pdftex.def Info: fig1.jpg used on input line 141.
 (pdftex.def)             Requested size: 301.12732pt x 169.23355pt.
 
-<fig2.jpg, id=163, 622.325pt x 333.245pt>
+<fig2.jpg, id=164, 622.325pt x 333.245pt>
 File: fig2.jpg Graphic file (type jpg)
  <use fig2.jpg>
-Package pdftex.def Info: fig2.jpg used on input line 132.
+Package pdftex.def Info: fig2.jpg used on input line 147.
 (pdftex.def)             Requested size: 373.39787pt x 199.94853pt.
- [5 <./fig1.jpg> <./fig2.jpg>] <fig3.png, id=175, 462.528pt x 346.896pt>
+ [5 <./fig1.jpg> <./fig2.jpg>] <fig3.png, id=176, 462.528pt x 346.896pt>
 File: fig3.png Graphic file (type png)
  <use fig3.png>
-Package pdftex.def Info: fig3.png used on input line 153.
+Package pdftex.def Info: fig3.png used on input line 168.
 (pdftex.def)             Requested size: 277.51894pt x 208.13919pt.
 
-<fig4.png, id=177, 803.0pt x 526.96875pt>
+<fig4.png, id=178, 803.0pt x 526.96875pt>
 File: fig4.png Graphic file (type png)
  <use fig4.png>
-Package pdftex.def Info: fig4.png used on input line 163.
+Package pdftex.def Info: fig4.png used on input line 178.
 (pdftex.def)             Requested size: 361.34666pt x 237.13374pt.
 
-<fig5.png, id=180, 734.745pt x 566.115pt>
+<fig5.png, id=181, 734.745pt x 566.115pt>
 File: fig5.png Graphic file (type png)
  <use fig5.png>
-Package pdftex.def Info: fig5.png used on input line 167.
+Package pdftex.def Info: fig5.png used on input line 182.
 (pdftex.def)             Requested size: 293.89279pt x 226.44199pt.
  [6 <./fig3.png>]
 [7 <./fig4.png (PNG copy)> <./fig5.png (PNG copy)>] [8] [9]
 <fig6.jpg, id=254, 444.15938pt x 295.85532pt>
 File: fig6.jpg Graphic file (type jpg)
  <use fig6.jpg>
-Package pdftex.def Info: fig6.jpg used on input line 219.
+Package pdftex.def Info: fig6.jpg used on input line 234.
 (pdftex.def)             Requested size: 333.1187pt x 221.89093pt.
 
-Overfull \hbox (7.72676pt too wide) in paragraph at lines 217--223
+Overfull \hbox (7.72676pt too wide) in paragraph at lines 232--238
 \OT1/cmr/m/n/10.95 Considerable re-search has been done on study-ing non-spinni
 ng bi-na-ries and on non-precessing
  []
@@ -382,88 +389,88 @@ ng bi-na-ries and on non-precessing
 <fig7.png, id=257, 462.528pt x 346.896pt>
 File: fig7.png Graphic file (type png)
  <use fig7.png>
-Package pdftex.def Info: fig7.png used on input line 225.
+Package pdftex.def Info: fig7.png used on input line 240.
 (pdftex.def)             Requested size: 370.02289pt x 277.51717pt.
  [10] [11 <./fig6.jpg> <./fig7.png>] [12] <fig8.png, id=297, 462.528pt x 346.89
 6pt>
 File: fig8.png Graphic file (type png)
  <use fig8.png>
-Package pdftex.def Info: fig8.png used on input line 247.
+Package pdftex.def Info: fig8.png used on input line 262.
 (pdftex.def)             Requested size: 462.52686pt x 346.89514pt.
 
-Overfull \hbox (32.52686pt too wide) in paragraph at lines 247--249
+Overfull \hbox (32.52686pt too wide) in paragraph at lines 262--264
  [][] 
  []
 
 [13 <./fig8.png>] <fig9.png, id=304, 722.7pt x 325.215pt>
 File: fig9.png Graphic file (type png)
  <use fig9.png>
-Package pdftex.def Info: fig9.png used on input line 260.
+Package pdftex.def Info: fig9.png used on input line 275.
 (pdftex.def)             Requested size: 419.16629pt x 188.62483pt.
 
 [14 <./fig9.png>] <fig10.png, id=311, 723.70375pt x 576.1525pt>
 File: fig10.png Graphic file (type png)
 
 <use fig10.png>
-Package pdftex.def Info: fig10.png used on input line 273.
+Package pdftex.def Info: fig10.png used on input line 288.
 (pdftex.def)             Requested size: 430.0pt x 342.33585pt.
  <fig11.png, id=312, 1058.95625pt x 501.875pt>
 File: fig11.png Graphic file (type png)
  <use fig11.png>
-Package pdftex.def Info: fig11.png used on input line 279.
+Package pdftex.def Info: fig11.png used on input line 294.
 (pdftex.def)             Requested size: 430.0pt x 203.79431pt.
 
 <fig12.png, id=313, 690.58pt x 481.8pt>
 File: fig12.png Graphic file (type png)
  <use fig12.png>
-Package pdftex.def Info: fig12.png used on input line 285.
+Package pdftex.def Info: fig12.png used on input line 300.
 (pdftex.def)             Requested size: 430.0pt x 300.00679pt.
  [15 <./fig10.png>]
 [16 <./fig11.png> <./fig12.png>] <fig13.png, id=328, 539.01375pt x 385.44pt>
 File: fig13.png Graphic file (type png)
 
 <use fig13.png>
-Package pdftex.def Info: fig13.png used on input line 303.
+Package pdftex.def Info: fig13.png used on input line 318.
 (pdftex.def)             Requested size: 296.45847pt x 211.99265pt.
  [17] <fig14.png, id=333, 602.25pt x 702.625pt>
 File: fig14.png Graphic file (type png)
  <use fig14.png>
-Package pdftex.def Info: fig14.png used on input line 314.
+Package pdftex.def Info: fig14.png used on input line 329.
 (pdftex.def)             Requested size: 430.0pt x 501.6869pt.
 
 <fig15.png, id=334, 602.25pt x 702.625pt>
 File: fig15.png Graphic file (type png)
  <use fig15.png>
-Package pdftex.def Info: fig15.png used on input line 320.
+Package pdftex.def Info: fig15.png used on input line 335.
 (pdftex.def)             Requested size: 430.0pt x 501.6869pt.
 
 <fig16.png, id=335, 1174.3875pt x 1786.675pt>
 File: fig16.png Graphic file (type png)
  <use fig16.png>
-Package pdftex.def Info: fig16.png used on input line 326.
+Package pdftex.def Info: fig16.png used on input line 341.
 (pdftex.def)             Requested size: 352.31897pt x 536.00664pt.
  [18 <./fig13.png>] [19 <./fig14.png>] [20 <./fig15.png>] [21 <./fig16.png>]
 <fig17.png, id=362, 602.25pt x 702.625pt>
 File: fig17.png Graphic file (type png)
  <use fig17.png>
-Package pdftex.def Info: fig17.png used on input line 343.
+Package pdftex.def Info: fig17.png used on input line 358.
 (pdftex.def)             Requested size: 430.0pt x 501.6869pt.
 
 <fig18.png, id=363, 1174.3875pt x 872.25874pt>
 File: fig18.png Graphic file (type png)
  <use fig18.png>
-Package pdftex.def Info: fig18.png used on input line 349.
+Package pdftex.def Info: fig18.png used on input line 364.
 (pdftex.def)             Requested size: 352.31897pt x 261.67964pt.
  [22] [23 <./fig17.png>] <fig19.png, id=374, 462.528pt x 346.896pt>
 File: fig19.png Graphic file (type png)
  <use fig19.png>
-Package pdftex.def Info: fig19.png used on input line 363.
+Package pdftex.def Info: fig19.png used on input line 378.
 (pdftex.def)             Requested size: 430.0pt x 322.51465pt.
 
 <fig20.png, id=375, 578.16pt x 433.62pt>
 File: fig20.png Graphic file (type png)
  <use fig20.png>
-Package pdftex.def Info: fig20.png used on input line 369.
+Package pdftex.def Info: fig20.png used on input line 384.
 (pdftex.def)             Requested size: 346.89867pt x 260.17401pt.
  [24 <./fig18.png>]
 
@@ -472,13 +479,13 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 [25 <./fig19.png>] <fig21.png, id=389, 578.16pt x 289.08pt>
 File: fig21.png Graphic file (type png)
  <use fig21.png>
-Package pdftex.def Info: fig21.png used on input line 379.
+Package pdftex.def Info: fig21.png used on input line 394.
 (pdftex.def)             Requested size: 430.0pt x 214.99654pt.
 
 <fig22.png, id=390, 462.528pt x 346.896pt>
 File: fig22.png Graphic file (type png)
  <use fig22.png>
-Package pdftex.def Info: fig22.png used on input line 385.
+Package pdftex.def Info: fig22.png used on input line 400.
 (pdftex.def)             Requested size: 430.0pt x 322.51465pt.
  [26 <./fig20.png>]
 [27 <./fig21.png> <./fig22.png>] [28] [29] (./draft.bbl
@@ -532,24 +539,24 @@ ps : / / phys . org / news /
  []
 
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 408.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 423.
  [33]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 408.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 423.
  (./draft.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 408.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 408.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 423.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 423.
 Package rerunfilecheck Info: File `draft.out' has not changed.
 (rerunfilecheck)             Checksum: 1A2D37D2E6B233213C6DE9D0ACBAF56D;1124.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 408.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 423.
  ) 
 Here is how much of TeX's memory you used:
- 6340 strings out of 494953
- 89434 string characters out of 6180977
+ 6346 strings out of 494953
+ 89500 string characters out of 6180977
  173111 words of memory out of 5000000
- 9396 multiletter control sequences out of 15000+600000
- 15105 words of font info for 57 fonts, out of 8000000 for 9000
+ 9400 multiletter control sequences out of 15000+600000
+ 16408 words of font info for 61 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 29i,7n,28p,1893b,433s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 29i,10n,28p,1893b,433s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/tex
@@ -566,7 +573,7 @@ b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr
 /texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texli
 ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on draft.pdf (34 pages, 2494893 bytes).
+Output written on draft.pdf (34 pages, 2495451 bytes).
 PDF statistics:
  528 PDF objects out of 1000 (max. 8388607)
  427 compressed objects within 5 object streams
