@@ -65,14 +65,8 @@
 \text{\emph{Student Number}}&: \text{1265898} \\
 \text{\emph{Degree Programme}}&: \text{MPhys Physics with Astronomy} \\
 \text{\emph{Primary Assessor}}&: \text{Prof. Carole \textsc{Tucker}} \\
-\text{\emph{Secondary Assessor}}&: \text{Dr. Clarence \textsc{Matthai}} \\
+\text{\emph{Secondary Assessor}}&: \text{Dr. Clarence C. \textsc{Matthai}} \\
 \end{align*}
-%\begin{tabular}{2}
-%Student number: &1265898\\
-%Degree Programme:& MPhys Physics with Astronomy\\
-%Primary Assessor:& Prof. Carole \textsc{Tucker}\\
-%
-%\end{tabular}
 
 	%----------------------------------------------------------------------------------------
 
@@ -181,7 +175,7 @@ The waveform can be split into three phases - the inspiral, the merger and the r
 	\centering
 	\includegraphics[scale=0.40]{fig5.png}
 	\centering
-	\caption{\cite{noisecurve}Noise 'budget for advanced LIGO detectors.}
+	\caption{\cite{noisecurve}Noise curve for advanced LIGO detectors.}
 	\centering
 \end{figure}
 The fundamental physical principle of the LIGO detectors is that they are laser interferometeres. Interferometers are devices that can measure extremely small changes in length to high accuracy using constructive and destructive interference, as shown in Fig. 4. Light leaves the laser beam, and is split down the two arms of the detector by the beam splitter. If the length of the two arms is equal, the optical path difference between the two light beams is zero, and the two beams constructively interfere after recombining at the beam splitter. However if there is any change in the length of one of the arms, the beams will no longer constructively interfere and the photodetector will register a change in intensity. As a gravitational wave passes through the detector, the relative length of the arms changes, and the GW signal is recorded by the photodiode. A large part of the scientific and engineering effort at LIGO involves techniques to minimise and account for noise in the system, and the recent advanced LIGO upgrade to the detectors increased the effective volume within which mergers can be detected by an order of magnitude\cite{noise}\cite{noise2}. Some of these techniques include suspending the mirrors from a series of pulleys and penduli, and applying real time corrections to the positions of the mirrors to compensate for external seismic noise. There is also considerable effort in managing the optics and lasers of the system in order to maximise the coherence of the laser beam and the intensity detected in the photodiode\cite{lasers}. The noise spectrum for advanced LIGO is shown in Fig. 5.\cite{noise3}, where the sharp noise peaks are specifically designed resonances that are removed from the strain data during signal processing. The strain data observed in the detector is a function of the different polarisation amplitudes
@@ -208,9 +202,9 @@ Given that so many parameters, many of them extrinsic, describe only two sets of
 
 The qualitative idea behind current methods of parameter estimation is that the GW signal is processed and extracted from the raw strain data, and then matched against an array of simulated waveforms to find which waveform most closely resembles the detected signal. The two technical challenges here are quantifying how well a template represents the observed signal, and how to efficiently sample the parameter space for new templates to test against the data. Within LIGO a standard method for quantifying the similarity between two signals $h_1(t)$ and $h_2(t)$ is given by the noise weighted inner product, also referred to as the 'match' between signals, and is defined as
 \begin{equation}
-\langle h_1(t) \vert h_2(t) \rangle=2\int_{0}^{\infty}\frac{\tilde{h_1^*}(f)\tilde{h_2}(f)+\tilde{h_1}(f)\tilde{h_2^*}(f)}{S_n(f)}df 
+\langle h_1(t) \vert h_2(t) \rangle=2\int_{f_{\mathrm{low}}}^{\infty}\frac{\tilde{h_1^*}(f)\tilde{h_2}(f)+\tilde{h_1}(f)\tilde{h_2^*}(f)}{S_n(f)}df 
 \end{equation}
-where $\tilde{h}(f)$ is the Fourier transform of the signal $h(t)$, and $S_n(f)$ is the noise curve of the detector\cite{oldest_pe}. It is also convenient here to define the term \textit{mismatch}, which is simply $1-m$ where $m$ is the match. A variety of methods have been employed to sample the parameter space, including nested sampling\cite{pe2} and analysis using Gaussian wavelets\cite{props}, and in this work we use a framework of Bayesian inference and Markov-Chain Monte Carlo methods\cite{inj}\cite{pe}\cite{pe4}. This process results in a set of posterior distribution functions (PDFs) for each parameter. Using Bayes' Theorem, the posterior is given by
+where $\tilde{h}(f)$ is the Fourier transform of the signal $h(t)$, and $S_n(f)$ is the noise curve of the detector\cite{oldest_pe}. Here $f_{\mathrm{low}}$ is the minimum frequency cutoff, which in this paper we set to 20Hz throughout. It is also convenient here to define the term \textit{mismatch}, which is simply $1-m$ where $m$ is the match. A variety of methods have been employed to sample the parameter space, including nested sampling\cite{pe2} and analysis using Gaussian wavelets\cite{props}, and in this work we use a framework of Bayesian inference and Markov-Chain Monte Carlo methods\cite{inj}\cite{pe}\cite{pe4}. This process results in a set of posterior distribution functions (PDFs) for each parameter. Using Bayes' Theorem, the posterior is given by
 \begin{equation}
 p(\vec{\theta})|d)=\frac{p(\vec{\theta})p(d|\vec{\theta})}{P(d)}
 \end{equation}
@@ -267,9 +261,7 @@ We first consider in more detail the effects of precession on a GW waveform. Thi
 
 We show this in Fig. 8, where from this particular perspective the precessive effect appears largest in the case of the in-plane spin being $0.5$, instead of the maximally precessing system with $|\vec{S}|=0.98$. In this case, this is due to the fact that the inclination angle is defined with respect to the total angular momentum. In the case of precessing binaries, $\vec{L}$ and $\vec{J}$ are not aligned, so when we say we are viewing a binary 'edge-on', i.e. at $\iota=\pi/2$, the actual orbital plane of the system will not necessarily be edge-on. As a result, it is not always the case that precession affects are most noticeable in systems with the most precession, and a lot depends on the specific combination of source location and the polarisation and inclination angles for a specific event.
 
-The situation is further complicated by the fact that the phase, $\phi_c$ is an important degree of freedom in precessing binaries, as shown in Fig. 9. In non-precessing binaries, the phase is very much a trivial parameter which contains no interesting information about the system, however in precessing binaries the phase has a significant affect on the signal modulation. This opens up the possibility of many different degeneracies between binaries with different intrinsic parameters but a certain combination of phase and source location, and makes studying precessing waveforms more challenging. When considering precession it is also important to note that heavier total mass binaries have considerably shorter inspiral phases, and therefore fewer oscillation cycles within the detection frequency band. So while they will have a stronger signal, there is less opportunity for precessive effects to manifest.
-\subsection{Matching and exploring the parameter space}
-An extremely useful and computationally cheap way to identify some of these degeneracies is through the process of matching as defined in (13). In the \textit{PyCBC} framework, the match is maximised over extrinsic parameters such as distance and source location that only affect the amplitude of a signal, and so is a useful tool for examining the similarities in the morphologies of different waveforms.
+The situation is further complicated by the fact that the phase, $\phi_c$ is an important degree of freedom in precessing binaries, as shown in Fig. 9. In non-precessing binaries, the phase is very much a trivial parameter which contains no interesting information about the system, however in precessing binaries the phase has a significant affect on the signal modulation.
 
 \begin{figure}[H]
 	\includegraphics[scale=0.58]{fig9.png}
@@ -277,8 +269,11 @@ An extremely useful and computationally cheap way to identify some of these dege
 	\caption{Affect of phase on non-precessing and precessing waveforms. Precession adds an extra degree of freedom in that the morphology of precessing waveforms is different for different phases.}
 	\centering
 \end{figure}
+This opens up the possibility of many different degeneracies between binaries with different intrinsic parameters but a certain combination of phase and source location, and makes studying precessing waveforms more challenging. When considering precession it is also important to note that heavier total mass binaries have considerably shorter inspiral phases, and therefore fewer oscillation cycles within the detection frequency band. So while they will have a stronger signal, there is less opportunity for precessive effects to manifest.
+\subsection{Matching and exploring the parameter space}
+An extremely useful and computationally cheap way to identify some of these degeneracies is through the process of matching as defined in (13). In the \textit{PyCBC} framework, the match is maximised over extrinsic parameters such as distance and source location that only affect the amplitude of a signal, and so is a useful tool for examining the similarities in the morphologies of different waveforms.
 
- A match takes values in the range $[0,1]$, with identical waveforms having a match of 1. It is also important to note that the inclination parameter has a similar nature of that of the initial phase, in that in matches of non-precessing binaries it can be maximised over as it does not affect signal morphology, however once precession is added, waveforms at different inclinations no longer match, further adding to the complexity of the parameter space.
+A match takes values in the range $[0,1]$, with identical waveforms having a match of 1. It is also important to note that the inclination parameter has a similar nature of that of the initial phase, in that in matches of non-precessing binaries it can be maximised over as it does not affect signal morphology, however once precession is added, waveforms at different inclinations no longer match, further adding to the complexity of the parameter space.
 
 
 
@@ -415,7 +410,7 @@ Two explanations were proposed for the failure to accurately infer $\chi_p$, one
 
 There is significantly more work to be done in this area, and this comes nowhere close to a conclusive study. Due to time constraints, this work only explored a very small sliver of the overall parameter space. However, while it is certainly possible that the results presented here are specific to this region, given that the trend of excluding $\chi_p$ is so strong in these results, it is unlikely to be entirely unique. During the project, individual software injections were performed for a wider range of parameters than those shown here and the general trend of $\chi_p$ being excluded was observed there as well, however this is now anecdotal evidence and much closer analysis is needed, both in the form of larger scope studies of the parameter space and more targeted studies to understand better the causes of incorrect parameter inference. As a final point, many of the posteriors of $\chi_p$ shown in this work are extremely similar to those shown in the recent detection papers\cite{obs}\cite{obs2} despite the fact that in many cases the injected parameters were excluded by the inference process. If there is indeed a bias here towards certain spin orientations or magnitudes, it is crucial that this is identified in order ensure that astrophysical conclusions drawn from current and future LIGO observations are well grounded.
 \section{Acknowledgements}
-I would firstly like to thank Steve Fairhurst for his patient and warm supervision. Our meetings were always informative and enjoyable and I have learned a lot from him over the past year. I would also like to give a huge thanks to Collin Capano, without whom this report would have been significantly shorter, for being extremely generous with his time and helping me navigate the labyrinth of LIGO codes. Finally I would like to thank Callum Booth for being my partner in crime over the last 9 months.
+I would firstly like to thank Steve Fairhurst for his patient and warm supervision. Our meetings were always informative and enjoyable and I have learned a lot from him over the course of the project. I would also like to give a huge thanks to Collin Capano, without whom this report would have been significantly shorter, for being extremely generous with his time and helping me navigate the labyrinth of LIGO codes. Finally I would like to thank Callum Booth for being my partner in crime over the last 9 months.
 \section{Reflective Statement}
 This project has certainly taught me the value of time, and what a scarce resource it is. These kinds of things seem to suck up an endless amount of time for very little apparent progress, and knowing when to call it and do something else for a few hours is something I'm not so great at. Something I need to learn in the future is to figure out a way to switch off and reset once in a while. Overall I did have a great time working on it. The LIGO collaboration is truly awesome and this was a really great opportunity to be a part of it. I certainly learnt a lot of useful technical skills, especially learning to use GitHub from the command line, and my programming improved dramatically over the course of the project. 
 
