@@ -73,13 +73,7 @@ Pau Amaro-Seoane et~al.
 \newblock {\em Classical and Quantum Gravity}, 29(12):124016, Jun 2012.
 
 \bibitem{pycbc}
-Alex Nitz, Ian Harry, Christopher~M. Biwer, Duncan Brown, Josh Willis, Tito~Dal
-  Canton, Larne Pekowsky, Thomas Dent, Andrew~R. Williamson, Collin Capano,
-  Soumi De, Bernd Machenschalk, Prayush Kumar, Miriam Cabero, Thomas Massinger,
-  Amber Lenon, Stephen Fairhurst, Steven Reyes, Alex Nielsen, shasvath,
-  Francesco Pannarale, Leo Singer, Stanislav Babak, Duncan Macleod, CBC Sugar,
-  Lorena~Magaña Zertuche, John Veitch, couvares, Brian Bockelman, and
-  n~wbrown.
+Alex~Nitz et~al.
 \newblock ligo-cbc/pycbc: O2 production release 11, April 2017.
 
 \bibitem{hartle}
@@ -88,7 +82,12 @@ James~B. Hartle.
 \newblock Addison Wesley, 2003.
 
 \bibitem{fig1}
-Unknown.
+Plus and cross polarised gravitational waves.
+
+\bibitem{fig2}
+Swinburne astronomy productions.
+\newblock
+  \url{https://astronomynow.com/2016/02/11/gravitational-waves-found-from-merging-black-holes/}.
 \newblock Accessed {09/04/2017}.
 
 \bibitem{blanch}
@@ -98,15 +97,11 @@ Luc Blanchet, Thibault Damour, Bala~R. Iyer, Clifford~M. Will, and Alan~G.
   post-newtonian order.
 \newblock {\em Physical Review Letters}, 74(18):3515--3518, May 1995.
 
-\bibitem{fig2}
-Swinburne~Astronomy Productions.
-\newblock Accessed {09/04/2017}.
-
 \bibitem{advfig}
-Advanced ligo fig.
+Schematic of an advanced ligo detector.
 \newblock
   \url{https://upload.wikimedia.org/wikipedia/commons/d/d5/Simplified_diagram_of_an_Advanced_LIGO_detector.png}.
-\newblock Accessed: 10/04/2017.
+\newblock Accessed: 04/05/2017.
 
 \bibitem{noisecurve}
 Rana~X. Adhikari.
@@ -240,6 +235,12 @@ Lawrence~E. Kidder.
 \newblock Coalescing binary systems of compact objects to
   (post${)}^{5/2}$-newtonian order. v. spin effects.
 \newblock {\em Phys. Rev. D}, 52:821--847, Jul 1995.
+
+\bibitem{precBH}
+Depiction of precessing bbh.
+\newblock
+  \url{https://phys.org/news/2015-03-insights-black-hole-collisions.html}.
+\newblock Accessed: 04/05/2017.
 
 \bibitem{chip}
 Patricia Schmidt, Frank Ohme, and Mark Hannam.
