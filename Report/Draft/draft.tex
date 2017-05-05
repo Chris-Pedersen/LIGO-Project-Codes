@@ -14,7 +14,67 @@
 \author{Chris Pedersen}
 
 \begin{document}
-\maketitle
+\begin{titlepage}
+	
+	\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for the horizontal lines, change thickness here
+	
+	\center % Center everything on the page
+	
+	%----------------------------------------------------------------------------------------
+	%	HEADING SECTIONS
+	%----------------------------------------------------------------------------------------
+	\includegraphics[scale=0.5]{logos.jpg}\\[1cm]
+	\textsc{\LARGE School of Physics and Astronomy}\\[1.5cm] % Name of your university/college
+	\textsc{\Large Year 4 Project Dissertation}\\[0.5cm] % Major heading such as course name
+	\textsc{\large Session 2016-2017}\\[0.5cm] % Minor heading such as course title
+	
+	%----------------------------------------------------------------------------------------
+	%	TITLE SECTION
+	%----------------------------------------------------------------------------------------
+	
+	\HRule \\[0.4cm]
+	{ \huge \bfseries Gravitational waves from colliding black holes}\\[0.4cm] % Title of your document
+	\HRule \\[1.5cm]
+	
+	%----------------------------------------------------------------------------------------
+	%	AUTHOR SECTION
+	%----------------------------------------------------------------------------------------
+	
+\begin{minipage}{0.4\textwidth}
+	\begin{flushleft} \large
+		\emph{Author:}\\
+		Christian \textsc{Pedersen} % Your name
+	\end{flushleft}
+\end{minipage}
+~
+\begin{minipage}{0.4\textwidth}
+	\begin{flushright} \large
+		\emph{Supervisor:} \\
+		Prof. Stephen \textsc{Fairhurst} % Supervisor's Name
+	\end{flushright}
+\end{minipage}\\[1cm]
+	% If you don't want a supervisor, uncomment the two lines below and remove the section above
+	%\Large \emph{Author:}\\
+	%John \textsc{Smith}\\[3cm] % Your name
+	Student number: 1265898\\
+	Primary Assessor: Prof. Carole \textsc{Tucker}\\
+	Secondary Assessor: Dr. Clarence \textsc{Matthai}\\
+	%----------------------------------------------------------------------------------------
+	%	DATE SECTION
+	%----------------------------------------------------------------------------------------
+	{\large \today}\\[1cm] % Date, change the \today to a set date if you want to be precise
+	
+	%----------------------------------------------------------------------------------------
+	%	LOGO SECTION
+	%----------------------------------------------------------------------------------------
+	
+	%\includegraphics{Logo}\\[1cm] % Include a department/university logo - this will require the graphicx package
+	
+	%----------------------------------------------------------------------------------------
+	
+	\vfill % Fill the rest of the page with whitespace
+	
+\end{titlepage}
 \begin{abstract}
 A complete understanding of the LIGO detectors' ability to accurately measure spin parameters is of key importance to understanding the astrophysics of binary black hole systems. Of particular significance is an ability to determine spin orientations as a means of distinguishing between binary formation models. In this work we overview the core physics of gravitational waves, relativistic precession in binary systems, the LIGO detectors, and the techniques involved in parameter estimation. We then examine the specific effects of precession on a gravitational waveform. The technique of 'matching' between waveforms is used as a computationally cheap way to explore degeneracies in the parameter space. A series of signals are then injected into simulated detector noise, and a full parameter estimation is performed on the data segments. Using the match results as a guide, we target these injections to areas in the parameter space where we expect to be particularly sensitive and insensitive to spin parameters. A total of 20 signals with $\chi_p=0.9$ across a full range of inclinations were injected and recovered, with all but 5 results having the injected value of $\chi_p$ excluded, and even in these cases the value of $\chi_p$ is consistently underestimated. Comparisons between the match and inference results suggest that matching is not a successful predictor of the inference results, and intrinsic degeneracies in the waveforms are suggested as the source of the inaccuracy. Finally we briefly examine the impact of the Virgo detector on spin estimation, and present results that indicate that the impact will be marginal.
 \end{abstract}
@@ -164,7 +224,7 @@ Considerable research has been done on studying non-spinning binaries and on non
 \begin{figure}[H]
 	\includegraphics[scale=0.8]{fig7.png}
 	\centering
-	\caption{Waveforms for three BBH mergers with $m_1=30$, $m_2=10$ and with spins only in the $x$ direction on the heavier black hole. The inclination is such that the binary is viewed edge-on. LEGEND ON THIS FIGURE IS WRONG, FIX BEFORE SUBMIT}
+	\caption{Waveforms for three BBH mergers with $m_1=30$, $m_2=10$ and with spins only in the $x$ direction on the heavier black hole. The inclination is such that the binary is viewed edge-on.}
 	\centering
 \end{figure}
 This causes the signal in the detector to have an overall amplitude modulation as a function of time due to the change in orientation of the source, and therefore the change in direction of peak emission of GWs. This can be seen in Fig. 7, where we compare a very slightly precessing system with a maximally precessing one.
