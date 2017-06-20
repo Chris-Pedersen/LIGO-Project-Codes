@@ -1,7 +1,5 @@
 #Create new directory for this inference run
-#DIR=`date '+%Y%m%d-%H%M%S'`
-DIR=testrun
-NAMEDIR=final/${DIR}
+NAMEDIR=`date '+%Y%m%d-%H%M%S'`
 mkdir ${NAMEDIR}
 PAR=${NAMEDIR}/parameters.txt
 
