@@ -1,8 +1,8 @@
-#!/usr/bin/env bash
+y
 
 #Create new directory for this inference run
-#DIR=`date '+%Y%m%d-%H%M%S'`
-DIR=800mp_highMR_0
+DIR=`date '+%Y%m%d-%H%M%S'`
+#DIR=800mp_highMR_0
 NAMEDIR=final/${DIR}
 mkdir ${NAMEDIR}
 PAR=${NAMEDIR}/parameters.txt
