@@ -11,10 +11,6 @@ pycbc_inference_plot_posterior \
     --plot-scatter \
     --plot-marginal \
     --z-arg logplr \
-    --parameters "dec*180/pi:$\delta$ (deg)" \
-                 "polarization*180/pi:$\psi$ (deg)" \
-                 mchirp q spin1_azimuthal spin1_polar \
-                 spin2_azimuthal spin2_polar \
+    --parameters mass1 mass2 \
+                 mchirp q \
                  chi_p chi_eff \
-                 "inclination*180/pi:$\iota$ (deg)" distance \
-                 "coa_phase*180/pi:$\phi_0$ (deg)" tc
