@@ -15,5 +15,6 @@ pycbc_inference_plot_posterior \
                  "polarization*180/pi:$\psi$ (deg)" \
                  mchirp q spin1_azimuthal spin1_polar \
                  spin2_azimuthal spin2_polar \
+                 chi_p chi_eff \
                  "inclination*180/pi:$\iota$ (deg)" distance \
                  "coa_phase*180/pi:$\phi_0$ (deg)" tc
