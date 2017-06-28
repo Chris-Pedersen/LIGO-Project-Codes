@@ -3,7 +3,7 @@ FOLDER=$1
 
 ITER=11999 #Take last iteration - change this if you run with more
 INPUT_FILE=${FOLDER}/output.hdf
-OUTPUT_FILE=${FOLDER}/posteriors.png
+OUTPUT_FILE=${FOLDER}/posteriors_pycbc.png
 pycbc_inference_plot_posterior \
     --iteration ${ITER} \
     --input-file ${INPUT_FILE} \
